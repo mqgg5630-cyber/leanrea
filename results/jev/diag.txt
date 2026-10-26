@@ -1,0 +1,16 @@
+﻿cwd=C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42
+psver=5.1.26100.8875
+exists=True
+len=5490
+codefiles=C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42\code\check_all.sh|C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42\code\check_loop_summary.ps1|C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42\code\check_loop_summary.py|C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42\code\local_check.ps1|C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42\code\scan_ps_var_colon.py|C:\Users\文少\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-2fb90a42\code\jev\probe_env.ps1
+pwsh=
+probe_exit=0
+probe_lines=32
+COMPUTER=LAPTOP-R77M5D6M
+USER=文少
+OS=Microsoft Windows 11 专业版 build 26200
+OS_ARCH=64 位
+PS=5.1.26100.8875
+NOW_LOCAL=2026-10-26 19:49:56
+PY E:\spider\python.exe=3.11.9 64bit
+PATH python.exe=C:\Users\文少\AppData\Local\Programs\Python\Python312\python.exe
