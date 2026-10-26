@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T130930Z",
-    "powershell":  [
-                       "\"watcher=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"chat_now=\" + ((Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -match \"^(weixin|wechat|qq)$\" } | ForEach-Object { $_.ProcessName }) -join \",\"); \"task=\" + ((Get-ScheduledTask -TaskName \"jev-chat-monitor\").State); (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\events.jsonl\" -Tail 3 -Encoding UTF8) -join \" || \""
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T13:09:03Z",
-    "executed_at_local":  "2026-10-26 21:09:03",
-    "source_commit":  "a8a341711361c54e6372ff5e313e11b4e3830724"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T143645Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; \"chat=\" + ((Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -match \"^(weixin|wechat|qq)$\" } | ForEach-Object { $_.ProcessName + \":\" + $_.Id }) -join \",\"); \"watcher=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\verify_ui.ps1\" | Out-Null; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 400 | Out-Null; Get-ChildItem \"results\\jev-monitor\" | ForEach-Object { $_.Name + \" \" + $_.Length }"
+  ]
 }

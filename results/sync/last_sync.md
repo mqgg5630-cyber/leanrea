@@ -1,8 +1,146 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-26 13:09 UTC
+- 时间：2026-10-26 14:36 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：check(jev): watcher heartbeat
+- 本轮纳入的**本机侧**提交（本机 -> 助手 ✅）：
+  - 527c78c hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - a8a3417 check(jev): watcher heartbeat
+  - e7a1648 docs(jev): final deployment status + verified state
+  - f028ee1 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 4240861 diag(jev): identify the two watcher pids
+  - 6a70554 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 4b2e00b fix(jev): restart the single watcher via the scheduled task
+  - 6e8c83e fix(jev): named-mutex single instance for the watcher
+  - 8b9fb38 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - c830479 poll(jev): watcher count after the restart
+  - d985e6e hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - fad0ec4 fix(jev): make sure exactly one watcher runs
+  - c56e475 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 71555a7 chore: verify the hub after pruning the extra branch
+  - 8fad4ee hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 3e20e43 chore(hub): point the base clone at this branch before pruning the old one
+  - ab5b0da docs(jev): headless recorder rationale, logs format, desktop guide
+  - 8171046 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 72e8dcf fix(jev): R collided with the Invoke-History alias in pull_events
+  - 44a65e4 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 1fe6011 diag(jev): pull_events produced an empty file
+  - c453f74 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 82eb474 feat(jev): restart headless watcher with the fixed hook + snapshot
+  - 7851210 feat(jev): headless recorder watcher + tolerant hook install
+  - 91c273f hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - e827b7f poll(jev): watcher alive?
+  - fa04caf hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 4f366ad feat(jev): headless recorder watcher (no Qt)
+  - d6f45b4 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - cf48d0a diag(jev): load Qt DLLs directly
+  - ce0cc58 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - f53974d poll(jev): PySide6 walk result
+  - 63b3fd9 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - c9f198f diag(jev): does the base python already have a working PySide6
+  - c1bf478 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - c115bc2 diag(jev): does the same PySide6 import under python 3.12
+  - 80fe6d8 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - a85ed55 poll(jev): PySide6 version walk
+  - 7be5dd2 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 09796fe fix(jev): version-walk PySide6 until QtCore imports
+  - 66a8f84 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 3327b19 fix(jev): pin PySide6 6.8.3
+  - 68c229e hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - cdd4f61 diag(jev): PySide6 on a clean python 3.12 venv
+  - 6a55aeb hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - cf78f3f diag(jev): which PySide6/runtime is in play now
+  - 62a93c3 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 7b86191 fix(jev): try PySide6 6.8.3 against the installed VC runtime
+  - 7502b22 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 7a12365 diag(jev): is a stale VC runtime on PATH the culprit
+  - b0b8d7c hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 51a3d3d diag(jev): PySide6 DLL inventory
+  - 33d74b9 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 4ce400e diag(jev): PySide6 QtCore DLL failure
+  - d60035d hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 6841de4 feat(jev): hook + tasks + first launch
+  - 39a6d21 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 98a7473 poll(jev): uv verify result
+  - 121255f hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - b5e2bdf poll(jev): uv install progress
+  - 7c9e674 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - c359c44 feat(jev): uv-based parallel install (pip is 200KB/s single stream)
+  - e475760 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - ddb6a62 feat(jev): fetch uv for a parallel dependency install
+  - 4eed083 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - ec40841 poll(jev): pip progress
+  - 0d22e27 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 37ba23b docs(jev): desktop cheat-sheet + pip poll
+  - 7227b08 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 6c81f6a poll(jev): pip throughput
+  - c347447 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - d372e8c poll(jev): PySide6 download progress
+  - e10d7c7 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 80c2a4f poll(jev): direct pip progress
+  - 19bcd98 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 5e45b33 docs(jev): deployment status snapshot (ASCII gate fix)
+  - 7957d4c hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 5e7dfbb poll(jev): direct pip progress
+  - 84eac5b hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - d767848 feat(jev): direct-mode pip install (proxy corrupts large wheels)
+  - b751c08 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 909bd6d poll(jev): wheelhouse progress
+  - a968c3f hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 23c1ad6 feat(jev): curl wheelhouse + offline pip install
+  - 6613fc6 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 599c568 diag(jev): curl through proxy vs direct, checksum compare
+  - f930308 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 9329047 fix(jev): pip worker Log must not pollute the success flag
+  - 09cecd2 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 568d2df poll(jev): pip progress
+  - 8d935cf hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 75e3c0b feat(jev): hybrid pip worker (proxy-first, direct fallback)
+  - dbf827c hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 4548386 diag(jev): single small package, proxy off
+  - 28632fe hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - ed4bde3 diag(jev): mirror reachability + speed
+  - ab9bb37 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 00c04ed poll(jev): pip progress
+  - 5681264 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 7f4efa2 poll(jev): is pip still working
+  - 5206a1d hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 3d41aeb poll(jev): pip worker progress
+  - bc32ab0 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 9a25865 poll(jev): pip worker progress
+  - 7cf3fe8 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 9ca9572 feat(jev): detached pip worker (proxy bypassed, mirror fallback)
+  - fe861b2 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 50f3ca4 diag(jev): try pip with proxy bypassed
+  - 1ddd779 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 354f4e6 feat(jev): rerun install with aliyun index
+  - 2e7fb09 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 0cc6c3d diag(jev): find a working pypi route
+  - 9c8ca83 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 72bfff3 diag(jev): why pip failed
+  - 7bfd018 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 66c3a2e poll(jev): pip install progress
+  - 3521f60 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 064d67c feat(jev): deploy to E:/0apps (outside the hub wipe zone)
+  - 105b431 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 5f3693f diag(jev): where did the deploy folder go
+  - 704c8b6 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 89c0003 fix(jev): monitor files live under code/jev/monitor (sparse clone) + apply hook
+  - 992965f hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - a42463e feat(jev): deploy jev-chat-windows + recorder monitor (detached install)
+  - 856b03b hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 5da20c0 probe(jev): which chat app is installed on the host
+  - dff7ae9 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 828d861 probe(jev): full environment report
+  - 3a8be57 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 9f1eb6e diag(jev): why the probe printed nothing
+  - 29ddffe hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 6043aab probe(jev): environment probe -> results/jev/probe_env.txt
+  - 463fef3 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 541f775 probe(jev): read-only environment probe on host
+  - 3214c55 hub(LAPTOP-R77M5D6M): exec & sync to E:\0github\results\leanrea-4d729933-leanrea
+  - 6ac1109 test(hub): write D:/桌面/测试成功.txt via git-sync-hub v4.0
+  - 8a02124 chore(skill): install git-sync v4.0.0 (hub bridge) on arena/4d729933-leanrea
+- 本轮助手提交：check(jev): verify UI against the open chat window
 - 本轮改动文件：
    M results/status/hub_task.json
 
