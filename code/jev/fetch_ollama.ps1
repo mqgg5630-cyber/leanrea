@@ -92,43 +92,53 @@ function Get-Chunk([int]$idx) {
     return $false
 }
 
-$jobs = @()
-$queue = [System.Collections.Queue]::new()
-for ($i = 0; $i -lt $count; $i++) { $queue.Enqueue($i) }
-$failed = 0
-$workers = @()
-for ($w = 0; $w -lt $Workers; $w++) {
-    $ps = [PowerShell]::Create()
-    [void]$ps.AddScript({
-        param($queueRef, $fn, $chunkDir)
-        while ($true) {
-            $idx = $null
-            [System.Threading.Monitor]::Enter($queueRef)
-            try {
-                if ($queueRef.Count -gt 0) { $idx = $queueRef.Dequeue() }
-            } finally { [System.Threading.Monitor]::Exit($queueRef) }
-            if ($null -eq $idx) { break }
-            $ok = Get-Chunk $idx
-            if (-not $ok) { Add-Content -LiteralPath (Join-Path $chunkDir 'failed.txt') -Value $idx }
+# Self-contained worker: each job owns a disjoint set of chunk indices.
+$workerBody = {
+    param($indices, $base, $px, $chunkBytes, $total, $dir)
+    foreach ($idx in $indices) {
+        $startB = [int64]$idx * $chunkBytes
+        $endB = [math]::Min($startB + $chunkBytes - 1, $total - 1)
+        $want = $endB - $startB + 1
+        $file = Join-Path $dir ('part_{0:d5}.bin' -f $idx)
+        if ((Test-Path -LiteralPath $file) -and ((Get-Item $file).Length -eq $want)) { continue }
+        for ($try = 1; $try -le 8; $try++) {
+            $a = @('-sS', '-L', '--http1.1', '--ssl-no-revoke', '-k', '-r', "$startB-$endB",
+                   '--connect-timeout', '20', '--max-time', '180', '-o', $file)
+            if ($px) { $a = @('-x', $px) + $a }
+            $a += $base
+            & curl.exe @a 2>&1 | Out-Null
+            if ((Test-Path -LiteralPath $file) -and ((Get-Item $file).Length -eq $want)) { break }
+            Start-Sleep -Milliseconds 700
         }
-    }).AddArgument($queue).AddArgument($null).AddArgument($Chunks)
-    $workers += $ps
-    [void]$ps.BeginInvoke()
-}
-Log 'workers started - this takes a few minutes'
-
-# progress loop
-$lastReport = 0
-while ($workers | Where-Object { $_.InvocationStateInfo.State -eq 'Running' }) {
-    Start-Sleep -Seconds 15
-    $have = @(Get-ChildItem -LiteralPath $Chunks -Filter 'part_*.bin' -ErrorAction SilentlyContinue)
-    $mb = [math]::Round((($have | Measure-Object -Property Length -Sum).Sum) / 1MB, 0)
-    if ([int](Get-Date -Format 'HHmm') -ne $lastReport) {
-        $lastReport = [int](Get-Date -Format 'HHmm')
-        Log ('downloaded ' + $mb + ' / ' + [math]::Round($total / 1MB) + ' MB')
-        Save-Status @{ ok = $false; stage = 'download'; mb = $mb; total_mb = [math]::Round($total / 1MB) }
     }
 }
+
+$errFile = Join-Path $Chunks 'failed.txt'
+if (Test-Path -LiteralPath $errFile) { Remove-Item -LiteralPath $errFile -Force -ErrorAction SilentlyContinue }
+$jobs = @()
+for ($w = 0; $w -lt $Workers; $w++) {
+    $indices = @()
+    for ($i = $w; $i -lt $count; $i += $Workers) { $indices += $i }
+    $jobs += Start-Job -ScriptBlock $workerBody -ArgumentList $indices, $Base, $Px, $chunkBytes, $total, $Chunks
+}
+Log ('started ' + $jobs.Count + ' download jobs')
+
+$lastReport = ''
+while ($true) {
+    $running = @($jobs | Where-Object { $_.State -eq 'Running' })
+    $have = @(Get-ChildItem -LiteralPath $Chunks -Filter 'part_*.bin' -ErrorAction SilentlyContinue)
+    $mb = [math]::Round((($have | Measure-Object -Property Length -Sum).Sum) / 1MB, 0)
+    $stamp = (Get-Date -Format 'HHmm')
+    if ($stamp -ne $lastReport) {
+        $lastReport = $stamp
+        Log ('downloaded ' + $mb + ' / ' + [math]::Round($total / 1MB) + ' MB (' + $have.Count + '/' + $count + ' chunks)')
+        Save-Status @{ ok = $false; stage = 'download'; mb = $mb; total_mb = [math]::Round($total / 1MB) }
+    }
+    if ($running.Count -eq 0) { break }
+    Start-Sleep -Seconds 10
+}
+$jobs | Receive-Job -ErrorAction SilentlyContinue | Out-Null
+$jobs | Remove-Job -Force -ErrorAction SilentlyContinue
 
 # ---------------------------------------------------------------- 3. assemble
 $have = @(Get-ChildItem -LiteralPath $Chunks -Filter 'part_*.bin' -ErrorAction SilentlyContinue)

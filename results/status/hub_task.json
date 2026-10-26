@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T145542Z",
-    "powershell":  [
-                       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*fetch_ollama*\" -or $_.CommandLine -like \"*install_ollama*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; Copy-Item -Path \"code\\jev\\fetch_ollama.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\fetch_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 60; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 6 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:56:03Z",
-    "executed_at_local":  "2026-10-26 22:56:03",
-    "source_commit":  "5d3e981a71e3b367c2e4feffbbcca784a855c350"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T145709Z",
+  "powershell": [
+    "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*fetch_ollama*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Get-Job | Remove-Job -Force -ErrorAction SilentlyContinue; Start-Sleep 1; Copy-Item -Path \"code\\jev\\fetch_ollama.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\fetch_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 75; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8; \"chunks=\" + ((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB)"
+  ]
 }
