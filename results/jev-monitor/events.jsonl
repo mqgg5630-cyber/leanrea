@@ -84,3 +84,16 @@
 {"t": "2026-10-26 23:22:33", "ts": 1793028153.001, "kind": "heartbeat", "frames": 675, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
 {"t": "2026-10-26 23:23:33", "ts": 1793028213.046, "kind": "heartbeat", "frames": 731, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
 {"t": "2026-10-26 23:24:33", "ts": 1793028273.059, "kind": "heartbeat", "frames": 787, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:25:33", "ts": 1793028333.524, "kind": "heartbeat", "frames": 844, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:26:33", "ts": 1793028393.534, "kind": "heartbeat", "frames": 900, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:27:34", "ts": 1793028454.03, "kind": "heartbeat", "frames": 957, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:28:34", "ts": 1793028514.352, "kind": "heartbeat", "frames": 1014, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:29:34", "ts": 1793028574.813, "kind": "heartbeat", "frames": 1070, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:30:34", "ts": 1793028634.83, "kind": "heartbeat", "frames": 1126, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:31:34", "ts": 1793028694.851, "kind": "heartbeat", "frames": 1182, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:32:34", "ts": 1793028754.854, "kind": "heartbeat", "frames": 1238, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:32:52", "ts": 1793028772.921, "kind": "unminimize", "hwnd": 265520}
+{"t": "2026-10-26 23:33:01", "ts": 1793028781.465, "kind": "unminimize", "hwnd": 265520}
+{"t": "2026-10-26 23:33:03", "ts": 1793028783.32, "kind": "unminimize", "hwnd": 265520}
+{"t": "2026-10-26 23:33:04", "ts": 1793028784.665, "kind": "unminimize", "hwnd": 265520}
+{"t": "2026-10-26 23:33:35", "ts": 1793028815.017, "kind": "heartbeat", "frames": 1295, "messages": 3, "chat": "老婆宝宝"}
