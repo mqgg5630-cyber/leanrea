@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "599c568c2c8297e6a888b0768d94279302064635",
-    "synced_at_utc":  "2026-10-26T12:18:14Z",
-    "synced_at_local":  "2026-10-26 20:18:14",
+    "source_commit":  "23c1ad652abad964cde5837715174c0af61a25ea",
+    "synced_at_utc":  "2026-10-26T12:19:56Z",
+    "synced_at_local":  "2026-10-26 20:19:56",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  21,
     "tasks_executed_count":  1,
-    "tasks_all_ok":  false,
+    "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
-                               "exit_code":  124,
-                               "elapsed_ms":  120163,
-                               "stdout":  "proxy_ms=61111 size=14915192\r\nproxy_sha=971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf",
+                               "exit_code":  0,
+                               "elapsed_ms":  51744,
+                               "stdout":  "[2026-10-26 20:19:07] wheelhouse: resolving the wheel list with pip --dry-run --report",
                                "stderr":  ""
                            }
                        ],
