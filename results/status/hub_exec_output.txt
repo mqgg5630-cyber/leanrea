@@ -1,10 +1,12 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 3327b19673b08fd538dc42c9b5bdf19d36332034
-executed_at_utc: 2026-10-26T12:51:29Z
-executed_at_local: 2026-10-26 20:51:29
-tasks_all_ok: False
+source_commit: 09796feeda229860f11e57a36297c28cf8b85e03
+executed_at_utc: 2026-10-26T12:52:20Z
+executed_at_local: 2026-10-26 20:52:20
+tasks_all_ok: True
 
---- step: hub_task.powershell (exit=124) ---
+--- step: hub_task.powershell (exit=0) ---
+[2026-10-26 20:52:01] fix_pyside: current: Traceback (most recent call last):   File "<string>", line 1, in <module> ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���
+[2026-10-26 20:52:01] fix_pyside: trying PySide6 6.8.3
 

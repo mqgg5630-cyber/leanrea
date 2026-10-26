@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "3327b19673b08fd538dc42c9b5bdf19d36332034",
-    "synced_at_utc":  "2026-10-26T12:51:29Z",
-    "synced_at_local":  "2026-10-26 20:51:29",
+    "source_commit":  "09796feeda229860f11e57a36297c28cf8b85e03",
+    "synced_at_utc":  "2026-10-26T12:52:20Z",
+    "synced_at_local":  "2026-10-26 20:52:20",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  41,
+    "synced_files_count":  42,
     "tasks_executed_count":  1,
-    "tasks_all_ok":  false,
+    "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
-                               "exit_code":  124,
-                               "elapsed_ms":  120164,
-                               "stdout":  "",
+                               "exit_code":  0,
+                               "elapsed_ms":  21759,
+                               "stdout":  "[2026-10-26 20:52:01] fix_pyside: current: Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���\r\n[2026-10-26 20:52:01] fix_pyside: trying PySide6 6.8.3",
                                "stderr":  ""
                            }
                        ],
