@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T114941Z",
-    "powershell":  [
-                       "New-Item -ItemType Directory -Force -Path \"results\\jev\" | Out-Null; (powershell -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_env.ps1\" 2\u003e\u00261) | Out-File -FilePath \"results\\jev\\probe_env.txt\" -Encoding utf8; \"probe written: \" + (Get-Item \"results\\jev\\probe_env.txt\").Length + \" bytes\""
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T11:49:06Z",
-    "executed_at_local":  "2026-10-26 19:49:06",
-    "source_commit":  "6043aab667c236ee69afcd0d3ce770a3d9c98408"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T115019Z",
+  "powershell": [
+    "$o=@(); $o+=\"cwd=\"+(Get-Location).Path; $o+=\"psver=\"+$PSVersionTable.PSVersion.ToString(); $p=\"code\\jev\\probe_env.ps1\"; $o+=\"exists=\"+(Test-Path -LiteralPath $p); if(Test-Path -LiteralPath $p){$o+=\"len=\"+(Get-Item -LiteralPath $p).Length}; $o+=\"codefiles=\"+((Get-ChildItem -LiteralPath code -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 15 | ForEach-Object { $_.FullName }) -join \"|\"); $o+=\"pwsh=\"+((Get-Command pwsh.exe -ErrorAction SilentlyContinue).Source); $r=& powershell.exe -NoProfile -ExecutionPolicy Bypass -File $p 2>&1; $o+=\"probe_exit=\"+$LASTEXITCODE; $o+=\"probe_lines=\"+@($r).Count; $o+=(@($r)|Select-Object -First 8); $o | Out-File -FilePath \"results\\jev\\diag.txt\" -Encoding utf8; \"diag bytes: \"+(Get-Item results\\jev\\diag.txt).Length"
+  ]
 }
