@@ -1,11 +1,16 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 0cc6c3d46d20d239fa62327ab26e457a9ee4139c
-executed_at_utc: 2026-10-26T12:02:24Z
-executed_at_local: 2026-10-26 20:02:24
+source_commit: 354f4e69d481e5c1d2863eb0d04fb316d460aaaa
+executed_at_utc: 2026-10-26T12:03:43Z
+executed_at_local: 2026-10-26 20:03:43
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-IDX https://mirrors.aliyun.com/pypi/simple/ => exit=0 :: Installing collected packages: numpy ;; Successfully installed numpy-2.4.6
+[2026-10-26 20:03:37]       rapidocr-onnxruntime<2,>=1.4 from https://mirrors.ustc.edu.cn/pypi/packages/ba/12/1e5497183bdbe782dbb91bad1d0d2297dba4d2831b2652657f7517bfc6df/rapidocr_onnxruntime-1.4.4-py3-none-any.whl (from -r E:\0apps\jev-chat-windows\app\requirements.txt (line 2)):
+[2026-10-26 20:03:37]           Expected sha256 971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf
+[2026-10-26 20:03:37]                Got        2fd06efe1b9134ffdff6b36370d6f1915def311ccff2cbc11caab9af5e418de7
+[2026-10-26 20:03:37]   System.Management.Automation.RemoteException
+[2026-10-26 20:03:37] index failed (exit 1) - next index
+[2026-10-26 20:03:37] pip install -r requirements.txt via https://pypi.org/simple
 
