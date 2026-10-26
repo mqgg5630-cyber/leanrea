@@ -32,9 +32,11 @@ Rep ''
 Rep ('host=' + $env:COMPUTERNAME)
 
 # ---- health ------------------------------------------------------------------
-$procs = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
+$gui = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
     $_.CommandLine -and ($_.CommandLine -match 'jev-chat-windows\\app\\main\.py') })
-Rep ('app_running=' + ($procs.Count -gt 0))
+$head = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
+    $_.CommandLine -and ($_.CommandLine -match 'jev-chat-windows\\monitor\\headless_watch\.py') })
+Rep ('app_running=' + (($gui.Count + $head.Count) -gt 0) + ' watcher_procs=' + $head.Count + ' gui_procs=' + $gui.Count)
 $taskState = 'missing'
 try { $taskState = (Get-ScheduledTask -TaskName 'jev-chat-monitor' -ErrorAction Stop).State } catch {}
 Rep ('task_jev_monitor=' + $taskState)

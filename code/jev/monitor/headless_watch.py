@@ -52,6 +52,67 @@ def log(msg: str) -> None:
 
 _MUTEX = None
 
+# OCR noise that is never a message: voice-message duration ("3\""), sticker
+# labels, bare punctuation. WeChat renders those inside the bubble area.
+import re as _re  # noqa: E402
+
+_VOICE = _re.compile(r'^\s*\d{1,3}\s*["\u2033\u201d\u2019\']?\s*[\(\（]?\s*[oO0\u3002]?\s*[\)\）]?\s*$')
+_JUNK = _re.compile(r'^[\W_]+$', _re.UNICODE)
+_MEANINGFUL = _re.compile(r'[\u4e00-\u9fffA-Za-z0-9]')
+
+
+def is_noise(text: str) -> bool:
+    """True for voice durations / emoji-only / punctuation-only OCR fragments."""
+    s = (text or "").strip()
+    if len(s) < 1:
+        return True
+    if _VOICE.match(s):
+        return True
+    if not _MEANINGFUL.search(s):
+        return True
+    if _JUNK.match(s):
+        return True
+    return False
+
+
+def label_override() -> str:
+    """Optional manual conversation label (logs\\chat_label.txt), because some
+    nicknames are emoji the OCR cannot read."""
+    path = os.path.join(LOGS, "chat_label.txt")
+    try:
+        with open(path, encoding="utf-8-sig") as f:
+            return f.read().strip()
+    except OSError:
+        return ""
+
+
+def clean_title(name: str) -> str:
+    """Keep the OCR title but drop trailing junk so the same chat does not split."""
+    s = (name or "").strip()
+    s = _re.sub(r'[^\u4e00-\u9fffA-Za-z0-9_\-\.]+$', '', s)
+    s = _re.sub(r'^[^\u4e00-\u9fffA-Za-z0-9]+', '', s)
+    return s
+
+
+_CJK = _re.compile(r'[\u4e00-\u9fff]')
+
+
+def title_of(ocr_name: str, current: str, readers: dict, similar) -> str:
+    forced = label_override()
+    if forced and (not ocr_name or (not _CJK.search(ocr_name) and len(ocr_name) < 12)):
+        # The nickname on screen is emoji/stylised -> OCR cannot read it, so the
+        # manual label wins. A readable CJK nickname always beats the label.
+        return forced
+    name = clean_title(ocr_name)
+    if name:
+        name = next((k for k in readers if similar(k, name)), name)
+    if not name:
+        # OCR gave nothing usable: keep the previous name, else a stable fallback
+        return current or "chat-1"
+    if len(name) < 2 and current:
+        return current
+    return name
+
 
 def acquire_single_instance() -> bool:
     """Named mutex beats a pid file: two watchers started at the same moment both
@@ -168,12 +229,10 @@ def main() -> int:
 
                 header = full[y_pane:y0, x0:x1]
                 try:
-                    name = read_title(header, app)
+                    ocr_name = read_title(header, app) if header.size else ""
                 except Exception:
-                    name = ""
-                if name:
-                    name = next((k for k in readers if similar(k, name)), name)
-                name = name or title or "current chat"
+                    ocr_name = ""
+                name = title_of(ocr_name, title, readers, similar)
                 if name != title:
                     title = name
                     log("conversation: " + title)
@@ -189,6 +248,8 @@ def main() -> int:
                     continue
 
                 for who, gname, text in reader.new_lines(lines):
+                    if is_noise(text):
+                        continue
                     messages += 1
                     clock = datetime.now().strftime("%H:%M")
                     recorder.record_message(title, who, gname, text, clock)
