@@ -1,14 +1,17 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: b5dd672586e49a5447a30e4f793db98cdd62c1ea
-executed_at_utc: 2026-10-26T16:06:29Z
-executed_at_local: 2026-10-27 00:06:29
+source_commit: 42c322ce7fdcc213b9724e07d2db72f103868fcc
+executed_at_utc: 2026-10-26T16:11:10Z
+executed_at_local: 2026-10-27 00:11:10
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 23:47:11] repair: FATAL: hash still wrong
-[2026-10-27 00:05:30] model: exe=C:\Users\����\AppData\Local\Programs\Ollama\ollama.exe
-[2026-10-27 00:05:31] model: service_up=True
-[2026-10-27 00:05:31] model: pulling qwen2.5:3b
+[2026-10-27 00:07:16] model:   pulling 5ee4f07cdb9b:   4% �?                 �? 72 MB/1.9 GB                  [K[?25h[?2026l
+[2026-10-27 00:07:16] model:   Error: max retries exceeded: Get "https://dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com/ollama/docker/registry/v2/blobs/sha256/5e/5ee4f07cdb9beadbbb293e85803c569b01bd37ed059d2715faa7bb405f31caa6/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=66040c77ac1b787c3af820529859349a%2F20261026%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20261026T160630Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=768827c0deac613b1339f38ecc9702580f423b54df28df09ee59ea5f626b6170": tls: failed to verify certificate: x509: certificate is valid for *.google.com, *.appengine.google.com, *.bdn.dev, *.origin-test.bdn.dev, *.cloud.google.com, *.crowdsource.google.com, *.datacompute.google.com, *.google.ca, *.google.cl, *.google.co.in, *.google.co.jp, *.google.co.uk, *.google.com.ar, *.google.com.au, *.google.com.br, *.google.com.co, *.google.com.mx, *.google.com.tr, *.google.com.vn, *.google.de, *.google.es, *.google.fr, *.google.hu, *.google.it, *.google.nl, *.google.pl, *.google.pt, *.gemini.cloud.google.com, *.gstatic.com, *.metric.gstatic.com, *.gvt1.com, *.gcpcdn.gvt1.com, *.gvt2.com, *.gcp.gvt2.com, *.url.google.com, *.youtube-nocookie.com, *.ytimg.com, ai.android, android.com, *.android.com, *.flash.android.com, g.co, *.g.co, goo.gl, www.goo.gl, google-analytics.com, *.google-analytics.com, google.com, googlecommerce.com, *.googlecommerce.com, urchin.com, *.urchin.com, youtu.be, youtube.com, *.youtube.com, music.youtube.com, *.music.youtube.com, youtubeeducation.com, *.youtubeeducation.com, youtubekids.com, *.youtubekids.com, yt.be, *.yt.be, android.clients.google.com, *.aistudio.google.com, not dd20bb891979d25aebc8bec07b2b3bbc.r2.cloudflarestorage.com
+[2026-10-27 00:07:16] model: pull exit=1
+[2026-10-27 00:07:16] model: installed models: NAME    ID    SIZE    MODIFIED 
+[2026-10-27 00:07:16] model: smoke (0s) = ERROR: Զ�̷��������ش���: (404) δ�ҵ���
+[2026-10-27 00:07:16] model: DONE ok=False
+status={ "updated_local": "2026-10-27 00:07:16", "smoke": "ERROR: Զ�̷��������ش���: (404) δ�ҵ���", "exe": "C:\\Users\\����\\AppData\\Local\\Programs\\Ollama\\ollama.exe", "stage": "done", "ok": false, "smoke_ms": 44, "model": "qwen2.5:3b" }
 
