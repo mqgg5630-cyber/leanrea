@@ -52,10 +52,16 @@ if (-not $exe) {
     $setup = Join-Path $Tools 'OllamaSetup.exe'
     if (-not (Test-Path -LiteralPath $setup) -or ((Get-Item $setup).Length -lt 50MB)) {
         Log 'downloading OllamaSetup.exe (~1 GB)'
-        $curlArgs = @('-sS', '--http1.1', '-L', '--connect-timeout', '20', '--max-time', '3600',
-                      '-o', $setup, 'https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe')
-        if ($Proxy) { $curlArgs = @('-x', $Proxy) + $curlArgs }
-        & curl.exe @curlArgs 2>&1 | ForEach-Object { Log ('  curl: ' + $_) }
+        $url = 'https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe'
+        foreach ($withProxy in @($true, $false)) {
+            if ((Test-Path -LiteralPath $setup) -and ((Get-Item $setup).Length -gt 50MB)) { break }
+            $a = @('-sS', '--http1.1', '-L', '--ssl-no-revoke', '--connect-timeout', '20',
+                   '--max-time', '3600', '-o', $setup)
+            if ($withProxy -and $Proxy) { $a = @('-x', $Proxy) + $a }
+            $a += $url
+            Log ('downloading (proxy=' + ($withProxy -and [bool]$Proxy) + ')')
+            & curl.exe @a 2>&1 | Select-Object -Last 3 | ForEach-Object { Log ('  curl: ' + $_) }
+        }
     }
     if ((Test-Path -LiteralPath $setup) -and ((Get-Item $setup).Length -gt 50MB)) {
         Log ('installer size=' + [math]::Round((Get-Item $setup).Length / 1MB) + ' MB - silent install')
