@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T115515Z",
-  "powershell": [
-    "$Root=\"E:\\0github\\apps\\jev-chat-windows\"; New-Item -ItemType Directory -Force -Path \"$Root\\monitor\" | Out-Null; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; if(-not (Test-Path -LiteralPath $VPy)){$VPy=\"E:\\spider\\python.exe\"}; \"monitor files: \" + ((Get-ChildItem \"$Root\\monitor\" | Measure-Object).Count); & $VPy \"$Root\\monitor\\patch_main.py\" $Root; \"--- install.log tail ---\"; Get-Content \"$Root\\logs\\install.log\" -Tail 8 -Encoding UTF8"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T115515Z",
+    "powershell":  [
+                       "$Root=\"E:\\0github\\apps\\jev-chat-windows\"; New-Item -ItemType Directory -Force -Path \"$Root\\monitor\" | Out-Null; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; if(-not (Test-Path -LiteralPath $VPy)){$VPy=\"E:\\spider\\python.exe\"}; \"monitor files: \" + ((Get-ChildItem \"$Root\\monitor\" | Measure-Object).Count); \u0026 $VPy \"$Root\\monitor\\patch_main.py\" $Root; \"--- install.log tail ---\"; Get-Content \"$Root\\logs\\install.log\" -Tail 8 -Encoding UTF8"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T11:54:33Z",
+    "executed_at_local":  "2026-10-26 19:54:33",
+    "source_commit":  "89c0003d8fe372dda70d4f76767575bbc7ef6bb2"
 }
