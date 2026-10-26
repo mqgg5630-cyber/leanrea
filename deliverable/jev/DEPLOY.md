@@ -71,6 +71,30 @@ numpy / rapidocr / windows-capture 全部导入正常，OCR 模型预热 `OCR_OK
 
 `logs/digest-2026-10-26.md` 是人可读的当日摘要，`logs/watcher.log` 是运行日志。
 
+
+## 2d. 真·自动分析（本机模型，无需 key）
+
+需求是"来一条消息就出分析、我不在线也要跑"。API key 一路做不到（没有 key），
+所以改成**在本机跑小模型**：
+
+| 项 | 值 |
+|---|---|
+| 运行时 | Ollama 0.40（静默安装，服务常驻 127.0.0.1:11434） |
+| 模型 | `qwen2.5:3b`（Q4，~2 GB，完全塞进 GTX 1650 的 4 GB 显存） |
+| 触发 | `monitor/auto_analyze.py` 跟读 `logs/events.jsonl`，出现**对方新消息**后等 25 秒安静窗口（一句话一段、连发多条只分析一次，最长等 120 秒） |
+| 输出 | `logs/analysis.jsonl`（全部历史）、`logs/live.md`、`logs/live.html`（每 5 秒自动刷新的卡片：意图/情绪/风险/3 条候选/推荐理由） |
+| 常驻 | 计划任务 `jev-chat-analyze`（登录自启）；模型没装好时每 30 秒重试，不影响记录 |
+| 隐私 | 提示词和聊天内容只在本机 GPU 上算，不出网、不花钱 |
+
+整条链：`headless_watch.py`（截屏+OCR，一直跑）→ `events.jsonl` →
+`auto_analyze.py`（本机模型）→ `live.html` + `analysis.jsonl`。
+原来的付费路径保留：`monitor/analyze_local.py` 在填了 `LLM_API_KEY` 时可以直接
+用 DeepSeek 起草 + 判断（更快更准），填了 `JEV_API_KEY` 则走官方 Jev 排序。
+
+下载说明：这台机器的代理会在 10 秒左右掐断长连接，`fetch_ollama.ps1` 因此把
+1.6 GB 安装包切成 199 个 8 MB 分片、4 个并发、每片带校验和重试、拼完后与官方
+`sha256sum.txt` 对账。
+
 ## 3. 常驻方式
 
 | 计划任务 | 触发 | 作用 |
