@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T121934Z",
-    "powershell":  [
-                       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip_worker*\" -or $_.CommandLine -like \"*-m pip*jev-chat-windows*\" -or $_.CommandLine -like \"*wheelhouse*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\wheelhouse.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 50; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\wheelhouse.log\" -Tail 12 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:19:56Z",
-    "executed_at_local":  "2026-10-26 20:19:56",
-    "source_commit":  "23c1ad652abad964cde5837715174c0af61a25ea"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T122201Z",
+  "powershell": [
+    "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\wheelhouse.log\" -Tail 14 -Encoding UTF8; \"wheelhouse_files=\" + ((Get-ChildItem \"E:\\0apps\\jev-chat-windows\\wheelhouse\" -File -ErrorAction SilentlyContinue | Measure-Object).Count)"
+  ]
 }
