@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T123824Z",
-  "powershell": [
-    "$t=\"E:\\0apps\\tools\"; New-Item -ItemType Directory -Force -Path $t | Out-Null; $zip=\"$t\\uv.zip\"; & curl.exe -sS -L --http1.1 --connect-timeout 20 --max-time 300 -o $zip \"https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-pc-windows-msvc.zip\" 2>&1 | Out-Null; \"zip=\" + (Get-Item $zip -ErrorAction SilentlyContinue).Length; try { Expand-Archive -LiteralPath $zip -DestinationPath $t -Force -ErrorAction Stop; \"expanded\" } catch { \"expand_failed: \" + $_.Exception.Message }; $uv = Get-ChildItem $t -Filter uv.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1; if($uv){ \"uv_path=\" + $uv.FullName; (& $uv.FullName --version) } else { \"uv_missing\" }"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T123824Z",
+    "powershell":  [
+                       "$t=\"E:\\0apps\\tools\"; New-Item -ItemType Directory -Force -Path $t | Out-Null; $zip=\"$t\\uv.zip\"; \u0026 curl.exe -sS -L --http1.1 --connect-timeout 20 --max-time 300 -o $zip \"https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-pc-windows-msvc.zip\" 2\u003e\u00261 | Out-Null; \"zip=\" + (Get-Item $zip -ErrorAction SilentlyContinue).Length; try { Expand-Archive -LiteralPath $zip -DestinationPath $t -Force -ErrorAction Stop; \"expanded\" } catch { \"expand_failed: \" + $_.Exception.Message }; $uv = Get-ChildItem $t -Filter uv.exe -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1; if($uv){ \"uv_path=\" + $uv.FullName; (\u0026 $uv.FullName --version) } else { \"uv_missing\" }"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:37:52Z",
+    "executed_at_local":  "2026-10-26 20:37:52",
+    "source_commit":  "ddb6a6202c4687e6e3d3847cf290372e5b4d9cca"
 }
