@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T144213Z",
-  "powershell": [
-    "$d=[Environment]::GetFolderPath(\"Desktop\"); Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination $d -Force; $m=\"E:\\0github\\results\\leanrea-4d729933-leanrea\\jev-monitor\"; New-Item -ItemType Directory -Force -Path $m | Out-Null; Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination $m -Force; \"desktop=\" + (Test-Path (Join-Path $d \"analysis-20261026-2236.md\")); \"mirror=\" + (Test-Path (Join-Path $m \"analysis-20261026-2236.md\"))"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T144213Z",
+    "powershell":  [
+                       "$d=[Environment]::GetFolderPath(\"Desktop\"); Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination $d -Force; $m=\"E:\\0github\\results\\leanrea-4d729933-leanrea\\jev-monitor\"; New-Item -ItemType Directory -Force -Path $m | Out-Null; Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination $m -Force; \"desktop=\" + (Test-Path (Join-Path $d \"analysis-20261026-2236.md\")); \"mirror=\" + (Test-Path (Join-Path $m \"analysis-20261026-2236.md\"))"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T14:41:34Z",
+    "executed_at_local":  "2026-10-26 22:41:34",
+    "source_commit":  "e9a083ba0898abaaa122a81208c1a5a85036e27c"
 }
