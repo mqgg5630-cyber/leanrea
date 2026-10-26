@@ -1,16 +1,17 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 5e7dfbbf08b30b10c9a6ea5bbff283c0c8296025
-executed_at_utc: 2026-10-26T12:25:22Z
-executed_at_local: 2026-10-26 20:25:22
+source_commit: 80c2a4fcae881c3b50acf3bcc4d159320027a5b2
+executed_at_utc: 2026-10-26T12:28:16Z
+executed_at_local: 2026-10-26 20:28:16
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 20:22:15] pip_worker:   Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
-[2026-10-26 20:22:15] pip_worker:   Requirement already satisfied: numpy in e:\0apps\jev-chat-windows\venv\lib\site-packages (2.4.6)
-[2026-10-26 20:22:15] pip_worker:   exit=0
-[2026-10-26 20:22:15] pip_worker: OK: numpy
-[2026-10-26 20:22:15] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.aliyun.com attempt 1 proxy=False
-venv_mb=91.4
+[2026-10-26 20:26:07] pip_worker: install pillow via mirrors.aliyun.com attempt 1 proxy=False
+[2026-10-26 20:26:08] pip_worker:   Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+[2026-10-26 20:26:08] pip_worker:   Requirement already satisfied: pillow in e:\0apps\jev-chat-windows\venv\lib\site-packages (13.0.0)
+[2026-10-26 20:26:08] pip_worker:   exit=0
+[2026-10-26 20:26:08] pip_worker: OK: pillow
+[2026-10-26 20:26:08] pip_worker: install PySide6-Fluent-Widgets via mirrors.aliyun.com attempt 1 proxy=False
+venv_mb=278.4
 
