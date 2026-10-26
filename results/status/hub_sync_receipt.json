@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "ed4bde3dde91381baaa153b852c0142101654fa8",
-    "synced_at_utc":  "2026-10-26T12:11:10Z",
-    "synced_at_local":  "2026-10-26 20:11:10",
+    "source_commit":  "4548386cae060c06abb874d769f1c1e1431b16f2",
+    "synced_at_utc":  "2026-10-26T12:12:25Z",
+    "synced_at_local":  "2026-10-26 20:12:25",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  21,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  2292,
-                               "stdout":  "OK https://mirrors.aliyun.com/pypi/web/simple/rapidocr-onnxruntime/ status=200 bytes=24965 ms=575\r\nOK https://pypi.tuna.tsinghua.edu.cn/simple/rapidocr-onnxruntime/ status=200 bytes=24963 ms=565\r\npy_alive=2",
+                               "elapsed_ms":  45504,
+                               "stdout":  "pillow exit=0 ms=41925 :: System.Management.Automation.RemoteException ;; [notice] A new release of pip is available: 24.0 -\u003e 26.2.2 ;; [notice] To update, run: E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe -m pip install --upgrade pip",
                                "stderr":  ""
                            }
                        ],
