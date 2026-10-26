@@ -1,12 +1,12 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 4b2e00b2658f552fba7680f59e86e95d76a8b026
-executed_at_utc: 2026-10-26T13:07:34Z
-executed_at_local: 2026-10-26 21:07:34
+source_commit: 4240861887aec46100649efc4d13b9b5a8f1c72b
+executed_at_utc: 2026-10-26T13:08:08Z
+executed_at_local: 2026-10-26 21:08:08
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-watchers=308620,309776
-[2026-10-26 21:07:28] watcher: started pid=309776 python=3.11.9 || [2026-10-26 21:07:28] watcher: no chat window: û�ҵ����촰�ڣ�������
+308620 name=pythonw.exe parent=311180 cmd="E:\0apps\jev-chat-windows\venv\Scripts\pythonw.exe" "E:\0apps\jev-chat-windows\monitor\headless_watch.py" 
+309776 name=pythonw.exe parent=308620 cmd="E:\spider\pythonw.exe" "E:\0apps\jev-chat-windows\monitor\headless_watch.py"
 
