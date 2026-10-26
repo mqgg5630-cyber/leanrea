@@ -1,10 +1,17 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 4f366adf411ebb0f93388c2c5da110f04fcbf88b
-executed_at_utc: 2026-10-26T12:58:58Z
-executed_at_local: 2026-10-26 20:58:58
+source_commit: e827b7f86cc85b520818a721f1cfc10f70afc899
+executed_at_utc: 2026-10-26T12:59:35Z
+executed_at_local: 2026-10-26 20:59:35
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
+procs=253804,250700
+--- watcher.log ---
+[2026-10-26 20:58:44] watcher: started pid=250700 python=3.11.9 || [2026-10-26 20:58:44] watcher: no chat window: û�ҵ����촰�ڣ�������
+--- app_err ---
+
+--- monitor.log ---
+[2026-10-26 20:42:29] start_monitor: launched pythonw main.py (recorder hook active) || [2026-10-26 20:58:42] start_monitor: launched E:\0apps\jev-chat-windows\monitor\headless_watch.py || [2026-10-26 20:58:42] overlay patch failed: "E:\0apps\jev-chat-windows\monitor\recorder.py", line 236, in install from app.overlay import Overlay File "E:\0apps\jev-chat-windows\app\app\overlay.py", line 10, in <module> from PySide6.QtCore import QObject, QSize, Qt, QTimer, Signal ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ��� || [2026-10-26 20:58:43] qq profile injected
 

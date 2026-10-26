@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T130001Z",
-  "powershell": [
-    "\"procs=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object {$_.ProcessId}) -join \",\"); \"--- watcher.log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 8 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"--- app_err ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\app_err.log\" -Tail 8 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"--- monitor.log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\monitor.log\" -Tail 4 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \""
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T130001Z",
+    "powershell":  [
+                       "\"procs=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object {$_.ProcessId}) -join \",\"); \"--- watcher.log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 8 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"--- app_err ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\app_err.log\" -Tail 8 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"--- monitor.log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\monitor.log\" -Tail 4 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \""
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:59:35Z",
+    "executed_at_local":  "2026-10-26 20:59:35",
+    "source_commit":  "e827b7f86cc85b520818a721f1cfc10f70afc899"
 }
