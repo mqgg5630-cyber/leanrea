@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T161851Z",
-    "powershell":  [
-                       "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 6 -Encoding UTF8; \"status=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama_status.json\" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) -replace \"\\s+\",\" \")"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T16:18:15Z",
-    "executed_at_local":  "2026-10-27 00:18:15",
-    "source_commit":  "79d4d57c321ab2aec6bc5e5ddfef6872daa7c8bc"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T162401Z",
+  "powershell": [
+    "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 120 | Out-Null; \"gguf_mb=\" + [math]::Round((Get-Item \"E:\\0apps\\tools\\qwen2.5-3b-instruct-q4_k_m.gguf\" -ErrorAction SilentlyContinue).Length/1MB,0); Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 2 -Encoding UTF8"
+  ]
 }
