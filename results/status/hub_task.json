@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T125624Z",
-    "powershell":  [
-                       "$src=\"E:\\0apps\\jev-chat-windows\\venv\\Lib\\site-packages\"; $t=\"E:\\0apps\\jev-test-venv\"; $dst=\"$t\\Lib\\site-packages\"; \u0026 robocopy.exe $src $dst \"PySide6\" /E /NFL /NDL /NJH /NJS /NP | Out-Null; \u0026 robocopy.exe $src $dst \"shiboken6\" /E /NFL /NDL /NJH /NJS /NP | Out-Null; \"copied=\" + (Test-Path \"$dst\\PySide6\\QtCore.pyd\") + \",\" + (Test-Path \"$dst\\shiboken6\"); \"spider_python3dll=\" + (Test-Path \"E:\\spider\\python3.dll\") + \" spider_python311dll=\" + (Test-Path \"E:\\spider\\python311.dll\"); $r = (\u0026 \"$t\\Scripts\\python.exe\" -c \"from PySide6 import QtCore; print(chr(79)+chr(75), QtCore.__version__)\" 2\u003e\u00261) -join \" || \"; \"py312_pyside=\" + $r"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:55:51Z",
-    "executed_at_local":  "2026-10-26 20:55:51",
-    "source_commit":  "c115bc28e73850b3b20ebc708a6cd340a13369b0"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T125656Z",
+  "powershell": [
+    "$sp=\"E:\\spider\\python.exe\"; foreach($mod in @(\"PySide6\",\"qfluentwidgets\",\"rapidocr_onnxruntime\",\"windows_capture\",\"numpy\")){ $r = (& $sp -c \"import $mod; print(getattr($mod, chr(95)*2+chr(118)+chr(101)+chr(114)+chr(115)+chr(105)+chr(111)+chr(110)+chr(95)*2, chr(45)))\" 2>&1) -join \" \"; \"spider_$mod => $r\" }; $r2 = (& $sp -c \"from PySide6 import QtCore; print(chr(79)+chr(75), QtCore.__version__)\" 2>&1) -join \" || \"; \"spider_qtcore=\" + $r2; $src=\"E:\\0apps\\jev-chat-windows\\venv\\Lib\\site-packages\\PySide6\"; \"pyd_sample=\" + ((Get-ChildItem $src -Filter \"*.pyd\" -ErrorAction SilentlyContinue | Select-Object -First 6 | ForEach-Object {$_.Name}) -join \",\"); \"qtcore_pyd=\" + (Test-Path \"$src\\QtCore.pyd\")"
+  ]
 }

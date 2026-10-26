@@ -2,7 +2,7 @@
 
 - 时间：2026-10-26 12:56 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：diag(jev): does the same PySide6 import under python 3.12
+- 本轮助手提交：diag(jev): does the base python already have a working PySide6
 - 本轮改动文件：
    M results/status/hub_task.json
 
