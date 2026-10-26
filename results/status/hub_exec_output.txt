@@ -1,13 +1,13 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: ddb6a6202c4687e6e3d3847cf290372e5b4d9cca
-executed_at_utc: 2026-10-26T12:37:52Z
-executed_at_local: 2026-10-26 20:37:52
+source_commit: c359c449b41a3cb08713571396fe204d89f5a92b
+executed_at_utc: 2026-10-26T12:39:08Z
+executed_at_local: 2026-10-26 20:39:08
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-zip=0
-expand_failed: ·����E:\0apps\tools\uv.zip�������ڣ����߲�����Ч���ļ�ϵͳ·����
-uv_missing
+[2026-10-26 20:38:24] uv_install: stopping slow pip pid 400244
+[2026-10-26 20:38:29] uv_install: uv=C:\Users\����\.local\bin\uv.exe version=uv 0.11.29 (901092ee1 2026-07-15 x86_64-pc-windows-msvc)
+[2026-10-26 20:38:29] uv_install: uv pip install -r requirements.txt (16 connections, direct mirror)
 
