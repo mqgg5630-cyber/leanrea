@@ -8,7 +8,7 @@
     few hundred MB. Everything is appended to logs\install.log and summarised in
     logs\install_status.json so the agent can poll progress over git.
 
-    Layout (Root = E:\0github\apps\jev-chat-windows):
+    Layout (Root = E:\0apps\jev-chat-windows):
       app\      upstream clone (github.com/jev-chat/jev-chat-windows)
       venv\     python 3.11 virtualenv holding the OCR / Qt / model SDKs
       monitor\  recorder hook + start / sync scripts
@@ -21,7 +21,7 @@
 $ErrorActionPreference = 'Continue'
 $ProgressPreference    = 'SilentlyContinue'
 
-$Root    = 'E:\0github\apps\jev-chat-windows'
+$Root    = 'E:\0apps\jev-chat-windows'
 $AppDir  = Join-Path $Root 'app'
 $Venv    = Join-Path $Root 'venv'
 $Logs    = Join-Path $Root 'logs'
@@ -80,36 +80,57 @@ Log ('app_head=' + $head)
 
 # ---------------------------------------------------------------- 2. venv
 Log '== stage 2: python 3.11 virtualenv'
-$basePy = $null
-foreach ($c in @('E:\spider\python.exe', 'C:\Python311\python.exe', 'C:\Python310\python.exe')) {
-    if (Test-Path -LiteralPath $c) { $basePy = $c; break }
+$VPy = Join-Path $Venv 'Scripts\python.exe'
+
+# A venv is only usable when its pip works; portable/embedded CPython builds
+# silently produce a broken one ("No pyvenv.cfg file"), so try candidates in order.
+$candidates = New-Object System.Collections.ArrayList
+foreach ($c in @('E:\spider\python.exe', 'C:\Python312\python.exe', 'C:\Python311\python.exe', 'C:\Python310\python.exe')) {
+    if (Test-Path -LiteralPath $c) { [void]$candidates.Add($c) }
 }
-if (-not $basePy) {
-    $cmd = Get-Command python.exe -ErrorAction SilentlyContinue
-    if ($cmd) { $basePy = $cmd.Source }
+foreach ($n in @('python.exe', 'py.exe')) {
+    $cmd = Get-Command $n -ErrorAction SilentlyContinue
+    if ($cmd -and ($candidates -notcontains $cmd.Source)) { [void]$candidates.Add($cmd.Source) }
 }
-if (-not $basePy) {
+if ($candidates.Count -eq 0) {
     Log 'FATAL: no python found'
     Save-Status @{ ok = $false; stage = 'python'; error = 'no python' }
     exit 3
 }
-$pyVer = (& $basePy -c "import sys;print('%d.%d.%d' % sys.version_info[:3])" 2>&1) -join ''
-Log ('base_python=' + $basePy + ' version=' + $pyVer)
-if ($pyVer -match '^3\.(1[3-9]|[2-9][0-9])') {
-    Log 'WARN: rapidocr-onnxruntime needs python < 3.13; falling back to py -3.11 if available'
+
+$basePy = $null
+$venvOk = $false
+if (Test-Path -LiteralPath $VPy) {
+    $probe = (& $VPy -m pip --version 2>&1) -join ' '
+    if ($probe -match 'pip \d') { $venvOk = $true; Log ('existing venv is usable: ' + $probe) }
+    else { Log 'existing venv is broken - rebuilding'; Remove-Item -LiteralPath $Venv -Recurse -Force -ErrorAction SilentlyContinue }
 }
 
-$VPy = Join-Path $Venv 'Scripts\python.exe'
-if (-not (Test-Path -LiteralPath $VPy)) {
-    Log 'creating venv'
-    $out = & $basePy -m venv $Venv 2>&1
+foreach ($cand in $candidates) {
+    if ($venvOk) { break }
+    $pyVer = (& $cand -c "import sys;print('%d.%d.%d' % sys.version_info[:3])" 2>&1) -join ''
+    if (-not ($pyVer -match '^\d+\.\d+\.\d+$')) { Log ('skip ' + $cand + ' (not a working python)'); continue }
+    if ($pyVer -match '^3\.(1[3-9]|[2-9][0-9])') { Log ('skip ' + $cand + ' v' + $pyVer + ' (rapidocr needs < 3.13)'); continue }
+    Log ('creating venv with ' + $cand + ' v' + $pyVer)
+    $out = & $cand -m venv $Venv --clear 2>&1
     $out | ForEach-Object { Log ('  ' + $_) }
+    if (Test-Path -LiteralPath $VPy) {
+        $probe = (& $VPy -m pip --version 2>&1) -join ' '
+        if ($probe -match 'pip \d') { $venvOk = $true; $basePy = $cand; Log ('venv ok: ' + $probe) }
+        else {
+            Log ('venv pip unusable (' + $probe + ') - trying the next python')
+            Remove-Item -LiteralPath $Venv -Recurse -Force -ErrorAction SilentlyContinue
+        }
+    } else {
+        Log 'venv\Scripts\python.exe missing - trying the next python'
+    }
 }
-if (-not (Test-Path -LiteralPath $VPy)) {
-    Log 'FATAL: venv creation failed'
-    Save-Status @{ ok = $false; stage = 'venv'; error = 'venv failed' }
+if (-not $venvOk) {
+    Log 'FATAL: no python produced a usable venv'
+    Save-Status @{ ok = $false; stage = 'venv'; error = 'no usable venv' }
     exit 3
 }
+Log ('base_python=' + $basePy)
 Log ('venv_python=' + ((& $VPy -c "import sys;print(sys.version.split()[0])" 2>&1) -join ''))
 
 # ---------------------------------------------------------------- 3. deps

@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T115538Z",
-    "powershell":  [
-                       "$o=@(); $o+=\"APPS=\" + ((Get-ChildItem \"E:\\0github\\apps\" -Force -ErrorAction SilentlyContinue | ForEach-Object {$_.Name}) -join \",\"); $o+=\"ROOT_ITEMS=\" + ((Get-ChildItem \"E:\\0github\\apps\\jev-chat-windows\" -Force -ErrorAction SilentlyContinue | ForEach-Object {$_.Name}) -join \",\"); $o+=\"LOGS_ITEMS=\" + ((Get-ChildItem \"E:\\0github\\apps\\jev-chat-windows\\logs\" -Force -ErrorAction SilentlyContinue | ForEach-Object {$_.Name}) -join \",\"); $o+=\"VENV_ITEMS=\" + ((Get-ChildItem \"E:\\0github\\apps\\jev-chat-windows\\venv\" -Force -ErrorAction SilentlyContinue | ForEach-Object {$_.Name}) -join \",\"); $o+=\"SPIDER_PY=\" + ((\u0026 \"E:\\spider\\python.exe\" -c \"import sys;print(sys.prefix, sys.executable)\" 2\u003e\u00261) -join \" \"); $o+=\"VENV_MOD=\" + ((\u0026 \"E:\\spider\\python.exe\" -c \"import venv,ensurepip;print(\\\"venv+ensurepip ok\\\")\" 2\u003e\u00261) -join \" \"); $o+=\"PY312=\" + ((\u0026 \"C:\\Users\\$env:USERNAME\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" -c \"import venv,ensurepip;print(\\\"312 venv ok\\\", sys.version.split()[0])\" 2\u003e\u00261) -join \" \"); $o+=\"PROCS=\" + ((Get-Process python,pip,pythonw -ErrorAction SilentlyContinue | ForEach-Object {$_.Id.ToString() + \":\" + $_.ProcessName}) -join \",\"); $o | Out-File -FilePath \"results\\jev\\diag2.txt\" -Encoding utf8; \"lines \" + @($o).Count"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T11:55:03Z",
-    "executed_at_local":  "2026-10-26 19:55:03",
-    "source_commit":  "5f3693fccfe19565fd011936403f6d7f9a999619"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T115623Z",
+  "powershell": [
+    "$Root=\"E:\\0apps\\jev-chat-windows\"; New-Item -ItemType Directory -Force -Path \"$Root\\logs\",\"$Root\\tools\",\"$Root\\monitor\" | Out-Null; Copy-Item -Path \"monitor\\*\" -Destination \"$Root\\monitor\\\" -Force -ErrorAction SilentlyContinue; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"$Root\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"$Root\\tools\\install.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 25; \"install.log:\"; Get-Content \"$Root\\logs\\install.log\" -Tail 12 -Encoding UTF8"
+  ]
 }

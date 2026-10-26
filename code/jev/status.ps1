@@ -6,7 +6,7 @@
 #>
 $ErrorActionPreference = 'Continue'
 
-$Root    = 'E:\0github\apps\jev-chat-windows'
+$Root    = 'E:\0apps\jev-chat-windows'
 $AppDir  = Join-Path $Root 'app'
 $Logs    = Join-Path $Root 'logs'
 $Venv    = Join-Path $Root 'venv'

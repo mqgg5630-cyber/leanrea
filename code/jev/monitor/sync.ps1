@@ -16,7 +16,7 @@
 #>
 $ErrorActionPreference = 'Continue'
 
-$Root    = 'E:\0github\apps\jev-chat-windows'
+$Root    = 'E:\0apps\jev-chat-windows'
 $Logs    = Join-Path $Root 'logs'
 $Sync    = Join-Path $Root 'sync'
 $Branch  = 'arena/4d729933-leanrea'

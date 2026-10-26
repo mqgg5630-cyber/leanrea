@@ -9,7 +9,7 @@
 #>
 $ErrorActionPreference = 'Continue'
 
-$Root    = 'E:\0github\apps\jev-chat-windows'
+$Root    = 'E:\0apps\jev-chat-windows'
 $Start   = Join-Path $Root 'monitor\start_monitor.ps1'
 $Sync    = Join-Path $Root 'monitor\sync.ps1'
 $LogFile = Join-Path $Root 'logs\install.log'
