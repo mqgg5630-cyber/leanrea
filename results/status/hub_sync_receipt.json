@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "907c877737d86b5104a945f8908bd037529c4bff",
-    "synced_at_utc":  "2026-10-26T15:28:40Z",
-    "synced_at_local":  "2026-10-26 23:28:40",
+    "source_commit":  "2191812987e2f9159c5c9240d7e8f06d725e550a",
+    "synced_at_utc":  "2026-10-26T15:30:15Z",
+    "synced_at_local":  "2026-10-26 23:30:15",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  115,
+    "synced_files_count":  116,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  2141,
-                               "stdout":  "winget=C:\\Users\\����\\AppData\\Local\\Microsoft\\WindowsApps\\winget.exe\r\nchoco=\r\nscoop=\r\nchunk0=8388608\r\nchunk50=8388608\r\nchunk120=8388608\r\nchunk198=537800\r\nchunk_count=199\r\nshort_chunks=29",
+                               "elapsed_ms":  56811,
+                               "stdout":  "[2026-10-26 23:26:46] fetch_ollama: chunks on disk=199 of 199\r\n[2026-10-26 23:26:55] fetch_ollama: assembled bytes=1444081919\r\n[2026-10-26 23:27:13] fetch_ollama: sha256=07ddddf7289ecc25b2eacd79bf6bd33342bd733a4866988eb0c194dc0379fcc4 expected=87309d23b423abeae1d8df2f98df95f94bf35659debfdf3761d65b7b62a75508 match=False\r\n[2026-10-26 23:27:13] fetch_ollama: FATAL: hash mismatch - removing the file\r\n[2026-10-26 23:29:22] repair: chunks=199 bad=28",
                                "stderr":  ""
                            }
                        ],

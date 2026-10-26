@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T152951Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\jev\\repair_ollama.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\repair_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 55; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T152951Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\jev\\repair_ollama.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\repair_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 55; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T15:30:15Z",
+    "executed_at_local":  "2026-10-26 23:30:15",
+    "source_commit":  "2191812987e2f9159c5c9240d7e8f06d725e550a"
 }
