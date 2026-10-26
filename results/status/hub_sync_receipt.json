@@ -3,21 +3,21 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "5da20c0a87fc028d314e1ff78d64b625954dfdec",
-    "synced_at_utc":  "2026-10-26T11:51:28Z",
-    "synced_at_local":  "2026-10-26 19:51:28",
+    "source_commit":  "a42463e38ac9ef2dc37d33cf5366e56df2496600",
+    "synced_at_utc":  "2026-10-26T11:54:04Z",
+    "synced_at_local":  "2026-10-26 19:54:04",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  9,
+    "synced_files_count":  10,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  8537,
-                               "stdout":  "lines: 11",
-                               "stderr":  ""
+                               "elapsed_ms":  10138,
+                               "stdout":  "launched; install.log bytes=417\r\n[2026-10-26 19:53:57] clone -\u003e E:\\0github\\apps\\jev-chat-windows\\app\r\n[2026-10-26 19:54:00]   Cloning into \u0027E:\\0github\\apps\\jev-chat-windows\\app\u0027...\r\n[2026-10-26 19:54:00] app_head=c6d3a10\r\n[2026-10-26 19:54:00] == stage 2: python 3.11 virtualenv\r\n[2026-10-26 19:54:01] base_python=E:\\spider\\python.exe version=3.11.9\r\n[2026-10-26 19:54:01] creating venv",
+                               "stderr":  "Copy-Item : �Ҳ���·����C:\\Users\\����\\AppData\\Local\\Temp\\git-sync-hub-ephemeral\\leanrea-4d729933-leanrea-147f8892\\monito\r\nr������Ϊ��·�������ڡ�\r\n����λ�� C:\\Users\\����\\AppData\\Local\\Temp\\hub_inline_3a4c6e95e5a14540847d5463d7ea59fd.ps1:1 �ַ�: 140\r\n+ ... | Out-Null; Copy-Item -Path \"monitor\\*\" -Destination \"$Root\\monitor\\\" ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (C:\\Users\\����\\App...47f8892\\monitor:String) [Copy-Item], ItemNotFoundExc\r\ne    ption\r\n    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand"
                            }
                        ],
     "copied_targets":  [

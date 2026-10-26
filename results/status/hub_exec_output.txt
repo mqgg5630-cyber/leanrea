@@ -1,11 +1,25 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 5da20c0a87fc028d314e1ff78d64b625954dfdec
-executed_at_utc: 2026-10-26T11:51:28Z
-executed_at_local: 2026-10-26 19:51:28
+source_commit: a42463e38ac9ef2dc37d33cf5366e56df2496600
+executed_at_utc: 2026-10-26T11:54:04Z
+executed_at_local: 2026-10-26 19:54:04
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-lines: 11
+launched; install.log bytes=417
+[2026-10-26 19:53:57] clone -> E:\0github\apps\jev-chat-windows\app
+[2026-10-26 19:54:00]   Cloning into 'E:\0github\apps\jev-chat-windows\app'...
+[2026-10-26 19:54:00] app_head=c6d3a10
+[2026-10-26 19:54:00] == stage 2: python 3.11 virtualenv
+[2026-10-26 19:54:01] base_python=E:\spider\python.exe version=3.11.9
+[2026-10-26 19:54:01] creating venv
+[stderr] Copy-Item : �Ҳ���·����C:\Users\����\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-147f8892\monito
+r������Ϊ��·�������ڡ�
+����λ�� C:\Users\����\AppData\Local\Temp\hub_inline_3a4c6e95e5a14540847d5463d7ea59fd.ps1:1 �ַ�: 140
++ ... | Out-Null; Copy-Item -Path "monitor\*" -Destination "$Root\monitor\" ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\����\App...47f8892\monitor:String) [Copy-Item], ItemNotFoundExc
+e    ption
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
 
