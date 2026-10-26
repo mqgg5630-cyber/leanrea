@@ -1,14 +1,10 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 71555a756f0aa79da93c97e7c6e890acfbab35f9
-executed_at_utc: 2026-10-26T13:03:38Z
-executed_at_local: 2026-10-26 21:03:38
-tasks_all_ok: True
+source_commit: fad0ec40be0e6a025f188ff47000dc615f335ff2
+executed_at_utc: 2026-10-26T13:06:16Z
+executed_at_local: 2026-10-26 21:06:16
+tasks_all_ok: False
 
---- step: hub_task.powershell (exit=0) ---
-chat_procs=
-watcher=264060,263160
-[2026-10-26 20:58:44] watcher: no chat window: û�ҵ����촰�ڣ������� || [2026-10-26 21:00:21] watcher: started pid=263160 python=3.11.9 || [2026-10-26 21:00:21] watcher: no chat window: û�ҵ����촰�ڣ�������
-wrote C:\Users\����\AppData\Local\Temp\git-sync-hub-ephemeral\leanrea-4d729933-leanrea-5e84f876\results\jev-monitor\pull-20261026-210336.md (17 lines)
+--- step: hub_task.powershell (exit=124) ---
 
