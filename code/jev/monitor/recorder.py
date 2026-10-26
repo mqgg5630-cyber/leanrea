@@ -138,6 +138,11 @@ def _on_message(who, text, name="", timestamp=None, chat=None) -> None:
         _note("message hook failed: " + " ".join(traceback.format_exc().split())[-300:])
 
 
+def record_message(chat, who, name, text, clock=None) -> None:
+    """Public entry for callers that are not the GUI (headless watcher)."""
+    _on_message(who, text, name or "", clock, chat or "")
+
+
 def _compact_answers(answers) -> dict:
     """Jev answers -> {question: value/confidence} so the JSONL stays readable."""
     out = {}
