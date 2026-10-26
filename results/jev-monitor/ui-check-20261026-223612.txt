@@ -1,0 +1,12 @@
+﻿exit_code=0
+APPS=kakaotalk,qq,wechat
+FIND_WINDOW=ok
+APP_KEY=wechat
+HWND=265520
+FRAME=960x1080
+CHAT_AREA=(376, 100, 953, 899)
+PANE_BG=(30, 30, 31)
+TITLE=+g>w<et
+OCR_LINES=1
+LINE=me|-|我准备去洗个衣服哦
+VERDICT=ok

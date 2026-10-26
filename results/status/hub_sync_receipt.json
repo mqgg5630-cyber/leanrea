@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "a8a341711361c54e6372ff5e313e11b4e3830724",
-    "synced_at_utc":  "2026-10-26T13:09:03Z",
-    "synced_at_local":  "2026-10-26 21:09:03",
+    "source_commit":  "0c0fba6c130f9a4013eb60ec979d117fddacbd31",
+    "synced_at_utc":  "2026-10-26T14:36:21Z",
+    "synced_at_local":  "2026-10-26 22:36:21",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  68,
+    "synced_files_count":  71,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  2855,
-                               "stdout":  "watcher=308620,309776\r\nchat_now=\r\ntask=Ready\r\n{\"t\": \"2026-10-26 21:07:28\", \"ts\": 1793020048.425, \"kind\": \"app_start\", \"pid\": 309776, \"argv\": \"[\u0027E:\\\\\\\\0apps\\\\\\\\jev-chat-windows\\\\\\\\monitor\\\\\\\\headless_watch.py\u0027]\", \"python\": \"3.11.9\"} || {\"t\": \"2026-10-26 21:07:28\", \"ts\": 1793020048.739, \"kind\": \"watcher_start\", \"pid\": 309776, \"python\": \"3.11.9\"} || {\"t\": \"2026-10-26 21:07:28\", \"ts\": 1793020048.742, \"kind\": \"no_window\", \"detail\": \"û�ҵ����촰�ڣ�������\"}",
+                               "elapsed_ms":  12421,
+                               "stdout":  "chat=Weixin:211856,Weixin:215672,Weixin:219328,Weixin:219384,Weixin:219404\r\nwatcher=308620,309776\r\ndigest-2026-10-26.md 894\r\nevents.jsonl 5791\r\npull-20261026-210031.md 5\r\npull-20261026-210153.md 305\r\npull-20261026-210336.md 305\r\npull-20261026-223618.md 1477\r\nui-check-20261026-223612.txt 236",
                                "stderr":  ""
                            }
                        ],
