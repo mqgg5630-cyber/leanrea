@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T155046Z",
-  "powershell": [
-    "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 8 -Encoding UTF8; \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\"); \"status=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama_status.json\" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) -replace \"\\s+\",\" \")"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T155046Z",
+    "powershell":  [
+                       "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 8 -Encoding UTF8; \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\"); \"status=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama_status.json\" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) -replace \"\\s+\",\" \")"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T15:50:19Z",
+    "executed_at_local":  "2026-10-26 23:50:19",
+    "source_commit":  "0385d26321306d61a72499f2085b957fc054fb12"
 }
