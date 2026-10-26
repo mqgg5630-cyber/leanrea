@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T125554Z",
-  "powershell": [
-    "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pyside.log\" -Tail 10 -Encoding UTF8"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T125554Z",
+    "powershell":  [
+                       "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pyside.log\" -Tail 10 -Encoding UTF8"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:55:19Z",
+    "executed_at_local":  "2026-10-26 20:55:19",
+    "source_commit":  "a85ed557e262552d20b66ccde7b366fb497c2911"
 }
