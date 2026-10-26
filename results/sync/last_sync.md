@@ -1,10 +1,9 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-26 15:43 UTC
+- 时间：2026-10-26 15:47 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：fix(jev): rebuild stubborn chunks from 1 MB sub-ranges
+- 本轮助手提交：fix(jev): finish chunk 119 then assemble+install
 - 本轮改动文件：
    M results/status/hub_task.json
-  ?? code/jev/fix_chunks_small.ps1
 
 > 完整历史：`git log --oneline -10`；本机 `.\sync.ps1` 之后即可看到本文件。
