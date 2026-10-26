@@ -1,20 +1,15 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 9525a2e53816adca1d28379696fa16a2dc8ad62f
-executed_at_utc: 2026-10-26T15:42:32Z
-executed_at_local: 2026-10-26 23:42:32
+source_commit: 872c2d2d3d26fc5de0d2101ba276ab49640fe17b
+executed_at_utc: 2026-10-26T15:44:40Z
+executed_at_local: 2026-10-26 23:44:40
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 23:31:34] repair: repaired 5/28
-[2026-10-26 23:33:00] repair: FAILED chunk 119
-[2026-10-26 23:33:20] repair: repaired 10/28
-[2026-10-26 23:35:05] repair: repaired 15/28
-[2026-10-26 23:37:13] repair: repaired 20/28
 [2026-10-26 23:38:45] repair: repaired 25/28
 [2026-10-26 23:38:54] repair: repaired=26 still_bad=2
 [2026-10-26 23:38:54] repair: FATAL: chunks still missing - rerun later
-status={ "updated_local": "2026-10-26 23:38:54", "ok": false, "still_bad": 2, "stage": "repair" } 
-exe=False
+[2026-10-26 23:43:12] subchunk: bad chunks: 67,119
+[2026-10-26 23:43:57] subchunk:   chunk 67 rebuilt (8388608 bytes)
 
