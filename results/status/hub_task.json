@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T115148Z",
-    "powershell":  [
-                       "$r = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_chat.ps1\" 2\u003e\u00261; $r | Out-File -FilePath \"results\\jev\\probe_chat.txt\" -Encoding utf8; \"lines: \" + @($r).Count"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T11:51:28Z",
-    "executed_at_local":  "2026-10-26 19:51:28",
-    "source_commit":  "5da20c0a87fc028d314e1ff78d64b625954dfdec"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T115421Z",
+  "powershell": [
+    "$Root=\"E:\\0github\\apps\\jev-chat-windows\"; New-Item -ItemType Directory -Force -Path \"$Root\\logs\",\"$Root\\tools\",\"$Root\\monitor\" | Out-Null; Copy-Item -Path \"monitor\\*\" -Destination \"$Root\\monitor\\\" -Recurse -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"$Root\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"$Root\\tools\\install.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 8; \"launched; install.log bytes=\" + (Get-Item \"$Root\\logs\\install.log\" -ErrorAction SilentlyContinue).Length; Get-Content \"$Root\\logs\\install.log\" -Tail 6 -Encoding UTF8"
+  ]
 }

@@ -86,7 +86,7 @@ foreach ($p in @(
 Line 'CHAT_INSTALLED' (($inst -join ' | ') -replace '^$', 'none')
 
 # ---- existing layout ---------------------------------------------------------
-foreach ($d in @('E:\0github', 'E:\0github\apps', 'E:\0github\results', 'D:\桌面', 'E:\spider')) {
+foreach ($d in @('E:\0github', 'E:\0github\apps', 'E:\0github\results', [Environment]::GetFolderPath('Desktop'), 'E:\spider')) {
     if (Test-Path -LiteralPath $d) { Line ('HAS ' + $d) 'yes' } else { Line ('HAS ' + $d) 'no' }
 }
 try {
