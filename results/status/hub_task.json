@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T114714Z",
+  "write_files": [
+    {
+      "path": "D:\\桌面\\测试成功.txt",
+      "content": "桌面写入成功！"
+    }
+  ],
+  "powershell": [
+    "Get-Item -LiteralPath 'D:\\桌面\\测试成功.txt' -ErrorAction SilentlyContinue | Select-Object FullName,Length"
+  ]
+}
