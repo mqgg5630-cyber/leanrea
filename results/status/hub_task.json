@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T121500Z",
-  "powershell": [
-    "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pip.log\" -Tail 12 -Encoding UTF8; \"venv_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\jev-chat-windows\\venv\" -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T121500Z",
+    "powershell":  [
+                       "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pip.log\" -Tail 12 -Encoding UTF8; \"venv_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\jev-chat-windows\\venv\" -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1)"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:14:28Z",
+    "executed_at_local":  "2026-10-26 20:14:28",
+    "source_commit":  "568d2df3cd0e6cfa80851f0de9b4b2bb7227fb98"
 }
