@@ -1,14 +1,13 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 7a1236535fefc92731e5f3febde5b42fbe6a63c3
-executed_at_utc: 2026-10-26T12:44:09Z
-executed_at_local: 2026-10-26 20:44:09
-tasks_all_ok: True
+source_commit: 7b861910bcec6b2caeb5dfac62472584923ec314
+executed_at_utc: 2026-10-26T12:46:36Z
+executed_at_local: 2026-10-26 20:46:36
+tasks_all_ok: False
 
---- step: hub_task.powershell (exit=0) ---
-PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;E:\Docker\DockerDesktop\resources\bin;E:\Go\bin;C:\Program Files\GitHub CLI\;E:\Tailscale\;C:\Users\����\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\����\AppData\Local\Programs\Python\Python312\;C:\Users\����\AppData\Local\Programs\Python\Launcher\;C:\Users\����\.local\bin;C:\Users\����\AppData\Local\agy\bin;C:\Users\����\.cargo\bin;E:\proto\shims;E:\proto\bin;E:\spider;E:\spider\Library\mingw-w64\bin;E:\spider\Library\usr\bin;E:\spider\Library\bin;E:\spider\Scripts;E:\spider\bin;E:\spider\condabin;c:\Users\����\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\����\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;E:\hermes\bin;C:\Users\����\AppData\Local\hermes\bin;C:\Users\����\AppData\Local\Microsoft\WindowsApps;C:\Users\����\AppData\Local\hermes\git\cmd;C:\Users\����\AppData\Local\hermes\git\bin;C:\Users\����\AppData\Local\hermes\git\usr\bin;C:\Users\����\AppData\Local\hermes\node;E:\hermes\git\cmd;E:\hermes\git\bin;E:\hermes\git\usr\bin;E:\hermes\node;C:\Users\����\AppData\Local\Microsoft\WinGet\Packages\BurntSushi.ripgrep.MSVC_Microsoft.Winget.Source_8wekyb3d8bbwe\ripgrep-15.2.0-x86_64-pc-windows-msvc;E:\npm;.;c:\Users\����\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\scripts\noConfigScripts;E:\hermes\hermes-agent\.venv\Scripts;E:\gmx2020.6_GPU\bin;C:\Users\����\go\bin;E:\cargo\bin;E:\0md\1\packmol_18.169_win64;E:\Antigravity\bin;E:\vscode\bin;E:\java\jdk-21.0.12.1+1\bin;C:\Users\����\AppData\Local\Programs\rclone
-clean_path_import=Traceback (most recent call last): ||   File "<string>", line 1, in <module> || ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���
-venv_scripts_vcruntime=False
-where_vcruntime=C:\Windows\System32\vcruntime140.dll
+--- step: hub_task.powershell (exit=124) ---
+vcruntime140.dll=14.44.35211.0
+vcruntime140_1.dll=14.44.35211.0
+msvcp140.dll=14.44.35211.0
 
