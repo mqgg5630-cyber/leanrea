@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T114901Z",
-    "powershell":  [
-                       "powershell -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_env.ps1\""
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T11:48:36Z",
-    "executed_at_local":  "2026-10-26 19:48:36",
-    "source_commit":  "541f775411aaedf0276baff69ae8cafe91226057"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T114941Z",
+  "powershell": [
+    "New-Item -ItemType Directory -Force -Path \"results\\jev\" | Out-Null; (powershell -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_env.ps1\" 2>&1) | Out-File -FilePath \"results\\jev\\probe_env.txt\" -Encoding utf8; \"probe written: \" + (Get-Item \"results\\jev\\probe_env.txt\").Length + \" bytes\""
+  ]
 }
