@@ -1,20 +1,12 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 9329047f7ddef9bb62298370b79865b538656272
-executed_at_utc: 2026-10-26T12:15:43Z
-executed_at_local: 2026-10-26 20:15:43
-tasks_all_ok: True
+source_commit: 599c568c2c8297e6a888b0768d94279302064635
+executed_at_utc: 2026-10-26T12:18:14Z
+executed_at_local: 2026-10-26 20:18:14
+tasks_all_ok: False
 
---- step: hub_task.powershell (exit=0) ---
-[2026-10-26 20:15:09] pip_worker:   ERROR: Could not find a version that satisfies the requirement rapidocr-onnxruntime<2,>=1.4 (from versions: none)
-[2026-10-26 20:15:09] pip_worker:   ERROR: No matching distribution found for rapidocr-onnxruntime<2,>=1.4
-[2026-10-26 20:15:09] pip_worker:   exit=1
-[2026-10-26 20:15:09] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.ustc.edu.cn attempt 1 proxy=True
-[2026-10-26 20:15:28] pip_worker:       opencv-python>=4.5.1.48 from https://mirrors.ustc.edu.cn/pypi/packages/21/f0/9fa6e85cb10c8eb36a0222d27e50fe381b86ce49a55446bf39f491727564/opencv_python-5.0.0.93-cp37-abi3-win_amd64.whl (from rapidocr-onnxruntime<2,>=1.4):
-[2026-10-26 20:15:28] pip_worker:           Expected sha256 f90ba04b8f73bc5c3814037699739f0156f597338a98f05956c684e7c3ca10d2
-[2026-10-26 20:15:28] pip_worker:                Got        6a27f67e2d6ec3de900b56b695331933acb09765fece5a5b49df3447f9f05844
-[2026-10-26 20:15:28] pip_worker:   System.Management.Automation.RemoteException
-[2026-10-26 20:15:28] pip_worker:   exit=1
-[2026-10-26 20:15:28] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.aliyun.com attempt 2 proxy=True
+--- step: hub_task.powershell (exit=124) ---
+proxy_ms=61111 size=14915192
+proxy_sha=971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf
 
