@@ -25,40 +25,40 @@ $Stamp   = Get-Date -Format 'yyyyMMdd-HHmmss'
 if (-not (Test-Path -LiteralPath $Dst)) { New-Item -ItemType Directory -Path $Dst -Force | Out-Null }
 
 $report = New-Object System.Collections.ArrayList
-function R([string]$line) { [void]$report.Add($line) }
+function Rep([string]$line) { [void]$report.Add($line) }
 
-R ('# JevChat monitor snapshot ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))
-R ''
-R ('host=' + $env:COMPUTERNAME)
+Rep ('# JevChat monitor snapshot ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))
+Rep ''
+Rep ('host=' + $env:COMPUTERNAME)
 
 # ---- health ------------------------------------------------------------------
 $procs = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object {
     $_.CommandLine -and ($_.CommandLine -match 'jev-chat-windows\\app\\main\.py') })
-R ('app_running=' + ($procs.Count -gt 0))
+Rep ('app_running=' + ($procs.Count -gt 0))
 $taskState = 'missing'
 try { $taskState = (Get-ScheduledTask -TaskName 'jev-chat-monitor' -ErrorAction Stop).State } catch {}
-R ('task_jev_monitor=' + $taskState)
+Rep ('task_jev_monitor=' + $taskState)
 $keys = @()
 foreach ($k in @('JEV_API_KEY', 'LLM_API_KEY')) {
     $keys += ($k + '=' + [string]([bool]([Environment]::GetEnvironmentVariable($k, 'User'))))
 }
-R ('keys=' + ($keys -join ' '))
+Rep ('keys=' + ($keys -join ' '))
 if (Test-Path -LiteralPath (Join-Path $AppDir '.git')) {
-    R ('app_head=' + ((& git -C $AppDir rev-parse --short HEAD 2>&1) -join ' '))
+    Rep ('app_head=' + ((& git -C $AppDir rev-parse --short HEAD 2>&1) -join ' '))
 }
 $hook = @(Select-String -LiteralPath (Join-Path $AppDir 'main.py') -Pattern 'jev-monitor:hook' -SimpleMatch -ErrorAction SilentlyContinue).Count
-R ('hook_in_main=' + ($hook -gt 0))
-R ''
+Rep ('hook_in_main=' + ($hook -gt 0))
+Rep ''
 
 # ---- events ------------------------------------------------------------------
 $events = Join-Path $Src 'events.jsonl'
 if (-not (Test-Path -LiteralPath $events)) {
-    R 'events.jsonl missing: the app has not run yet, or no new message arrived.'
+    Rep 'events.jsonl missing: the app has not run yet, or no new message arrived.'
 } else {
     $it = Get-Item -LiteralPath $events
     $lines = @(Get-Content -LiteralPath $events -Tail $Tail -Encoding UTF8 -ErrorAction SilentlyContinue)
-    R ('events_bytes=' + $it.Length + ' tail_lines=' + $lines.Count)
-    R ''
+    Rep ('events_bytes=' + $it.Length + ' tail_lines=' + $lines.Count)
+    Rep ''
     Copy-Item -LiteralPath $events -Destination (Join-Path $Dst 'events.jsonl') -Force
 
     $records = @()
@@ -68,28 +68,28 @@ if (-not (Test-Path -LiteralPath $events)) {
     $msgs = @($records | Where-Object { $_.kind -eq 'msg' })
     $an   = @($records | Where-Object { $_.kind -eq 'analysis' })
     $starts = @($records | Where-Object { $_.kind -eq 'app_start' })
-    R ('messages=' + $msgs.Count + ' analyses=' + $an.Count + ' app_starts=' + $starts.Count)
-    R ''
-    R '## messages'
-    R ''
+    Rep ('messages=' + $msgs.Count + ' analyses=' + $an.Count + ' app_starts=' + $starts.Count)
+    Rep ''
+    Rep '## messages'
+    Rep ''
     foreach ($m in ($msgs | Select-Object -Last 120)) {
         $who = 'her'
         if ($m.who -eq 'me') { $who = 'me' }
         $name = ''
         if ($m.name) { $name = $m.name + ' ' }
-        R ('- `' + $m.t + '` [' + $m.chat + '] ' + $name + $who + ': ' + $m.text)
+        Rep ('- `' + $m.t + '` [' + $m.chat + '] ' + $name + $who + ': ' + $m.text)
     }
     if ($an.Count -gt 0) {
-        R ''
-        R '## app judgement / candidates'
-        R ''
+        Rep ''
+        Rep '## app judgement / candidates'
+        Rep ''
         foreach ($a in ($an | Select-Object -Last 20)) {
-            R ('### ' + $a.t)
+            Rep ('### ' + $a.t)
             $i = 0
             foreach ($c in @($a.candidates)) {
                 $mark = ''
                 if ($i -eq [int]$a.best_index) { $mark = ' **[best]**' }
-                R ('- (' + $i + ') ' + $c + $mark)
+                Rep ('- (' + $i + ') ' + $c + $mark)
                 $i++
             }
             if ($a.answers) {
@@ -102,9 +102,9 @@ if (-not (Test-Path -LiteralPath $events)) {
                     elseif ($v.noul -ne $null) { $txt = 'p=' + [string]$v.noul }
                     $pairs += ($p.Name + '=' + $txt)
                 }
-                R ('- judgement: ' + ($pairs -join '; '))
+                Rep ('- judgement: ' + ($pairs -join '; '))
             }
-            R ''
+            Rep ''
         }
     }
 }
@@ -113,8 +113,8 @@ if (-not (Test-Path -LiteralPath $events)) {
 $digests = @(Get-ChildItem -LiteralPath $Src -Filter 'digest-*.md' -ErrorAction SilentlyContinue |
              Sort-Object LastWriteTime -Descending | Select-Object -First 5)
 foreach ($d in $digests) { Copy-Item -LiteralPath $d.FullName -Destination (Join-Path $Dst $d.Name) -Force }
-R ''
-R ('digests_copied=' + $digests.Count)
+Rep ''
+Rep ('digests_copied=' + $digests.Count)
 
 $outFile = Join-Path $Dst ('pull-' + $Stamp + '.md')
 ($report -join "`r`n") | Set-Content -LiteralPath $outFile -Encoding UTF8
