@@ -1,11 +1,18 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 4548386cae060c06abb874d769f1c1e1431b16f2
-executed_at_utc: 2026-10-26T12:12:24Z
-executed_at_local: 2026-10-26 20:12:24
+source_commit: 75e3c0baf79a60ac0d1b708f6a57dba0c9252ca1
+executed_at_utc: 2026-10-26T12:13:56Z
+executed_at_local: 2026-10-26 20:13:56
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-pillow exit=0 ms=41925 :: System.Management.Automation.RemoteException ;; [notice] A new release of pip is available: 24.0 -> 26.2.2 ;; [notice] To update, run: E:\0apps\jev-chat-windows\venv\Scripts\python.exe -m pip install --upgrade pip
+[2026-10-26 20:07:21] pip_worker: group=core index=mirrors.aliyun.com attempt=1 pkgs=numpy,rapidocr-onnxruntime>=1.4,<2,windows-capture,PySide6-Fluent-Widgets,pillow
+[2026-10-26 20:13:17] pip_worker: started, proxy=http://127.0.0.1:18088
+[2026-10-26 20:13:17] pip_worker: install numpy via mirrors.aliyun.com attempt 1 proxy=True
+[2026-10-26 20:13:18] pip_worker:   Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+[2026-10-26 20:13:18] pip_worker:   Requirement already satisfied: numpy in e:\0apps\jev-chat-windows\venv\lib\site-packages (2.4.6)
+[2026-10-26 20:13:18] pip_worker:   exit=0
+[2026-10-26 20:13:18] pip_worker: OK: numpy
+[2026-10-26 20:13:18] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.aliyun.com attempt 1 proxy=True
 

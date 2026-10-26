@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "4548386cae060c06abb874d769f1c1e1431b16f2",
-    "synced_at_utc":  "2026-10-26T12:12:25Z",
-    "synced_at_local":  "2026-10-26 20:12:25",
+    "source_commit":  "75e3c0baf79a60ac0d1b708f6a57dba0c9252ca1",
+    "synced_at_utc":  "2026-10-26T12:13:56Z",
+    "synced_at_local":  "2026-10-26 20:13:56",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  21,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  45504,
-                               "stdout":  "pillow exit=0 ms=41925 :: System.Management.Automation.RemoteException ;; [notice] A new release of pip is available: 24.0 -\u003e 26.2.2 ;; [notice] To update, run: E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe -m pip install --upgrade pip",
+                               "elapsed_ms":  41379,
+                               "stdout":  "[2026-10-26 20:07:21] pip_worker: group=core index=mirrors.aliyun.com attempt=1 pkgs=numpy,rapidocr-onnxruntime\u003e=1.4,\u003c2,windows-capture,PySide6-Fluent-Widgets,pillow\r\n[2026-10-26 20:13:17] pip_worker: started, proxy=http://127.0.0.1:18088\r\n[2026-10-26 20:13:17] pip_worker: install numpy via mirrors.aliyun.com attempt 1 proxy=True\r\n[2026-10-26 20:13:18] pip_worker:   Looking in indexes: https://mirrors.aliyun.com/pypi/simple/\r\n[2026-10-26 20:13:18] pip_worker:   Requirement already satisfied: numpy in e:\\0apps\\jev-chat-windows\\venv\\lib\\site-packages (2.4.6)\r\n[2026-10-26 20:13:18] pip_worker:   exit=0\r\n[2026-10-26 20:13:18] pip_worker: OK: numpy\r\n[2026-10-26 20:13:18] pip_worker: install rapidocr-onnxruntime\u003e=1.4,\u003c2 via mirrors.aliyun.com attempt 1 proxy=True",
                                "stderr":  ""
                            }
                        ],
