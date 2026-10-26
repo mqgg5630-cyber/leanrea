@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T115148Z",
-  "powershell": [
-    "$r = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_chat.ps1\" 2>&1; $r | Out-File -FilePath \"results\\jev\\probe_chat.txt\" -Encoding utf8; \"lines: \" + @($r).Count"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T115148Z",
+    "powershell":  [
+                       "$r = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_chat.ps1\" 2\u003e\u00261; $r | Out-File -FilePath \"results\\jev\\probe_chat.txt\" -Encoding utf8; \"lines: \" + @($r).Count"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T11:51:28Z",
+    "executed_at_local":  "2026-10-26 19:51:28",
+    "source_commit":  "5da20c0a87fc028d314e1ff78d64b625954dfdec"
 }

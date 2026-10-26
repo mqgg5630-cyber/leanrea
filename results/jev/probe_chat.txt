@@ -1,0 +1,11 @@
+﻿PROBE_CHAT_START=2026-10-26 19:51:22
+INSTALLED_APPS=WeChatDataAnalysis 2.9.0 :: 
+WINDOWS=ApplicationFrameHost:设置 || chrome:jev-chat/jev-chat-windows: JevChat-Windows：聊天窗口旁挂的回复辅助。窗口截图 + 本地离线 OCR 读对方消息 → Jev 判断意图 → 3 条候选一键填入，发送永远手动 - Google Chrome || Code:it_key_18464_1790233996201 - 0github - Visual Studio Code || firefox:Arena | Benchmark & Compare the Best AI Models — Mozilla Firefox || msedge:Arena | Benchmark & Compare the Best AI Models 和另外 22 个页面 - 个人 - Microsoft? Edge || Notepad:1.txt - Notepad || SystemSettings:设置 || TextInputHost:Windows 输入体验 || v2rayN:v2rayN - V7.25.6 - X64 - 以管理员身份运行 || wpsoffice:mnt.docx - WPS Office
+SHORTCUTS=Live Support (chat), QQ, WeChatDataAnalysis
+EXE_HITS=E:\Program Files\QQ.exe
+DATA_DIRS=C:\Users\文少\Documents\Tencent Files || C:\Users\文少\AppData\Roaming\Tencent
+DESKTOP_CS=D:\桌面
+DESKTOP_EXISTS=yes
+DESKTOP_FULLNAME=D:\桌面
+DESKTOP_ITEMS=AMP_Docking_Vina_R255_20261005_1552, AMP_SCI_Paper, Interop_And_Skills_20261007, OpenSpeedy, Periodontitis_AChE_SCI_Paper, skills1-deliverables, Turnitin_Reports_20261007, v2ray-subs-20261008-1128
+PROBE_CHAT_DONE=True
