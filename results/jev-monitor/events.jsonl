@@ -71,3 +71,5 @@
 {"t": "2026-10-26 23:10:33", "ts": 1793027433.551, "kind": "msg", "chat": "老婆宝宝", "who": "me", "name": "", "text": "老婆宝宝", "clock": "23:10"}
 {"t": "2026-10-26 23:10:39", "ts": 1793027439.321, "kind": "msg", "chat": "老婆宝宝", "who": "me", "name": "", "text": "mua", "clock": "23:10"}
 {"t": "2026-10-26 23:11:30", "ts": 1793027490.745, "kind": "heartbeat", "frames": 55, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:12:30", "ts": 1793027550.774, "kind": "heartbeat", "frames": 111, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:13:31", "ts": 1793027611.235, "kind": "heartbeat", "frames": 168, "messages": 3, "chat": "老婆宝宝"}
