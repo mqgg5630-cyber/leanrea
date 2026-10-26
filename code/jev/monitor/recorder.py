@@ -246,8 +246,9 @@ def install(root: str | None = None) -> bool:
             log_message.__wrapped__ = orig
             Overlay.log_message = log_message
     except Exception:
-        _note("overlay patch failed: " + " ".join(traceback.format_exc().split())[-300:])
-        return False
+        # Headless mode has no Qt at all (PySide6 cannot load on this host), so a
+        # failed overlay patch is expected and must not stop the rest.
+        _note("overlay patch skipped: " + " ".join(traceback.format_exc().split())[-200:])
 
     try:
         import core.engine as engine
@@ -263,8 +264,7 @@ def install(root: str | None = None) -> bool:
         if main_mod is not None and getattr(main_mod, "analyze", None) is _ORIG_ANALYZE:
             main_mod.analyze = engine.analyze
     except Exception:
-        _note("engine patch failed: " + " ".join(traceback.format_exc().split())[-300:])
-        return False
+        _note("engine patch skipped: " + " ".join(traceback.format_exc().split())[-200:])
 
     add_qq_support()
 
