@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T160557Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\jev\\pull_model.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\pull_model.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 60; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 4 -Encoding UTF8"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T160557Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\jev\\pull_model.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\pull_model.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 60; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 4 -Encoding UTF8"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T16:06:29Z",
+    "executed_at_local":  "2026-10-27 00:06:29",
+    "source_commit":  "b5dd672586e49a5447a30e4f793db98cdd62c1ea"
 }
