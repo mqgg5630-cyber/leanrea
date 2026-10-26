@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T115623Z",
-  "powershell": [
-    "$Root=\"E:\\0apps\\jev-chat-windows\"; New-Item -ItemType Directory -Force -Path \"$Root\\logs\",\"$Root\\tools\",\"$Root\\monitor\" | Out-Null; Copy-Item -Path \"monitor\\*\" -Destination \"$Root\\monitor\\\" -Force -ErrorAction SilentlyContinue; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"$Root\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"$Root\\tools\\install.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 25; \"install.log:\"; Get-Content \"$Root\\logs\\install.log\" -Tail 12 -Encoding UTF8"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T115623Z",
+    "powershell":  [
+                       "$Root=\"E:\\0apps\\jev-chat-windows\"; New-Item -ItemType Directory -Force -Path \"$Root\\logs\",\"$Root\\tools\",\"$Root\\monitor\" | Out-Null; Copy-Item -Path \"monitor\\*\" -Destination \"$Root\\monitor\\\" -Force -ErrorAction SilentlyContinue; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"$Root\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"$Root\\tools\\install.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 25; \"install.log:\"; Get-Content \"$Root\\logs\\install.log\" -Tail 12 -Encoding UTF8"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T11:56:15Z",
+    "executed_at_local":  "2026-10-26 19:56:15",
+    "source_commit":  "064d67c0199b27f3ad97c2d5cc3a43edfd3c03ec"
 }
