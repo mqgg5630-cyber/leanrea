@@ -1,21 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T114714Z",
-    "write_files":  [
-                        {
-                            "path":  "D:\\桌面\\测试成功.txt",
-                            "content":  "桌面写入成功！"
-                        }
-                    ],
-    "powershell":  [
-                       "Get-Item -LiteralPath \u0027D:\\桌面\\测试成功.txt\u0027 -ErrorAction SilentlyContinue | Select-Object FullName,Length"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T11:46:40Z",
-    "executed_at_local":  "2026-10-26 19:46:40",
-    "source_commit":  "6ac1109db1a962e3799c08be9a184781c8aed72c",
-    "written_paths":  [
-                          "D:\\桌面\\测试成功.txt"
-                      ]
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T114901Z",
+  "powershell": [
+    "powershell -NoProfile -ExecutionPolicy Bypass -File \"code\\jev\\probe_env.ps1\""
+  ]
 }
