@@ -1,14 +1,18 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Detached dependency installer for the JevChat venv.
+    Detached dependency installer for the JevChat venv (hybrid network strategy).
 
 .DESCRIPTION
-    Started in the background by install.ps1 (or by hand) because a full install
-    pulls a few hundred MB and no hub step may run longer than 120 s.
-    Strategy: two package groups x four indexes x two attempts, proxy bypassed for
-    domestic mirrors (the local v2rayN proxy was corrupting wheel downloads),
-    everything appended to logs\pip.log, state in logs\pip_status.json.
+    The host reaches the internet through a local v2rayN proxy (127.0.0.1:18088):
+    fast for bulk (~2 MB/s) but it intermittently corrupts large wheels, which pip
+    reports as "THESE PACKAGES DO NOT MATCH THE HASHES". Domestic mirrors without
+    the proxy are reliable but slow (~80 KB/s).
+
+    So: for every package, try the proxy first (2 attempts, mirror list), then fall
+    back to a direct mirror download with the proxy cleared. Cache stays ON so a
+    good download is never repeated. Everything lands in logs\pip.log; state in
+    logs\pip_status.json. Runs detached because no hub step may exceed 120 s.
     ASCII only.
 #>
 param(
@@ -30,7 +34,6 @@ function Log([string]$m) {
     Write-Output $line
     try { Add-Content -LiteralPath $Log -Value $line -Encoding UTF8 } catch {}
 }
-
 function Save-Status([hashtable]$h) {
     $o = [ordered]@{ updated_local = (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') }
     foreach ($k in $h.Keys) { $o[$k] = $h[$k] }
@@ -43,55 +46,93 @@ if (-not (Test-Path -LiteralPath $VPy)) {
     exit 3
 }
 
-if ($NoProxy) {
-    $env:HTTP_PROXY = ''
-    $env:HTTPS_PROXY = ''
-    $env:ALL_PROXY = ''
-    $env:NO_PROXY = '*'
-    Log 'proxy environment cleared for this process'
-} else {
-    Log ('proxy in use: HTTP_PROXY=' + $env:HTTP_PROXY)
-}
+$proxySaved = $env:HTTPS_PROXY
+if (-not $proxySaved) { $proxySaved = $env:HTTP_PROXY }
 $env:PIP_DISABLE_PIP_VERSION_CHECK = '1'
 $env:PIP_NO_INPUT = '1'
+$env:PIP_PROGRESS_BAR = 'off'
+if ($NoProxy) { $proxySaved = '' }
+
+function Use-Proxy {
+    if ($proxySaved) {
+        $env:HTTP_PROXY  = $proxySaved
+        $env:HTTPS_PROXY = $proxySaved
+        $env:NO_PROXY    = ''
+    }
+}
+function Use-Direct {
+    $env:HTTP_PROXY  = ''
+    $env:HTTPS_PROXY = ''
+    $env:ALL_PROXY   = ''
+    $env:NO_PROXY    = '*'
+}
+
+if ($NoProxy) { Use-Direct; Log 'started in direct mode (proxy disabled)' }
+else { Use-Proxy; Log ('started, proxy=' + $proxySaved) }
 
 $Indexes = @(
     'https://mirrors.aliyun.com/pypi/simple/',
     'https://pypi.tuna.tsinghua.edu.cn/simple',
-    'https://mirrors.ustc.edu.cn/pypi/simple',
-    'https://pypi.org/simple'
+    'https://mirrors.ustc.edu.cn/pypi/simple'
 )
-$Groups = [ordered]@{
-    core = @('numpy', 'rapidocr-onnxruntime>=1.4,<2', 'windows-capture', 'PySide6-Fluent-Widgets', 'pillow')
-    sdk  = @('openai', 'typesafe-sdk', 'anthropic', 'google-genai', 'winsdk')
+
+function Pip-Try([string]$pkg, [string]$idx, [int]$attempt) {
+    $host_ = ([Uri]$idx).Host
+    Log ('install ' + $pkg + ' via ' + $host_ + ' attempt ' + $attempt + ' proxy=' + [bool]$env:HTTPS_PROXY)
+    $a = @('-m', 'pip', 'install', '--no-input', '--timeout', '45', '--retries', '1',
+           '-i', $idx, '--trusted-host', $host_, $pkg)
+    $out = & $VPy @a 2>&1
+    $code = $LASTEXITCODE
+    $out | Select-Object -Last 4 | ForEach-Object { Log ('  ' + $_) }
+    Log ('  exit=' + $code)
+    return ($code -eq 0)
 }
+
+$Packages = @(
+    'numpy',
+    'rapidocr-onnxruntime>=1.4,<2',
+    'windows-capture',
+    'pillow',
+    'PySide6-Fluent-Widgets',
+    'openai',
+    'typesafe-sdk',
+    'anthropic',
+    'google-genai',
+    'winsdk'
+)
 
 Save-Status @{ ok = $false; stage = 'running'; note = 'started' }
-$failed = [ordered]@{}
+$failed = @()
 
-foreach ($gname in $Groups.Keys) {
-    $pkgs = $Groups[$gname]
+foreach ($pkg in $Packages) {
     $done = $false
-    foreach ($idx in $Indexes) {
-        if ($done) { break }
-        $host_ = ([Uri]$idx).Host
-        for ($attempt = 1; $attempt -le 2; $attempt++) {
+
+    # 1) proxy, two passes over the mirror list
+    if (-not $NoProxy) {
+        Use-Proxy
+        foreach ($attempt in 1, 2) {
             if ($done) { break }
-            Log ('group=' + $gname + ' index=' + $host_ + ' attempt=' + $attempt + ' pkgs=' + ($pkgs -join ','))
-            $pipArgs = @('-m', 'pip', 'install', '--no-input', '--no-cache-dir',
-                         '--timeout', '60', '--retries', '2', '-i', $idx, '--trusted-host', $host_) + $pkgs
-            $out = & $VPy @pipArgs 2>&1
-            $code = $LASTEXITCODE
-            $out | Select-Object -Last 6 | ForEach-Object { Log ('  ' + $_) }
-            Log ('  exit=' + $code)
-            if ($code -eq 0) { $done = $true }
-            else { Start-Sleep -Seconds 3 }
+            foreach ($idx in $Indexes) {
+                if ($done) { break }
+                $done = Pip-Try $pkg $idx $attempt
+            }
         }
     }
-    if (-not $done) { $failed[$gname] = $pkgs }
+
+    # 2) direct mirror, slower but clean
+    if (-not $done) {
+        Use-Direct
+        foreach ($idx in $Indexes) {
+            if ($done) { break }
+            $done = Pip-Try $pkg $idx 1
+        }
+    }
+
+    if (-not $done) { $failed += $pkg; Log ('FAILED: ' + $pkg) }
+    else { Log ('OK: ' + $pkg) }
 }
 
-# ---- verification: what actually imports now --------------------------------
+Use-Proxy
 $probe = [ordered]@{}
 foreach ($mod in @('numpy', 'rapidocr_onnxruntime', 'PySide6', 'windows_capture', 'openai',
                    'anthropic', 'google.genai', 'winsdk')) {
@@ -104,7 +145,7 @@ $ocr = ''
 try { $ocr = (& $VPy -c "from rapidocr_onnxruntime import RapidOCR; RapidOCR(); print('OCR_OK')" 2>&1) -join ' ' } catch {}
 Log ('ocr_warmup: ' + $ocr)
 
-$okAll = ($failed.Count -eq 0) -and ($probe['rapidocr_onnxruntime'] -eq $true) -and ($probe['PySide6'] -eq $true)
+$okAll = ($failed.Count -eq 0) -and ($probe['rapidocr_onnxruntime'] -eq $true) -and ($probe['PySide6'] -eq $true) -and ($ocr -match 'OCR_OK')
 Save-Status @{
     ok      = $okAll
     stage   = 'done'
@@ -112,4 +153,4 @@ Save-Status @{
     imports = $probe
     ocr     = $ocr
 }
-Log ('DONE ok=' + $okAll)
+Log ('DONE ok=' + $okAll + ' failed=' + ($failed -join ','))
