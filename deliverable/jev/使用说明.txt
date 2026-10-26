@@ -7,11 +7,14 @@ JevChat + 常驻监控  使用说明
 --------------------------------------------------
 1. 打开微信（E:\新建文件夹\Weixin\Weixin.exe）或 QQ，把要聊的会话点开，
    窗口**不要最小化**（被别的窗口盖住没关系，最小化就截不到画面）。
-2. 程序会自己在登录时启动（计划任务 jev-chat-monitor）。
+2. 记录器会自己在登录时启动（计划任务 jev-chat-monitor，无界面、无弹窗）。
+   它只做"截屏 → OCR → 记录"，不需要 API key，也不会发任何消息。
    没启动就双击：E:\0apps\jev-chat-windows\monitor\start_monitor.ps1
    或者：右键开始菜单 → 运行 → powershell -File "E:\0apps\jev-chat-windows\monitor\start_monitor.ps1"
-3. 悬浮窗出现后，对方来消息 → 程序判断 + 给 3 条候选（需要填 API key 才会自己出候选）。
-   **发送永远手动**，程序只负责把字填进输入框。
+3. 对方来消息 → 记录器把这条写进 logs\events.jsonl（同时写当日摘要 digest-*.md），
+   你在 Arena 里说一句"拉一下"，我就读这些记录并给判断 + 候选回复。
+   原版的悬浮窗（3 条候选 + 一键填入）需要 PySide6；这台机器的系统缺 Qt 要的一个
+   系统函数（Qt6Core.dll WinError 127），所以图形界面暂时用不了，记录不受影响。
 
 二、没有 API key 也能用
 --------------------------------------------------

@@ -36,6 +36,41 @@ E:\0apps\jev-chat-windows\
 QQ 支持也在 `recorder.py` 里：运行期往 `app.chatapps.APPS` 注入一个 `qq` 画像
 （`QQ.exe`，我方气泡 `#0099FF` 判左右），上游文件不改；`JEV_MONITOR_QQ=0` 可关掉。
 
+
+## 2b. 为什么最后是"无界面记录器"（2026-10-26 21:00 更新）
+
+PySide6 **在这台机器上装不起来**：`Qt6Core.dll` 用 ctypes 直接加载就是
+`WinError 127 / 找不到指定的程序`（Qt 6.12、Qt 6.8.3、6.7.3 都一样；系统 VC 运行时已是
+14.44，PySide6 自带的也是 14.44，所有 Qt DLL 都在）。也就是说这台 Windows（build 26200，
+大概率是精简版镜像）缺了 Qt 需要的一个系统导出函数 —— 这是**图形界面**的问题，与采集无关：
+numpy / rapidocr / windows-capture 全部导入正常，OCR 模型预热 `OCR_OK`。
+
+所以监控走 `monitor/headless_watch.py`：直接复用上游的 `app/capture.py` + `app/ocr.py`
+（Windows Graphics Capture 取帧 → 定位消息区 → OCR 分左右气泡 → 去重），**不需要 Qt**，
+也不需要那两把 key。功能对照：
+
+| 能力 | GUI (`app/main.py`) | headless_watch.py |
+|---|---|---|
+| 截自己屏幕上的聊天窗口 | ✅ | ✅ |
+| OCR 分"对方/我" | ✅ | ✅ |
+| 新消息去重、记录 | ✅ | ✅ |
+| 悬浮窗 + 3 条候选 + 填入输入框 | ✅（需 key + 能加载 Qt） | ❌ |
+
+启动方式：默认就是 headless；想试图形界面用
+`monitor\start_monitor.ps1 -Gui`（Qt 修好之后才有意义）。
+
+## 2c. 记录长什么样
+
+`logs/events.jsonl` 一行一条 JSON：
+
+```json
+{"t":"2026-10-26 21:12:03","kind":"msg","chat":"小王","who":"her","name":"","text":"在吗","clock":"21:12"}
+{"t":"...","kind":"chat_switch","chat":"小王"}
+{"t":"...","kind":"heartbeat","frames":812,"messages":37,"chat":"小王"}
+```
+
+`logs/digest-2026-10-26.md` 是人可读的当日摘要，`logs/watcher.log` 是运行日志。
+
 ## 3. 常驻方式
 
 | 计划任务 | 触发 | 作用 |
@@ -87,4 +122,5 @@ powershell -NoProfile -ExecutionPolicy Bypass -File E:\0apps\jev-chat-windows\to
 已验证：venv 可用（3.11.9 + pip 24）、上游克隆完成（`app_head=c6d3a10`）、依赖与 OCR 模型安装、
 计划任务注册、`D:\桌面\测试成功.txt` 写入与回执（hub 链路 10 s 往返）。
 
-待验证：微信/QQ 窗口的实机 `chat_area` 识别与 OCR（需要窗口开着，用 `verify_ui.py` 出报告）。
+待验证：微信/QQ 窗口的实机 `chat_area` 识别与 OCR —— 需要你先把微信（或 QQ）打开、
+点开一个会话、**不要最小化**，然后 agent 跑 `monitor/verify_ui.py` 出报告。
