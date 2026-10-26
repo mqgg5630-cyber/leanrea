@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "23c1ad652abad964cde5837715174c0af61a25ea",
-    "synced_at_utc":  "2026-10-26T12:19:56Z",
-    "synced_at_local":  "2026-10-26 20:19:56",
+    "source_commit":  "909bd6dcd9cc309d498c7054bd0360b1eac2d2c3",
+    "synced_at_utc":  "2026-10-26T12:21:23Z",
+    "synced_at_local":  "2026-10-26 20:21:23",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  21,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  51744,
-                               "stdout":  "[2026-10-26 20:19:07] wheelhouse: resolving the wheel list with pip --dry-run --report",
+                               "elapsed_ms":  1321,
+                               "stdout":  "[2026-10-26 20:19:07] wheelhouse: resolving the wheel list with pip --dry-run --report\r\n[2026-10-26 20:20:38] wheelhouse:     Downloading https://mirrors.aliyun.com/pypi/packages/7d/f6/6e2d96413e4c9dbec12ea584d9e646d602877d4cce3ea669099f959deac6/pillow-13.0.0-cp311-cp311-win_amd64.whl (7.3 MB)\r\n[2026-10-26 20:20:38] wheelhouse:   ERROR: THESE PACKAGES DO NOT MATCH THE HASHES FROM THE REQUIREMENTS FILE. If you have updated the package versions, please update the hashes. Otherwise, examine the package contents carefully; someone may have tampered with them.\r\n[2026-10-26 20:20:38] wheelhouse:       pillow from https://mirrors.aliyun.com/pypi/packages/7d/f6/6e2d96413e4c9dbec12ea584d9e646d602877d4cce3ea669099f959deac6/pillow-13.0.0-cp311-cp311-win_amd64.whl#sha256=d7710eb676e9bb68965cb045be0d333b4c0d7f9dfbaa7fbf121385b1588683d3 (from -r E:\\0apps\\jev-chat-windows\\app\\requirements.txt (line 6)):\r\n[2026-10-26 20:20:38] wheelhouse:           Expected sha256 d7710eb676e9bb68965cb045be0d333b4c0d7f9dfbaa7fbf121385b1588683d3\r\n[2026-10-26 20:20:38] wheelhouse:                Got        9cb2a693cecd2f69df3368f4e628c877927cc9b4b5002172a5f2fcc0ae462b8f\r\n[2026-10-26 20:20:38] wheelhouse:   System.Management.Automation.RemoteException\r\n[2026-10-26 20:20:38] wheelhouse: resolve exit=1\r\n[2026-10-26 20:20:38] wheelhouse: wheels_to_fetch=0\r\n[2026-10-26 20:20:38] wheelhouse: FATAL: nothing to fetch (is the resolver reachable?)\r\nwheelhouse_files=0",
                                "stderr":  ""
                            }
                        ],
