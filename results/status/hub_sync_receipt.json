@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "1f34171e1fc87e008d4b095b160fcfef0cc7a5b9",
-    "synced_at_utc":  "2026-10-26T15:33:58Z",
-    "synced_at_local":  "2026-10-26 23:33:58",
+    "source_commit":  "86afe276310d8998faf31ba90f408be920985f48",
+    "synced_at_utc":  "2026-10-26T15:38:46Z",
+    "synced_at_local":  "2026-10-26 23:38:46",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  118,
+    "synced_files_count":  121,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  6502,
-                               "stdout":  "[2026-10-26 23:30:45] repair: FAILED chunk 67\r\n[2026-10-26 23:31:34] repair: repaired 5/28\r\n[2026-10-26 23:33:00] repair: FAILED chunk 119\r\n[2026-10-26 23:33:20] repair: repaired 10/28\r\nstatus={ \"updated_local\": \"2026-10-26 23:33:20\", \"bad\": 28, \"ok\": false, \"fixed\": 10, \"stage\": \"repair\" }",
+                               "elapsed_ms":  5435,
+                               "stdout":  "[2026-10-26 23:33:20] repair: repaired 10/28\r\n[2026-10-26 23:35:05] repair: repaired 15/28\r\n[2026-10-26 23:37:13] repair: repaired 20/28\r\n[2026-10-26 23:38:45] repair: repaired 25/28\r\nstatus={ \"updated_local\": \"2026-10-26 23:38:45\", \"bad\": 28, \"ok\": false, \"fixed\": 25, \"stage\": \"repair\" }",
                                "stderr":  ""
                            }
                        ],

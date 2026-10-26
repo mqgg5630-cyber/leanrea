@@ -97,3 +97,8 @@
 {"t": "2026-10-26 23:33:03", "ts": 1793028783.32, "kind": "unminimize", "hwnd": 265520}
 {"t": "2026-10-26 23:33:04", "ts": 1793028784.665, "kind": "unminimize", "hwnd": 265520}
 {"t": "2026-10-26 23:33:35", "ts": 1793028815.017, "kind": "heartbeat", "frames": 1295, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:34:35", "ts": 1793028875.056, "kind": "heartbeat", "frames": 1351, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:35:35", "ts": 1793028935.081, "kind": "heartbeat", "frames": 1407, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:36:35", "ts": 1793028995.126, "kind": "heartbeat", "frames": 1463, "messages": 3, "chat": "老婆宝宝", "waiting_frame": true}
+{"t": "2026-10-26 23:37:35", "ts": 1793029055.393, "kind": "heartbeat", "frames": 1520, "messages": 3, "chat": "老婆宝宝"}
+{"t": "2026-10-26 23:38:35", "ts": 1793029115.839, "kind": "heartbeat", "frames": 1577, "messages": 3, "chat": "老婆宝宝"}
