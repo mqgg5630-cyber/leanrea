@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T130313Z",
-    "powershell":  [
-                       "$b=\"E:\\0github\\.git-sync\\leanrea-626378d6-leanrea\"; \"base_dir=\" + (Test-Path $b); if(Test-Path $b){ \u0026 git -C $b fetch origin arena/4d729933-leanrea --quiet 2\u003e\u00261; $co = (\u0026 git -C $b checkout -f -B arena/4d729933-leanrea origin/arena/4d729933-leanrea 2\u003e\u00261) -join \" ;; \"; \"checkout=\" + $co; \u0026 git -C $b branch --set-upstream-to=origin/arena/4d729933-leanrea arena/4d729933-leanrea 2\u003e\u00261 | Out-Null; \"head=\" + ((\u0026 git -C $b rev-parse --abbrev-ref HEAD 2\u003e\u00261) -join \"\") + \" sha=\" + ((\u0026 git -C $b rev-parse --short HEAD 2\u003e\u00261) -join \"\"); \"status=\" + ((\u0026 git -C $b status --porcelain 2\u003e\u00261 | Measure-Object).Count) }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T13:03:01Z",
-    "executed_at_local":  "2026-10-26 21:03:01",
-    "source_commit":  "3e20e43c30e3ace8b618af7c2224e874fe99abd8"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T130408Z",
+  "powershell": [
+    "\"chat_procs=\" + ((Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -match \"^(weixin|wechat|qq|kakaotalk)$\" } | ForEach-Object { $_.ProcessName + \":\" + $_.Id }) -join \",\"); \"watcher=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object {$_.ProcessId}) -join \",\"); (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 3 -Encoding UTF8) -join \" || \"; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 200"
+  ]
 }
