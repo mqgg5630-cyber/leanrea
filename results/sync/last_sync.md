@@ -1,8 +1,8 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-26 12:42 UTC
+- 时间：2026-10-26 12:43 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：feat(jev): hook + tasks + first launch
+- 本轮助手提交：diag(jev): PySide6 QtCore DLL failure
 - 本轮改动文件：
    M results/status/hub_task.json
 
