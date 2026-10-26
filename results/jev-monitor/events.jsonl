@@ -39,3 +39,15 @@
 {"t": "2026-10-26 22:30:50", "ts": 1793025050.06, "kind": "heartbeat", "frames": 35, "messages": 22, "chat": "+g>w<et"}
 {"t": "2026-10-26 22:31:50", "ts": 1793025110.159, "kind": "heartbeat", "frames": 90, "messages": 22, "chat": "+g>w<et"}
 {"t": "2026-10-26 22:36:16", "ts": 1793025376.436, "kind": "heartbeat", "frames": 118, "messages": 22, "chat": "+g>w<et"}
+{"t": "2026-10-26 22:36:27", "ts": 1793025387.72, "kind": "msg", "chat": "+g>w<et", "who": "me", "name": "", "text": "我准备去洗", "clock": "22:36"}
+{"t": "2026-10-26 22:37:16", "ts": 1793025436.777, "kind": "heartbeat", "frames": 176, "messages": 23, "chat": "+g>w<et"}
+{"t": "2026-10-26 22:38:08", "ts": 1793025488.98, "kind": "msg", "chat": "+g>w<et", "who": "her", "name": "", "text": "亲亲", "clock": "22:38"}
+{"t": "2026-10-26 22:38:17", "ts": 1793025497.321, "kind": "heartbeat", "frames": 234, "messages": 24, "chat": "+g>w<et"}
+{"t": "2026-10-26 22:39:17", "ts": 1793025557.712, "kind": "heartbeat", "frames": 292, "messages": 24, "chat": "+g>w<et"}
+{"t": "2026-10-26 22:39:58", "ts": 1793025598.288, "kind": "app_start", "pid": 309496, "argv": "['E:\\\\0apps\\\\jev-chat-windows\\\\monitor\\\\headless_watch.py']", "python": "3.11.9"}
+{"t": "2026-10-26 22:39:59", "ts": 1793025599.581, "kind": "watcher_start", "pid": 309496, "python": "3.11.9"}
+{"t": "2026-10-26 22:39:59", "ts": 1793025599.849, "kind": "capture_start", "app": "wechat", "hwnd": 265520}
+{"t": "2026-10-26 22:40:01", "ts": 1793025601.816, "kind": "chat_switch", "chat": "老婆宝宝"}
+{"t": "2026-10-26 22:40:02", "ts": 1793025602.535, "kind": "msg", "chat": "老婆宝宝", "who": "me", "name": "", "text": "亲亲老婆宝宝", "clock": "22:40"}
+{"t": "2026-10-26 22:40:02", "ts": 1793025602.537, "kind": "msg", "chat": "老婆宝宝", "who": "me", "name": "", "text": "mua", "clock": "22:40"}
+{"t": "2026-10-26 22:40:02", "ts": 1793025602.539, "kind": "msg", "chat": "老婆宝宝", "who": "her", "name": "", "text": "亲亲", "clock": "22:40"}
