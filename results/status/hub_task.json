@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T121145Z",
-  "powershell": [
-    "$env:HTTP_PROXY=\"\"; $env:HTTPS_PROXY=\"\"; $env:NO_PROXY=\"*\"; $urls = @(\"https://mirrors.aliyun.com/pypi/web/simple/rapidocr-onnxruntime/\",\"https://pypi.tuna.tsinghua.edu.cn/simple/rapidocr-onnxruntime/\"); foreach($u in $urls){ try { $sw=[Diagnostics.Stopwatch]::StartNew(); $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 25; \"OK $u status=\" + $r.StatusCode + \" bytes=\" + $r.RawContentLength + \" ms=\" + [int]$sw.Elapsed.TotalMilliseconds } catch { \"FAIL $u :: \" + $_.Exception.Message.Substring(0,[Math]::Min(80,$_.Exception.Message.Length)) } }; \"py_alive=\" + ((Get-Process python -ErrorAction SilentlyContinue | Measure-Object).Count)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T121145Z",
+    "powershell":  [
+                       "$env:HTTP_PROXY=\"\"; $env:HTTPS_PROXY=\"\"; $env:NO_PROXY=\"*\"; $urls = @(\"https://mirrors.aliyun.com/pypi/web/simple/rapidocr-onnxruntime/\",\"https://pypi.tuna.tsinghua.edu.cn/simple/rapidocr-onnxruntime/\"); foreach($u in $urls){ try { $sw=[Diagnostics.Stopwatch]::StartNew(); $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 25; \"OK $u status=\" + $r.StatusCode + \" bytes=\" + $r.RawContentLength + \" ms=\" + [int]$sw.Elapsed.TotalMilliseconds } catch { \"FAIL $u :: \" + $_.Exception.Message.Substring(0,[Math]::Min(80,$_.Exception.Message.Length)) } }; \"py_alive=\" + ((Get-Process python -ErrorAction SilentlyContinue | Measure-Object).Count)"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:11:10Z",
+    "executed_at_local":  "2026-10-26 20:11:10",
+    "source_commit":  "ed4bde3dde91381baaa153b852c0142101654fa8"
 }

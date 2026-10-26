@@ -1,14 +1,13 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 00c04ed50cfa3dc2675c341c19dd762fb288d5c6
-executed_at_utc: 2026-10-26T12:10:39Z
-executed_at_local: 2026-10-26 20:10:39
+source_commit: ed4bde3dde91381baaa153b852c0142101654fa8
+executed_at_utc: 2026-10-26T12:11:10Z
+executed_at_local: 2026-10-26 20:11:10
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 20:07:21] pip_worker: proxy environment cleared for this process
-[2026-10-26 20:07:21] pip_worker: group=core index=mirrors.aliyun.com attempt=1 pkgs=numpy,rapidocr-onnxruntime>=1.4,<2,windows-capture,PySide6-Fluent-Widgets,pillow
-venv_mb=75.7
-pip_tmp_mb=0
+OK https://mirrors.aliyun.com/pypi/web/simple/rapidocr-onnxruntime/ status=200 bytes=24965 ms=575
+OK https://pypi.tuna.tsinghua.edu.cn/simple/rapidocr-onnxruntime/ status=200 bytes=24963 ms=565
+py_alive=2
 
