@@ -217,6 +217,15 @@ def main() -> int:
         stalled = False
         try:
             while cap.alive():
+                # Windows never renders a minimized window, so WGC would deliver
+                # nothing. Upstream's worker does the same: un-minimize without
+                # stealing focus and push it to the bottom of the z-order.
+                try:
+                    if cap_mod.unminimize(hwnd):
+                        log("window was minimized - restored it to the bottom")
+                        recorder.record("unminimize", hwnd=hwnd)
+                except Exception:
+                    pass
                 full = cap.settled()
                 if full is None:
                     # WGC sometimes stops delivering frames (window re-created after a
