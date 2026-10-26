@@ -3,21 +3,21 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "89c0003d8fe372dda70d4f76767575bbc7ef6bb2",
-    "synced_at_utc":  "2026-10-26T11:54:33Z",
-    "synced_at_local":  "2026-10-26 19:54:33",
+    "source_commit":  "5f3693fccfe19565fd011936403f6d7f9a999619",
+    "synced_at_utc":  "2026-10-26T11:55:03Z",
+    "synced_at_local":  "2026-10-26 19:55:03",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  11,
+    "synced_files_count":  13,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1598,
-                               "stdout":  "monitor files: 4\r\n--- install.log tail ---",
-                               "stderr":  "No pyvenv.cfg file\r\nGet-Content : �Ҳ���·����E:\\0github\\apps\\jev-chat-windows\\logs\\install.log������Ϊ��·�������ڡ�\r\n����λ�� C:\\Users\\����\\AppData\\Local\\Temp\\hub_inline_eb6177dc5af1409e9ea7d71ea53669fa.ps1:1 �ַ�: 445\r\n+ ...  tail ---\"; Get-Content \"$Root\\logs\\install.log\" -Tail 8 -Encoding UT ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (E:\\0github\\apps...ogs\\install.log:String) [Get-Content], ItemNotFoundEx \r\n   ception\r\n    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand"
+                               "elapsed_ms":  1540,
+                               "stdout":  "lines 8",
+                               "stderr":  ""
                            }
                        ],
     "copied_targets":  [

@@ -1,0 +1,8 @@
+﻿APPS=
+ROOT_ITEMS=
+LOGS_ITEMS=
+VENV_ITEMS=
+SPIDER_PY=E:\spider E:\spider\python.exe
+VENV_MOD=  File "<string>", line 1     import venv,ensurepip;print(" venv+ensurepip ok\)                                 ^ SyntaxError: unterminated string literal (detected at line 1)
+PY312=  File "<string>", line 1     import venv,ensurepip;print(" 312 venv ok\,                                 ^ SyntaxError: unterminated string literal (detected at line 1)
+PROCS=
