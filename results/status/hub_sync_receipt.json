@@ -3,32 +3,25 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "6ac1109db1a962e3799c08be9a184781c8aed72c",
-    "synced_at_utc":  "2026-10-26T11:46:40Z",
-    "synced_at_local":  "2026-10-26 19:46:40",
+    "source_commit":  "541f775411aaedf0276baff69ae8cafe91226057",
+    "synced_at_utc":  "2026-10-26T11:48:36Z",
+    "synced_at_local":  "2026-10-26 19:48:36",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  6,
-    "tasks_executed_count":  2,
+    "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
-                               "step":  "write_file: D:\\桌面\\测试成功.txt",
-                               "exit_code":  0,
-                               "written_to":  [
-                                                  "D:\\桌面\\测试成功.txt"
-                                              ]
-                           },
-                           {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1316,
-                               "stdout":  "FullName             Length\r\n--------             ------\r\nD:\\����\\���Գɹ�.txt     21",
+                               "elapsed_ms":  18377,
+                               "stdout":  "",
                                "stderr":  ""
                            }
                        ],
     "copied_targets":  [
-                           "D:\\桌面\\测试成功.txt"
+
                        ],
     "mode":  "auto-poll-exec-and-sync-zero-window-v4.0"
 }
