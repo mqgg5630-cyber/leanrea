@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "79d4d57c321ab2aec6bc5e5ddfef6872daa7c8bc",
-    "synced_at_utc":  "2026-10-26T16:18:15Z",
-    "synced_at_local":  "2026-10-27 00:18:15",
+    "source_commit":  "f55fb0af89347e3f465bb03db776366121fb36ae",
+    "synced_at_utc":  "2026-10-26T16:23:44Z",
+    "synced_at_local":  "2026-10-27 00:23:44",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  133,
+    "synced_files_count":  137,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1403,
-                               "stdout":  "[2026-10-27 00:17:06] direct:   gguf mb=186 (round 13)\r\n[2026-10-27 00:17:18] direct:   gguf mb=192 (round 14)\r\n[2026-10-27 00:17:30] direct:   gguf mb=202 (round 15)\r\n[2026-10-27 00:17:46] direct:   gguf mb=224 (round 16)\r\n[2026-10-27 00:17:57] direct:   gguf mb=228 (round 17)\r\n[2026-10-27 00:18:11] direct:   gguf mb=262 (round 18)\r\nstatus={ \"updated_local\": \"2026-10-27 00:11:54\", \"ok\": false, \"model\": \"qwen2.5:3b\", \"stage\": \"pull-direct\" }",
+                               "elapsed_ms":  5294,
+                               "stdout":  "gguf_mb=361\r\n[2026-10-27 00:19:52] direct:   gguf mb=358 (round 26)\r\n[2026-10-27 00:20:03] direct:   gguf mb=361 (round 27)",
                                "stderr":  ""
                            }
                        ],

@@ -1,17 +1,13 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 79d4d57c321ab2aec6bc5e5ddfef6872daa7c8bc
-executed_at_utc: 2026-10-26T16:18:15Z
-executed_at_local: 2026-10-27 00:18:15
+source_commit: f55fb0af89347e3f465bb03db776366121fb36ae
+executed_at_utc: 2026-10-26T16:23:44Z
+executed_at_local: 2026-10-27 00:23:44
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-27 00:17:06] direct:   gguf mb=186 (round 13)
-[2026-10-27 00:17:18] direct:   gguf mb=192 (round 14)
-[2026-10-27 00:17:30] direct:   gguf mb=202 (round 15)
-[2026-10-27 00:17:46] direct:   gguf mb=224 (round 16)
-[2026-10-27 00:17:57] direct:   gguf mb=228 (round 17)
-[2026-10-27 00:18:11] direct:   gguf mb=262 (round 18)
-status={ "updated_local": "2026-10-27 00:11:54", "ok": false, "model": "qwen2.5:3b", "stage": "pull-direct" }
+gguf_mb=361
+[2026-10-27 00:19:52] direct:   gguf mb=358 (round 26)
+[2026-10-27 00:20:03] direct:   gguf mb=361 (round 27)
 
