@@ -1,13 +1,16 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 92018e9a3b4428821a3bb738efd1bf9cd331c700
-executed_at_utc: 2026-10-26T14:48:17Z
-executed_at_local: 2026-10-26 22:48:17
+source_commit: 008b6a561a0f9f87a73c9c7847577cbc394de725
+executed_at_utc: 2026-10-26T14:49:34Z
+executed_at_local: 2026-10-26 22:49:34
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 22:47:50] ollama: downloading OllamaSetup.exe (~1 GB)
-[2026-10-26 22:47:55] ollama:   curl: curl: (35) schannel: next InitializeSecurityContext failed: CRYPT_E_REVOCATION_OFFLINE (0x80092013) - ���ڵ������������ѻ������������޷���������
-[2026-10-26 22:47:55] ollama: FATAL: installer download failed
+[2026-10-26 22:48:57] ollama: downloading (proxy=True)
+[2026-10-26 22:49:08] ollama:   curl: curl: (56) schannel: server closed abruptly (missing close_notify)
+[2026-10-26 22:49:08] ollama: downloading (proxy=False)
+[2026-10-26 22:49:13] ollama:   curl: curl: (56) schannel: server closed abruptly (missing close_notify)
+[2026-10-26 22:49:13] ollama: FATAL: installer download failed
+setup_mb=0
 
