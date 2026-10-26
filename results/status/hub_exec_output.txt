@@ -1,36 +1,14 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 51a3d3d9bc4b56ae25ec76a76e87b684fa7baf51
-executed_at_utc: 2026-10-26T12:43:38Z
-executed_at_local: 2026-10-26 20:43:38
+source_commit: 7a1236535fefc92731e5f3febde5b42fbe6a63c3
+executed_at_utc: 2026-10-26T12:44:09Z
+executed_at_local: 2026-10-26 20:44:09
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-python= 3.11.9 E:\0apps\jev-chat-windows\venv\Scripts\python.exe
-pyside_version= 6.12.0
-pyside_dir= E:\0apps\jev-chat-windows\venv\Lib\site-packages\PySide6
-pkg_has_Qt6Core.dll= True
-pkg_has_Qt6Gui.dll= True
-pkg_has_Qt6Widgets.dll= True
-pkg_has_pyside6.abi3.dll= True
-pkg_has_MSVCP140.dll= True
-pkg_has_VCRUNTIME140.dll= True
-pkg_has_VCRUNTIME140_1.dll= True
-pkg_has_CONCRT140.dll= True
-sys32_vcruntime140.dll= True
-sys32_vcruntime140_1.dll= True
-sys32_msvcp140.dll= True
-sys32_msvcp140_1.dll= True
-sys32_msvcp140_2.dll= True
-sys32_concrt140.dll= True
-QtCore_IMPORT_FAILED
-Traceback (most recent call last):
-  File "E:\0apps\jev-chat-windows\monitor\diag_pyside.py", line 34, in <module>
-    from PySide6 import QtCore
-ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���
-
-dll_count= 170
-dll_sample= Qt63DAnimation.dll, Qt63DCore.dll, Qt63DExtras.dll, Qt63DInput.dll, Qt63DLogic.dll, Qt63DQuick.dll, Qt63DQuickAnimation.dll, Qt63DQuickExtras.dll, Qt63DQuickInput.dll, Qt63DQuickLogic.dll, Qt63DQuickRender.dll, Qt63DQuickScene2D.dll
-plugins_dir= True
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;E:\Docker\DockerDesktop\resources\bin;E:\Go\bin;C:\Program Files\GitHub CLI\;E:\Tailscale\;C:\Users\����\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\����\AppData\Local\Programs\Python\Python312\;C:\Users\����\AppData\Local\Programs\Python\Launcher\;C:\Users\����\.local\bin;C:\Users\����\AppData\Local\agy\bin;C:\Users\����\.cargo\bin;E:\proto\shims;E:\proto\bin;E:\spider;E:\spider\Library\mingw-w64\bin;E:\spider\Library\usr\bin;E:\spider\Library\bin;E:\spider\Scripts;E:\spider\bin;E:\spider\condabin;c:\Users\����\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;c:\Users\����\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;E:\hermes\bin;C:\Users\����\AppData\Local\hermes\bin;C:\Users\����\AppData\Local\Microsoft\WindowsApps;C:\Users\����\AppData\Local\hermes\git\cmd;C:\Users\����\AppData\Local\hermes\git\bin;C:\Users\����\AppData\Local\hermes\git\usr\bin;C:\Users\����\AppData\Local\hermes\node;E:\hermes\git\cmd;E:\hermes\git\bin;E:\hermes\git\usr\bin;E:\hermes\node;C:\Users\����\AppData\Local\Microsoft\WinGet\Packages\BurntSushi.ripgrep.MSVC_Microsoft.Winget.Source_8wekyb3d8bbwe\ripgrep-15.2.0-x86_64-pc-windows-msvc;E:\npm;.;c:\Users\����\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\scripts\noConfigScripts;E:\hermes\hermes-agent\.venv\Scripts;E:\gmx2020.6_GPU\bin;C:\Users\����\go\bin;E:\cargo\bin;E:\0md\1\packmol_18.169_win64;E:\Antigravity\bin;E:\vscode\bin;E:\java\jdk-21.0.12.1+1\bin;C:\Users\����\AppData\Local\Programs\rclone
+clean_path_import=Traceback (most recent call last): ||   File "<string>", line 1, in <module> || ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���
+venv_scripts_vcruntime=False
+where_vcruntime=C:\Windows\System32\vcruntime140.dll
 
