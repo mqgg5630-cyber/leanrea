@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T124820Z",
-  "powershell": [
-    "$py312 = Join-Path $env:LOCALAPPDATA \"Programs\\Python\\Python312\\python.exe\"; \"py312=\" + (Test-Path $py312); $test=\"E:\\0apps\\jev-test-venv\"; if(-not (Test-Path \"$test\\Scripts\\python.exe\")){ & $py312 -m venv $test; \"venv_created=\" + (Test-Path \"$test\\Scripts\\python.exe\") }; $tp=\"$test\\Scripts\\python.exe\"; (& $tp -c \"import sys;print(sys.version.split()[0])\" 2>&1); $uv=\"$env:USERPROFILE\\.local\\bin\\uv.exe\"; $o = (& $uv pip install --python $tp PySide6 --index-url https://mirrors.aliyun.com/pypi/simple/ --no-cache 2>&1 | Select-Object -Last 3) -join \" ;; \"; \"uv=\" + $o; $r = (& $tp -c \"from PySide6 import QtCore; print(chr(79)+chr(75), QtCore.__version__)\" 2>&1) -join \" || \"; \"test312_import=\" + $r"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T124820Z",
+    "powershell":  [
+                       "$py312 = Join-Path $env:LOCALAPPDATA \"Programs\\Python\\Python312\\python.exe\"; \"py312=\" + (Test-Path $py312); $test=\"E:\\0apps\\jev-test-venv\"; if(-not (Test-Path \"$test\\Scripts\\python.exe\")){ \u0026 $py312 -m venv $test; \"venv_created=\" + (Test-Path \"$test\\Scripts\\python.exe\") }; $tp=\"$test\\Scripts\\python.exe\"; (\u0026 $tp -c \"import sys;print(sys.version.split()[0])\" 2\u003e\u00261); $uv=\"$env:USERPROFILE\\.local\\bin\\uv.exe\"; $o = (\u0026 $uv pip install --python $tp PySide6 --index-url https://mirrors.aliyun.com/pypi/simple/ --no-cache 2\u003e\u00261 | Select-Object -Last 3) -join \" ;; \"; \"uv=\" + $o; $r = (\u0026 $tp -c \"from PySide6 import QtCore; print(chr(79)+chr(75), QtCore.__version__)\" 2\u003e\u00261) -join \" || \"; \"test312_import=\" + $r"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:48:59Z",
+    "executed_at_local":  "2026-10-26 20:48:59",
+    "source_commit":  "cdd4f616a91dbc7145eccd7db04afd8edb895b98"
 }
