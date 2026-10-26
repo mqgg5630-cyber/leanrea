@@ -1,36 +1,55 @@
-# JevChat 部署进度（agent 实时记录）
+# JevChat 部署 + 常驻监控 —— 最终状态
 
-更新时间：2026-10-26 20:24（本机时间，UTC+8）
+更新时间：2026-10-26 21:10（本机时间 UTC+8）
 
-## 已完成
+## 一句话
 
-| 项 | 证据 |
+程序已装在 `E:\0apps\jev-chat-windows`，无界面记录器（`headless_watch.py`）已作为计划任务
+`jev-chat-monitor` 常驻运行、登录自启；它每帧截微信/QQ 窗口做离线 OCR，把新消息写进
+`logs\events.jsonl`。**现在只差你把微信（或 QQ）打开、点开一个会话**，它立刻开始记录。
+
+## 已完成并验证
+
+| 项 | 结果 |
 |---|---|
-| git-sync-hub 链路可用 | `D:\桌面\测试成功.txt` 写入成功（21 字节，UTF-8），往返 10 s，`tasks_all_ok=true`（commit `3214c55`） |
-| 本机环境探明 | Win11 build 26200 / PS 5.1 / Python 3.11.9 (`E:\spider\python.exe`) / git 2.54 / node 22 / E: 剩 267 GB / PyPI+镜像可达 |
-| 微信位置确认 | `E:\新建文件夹\Weixin\Weixin.exe`（Weixin 4.x，进程名 `weixin.exe`）；QQ 在 `E:\Program Files\QQ.exe` |
-| 部署根目录 | **`E:\0apps\jev-chat-windows`**（`E:\0github` 会被 hub 清理逻辑清空，已踩过并绕开） |
-| 上游源码 | 克隆完成 `app_head=c6d3a10`，`main.py` 已注入 `# jev-monitor:hook` |
-| venv | Python 3.11.9 + pip 24.0（`E:\0apps\jev-chat-windows\venv`） |
-| 依赖 | 安装中：numpy 2.4.6、pillow 已就位；rapidocr / PySide6 / SDK 排队 |
-| 计划任务 | `jev-chat-monitor`（登录自启，单实例）已注册；`jev-chat-sync` 按"仅本地留档"要求**不注册** |
+| git-sync-hub 通道 | `D:\桌面\测试成功.txt` 21 字节写入成功、10 s 回执（`tasks_all_ok=true`） |
+| 部署根目录 | `E:\0apps\jev-chat-windows`（`E:\0github` 会被 hub 清理，已绕开） |
+| 上游源码 | `app_head=c6d3a10`，`main.py` 已注入 `# jev-monitor:hook` |
+| venv | Python 3.11.9 + uv 安装全套依赖（1041 MB），`numpy / rapidocr / windows_capture / openai / anthropic / google.genai / winsdk` 全部 import OK，OCR 预热 `OCR_OK` |
+| 记录器 | `headless_watch.py` 运行中（pythonw，无窗口），命名互斥体保证单实例 |
+| 计划任务 | `jev-chat-monitor`（登录自启 + 单实例），`jev-chat-sync` **未注册**（按你选的"只本地留档"） |
+| 拉取闭环 | `pull_events.ps1` → `results/jev-monitor/pull-*.md` → hub 推回 agent（已跑通两次） |
+| 分支 | 远端只剩 `main` + `arena/4d729933-leanrea`（旧的 `arena/626378d6-leanrea` 已删除，hub 基底仓已切到本分支并验证仍可工作） |
+| 桌面 | `D:\桌面\测试成功.txt`、`D:\桌面\JevChat-使用说明.txt` |
 
-## 正在做
+## 关键发现（踩坑记录）
 
-依赖安装（直连国内镜像；本机 v2rayN 代理 `127.0.0.1:18088` 会把大 wheel 传坏，
-curl 单连接却正常，所以 pip 走代理必失败 —— 已改为直连 + 失败重试）。
-日志：`E:\0apps\jev-chat-windows\logs\pip.log`。
+1. **`E:\0github` 不能放东西** —— hub 每轮 `Invoke-ResultsOnlyCleanup` 会把除 `.git-sync`/`results`
+   之外的全部删掉（第一次部署的 venv 就是这样消失的）。
+2. **v2rayN 代理（127.0.0.1:18088）会传坏大 wheel** —— pip 反复
+   `THESE PACKAGES DO NOT MATCH THE HASHES`；同样的 URL 用 `curl --http1.1 -x` 拿到的
+   sha256 却是对的。直连国内镜像干净但只有 ~200 KB/s。最后用 **uv（并行下载）** 2 分钟装完。
+3. **PySide6 在这台机器加载不了** —— `Qt6Core.dll` 直接 ctypes 加载就是
+   `WinError 127（找不到指定的程序）`；6.12 / 6.8.3 / 6.7.3 都一样，系统与包内 VC 运行时都是
+   14.44，Qt DLL 齐全。结论：这台 Windows（build 26200，疑似精简镜像）缺 Qt 依赖的系统导出。
+   所以监控走**无 Qt 的 headless 记录器**（采集/OCR 全部正常），图形悬浮窗暂时不可用。
+4. `pull_events.ps1` 里的函数名 `R` 撞上了 PowerShell 内置别名 `r`（Invoke-History），
+   导致快照文件为空 —— 已改名 `Rep`。
 
-## 待办
+## 下一步（需要你配合 1 分钟）
 
-1. 依赖装完 → 重跑 `install.ps1` 的收尾阶段（导入自检、OCR 模型预热、任务注册）
-2. 启动程序（`Start-ScheduledTask jev-chat-monitor`）→ 弹设置页（先关掉，没 key 也能采集）
-3. `verify_ui.py` 实机验证：微信/QQ 窗口的消息区识别 + OCR（需要窗口开着、不最小化）
-4. 拉取第一份记录 `pull_events.ps1` → 我给出分析
+1. 打开微信：`E:\新建文件夹\Weixin\Weixin.exe`（或 QQ），**点开一个正在聊的会话**；
+   窗口不要最小化（被别的窗口盖住没问题）。
+2. 让对方发一条消息（或自己发一条也行，能触发 OCR 就有数据）。
+3. 回到 Arena 说「拉一下」，我会：
+   - 用 `verify_ui.py` 验证消息区/气泡识别（微信已知可用；**QQ 的布局需要在实机上校准**）
+   - 把记录拉上来，给出意图判断 + 3 条候选回复，写到
+     `results/jev-monitor/analysis-*.md`，并镜像到本机
+     `E:\0github\results\leanrea-4d729933-leanrea\jev-monitor\`
 
-## 已知限制
+## 说明
 
-- 没有 `JEV_API_KEY` / `LLM_API_KEY`：程序自己不产出候选，采集与记录照常；
-  分析由 agent 侧完成（拉取 → 分析 → `results/jev-monitor/analysis-*.md` → hub 镜像回本机）。
-- QQ 适配是运行期注入的画像（我方气泡 `#0099FF`），消息区启发式按微信调的，需要实机校准。
-- 微信窗口**不能被最小化**（Windows 不给最小化窗口出帧），被别的窗口盖住没问题。
+- 没有 `JEV_API_KEY` / `LLM_API_KEY`：程序自己不产出候选（它只会记录），分析由 agent 完成。
+  想恢复原版悬浮窗（3 条候选 + 一键填入）需要两件事：这台机器能加载 Qt，以及两把 key。
+- 想改成"后台每 5 分钟自动推送到仓库"：运行
+  `E:\0apps\jev-chat-windows\tools\install_tasks.ps1 -WithSync`（默认关闭）。
