@@ -1,19 +1,12 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 9f5166a41610370c70a167270ba6867b48e790ad
-executed_at_utc: 2026-10-26T15:56:05Z
-executed_at_local: 2026-10-26 23:56:05
+source_commit: 909388110aff0da499a37538b732928ab1050e37
+executed_at_utc: 2026-10-26T16:04:52Z
+executed_at_local: 2026-10-27 00:04:52
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-已找�?Ollama [Ollama.Ollama] 版本 0.40.11 || 此应用程序由其所有者授权给你�? || Microsoft 对第三方程序包概不负责，也不向第三方程序包授予任何许可证�? || 正在下载 https://github.com/ollama/ollama/releases/download/v0.40.11/OllamaSetup.exe
-exe=False
-[stderr] try : �޷�����try����ʶ��Ϊ cmdlet���������ű��ļ�������г�������ơ��������Ƶ�ƴд���������·������ȷ��·����ȷ��Ȼ����
-��һ�Ρ�
-����λ�� C:\Users\����\AppData\Local\Temp\hub_inline_40b34cc54f784f3191d3b2f71322072c.ps1:1 �ַ�: 209
-+ ... :LOCALAPPDATA\Programs\Ollama\ollama.exe"); "service=" + (try { (Invo ...
-+                                                               ~~~
-    + CategoryInfo          : ObjectNotFound: (try:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
+正在下载 https://github.com/ollama/ollama/releases/download/v0.40.11/OllamaSetup.exe || 已成功验证安装程序哈�? || 正在启动程序包安�?.. || 已成功安�?
+exe=True
 
