@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T145407Z",
-    "powershell":  [
-                       "function Speed([string]$label,[string]$u,[string]$px){ $a=@(\"-sS\",\"-L\",\"--http1.1\",\"--ssl-no-revoke\",\"-k\",\"-r\",\"0-20971519\",\"--connect-timeout\",\"15\",\"--max-time\",\"60\",\"-o\",\"NUL\",\"-w\",\"%{speed_download}\"); if($px){ $a=@(\"-x\",$px)+$a }; $sw=[Diagnostics.Stopwatch]::StartNew(); $r=(\u0026 curl.exe @a $u 2\u003e\u00261) -join \" \"; $sec=[int]$sw.Elapsed.TotalSeconds; $kb=[int]([double]($r -replace \"[^0-9\\.].*\",\"\")/1KB); \"$label =\u003e \" + $kb + \" KB/s in \" + $sec + \"s\" }; $px=\"http://127.0.0.1:18088\"; $gh=\"https://github.com/ollama/ollama/releases/download/v0.40.11/OllamaSetup.exe\"; Speed \"proxy-github\" $gh $px; Speed \"direct-github\" $gh \"\"; Speed \"ghproxy.net\" (\"https://ghproxy.net/\" + $gh) \"\"; Speed \"gh-proxy.com\" (\"https://gh-proxy.com/\" + $gh) \"\"; Speed \"hf-mirror\" \"https://hf-mirror.com/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf\" \"\""
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:54:25Z",
-    "executed_at_local":  "2026-10-26 22:54:25",
-    "source_commit":  "f54032eeef28e1b779853e93e1427d053fd70dcd"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T145542Z",
+  "powershell": [
+    "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*fetch_ollama*\" -or $_.CommandLine -like \"*install_ollama*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; Copy-Item -Path \"code\\jev\\fetch_ollama.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\fetch_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 60; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 6 -Encoding UTF8"
+  ]
 }
