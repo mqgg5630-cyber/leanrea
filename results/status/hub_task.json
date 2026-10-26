@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T120143Z",
-    "powershell":  [
-                       "$Root=\"E:\\0apps\\jev-chat-windows\"; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; $env:PIP_DISABLE_PIP_VERSION_CHECK=\"1\"; foreach($idx in @(\"https://mirrors.aliyun.com/pypi/simple/\",\"https://pypi.tuna.tsinghua.edu.cn/simple\",\"https://mirrors.ustc.edu.cn/pypi/simple\")){ $r = (\u0026 $VPy -m pip install --no-input --no-cache-dir --timeout 15 --retries 1 -i $idx --trusted-host ((New-Object Uri $idx).Host) numpy 2\u003e\u00261 | Select-Object -Last 2) -join \" ;; \"; \"IDX $idx =\u003e exit=$LASTEXITCODE :: $r\"; if($LASTEXITCODE -eq 0){ break } }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:02:24Z",
-    "executed_at_local":  "2026-10-26 20:02:24",
-    "source_commit":  "0cc6c3d46d20d239fa62327ab26e457a9ee4139c"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T120353Z",
+  "powershell": [
+    "$Root=\"E:\\0apps\\jev-chat-windows\"; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"$Root\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"$Root\\tools\\install.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 30; Get-Content \"$Root\\logs\\install.log\" -Tail 6 -Encoding UTF8"
+  ]
 }

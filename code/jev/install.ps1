@@ -29,7 +29,7 @@ $Tools   = Join-Path $Root 'tools'
 $Monitor = Join-Path $Root 'monitor'
 $LogFile = Join-Path $Logs 'install.log'
 $Status  = Join-Path $Logs 'install_status.json'
-$Mirror  = 'https://pypi.tuna.tsinghua.edu.cn/simple'
+$Indexes = @('https://mirrors.aliyun.com/pypi/simple/', 'https://pypi.tuna.tsinghua.edu.cn/simple', 'https://mirrors.ustc.edu.cn/pypi/simple', 'https://pypi.org/simple')
 
 foreach ($d in @($Root, $Logs, $Tools)) {
     if (-not (Test-Path -LiteralPath $d)) { New-Item -ItemType Directory -Path $d -Force | Out-Null }
@@ -138,18 +138,19 @@ Log '== stage 3: pip install (this is the slow one, few hundred MB)'
 $env:PIP_DISABLE_PIP_VERSION_CHECK = '1'
 $env:PIP_NO_INPUT = '1'
 $req = Join-Path $AppDir 'requirements.txt'
-$pipArgs = @('-m', 'pip', 'install', '--no-input', '-r', $req)
-Log 'pip install -r requirements.txt (mirror: tuna)'
-$out = & $VPy @pipArgs -i $Mirror 2>&1
-$code = $LASTEXITCODE
-$out | ForEach-Object { Log ('  ' + $_) }
-if ($code -ne 0) {
-    Log ('mirror install failed (exit ' + $code + ') - retrying against pypi.org')
-    $out = & $VPy @pipArgs 2>&1
+$pipArgs = @('-m', 'pip', 'install', '--no-input', '--no-cache-dir', '--timeout', '40', '--retries', '2', '-r', $req)
+$code = 1
+$usedIndex = ''
+foreach ($idx in $Indexes) {
+    $host_ = ([Uri]$idx).Host
+    Log ('pip install -r requirements.txt via ' + $idx)
+    $out = & $VPy @pipArgs -i $idx --trusted-host $host_ 2>&1
     $code = $LASTEXITCODE
-    $out | ForEach-Object { Log ('  ' + $_) }
+    $out | Select-Object -Last 25 | ForEach-Object { Log ('  ' + $_) }
+    if ($code -eq 0) { $usedIndex = $idx; Log ('pip ok via ' + $idx); break }
+    Log ('index failed (exit ' + $code + ') - next index')
 }
-Log ('pip_exit=' + $code)
+Log ('pip_exit=' + $code + ' index=' + $usedIndex)
 
 # ---------------------------------------------------------------- 4. monitor hook
 Log '== stage 4: install the monitor hook into app/main.py'

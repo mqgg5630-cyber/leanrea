@@ -7,6 +7,7 @@
     Runs as the current user (no admin needed, GUI lands in the user's session).
     ASCII only.
 #>
+param([switch]$WithSync)
 $ErrorActionPreference = 'Continue'
 
 $Root    = 'E:\0apps\jev-chat-windows'
@@ -43,7 +44,16 @@ try {
     Log ('register jev-chat-monitor failed: ' + $_.Exception.Message)
 }
 
-# ---------------------------------------------------------------- sync task
+# ---------------------------------------------------------------- sync task (opt-in)
+if (-not $WithSync) {
+    # Default is LOCAL ONLY: recorder logs stay on this machine. Nothing is
+    # pushed to GitHub in the background; the agent pulls a snapshot on demand
+    # through a git-sync-hub task instead.
+    try {
+        Unregister-ScheduledTask -TaskName 'jev-chat-sync' -Confirm:$false -ErrorAction SilentlyContinue
+        Log 'jev-chat-sync not registered (local-only mode; pass -WithSync to enable publishing)'
+    } catch {}
+} else {
 try {
     $action2 = New-ScheduledTaskAction -Execute $ps `
                 -Argument ('-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "' + $Sync + '"')
@@ -57,6 +67,7 @@ try {
 } catch {
     Log ('register jev-chat-sync failed: ' + $_.Exception.Message)
 }
+}
 
 # ---------------------------------------------------------------- report + kick
 foreach ($n in @('jev-chat-monitor', 'jev-chat-sync')) {
@@ -65,9 +76,11 @@ foreach ($n in @('jev-chat-monitor', 'jev-chat-sync')) {
         Log ('task ' + $n + ' state=' + $t.State)
     } catch { Log ('task ' + $n + ' missing') }
 }
-try {
-    Start-ScheduledTask -TaskName 'jev-chat-sync'
-    Log 'triggered one sync run now'
-} catch { Log ('start jev-chat-sync failed: ' + $_.Exception.Message) }
+if ($WithSync) {
+    try {
+        Start-ScheduledTask -TaskName 'jev-chat-sync'
+        Log 'triggered one sync run now'
+    } catch { Log ('start jev-chat-sync failed: ' + $_.Exception.Message) }
+}
 
 Write-Output 'tasks done'

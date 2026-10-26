@@ -187,6 +187,37 @@ def _on_analyze(*args, **kwargs):
     return result
 
 
+# --------------------------------------------------------------------------- QQ
+def _qq_me(bg) -> bool:
+    """QQ's own bubble is #0099FF: blue clearly above red and green.
+    The other side is white, the chat ground is light grey, so both stay clear."""
+    try:
+        b, g, r = int(bg[2]), int(bg[1]), int(bg[0])
+    except (IndexError, TypeError, ValueError):
+        return False
+    return bool(b > 180 and b > r + 120 and b > g)
+
+
+def add_qq_support() -> bool:
+    """Register QQ (QQ.exe) as a chat app at runtime, so the upstream checkout is
+    never edited. Same OCR path as WeChat; only the "my bubble" rule differs.
+    Disable with JEV_MONITOR_QQ=0."""
+    if os.environ.get("JEV_MONITOR_QQ", "1") == "0":
+        return False
+    try:
+        from app import chatapps
+        if "qq" in chatapps.APPS:
+            return True
+        chatapps.APPS["qq"] = chatapps.ChatApp(
+            key="qq", label="QQ", exes=("qq.exe",), main_title="QQ",
+            skip_titles=(), ocr="rapidocr", join="", is_me=_qq_me)
+        _note("qq profile injected")
+        return True
+    except Exception:
+        _note("qq profile failed: " + " ".join(traceback.format_exc().split())[-300:])
+        return False
+
+
 def install(root: str | None = None) -> bool:
     """Patch the running app once. Safe to call twice. Returns True when active."""
     global _ROOT, _LOG_DIR, _ORIG_ANALYZE
@@ -229,6 +260,8 @@ def install(root: str | None = None) -> bool:
     except Exception:
         _note("engine patch failed: " + " ".join(traceback.format_exc().split())[-300:])
         return False
+
+    add_qq_support()
 
     record("app_start", pid=os.getpid(), argv=_short(sys.argv, 300),
            python=sys.version.split()[0])
