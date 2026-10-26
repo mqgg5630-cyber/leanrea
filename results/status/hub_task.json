@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T120750Z",
-    "powershell":  [
-                       "$Root=\"E:\\0apps\\jev-chat-windows\"; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip*\" -and $_.CommandLine -like \"*jev-chat-windows*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"$Root\\tools\\\" -Force; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"$Root\\monitor\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"$Root\\tools\\pip_worker.ps1\",\"-NoProxy\" -WindowStyle Hidden; Start-Sleep -Seconds 20; Get-Content \"$Root\\logs\\pip.log\" -Tail 5 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:07:40Z",
-    "executed_at_local":  "2026-10-26 20:07:40",
-    "source_commit":  "9ca95727637c081f72c35be03fa3994288532848"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T120859Z",
+  "powershell": [
+    "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pip.log\" -Tail 8 -Encoding UTF8; \"venv_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\jev-chat-windows\\venv\" -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1)"
+  ]
 }
