@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "5d3e981a71e3b367c2e4feffbbcca784a855c350",
-    "synced_at_utc":  "2026-10-26T14:56:04Z",
-    "synced_at_local":  "2026-10-26 22:56:04",
+    "source_commit":  "0cd6efaf0635c7bf9b384b034c97128f4eaa4704",
+    "synced_at_utc":  "2026-10-26T14:57:57Z",
+    "synced_at_local":  "2026-10-26 22:57:57",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  87,
+    "synced_files_count":  88,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  64361,
-                               "stdout":  "[2026-10-26 22:55:09] fetch_ollama: installer bytes=1661482184 (1585 MB)\r\n[2026-10-26 22:55:14] fetch_ollama: expected sha256=87309d23b423abeae1d8df2f98df95f94bf35659debfdf3761d65b7b62a75508\r\n[2026-10-26 22:55:14] fetch_ollama: chunks=199 x 8 MB, workers=4\r\n[2026-10-26 22:55:14] fetch_ollama: workers started - this takes a few minutes\r\n[2026-10-26 22:55:14] fetch_ollama: chunks on disk=0 of 199\r\n[2026-10-26 22:55:14] fetch_ollama: FATAL: missing chunks",
+                               "elapsed_ms":  78318,
+                               "stdout":  "[2026-10-26 22:56:51] fetch_ollama: expected sha256=87309d23b423abeae1d8df2f98df95f94bf35659debfdf3761d65b7b62a75508\r\n[2026-10-26 22:56:51] fetch_ollama: chunks=199 x 8 MB, workers=4\r\n[2026-10-26 22:56:52] fetch_ollama: started 4 download jobs\r\n[2026-10-26 22:56:53] fetch_ollama: downloaded 0 / 1585 MB (0/199 chunks)\r\n[2026-10-26 22:57:03] fetch_ollama: downloaded 1 / 1585 MB (3/199 chunks)\r\nchunks=73.0744018554688",
                                "stderr":  ""
                            }
                        ],
