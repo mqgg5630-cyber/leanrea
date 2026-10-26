@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T121529Z",
-    "powershell":  [
-                       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip_worker*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*-m pip*jev-chat-windows*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\pip_worker.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 45; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pip.log\" -Tail 10 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:15:43Z",
-    "executed_at_local":  "2026-10-26 20:15:43",
-    "source_commit":  "9329047f7ddef9bb62298370b79865b538656272"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T121653Z",
+  "powershell": [
+    "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip_worker*\" -or $_.CommandLine -like \"*-m pip*jev-chat-windows*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; $url=\"https://mirrors.aliyun.com/pypi/packages/ba/12/1e5497183bdbe782dbb91bad1d0d2297dba4d2831b2652657f7517bfc6df/rapidocr_onnxruntime-1.4.4-py3-none-any.whl\"; $f1=\"$env:TEMP\\r_proxy.whl\"; $sw=[Diagnostics.Stopwatch]::StartNew(); & curl.exe -sS -x http://127.0.0.1:18088 --http1.1 -o $f1 $url; \"proxy_ms=\" + [int]$sw.Elapsed.TotalMilliseconds + \" size=\" + (Get-Item $f1 -ErrorAction SilentlyContinue).Length; if(Test-Path $f1){ \"proxy_sha=\" + (Get-FileHash $f1 -Algorithm SHA256).Hash.ToLower() }; $f2=\"$env:TEMP\\r_direct.whl\"; $sw2=[Diagnostics.Stopwatch]::StartNew(); & curl.exe -sS --noproxy \"*\" -o $f2 $url; \"direct_ms=\" + [int]$sw2.Elapsed.TotalMilliseconds + \" size=\" + (Get-Item $f2 -ErrorAction SilentlyContinue).Length; if(Test-Path $f2){ \"direct_sha=\" + (Get-FileHash $f2 -Algorithm SHA256).Hash.ToLower() }; \"expected=971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf\""
+  ]
 }
