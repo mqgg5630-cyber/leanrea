@@ -1,16 +1,15 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 20700f99f539d6aa6e96cba63f39ff4f51534fb0
-executed_at_utc: 2026-10-26T15:06:44Z
-executed_at_local: 2026-10-26 23:06:44
+source_commit: bd1b9b4d98dd7c37c22a93e2478898f625e43bd4
+executed_at_utc: 2026-10-26T15:07:23Z
+executed_at_local: 2026-10-26 23:07:23
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-chunks_mb=586
-ollama_status={ "updated_local": "2026-10-26 23:06:04", "ok": false, "total_mb": 1585, "mb": 578, "stage": "download" } 
-setup_mb=90
-[2026-10-26 23:04:03] fetch_ollama: downloaded 458 / 1585 MB (63/199 chunks)
-[2026-10-26 23:05:04] fetch_ollama: downloaded 524 / 1585 MB (71/199 chunks)
-[2026-10-26 23:06:04] fetch_ollama: downloaded 578 / 1585 MB (77/199 chunks)
+watcher_procs=307960,309496
+chat_procs=Weixin,Weixin,Weixin,Weixin,Weixin
+weixin_windows=΢��/215672
+--- watcher.log ---
+[2026-10-26 22:39:59] watcher: started pid=309496 python=3.11.9 || [2026-10-26 22:39:59] watcher: capturing app=wechat hwnd=265520 || [2026-10-26 22:40:01] watcher: conversation: ���ű��� || [2026-10-26 22:40:02] watcher: msg [���ű���] me: �������ű��� || [2026-10-26 22:40:02] watcher: msg [���ű���] me: mua || [2026-10-26 22:40:02] watcher: msg [���ű���] her: ����
 

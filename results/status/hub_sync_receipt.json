@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "20700f99f539d6aa6e96cba63f39ff4f51534fb0",
-    "synced_at_utc":  "2026-10-26T15:06:45Z",
-    "synced_at_local":  "2026-10-26 23:06:45",
+    "source_commit":  "bd1b9b4d98dd7c37c22a93e2478898f625e43bd4",
+    "synced_at_utc":  "2026-10-26T15:07:23Z",
+    "synced_at_local":  "2026-10-26 23:07:23",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  94,
+    "synced_files_count":  95,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  5227,
-                               "stdout":  "chunks_mb=586\r\nollama_status={ \"updated_local\": \"2026-10-26 23:06:04\", \"ok\": false, \"total_mb\": 1585, \"mb\": 578, \"stage\": \"download\" } \r\nsetup_mb=90\r\n[2026-10-26 23:04:03] fetch_ollama: downloaded 458 / 1585 MB (63/199 chunks)\r\n[2026-10-26 23:05:04] fetch_ollama: downloaded 524 / 1585 MB (71/199 chunks)\r\n[2026-10-26 23:06:04] fetch_ollama: downloaded 578 / 1585 MB (77/199 chunks)",
+                               "elapsed_ms":  1858,
+                               "stdout":  "watcher_procs=307960,309496\r\nchat_procs=Weixin,Weixin,Weixin,Weixin,Weixin\r\nweixin_windows=΢��/215672\r\n--- watcher.log ---\r\n[2026-10-26 22:39:59] watcher: started pid=309496 python=3.11.9 || [2026-10-26 22:39:59] watcher: capturing app=wechat hwnd=265520 || [2026-10-26 22:40:01] watcher: conversation: ���ű��� || [2026-10-26 22:40:02] watcher: msg [���ű���] me: �������ű��� || [2026-10-26 22:40:02] watcher: msg [���ű���] me: mua || [2026-10-26 22:40:02] watcher: msg [���ű���] her: ����",
                                "stderr":  ""
                            }
                        ],
