@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T144117Z",
-    "powershell":  [
-                       "\u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 300 | Out-Null; \"pulled\""
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:40:57Z",
-    "executed_at_local":  "2026-10-26 22:40:57",
-    "source_commit":  "b46d8f97de0a165ed56bdc5bde3da7530cdc5361"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T144213Z",
+  "powershell": [
+    "$d=[Environment]::GetFolderPath(\"Desktop\"); Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination $d -Force; $m=\"E:\\0github\\results\\leanrea-4d729933-leanrea\\jev-monitor\"; New-Item -ItemType Directory -Force -Path $m | Out-Null; Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination $m -Force; \"desktop=\" + (Test-Path (Join-Path $d \"analysis-20261026-2236.md\")); \"mirror=\" + (Test-Path (Join-Path $m \"analysis-20261026-2236.md\"))"
+  ]
 }
