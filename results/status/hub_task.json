@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T144822Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\install_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 30; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T144822Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\install_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 30; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T14:48:17Z",
+    "executed_at_local":  "2026-10-26 22:48:17",
+    "source_commit":  "92018e9a3b4428821a3bb738efd1bf9cd331c700"
 }

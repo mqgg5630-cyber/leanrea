@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "2bd195adef99f3c07874379e30bbebc82414f5e3",
-    "synced_at_utc":  "2026-10-26T14:46:49Z",
-    "synced_at_local":  "2026-10-26 22:46:49",
+    "source_commit":  "92018e9a3b4428821a3bb738efd1bf9cd331c700",
+    "synced_at_utc":  "2026-10-26T14:48:18Z",
+    "synced_at_local":  "2026-10-26 22:48:18",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  84,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  8526,
-                               "stdout":  "lines=13",
+                               "elapsed_ms":  31540,
+                               "stdout":  "[2026-10-26 22:47:50] ollama: downloading OllamaSetup.exe (~1 GB)\r\n[2026-10-26 22:47:55] ollama:   curl: curl: (35) schannel: next InitializeSecurityContext failed: CRYPT_E_REVOCATION_OFFLINE (0x80092013) - ���ڵ������������ѻ������������޷���������\r\n[2026-10-26 22:47:55] ollama: FATAL: installer download failed",
                                "stderr":  ""
                            }
                        ],
