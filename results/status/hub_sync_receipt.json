@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "c9f198f45817968f5b38f9e1779eb570737bfccc",
-    "synced_at_utc":  "2026-10-26T12:56:22Z",
-    "synced_at_local":  "2026-10-26 20:56:22",
+    "source_commit":  "f53974d40a9e2f21f302f881dcba1f4445550d9b",
+    "synced_at_utc":  "2026-10-26T12:56:53Z",
+    "synced_at_local":  "2026-10-26 20:56:53",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  45,
+    "synced_files_count":  46,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  2215,
-                               "stdout":  "spider_PySide6 =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027PySide6\u0027\r\nspider_qfluentwidgets =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027qfluentwidgets\u0027\r\nspider_rapidocr_onnxruntime =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027rapidocr_onnxruntime\u0027\r\nspider_windows_capture =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027windows_capture\u0027\r\nspider_numpy =\u003e 1.26.4\r\nspider_qtcore=Traceback (most recent call last): ||   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e || ModuleNotFoundError: No module named \u0027PySide6\u0027\r\npyd_sample=Qt3DAnimation.pyd,Qt3DCore.pyd,Qt3DExtras.pyd,Qt3DInput.pyd,Qt3DLogic.pyd,Qt3DRender.pyd\r\nqtcore_pyd=True",
+                               "elapsed_ms":  1469,
+                               "stdout":  "[2026-10-26 20:52:35] fix_pyside:     ╰─�?peer closed connection without sending TLS close_notify:\r\n[2026-10-26 20:52:35] fix_pyside:         https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof\r\n[2026-10-26 20:52:35] fix_pyside:   System.Management.Automation.RemoteException\r\n[2026-10-26 20:52:35] fix_pyside:   hint: `pyside6-essentials` (v6.8.3) was included because `pyside6` (v6.8.3) depends on `pyside6-essentials`\r\n[2026-10-26 20:52:35] fix_pyside:   uv exit=1\r\n[2026-10-26 20:52:35] fix_pyside: trying PySide6 6.7.3\r\n[2026-10-26 20:55:11] fix_pyside:     ╰─�?peer closed connection without sending TLS close_notify:\r\n[2026-10-26 20:55:11] fix_pyside:         https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof\r\n[2026-10-26 20:55:11] fix_pyside:   System.Management.Automation.RemoteException\r\n[2026-10-26 20:55:11] fix_pyside:   hint: `pyside6-essentials` (v6.7.3) was included because `pyside6` (v6.7.3) depends on `pyside6-essentials`\r\n[2026-10-26 20:55:11] fix_pyside:   uv exit=1\r\n[2026-10-26 20:55:11] fix_pyside: trying PySide6 6.6.3.1",
                                "stderr":  ""
                            }
                        ],
