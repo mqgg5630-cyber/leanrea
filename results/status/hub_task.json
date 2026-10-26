@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T151012Z",
-  "powershell": [
-    "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 200 | Out-Null; \"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T151012Z",
+    "powershell":  [
+                       "\u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 200 | Out-Null; \"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0)"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T15:09:47Z",
+    "executed_at_local":  "2026-10-26 23:09:47",
+    "source_commit":  "c28f1c7688d5a09166ee6405b8438d8ab6a5aa9b"
 }

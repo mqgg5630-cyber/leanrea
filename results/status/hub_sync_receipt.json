@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "7667fd94d3d13255ba38a900ea6d659f5fedb3ba",
-    "synced_at_utc":  "2026-10-26T15:08:28Z",
-    "synced_at_local":  "2026-10-26 23:08:28",
+    "source_commit":  "c28f1c7688d5a09166ee6405b8438d8ab6a5aa9b",
+    "synced_at_utc":  "2026-10-26T15:09:47Z",
+    "synced_at_local":  "2026-10-26 23:09:47",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  96,
+    "synced_files_count":  98,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  29767,
-                               "stdout":  "watchers=93748,92020\r\n--- log ---\r\n[2026-10-26 22:40:02] watcher: msg [���ű���] me: �������ű��� || [2026-10-26 22:40:02] watcher: msg [���ű���] me: mua || [2026-10-26 22:40:02] watcher: msg [���ű���] her: ���� || [2026-10-26 23:08:06] watcher: started pid=92020 python=3.11.9 || [2026-10-26 23:08:06] watcher: capturing app=wechat hwnd=265520\r\n--- chunks_mb ---\r\n686",
+                               "elapsed_ms":  4860,
+                               "stdout":  "chunks_mb=763",
                                "stderr":  ""
                            }
                        ],
