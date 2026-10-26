@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T130446Z",
-    "powershell":  [
-                       "\"before=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId.ToString() + \"@\" + $_.CreationDate }) -join \" ; \"); Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; $r = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\monitor\\start_monitor.ps1\"; Start-Sleep 6; \"after=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"pidfile=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.pid\" -ErrorAction SilentlyContinue) -join \"\")"
-                   ],
-    "status":  "failed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T13:06:16Z",
-    "executed_at_local":  "2026-10-26 21:06:16",
-    "source_commit":  "fad0ec40be0e6a025f188ff47000dc615f335ff2"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T130716Z",
+  "powershell": [
+    "\"watchers=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"pidfile=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.pid\" -ErrorAction SilentlyContinue) -join \"\"); (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 3 -Encoding UTF8) -join \" || \"; \"task=\" + ((Get-ScheduledTask -TaskName \"jev-chat-monitor\" -ErrorAction SilentlyContinue).State)"
+  ]
 }
