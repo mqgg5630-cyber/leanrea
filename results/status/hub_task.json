@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T124349Z",
-  "powershell": [
-    "$Root=\"E:\\0apps\\jev-chat-windows\"; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; \"pyside=\" + ((& $VPy -c \"import PySide6,os;print(PySide6.__version__, os.path.dirname(PySide6.__file__))\" 2>&1) -join \" \"); foreach($d in @(\"vcruntime140.dll\",\"vcruntime140_1.dll\",\"msvcp140.dll\",\"concrt140.dll\")){ \"sys32_\" + $d + \"=\" + (Test-Path \"C:\\Windows\\System32\\$d\") }; \"spider_vcruntime=\" + (Test-Path \"E:\\spider\\vcruntime140.dll\"); $ps = \"$Root\\venv\\Lib\\site-packages\\PySide6\"; \"qt6core=\" + (Test-Path \"$ps\\Qt6Core.dll\"); \"pyside_dir_files=\" + ((Get-ChildItem $ps -File -ErrorAction SilentlyContinue | Select-Object -First 8 | ForEach-Object {$_.Name}) -join \",\"); $tr = (& $VPy -c \"import traceback\ntry:\n    from PySide6 import QtCore\n    print(QtCore"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T124349Z",
+    "powershell":  [
+                       "$Root=\"E:\\0apps\\jev-chat-windows\"; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; \"pyside=\" + ((\u0026 $VPy -c \"import PySide6,os;print(PySide6.__version__, os.path.dirname(PySide6.__file__))\" 2\u003e\u00261) -join \" \"); foreach($d in @(\"vcruntime140.dll\",\"vcruntime140_1.dll\",\"msvcp140.dll\",\"concrt140.dll\")){ \"sys32_\" + $d + \"=\" + (Test-Path \"C:\\Windows\\System32\\$d\") }; \"spider_vcruntime=\" + (Test-Path \"E:\\spider\\vcruntime140.dll\"); $ps = \"$Root\\venv\\Lib\\site-packages\\PySide6\"; \"qt6core=\" + (Test-Path \"$ps\\Qt6Core.dll\"); \"pyside_dir_files=\" + ((Get-ChildItem $ps -File -ErrorAction SilentlyContinue | Select-Object -First 8 | ForEach-Object {$_.Name}) -join \",\"); $tr = (\u0026 $VPy -c \"import traceback\ntry:\n    from PySide6 import QtCore\n    print(QtCore"
+                   ],
+    "status":  "failed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:43:09Z",
+    "executed_at_local":  "2026-10-26 20:43:09",
+    "source_commit":  "4ce400ea6049e3bcf0ac16c0d94b099d8b9fccf2"
 }

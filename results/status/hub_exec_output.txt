@@ -1,20 +1,20 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 6841de42123c720cbdb7445555d4cfd40b35b82d
-executed_at_utc: 2026-10-26T12:42:38Z
-executed_at_local: 2026-10-26 20:42:38
-tasks_all_ok: True
+source_commit: 4ce400ea6049e3bcf0ac16c0d94b099d8b9fccf2
+executed_at_utc: 2026-10-26T12:43:09Z
+executed_at_local: 2026-10-26 20:43:09
+tasks_all_ok: False
 
---- step: hub_task.powershell (exit=0) ---
-PATCHED: E:\0apps\jev-chat-windows\app\main.py hook_present= True
-engine ok
-chatapps ok
-[2026-10-26 20:42:25] tasks: registered jev-chat-monitor (AtLogOn)
-[2026-10-26 20:42:26] tasks: jev-chat-sync not registered (local-only mode; pass -WithSync to enable publishing)
-[2026-10-26 20:42:26] tasks: task jev-chat-monitor state=Ready
-[2026-10-26 20:42:27] tasks: task jev-chat-sync missing
-tasks done
-app_procs=
-app_err=    from app.overlay import Overlay |   File "E:\0apps\jev-chat-windows\app\app\overlay.py", line 10, in <module> |     from PySide6.QtCore import QObject, QSize, Qt, QTimer, Signal | ImportError: DLL load failed while importing QtCore: ?????????????
+--- step: hub_task.powershell (exit=1) ---
+[stderr] ����λ�� C:\Users\����\AppData\Local\Temp\hub_inline_951583c9dda745859edef2fb0c83b8ff.ps1:1 �ַ�: 664
++ ... Each-Object {$_.Name}) -join ","); $tr = (& $VPy -c "import traceback
++                                                         ~~~~~~~~~~~~~~~~~
+�ַ���ȱ����ֹ��: "��
+����λ�� C:\Users\����\AppData\Local\Temp\hub_inline_951583c9dda745859edef2fb0c83b8ff.ps1:4 �ַ�: 17
++     print(QtCore
++                 ~
+���ʽ��ȱ���ҡ�)����
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
 
