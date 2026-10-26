@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T143741Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; $o = \u0026 \"E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe\" \"E:\\0apps\\jev-chat-windows\\monitor\\diag_header.py\" 2\u003e\u00261; $o | Out-File -FilePath \"results\\jev-monitor\\diag-header.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:37:22Z",
-    "executed_at_local":  "2026-10-26 22:37:22",
-    "source_commit":  "941446e97e7aeca3fed412cff71e38b035262de1"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T143836Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; $o = & \"E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe\" \"E:\\0apps\\jev-chat-windows\\monitor\\diag_header2.py\" 2>&1; $o | Out-File -FilePath \"results\\jev-monitor\\diag-header2.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
+  ]
 }
