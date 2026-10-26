@@ -1,14 +1,16 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 131c062b0c3cc82f1ed0871ac3d97d63f82a6d66
-executed_at_utc: 2026-10-26T15:21:28Z
-executed_at_local: 2026-10-26 23:21:28
+source_commit: d0df83958c290248c4be2fcf74d9f253e93a0a41
+executed_at_utc: 2026-10-26T15:25:05Z
+executed_at_local: 2026-10-26 23:25:05
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-chunks_mb=1311
-chunks=186/199
-[2026-10-26 23:20:05] fetch_ollama: downloaded 1245 / 1585 MB (176/199 chunks)
+chunks=197/199
 [2026-10-26 23:21:05] fetch_ollama: downloaded 1288 / 1585 MB (183/199 chunks)
+[2026-10-26 23:22:05] fetch_ollama: downloaded 1311 / 1585 MB (188/199 chunks)
+[2026-10-26 23:23:06] fetch_ollama: downloaded 1338 / 1585 MB (192/199 chunks)
+[2026-10-26 23:24:06] fetch_ollama: downloaded 1353 / 1585 MB (196/199 chunks)
+status={ "updated_local": "2026-10-26 23:24:06", "ok": false, "total_mb": 1585, "mb": 1353, "stage": "download" }
 
