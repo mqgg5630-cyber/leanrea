@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "d0df83958c290248c4be2fcf74d9f253e93a0a41",
-    "synced_at_utc":  "2026-10-26T15:25:06Z",
-    "synced_at_local":  "2026-10-26 23:25:06",
+    "source_commit":  "08e0ff1d18df92172e67fd0363d503155761a7cb",
+    "synced_at_utc":  "2026-10-26T15:27:59Z",
+    "synced_at_local":  "2026-10-26 23:27:59",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  113,
+    "synced_files_count":  114,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  7428,
-                               "stdout":  "chunks=197/199\r\n[2026-10-26 23:21:05] fetch_ollama: downloaded 1288 / 1585 MB (183/199 chunks)\r\n[2026-10-26 23:22:05] fetch_ollama: downloaded 1311 / 1585 MB (188/199 chunks)\r\n[2026-10-26 23:23:06] fetch_ollama: downloaded 1338 / 1585 MB (192/199 chunks)\r\n[2026-10-26 23:24:06] fetch_ollama: downloaded 1353 / 1585 MB (196/199 chunks)\r\nstatus={ \"updated_local\": \"2026-10-26 23:24:06\", \"ok\": false, \"total_mb\": 1585, \"mb\": 1353, \"stage\": \"download\" }",
+                               "elapsed_ms":  2436,
+                               "stdout":  "[2026-10-26 23:25:06] fetch_ollama: downloaded 1362 / 1585 MB (197/199 chunks)\r\n[2026-10-26 23:26:06] fetch_ollama: downloaded 1371 / 1585 MB (198/199 chunks)\r\n[2026-10-26 23:26:46] fetch_ollama: chunks on disk=199 of 199\r\n[2026-10-26 23:26:55] fetch_ollama: assembled bytes=1444081919\r\n[2026-10-26 23:27:13] fetch_ollama: sha256=07ddddf7289ecc25b2eacd79bf6bd33342bd733a4866988eb0c194dc0379fcc4 expected=87309d23b423abeae1d8df2f98df95f94bf35659debfdf3761d65b7b62a75508 match=False\r\n[2026-10-26 23:27:13] fetch_ollama: FATAL: hash mismatch - removing the file\r\nsetup_mb=0\r\nollama_exe=False\r\nstatus={ \"updated_local\": \"2026-10-26 23:27:14\", \"ok\": false, \"note\": \"hash mismatch\", \"stage\": \"verify\" }",
                                "stderr":  ""
                            }
                        ],
