@@ -1,10 +1,102 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 82eb474a7fa41fe809a73ae064537edb1f9084ad
-executed_at_utc: 2026-10-26T13:00:37Z
-executed_at_local: 2026-10-26 21:00:37
+source_commit: 1fe6011873f12e8e936b8a5ffd879a0c2b9d65d2
+executed_at_utc: 2026-10-26T13:01:19Z
+executed_at_local: 2026-10-26 21:01:19
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
+---- file ----
+pull-20261026-210031.md bytes=5
+[stderr] R : �Ҳ��������� # JevChat monitor snapshot 2026-10-26 21:01:17 ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:30 �ַ�: 1
++ R ('# JevChat monitor snapshot ' + (Get-Date -Format 'yyyy-MM-dd HH:m ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (# JevChat monit...-10-26 21:01:17:String) [Invoke-History], ArgumentExc 
+   eption
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : ��ʶ�� 0 ������Ч����ʷ��¼��ʶ����ֵ����ָ��һ��������Ȼ�����ԡ�
+������: Id
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:31 �ַ�: 1
++ R ''
++ ~~~~
+    + CategoryInfo          : InvalidArgument: (0:Int64) [Invoke-History]��ArgumentOutOfRangeException
+    + FullyQualifiedErrorId : InvokeHistoryInvalidIdGetHistory,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� host=LAPTOP-R77M5D6M ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:32 �ַ�: 1
++ R ('host=' + $env:COMPUTERNAME)
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (host=LAPTOP-R77M5D6M:String) [Invoke-History], ArgumentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� app_running=False ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:37 �ַ�: 1
++ R ('app_running=' + ($procs.Count -gt 0))
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (app_running=False:String) [Invoke-History], ArgumentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� task_jev_monitor=Ready ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:40 �ַ�: 1
++ R ('task_jev_monitor=' + $taskState)
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (task_jev_monitor=Ready:String) [Invoke-History], ArgumentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� keys=JEV_API_KEY=False LLM_API_KEY=False ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:45 �ַ�: 1
++ R ('keys=' + ($keys -join ' '))
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (keys=JEV_API_KEY=False LLM_API_KEY=False:String) [Invoke-History], Argu 
+   mentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� app_head=c6d3a10 ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:47 �ַ�: 5
++     R ('app_head=' + ((& git -C $AppDir rev-parse --short HEAD 2>&1)  ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (app_head=c6d3a10:String) [Invoke-History], ArgumentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� hook_in_main=True ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:50 �ַ�: 1
++ R ('hook_in_main=' + ($hook -gt 0))
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (hook_in_main=True:String) [Invoke-History], ArgumentException
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : ��ʶ�� 0 ������Ч����ʷ��¼��ʶ����ֵ����ָ��һ��������Ȼ�����ԡ�
+������: Id
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:51 �ַ�: 1
++ R ''
++ ~~~~
+    + CategoryInfo          : InvalidArgument: (0:Int64) [Invoke-History]��ArgumentOutOfRangeException
+    + FullyQualifiedErrorId : InvokeHistoryInvalidIdGetHistory,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� events_bytes=655 tail_lines=5 ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:60 �ַ�: 5
++     R ('events_bytes=' + $it.Length + ' tail_lines=' + $lines.Count)
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (events_bytes=655 tail_lines=5:String) [Invoke-History], ArgumentExcepti 
+   on
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : ��ʶ�� 0 ������Ч����ʷ��¼��ʶ����ֵ����ָ��һ��������Ȼ�����ԡ�
+������: Id
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:61 �ַ�: 5
++     R ''
++     ~~~~
+    + CategoryInfo          : InvalidArgument: (0:Int64) [Invoke-History]��ArgumentOutOfRangeException
+    + FullyQualifiedErrorId : InvokeHistoryInvalidIdGetHistory,Microsoft.PowerShell.Commands.InvokeHistoryCommand
+ 
+R : �Ҳ��������� messages=0 analyses=0 app_starts=1 ����ʷ��¼��
+����λ�� E:\0apps\jev-chat-windows\tools\pull_events.ps1:71 �ַ�: 5
++     R ('messages=' + $msgs.Count + ' analyses=' + $an.Count + ' app_s ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (messages=0 analyses=0 app_starts=1:String) [Invoke-History], ArgumentEx 
+   ception
+    + FullyQualifiedErrorId : InvokeHistoryNoHistoryForCommandline,Microsoft.PowerShell.Commands.InvokeHistoryCommand
 

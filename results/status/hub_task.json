@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T130151Z",
-  "powershell": [
-    "Set-Location (Get-Location).Path; . \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 100 2>&1 | Select-Object -First 12; \"---- file ----\"; (Get-Item \"results\\jev-monitor\\pull-*.md\" | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | ForEach-Object { $_.Name + \" bytes=\" + $_.Length })"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T130151Z",
+    "powershell":  [
+                       "Set-Location (Get-Location).Path; . \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 100 2\u003e\u00261 | Select-Object -First 12; \"---- file ----\"; (Get-Item \"results\\jev-monitor\\pull-*.md\" | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | ForEach-Object { $_.Name + \" bytes=\" + $_.Length })"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T13:01:19Z",
+    "executed_at_local":  "2026-10-26 21:01:19",
+    "source_commit":  "1fe6011873f12e8e936b8a5ffd879a0c2b9d65d2"
 }
