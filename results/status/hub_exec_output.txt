@@ -1,17 +1,13 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 2d4a27c21711b64e476dbbfd9e6e323ad75f970f
-executed_at_utc: 2026-10-26T14:58:39Z
-executed_at_local: 2026-10-26 22:58:39
+source_commit: a1edd0df93cab73ac5c5869dbe1c476c1a3b7a30
+executed_at_utc: 2026-10-26T14:59:17Z
+executed_at_local: 2026-10-26 22:59:17
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 22:58:36] tasks: registered jev-chat-analyze (AtLogOn, local model)
-[2026-10-26 22:58:37] tasks: jev-chat-sync not registered (local-only mode; pass -WithSync to enable publishing)
-[2026-10-26 22:58:38] tasks: task jev-chat-monitor state=Ready
-[2026-10-26 22:58:38] tasks: task jev-chat-analyze state=Ready
-[2026-10-26 22:58:39] tasks: task jev-chat-sync missing
-tasks done
-chunks_mb=129
+chunks_mb=184
+[2026-10-26 22:58:03] fetch_ollama: downloaded 80 / 1585 MB (13/199 chunks)
+[2026-10-26 22:59:03] fetch_ollama: downloaded 168 / 1585 MB (24/199 chunks)
 
