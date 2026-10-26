@@ -1,0 +1,9 @@
+﻿WINDOW exe=weixin.exe hwnd=265520 size=781x870 title='微信'
+picked=wechat hwnd=265520
+area_full= (376, 100, 953, 899, array([30, 30, 31], dtype=uint8), 40)
+x0=376 y_top=100 x1=953 y_in=899 pane_top=40
+pane_top-64..top     shape=(100, 577, 3) ocr='g>w<e'
+top-40..top+40       shape=(80, 577, 3) ocr=''
+0..120               shape=(120, 577, 3) ocr='+g>w<e+'
+read_title_input     shape=(60, 577, 3) ocr='+g>w<et'
+read_title= '+g>w<et'
