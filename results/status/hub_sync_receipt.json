@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "a1edd0df93cab73ac5c5869dbe1c476c1a3b7a30",
-    "synced_at_utc":  "2026-10-26T14:59:17Z",
-    "synced_at_local":  "2026-10-26 22:59:17",
+    "source_commit":  "20700f99f539d6aa6e96cba63f39ff4f51534fb0",
+    "synced_at_utc":  "2026-10-26T15:06:45Z",
+    "synced_at_local":  "2026-10-26 23:06:45",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  92,
+    "synced_files_count":  94,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1724,
-                               "stdout":  "chunks_mb=184\r\n[2026-10-26 22:58:03] fetch_ollama: downloaded 80 / 1585 MB (13/199 chunks)\r\n[2026-10-26 22:59:03] fetch_ollama: downloaded 168 / 1585 MB (24/199 chunks)",
+                               "elapsed_ms":  5227,
+                               "stdout":  "chunks_mb=586\r\nollama_status={ \"updated_local\": \"2026-10-26 23:06:04\", \"ok\": false, \"total_mb\": 1585, \"mb\": 578, \"stage\": \"download\" } \r\nsetup_mb=90\r\n[2026-10-26 23:04:03] fetch_ollama: downloaded 458 / 1585 MB (63/199 chunks)\r\n[2026-10-26 23:05:04] fetch_ollama: downloaded 524 / 1585 MB (71/199 chunks)\r\n[2026-10-26 23:06:04] fetch_ollama: downloaded 578 / 1585 MB (77/199 chunks)",
                                "stderr":  ""
                            }
                        ],
