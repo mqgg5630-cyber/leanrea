@@ -113,7 +113,7 @@ Log ('pull exit=' + $LASTEXITCODE)
 $body = @{
     model    = $Model
     stream   = $false
-    messages = @(@{ role = 'user'; content = '只输出 JSON：{"ok":true,"why":"中文一句话"}' })
+    messages = @(@{ role = 'user'; content = 'reply with this JSON only: {"ok":true,"why":"one short sentence"}' })
 } | ConvertTo-Json -Depth 5 -Compress
 $reply = ''
 try {

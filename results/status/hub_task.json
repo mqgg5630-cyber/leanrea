@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T145215Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\fetch_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 45; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 4 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:52:20Z",
-    "executed_at_local":  "2026-10-26 22:52:20",
-    "source_commit":  "4a7d69afeaf6c5b2508f976cb99ae9cdb5e45116"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T145336Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 3 -Encoding UTF8; \"setup_mb=\" + [math]::Round((Get-Item \"E:\\0apps\\tools\\OllamaSetup.exe\" -ErrorAction SilentlyContinue).Length/1MB,1); \"status=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama_status.json\" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) -replace \"\\s+\",\" \")"
+  ]
 }

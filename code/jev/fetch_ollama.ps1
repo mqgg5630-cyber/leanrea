@@ -134,7 +134,7 @@ if (-not $pullOk) {
 
 # ---------------------------------------------------------------- 5. smoke
 $body = @{ model = $Model; stream = $false
-           messages = @(@{ role = 'user'; content = '只输出这个 JSON: {"ok":true}' }) } |
+           messages = @(@{ role = 'user'; content = 'reply with this JSON only: {"ok":true}' }) } |
         ConvertTo-Json -Depth 5 -Compress
 $reply = ''
 try {

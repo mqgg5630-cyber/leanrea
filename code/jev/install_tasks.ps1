@@ -44,6 +44,29 @@ try {
     Log ('register jev-chat-monitor failed: ' + $_.Exception.Message)
 }
 
+# ---------------------------------------------------------------- analyzer task
+# Runs the local model loop: new "her" message -> quiet window -> analysis card.
+# Starts only when the model is ready (see tools\fetch_ollama.ps1); harmless
+# otherwise because auto_analyze.py just retries.
+try {
+    $analyze = Join-Path $Root 'monitor\auto_analyze.py'
+    $py = Join-Path $Root 'venv\Scripts\pythonw.exe'
+    if ((Test-Path -LiteralPath $analyze) -and (Test-Path -LiteralPath $py)) {
+        $actionA = New-ScheduledTaskAction -Execute $ps `
+                    -Argument ('-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command "' +
+                               '& \"' + $py + '\" \"' + $analyze + '\" 2>&1 | Out-Null"')
+        $triggerA = New-ScheduledTaskTrigger -AtLogOn -User $user
+        Register-ScheduledTask -TaskName 'jev-chat-analyze' -Action $actionA -Trigger $triggerA `
+            -Principal $principal -Settings $settings -Force `
+            -Description 'Local model: analyse each new chat message (no API key)' | Out-Null
+        Log 'registered jev-chat-analyze (AtLogOn, local model)'
+    } else {
+        Log 'jev-chat-analyze skipped (auto_analyze.py or venv python missing)'
+    }
+} catch {
+    Log ('register jev-chat-analyze failed: ' + $_.Exception.Message)
+}
+
 # ---------------------------------------------------------------- sync task (opt-in)
 if (-not $WithSync) {
     # Default is LOCAL ONLY: recorder logs stay on this machine. Nothing is
@@ -70,7 +93,7 @@ try {
 }
 
 # ---------------------------------------------------------------- report + kick
-foreach ($n in @('jev-chat-monitor', 'jev-chat-sync')) {
+foreach ($n in @('jev-chat-monitor', 'jev-chat-analyze', 'jev-chat-sync')) {
     try {
         $t = Get-ScheduledTask -TaskName $n -ErrorAction Stop
         Log ('task ' + $n + ' state=' + $t.State)
