@@ -1,16 +1,17 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 0cd6efaf0635c7bf9b384b034c97128f4eaa4704
-executed_at_utc: 2026-10-26T14:57:57Z
-executed_at_local: 2026-10-26 22:57:57
+source_commit: 2d4a27c21711b64e476dbbfd9e6e323ad75f970f
+executed_at_utc: 2026-10-26T14:58:39Z
+executed_at_local: 2026-10-26 22:58:39
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 22:56:51] fetch_ollama: expected sha256=87309d23b423abeae1d8df2f98df95f94bf35659debfdf3761d65b7b62a75508
-[2026-10-26 22:56:51] fetch_ollama: chunks=199 x 8 MB, workers=4
-[2026-10-26 22:56:52] fetch_ollama: started 4 download jobs
-[2026-10-26 22:56:53] fetch_ollama: downloaded 0 / 1585 MB (0/199 chunks)
-[2026-10-26 22:57:03] fetch_ollama: downloaded 1 / 1585 MB (3/199 chunks)
-chunks=73.0744018554688
+[2026-10-26 22:58:36] tasks: registered jev-chat-analyze (AtLogOn, local model)
+[2026-10-26 22:58:37] tasks: jev-chat-sync not registered (local-only mode; pass -WithSync to enable publishing)
+[2026-10-26 22:58:38] tasks: task jev-chat-monitor state=Ready
+[2026-10-26 22:58:38] tasks: task jev-chat-analyze state=Ready
+[2026-10-26 22:58:39] tasks: task jev-chat-sync missing
+tasks done
+chunks_mb=129
 

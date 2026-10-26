@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T145904Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\install_tasks.ps1\" 2>&1 | Select-Object -Last 6; \"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T145904Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\install_tasks.ps1\" 2\u003e\u00261 | Select-Object -Last 6; \"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0)"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T14:58:39Z",
+    "executed_at_local":  "2026-10-26 22:58:39",
+    "source_commit":  "2d4a27c21711b64e476dbbfd9e6e323ad75f970f"
 }

@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "0cd6efaf0635c7bf9b384b034c97128f4eaa4704",
-    "synced_at_utc":  "2026-10-26T14:57:57Z",
-    "synced_at_local":  "2026-10-26 22:57:57",
+    "source_commit":  "2d4a27c21711b64e476dbbfd9e6e323ad75f970f",
+    "synced_at_utc":  "2026-10-26T14:58:39Z",
+    "synced_at_local":  "2026-10-26 22:58:39",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  88,
+    "synced_files_count":  89,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  78318,
-                               "stdout":  "[2026-10-26 22:56:51] fetch_ollama: expected sha256=87309d23b423abeae1d8df2f98df95f94bf35659debfdf3761d65b7b62a75508\r\n[2026-10-26 22:56:51] fetch_ollama: chunks=199 x 8 MB, workers=4\r\n[2026-10-26 22:56:52] fetch_ollama: started 4 download jobs\r\n[2026-10-26 22:56:53] fetch_ollama: downloaded 0 / 1585 MB (0/199 chunks)\r\n[2026-10-26 22:57:03] fetch_ollama: downloaded 1 / 1585 MB (3/199 chunks)\r\nchunks=73.0744018554688",
+                               "elapsed_ms":  6547,
+                               "stdout":  "[2026-10-26 22:58:36] tasks: registered jev-chat-analyze (AtLogOn, local model)\r\n[2026-10-26 22:58:37] tasks: jev-chat-sync not registered (local-only mode; pass -WithSync to enable publishing)\r\n[2026-10-26 22:58:38] tasks: task jev-chat-monitor state=Ready\r\n[2026-10-26 22:58:38] tasks: task jev-chat-analyze state=Ready\r\n[2026-10-26 22:58:39] tasks: task jev-chat-sync missing\r\ntasks done\r\nchunks_mb=129",
                                "stderr":  ""
                            }
                        ],
