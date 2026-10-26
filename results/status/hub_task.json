@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T150705Z",
-    "powershell":  [
-                       "\"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0); \"ollama_status=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama_status.json\" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) -replace \"\\s+\",\" \"); \"setup_mb=\" + [math]::Round((Get-Item \"E:\\0apps\\tools\\OllamaSetup.exe\" -ErrorAction SilentlyContinue).Length/1MB,0); Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 3 -Encoding UTF8; \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 200 | Out-Null"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T15:06:44Z",
-    "executed_at_local":  "2026-10-26 23:06:44",
-    "source_commit":  "20700f99f539d6aa6e96cba63f39ff4f51534fb0"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T150752Z",
+  "powershell": [
+    "\"watcher_procs=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"chat_procs=\" + ((Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -match \"^(weixin|wechat|qq)$\" } | ForEach-Object { $_.ProcessName }) -join \",\"); \"weixin_windows=\" + ((Get-Process -Name Weixin -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowTitle } | ForEach-Object { $_.MainWindowTitle + \"/\" + $_.Id }) -join \" | \"); \"--- watcher.log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 6 -Encoding UTF8) -join \" || \""
+  ]
 }
