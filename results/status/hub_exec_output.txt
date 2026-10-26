@@ -1,13 +1,25 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: c359c449b41a3cb08713571396fe204d89f5a92b
-executed_at_utc: 2026-10-26T12:39:08Z
-executed_at_local: 2026-10-26 20:39:08
+source_commit: b5e2bdf2967f26d37bc0e644c1fbb99c54e29fba
+executed_at_utc: 2026-10-26T12:40:41Z
+executed_at_local: 2026-10-26 20:40:41
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 20:38:24] uv_install: stopping slow pip pid 400244
-[2026-10-26 20:38:29] uv_install: uv=C:\Users\����\.local\bin\uv.exe version=uv 0.11.29 (901092ee1 2026-07-15 x86_64-pc-windows-msvc)
-[2026-10-26 20:38:29] uv_install: uv pip install -r requirements.txt (16 connections, direct mirror)
+[2026-10-26 20:40:20] uv_install:    + pysidesix-frameless-window==0.8.2
+[2026-10-26 20:40:20] uv_install:    + pywin32==312
+[2026-10-26 20:40:20] uv_install:    + requests==2.34.2
+[2026-10-26 20:40:20] uv_install:    + shiboken6==6.12.0
+[2026-10-26 20:40:20] uv_install:    + sniffio==1.3.1
+[2026-10-26 20:40:20] uv_install:    + tenacity==9.1.4
+[2026-10-26 20:40:20] uv_install:    + truststore==0.10.5
+[2026-10-26 20:40:20] uv_install:    + typesafe-sdk==0.7.5
+[2026-10-26 20:40:20] uv_install:    + typing-extensions==4.16.0
+[2026-10-26 20:40:20] uv_install:    + typing-inspection==0.4.4
+[2026-10-26 20:40:20] uv_install:    + urllib3==2.8.0
+[2026-10-26 20:40:20] uv_install:    + websockets==17.3
+[2026-10-26 20:40:20] uv_install:    + winsdk==1.0.0b10
+[2026-10-26 20:40:20] uv_install: uv exit=0
+venv_mb=1041.3
 
