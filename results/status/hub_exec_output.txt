@@ -1,20 +1,36 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 4ce400ea6049e3bcf0ac16c0d94b099d8b9fccf2
-executed_at_utc: 2026-10-26T12:43:09Z
-executed_at_local: 2026-10-26 20:43:09
-tasks_all_ok: False
+source_commit: 51a3d3d9bc4b56ae25ec76a76e87b684fa7baf51
+executed_at_utc: 2026-10-26T12:43:38Z
+executed_at_local: 2026-10-26 20:43:38
+tasks_all_ok: True
 
---- step: hub_task.powershell (exit=1) ---
-[stderr] ����λ�� C:\Users\����\AppData\Local\Temp\hub_inline_951583c9dda745859edef2fb0c83b8ff.ps1:1 �ַ�: 664
-+ ... Each-Object {$_.Name}) -join ","); $tr = (& $VPy -c "import traceback
-+                                                         ~~~~~~~~~~~~~~~~~
-�ַ���ȱ����ֹ��: "��
-����λ�� C:\Users\����\AppData\Local\Temp\hub_inline_951583c9dda745859edef2fb0c83b8ff.ps1:4 �ַ�: 17
-+     print(QtCore
-+                 ~
-���ʽ��ȱ���ҡ�)����
-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+--- step: hub_task.powershell (exit=0) ---
+python= 3.11.9 E:\0apps\jev-chat-windows\venv\Scripts\python.exe
+pyside_version= 6.12.0
+pyside_dir= E:\0apps\jev-chat-windows\venv\Lib\site-packages\PySide6
+pkg_has_Qt6Core.dll= True
+pkg_has_Qt6Gui.dll= True
+pkg_has_Qt6Widgets.dll= True
+pkg_has_pyside6.abi3.dll= True
+pkg_has_MSVCP140.dll= True
+pkg_has_VCRUNTIME140.dll= True
+pkg_has_VCRUNTIME140_1.dll= True
+pkg_has_CONCRT140.dll= True
+sys32_vcruntime140.dll= True
+sys32_vcruntime140_1.dll= True
+sys32_msvcp140.dll= True
+sys32_msvcp140_1.dll= True
+sys32_msvcp140_2.dll= True
+sys32_concrt140.dll= True
+QtCore_IMPORT_FAILED
+Traceback (most recent call last):
+  File "E:\0apps\jev-chat-windows\monitor\diag_pyside.py", line 34, in <module>
+    from PySide6 import QtCore
+ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���
+
+dll_count= 170
+dll_sample= Qt63DAnimation.dll, Qt63DCore.dll, Qt63DExtras.dll, Qt63DInput.dll, Qt63DLogic.dll, Qt63DQuick.dll, Qt63DQuickAnimation.dll, Qt63DQuickExtras.dll, Qt63DQuickInput.dll, Qt63DQuickLogic.dll, Qt63DQuickRender.dll, Qt63DQuickScene2D.dll
+plugins_dir= True
 

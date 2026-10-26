@@ -3,21 +3,21 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "4ce400ea6049e3bcf0ac16c0d94b099d8b9fccf2",
-    "synced_at_utc":  "2026-10-26T12:43:09Z",
-    "synced_at_local":  "2026-10-26 20:43:09",
+    "source_commit":  "51a3d3d9bc4b56ae25ec76a76e87b684fa7baf51",
+    "synced_at_utc":  "2026-10-26T12:43:39Z",
+    "synced_at_local":  "2026-10-26 20:43:39",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  35,
+    "synced_files_count":  36,
     "tasks_executed_count":  1,
-    "tasks_all_ok":  false,
+    "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
-                               "exit_code":  1,
-                               "elapsed_ms":  1090,
-                               "stdout":  "",
-                               "stderr":  "����λ�� C:\\Users\\����\\AppData\\Local\\Temp\\hub_inline_951583c9dda745859edef2fb0c83b8ff.ps1:1 �ַ�: 664\r\n+ ... Each-Object {$_.Name}) -join \",\"); $tr = (\u0026 $VPy -c \"import traceback\r\n+                                                         ~~~~~~~~~~~~~~~~~\r\n�ַ���ȱ����ֹ��: \"��\r\n����λ�� C:\\Users\\����\\AppData\\Local\\Temp\\hub_inline_951583c9dda745859edef2fb0c83b8ff.ps1:4 �ַ�: 17\r\n+     print(QtCore\r\n+                 ~\r\n���ʽ��ȱ���ҡ�)����\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString"
+                               "exit_code":  0,
+                               "elapsed_ms":  1367,
+                               "stdout":  "python= 3.11.9 E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe\r\npyside_version= 6.12.0\r\npyside_dir= E:\\0apps\\jev-chat-windows\\venv\\Lib\\site-packages\\PySide6\r\npkg_has_Qt6Core.dll= True\r\npkg_has_Qt6Gui.dll= True\r\npkg_has_Qt6Widgets.dll= True\r\npkg_has_pyside6.abi3.dll= True\r\npkg_has_MSVCP140.dll= True\r\npkg_has_VCRUNTIME140.dll= True\r\npkg_has_VCRUNTIME140_1.dll= True\r\npkg_has_CONCRT140.dll= True\r\nsys32_vcruntime140.dll= True\r\nsys32_vcruntime140_1.dll= True\r\nsys32_msvcp140.dll= True\r\nsys32_msvcp140_1.dll= True\r\nsys32_msvcp140_2.dll= True\r\nsys32_concrt140.dll= True\r\nQtCore_IMPORT_FAILED\r\nTraceback (most recent call last):\r\n  File \"E:\\0apps\\jev-chat-windows\\monitor\\diag_pyside.py\", line 34, in \u003cmodule\u003e\r\n    from PySide6 import QtCore\r\nImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���\r\n\r\ndll_count= 170\r\ndll_sample= Qt63DAnimation.dll, Qt63DCore.dll, Qt63DExtras.dll, Qt63DInput.dll, Qt63DLogic.dll, Qt63DQuick.dll, Qt63DQuickAnimation.dll, Qt63DQuickExtras.dll, Qt63DQuickInput.dll, Qt63DQuickLogic.dll, Qt63DQuickRender.dll, Qt63DQuickScene2D.dll\r\nplugins_dir= True",
+                               "stderr":  ""
                            }
                        ],
     "copied_targets":  [
