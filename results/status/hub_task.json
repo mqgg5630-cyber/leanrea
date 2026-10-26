@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T155632Z",
-  "powershell": [
-    "(Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\winget.log\" -Tail 6 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\"); \"service=\" + (try { (Invoke-WebRequest -Uri \"http://127.0.0.1:11434/api/tags\" -UseBasicParsing -TimeoutSec 4).StatusCode } catch { \"down\" })"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T155632Z",
+    "powershell":  [
+                       "(Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\winget.log\" -Tail 6 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\"); \"service=\" + (try { (Invoke-WebRequest -Uri \"http://127.0.0.1:11434/api/tags\" -UseBasicParsing -TimeoutSec 4).StatusCode } catch { \"down\" })"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T15:56:05Z",
+    "executed_at_local":  "2026-10-26 23:56:05",
+    "source_commit":  "9f5166a41610370c70a167270ba6867b48e790ad"
 }
