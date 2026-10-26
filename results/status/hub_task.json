@@ -1,12 +1,14 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T123221Z",
-    "powershell":  [
-                       "$d = Get-ChildItem $env:TEMP -Directory -Filter \"pip-*\" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 3; foreach($x in $d){ \"tmp=\" + $x.Name + \" mb=\" + [math]::Round((Get-ChildItem $x.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1) + \" age_s=\" + [int]((Get-Date)-$x.LastWriteTime).TotalSeconds }; $c = Get-Counter \"\\Network Interface(*)\\Bytes Received/sec\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty CounterSamples | Where-Object {$_.InstanceName -notlike \"*loopback*\"} | Measure-Object -Property CookedValue -Sum; \"rx_kb_s=\" + [int]($c.Sum/1KB)"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:31:50Z",
-    "executed_at_local":  "2026-10-26 20:31:50",
-    "source_commit":  "6c81f6a98fcec2381ddd86b2774bdcf77739b2c6"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T123309Z",
+  "copy_files": [
+    {
+      "source": "deliverable/jev/使用说明.txt",
+      "target": "D:\\桌面\\JevChat-使用说明.txt"
+    }
+  ],
+  "powershell": [
+    "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\pip.log\" -Tail 4 -Encoding UTF8; \"venv_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\jev-chat-windows\\venv\" -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1)"
+  ]
 }
