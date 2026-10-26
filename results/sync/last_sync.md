@@ -2,7 +2,7 @@
 
 - 时间：2026-10-26 12:01 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：diag(jev): why pip failed
+- 本轮助手提交：diag(jev): find a working pypi route
 - 本轮改动文件：
    M results/status/hub_task.json
 
