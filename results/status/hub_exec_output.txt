@@ -1,15 +1,15 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: bc72f179b2329757ca585292f01881c5c126bbc5
-executed_at_utc: 2026-10-26T14:53:02Z
-executed_at_local: 2026-10-26 22:53:02
+source_commit: f54032eeef28e1b779853e93e1427d053fd70dcd
+executed_at_utc: 2026-10-26T14:54:25Z
+executed_at_local: 2026-10-26 22:54:25
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 22:52:37] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
-[2026-10-26 22:52:37] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
-[2026-10-26 22:52:37] fetch_ollama: attempt 2 size=34.4 MB
-setup_mb=37.6
-status={ "updated_local": "2026-10-26 22:52:40", "attempt": 3, "ok": false, "mb": 34.4, "stage": "download" }
+proxy-github => 2508 KB/s in 8s
+direct-github => 2198 KB/s in 9s
+ghproxy.net => 0 KB/s in 8s
+gh-proxy.com => 1511 KB/s in 14s
+hf-mirror => 0 KB/s in 9s
 
