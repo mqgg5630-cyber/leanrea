@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "9ca95727637c081f72c35be03fa3994288532848",
-    "synced_at_utc":  "2026-10-26T12:07:40Z",
-    "synced_at_local":  "2026-10-26 20:07:40",
+    "source_commit":  "9a25865ff1a20b20069ef23d587d62205daa4fe4",
+    "synced_at_utc":  "2026-10-26T12:08:29Z",
+    "synced_at_local":  "2026-10-26 20:08:29",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  20,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  21629,
-                               "stdout":  "[2026-10-26 20:07:21] pip_worker: proxy environment cleared for this process\r\n[2026-10-26 20:07:21] pip_worker: group=core index=mirrors.aliyun.com attempt=1 pkgs=numpy,rapidocr-onnxruntime\u003e=1.4,\u003c2,windows-capture,PySide6-Fluent-Widgets,pillow",
+                               "elapsed_ms":  1559,
+                               "stdout":  "[2026-10-26 20:07:21] pip_worker: proxy environment cleared for this process\r\n[2026-10-26 20:07:21] pip_worker: group=core index=mirrors.aliyun.com attempt=1 pkgs=numpy,rapidocr-onnxruntime\u003e=1.4,\u003c2,windows-capture,PySide6-Fluent-Widgets,pillow\r\nvenv_mb=75.7",
                                "stderr":  ""
                            }
                        ],
