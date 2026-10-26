@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T121023Z",
-  "powershell": [
-    "\"py_procs=\" + ((Get-Process python -ErrorAction SilentlyContinue | ForEach-Object { $_.Id.ToString() + \":\" + [int]$_.CPU }) -join \",\"); $t = Get-ChildItem $env:TEMP -Filter \"pip-*\" -Directory -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($t){ \"pip_tmp=\" + $t.Name + \" mb=\" + [math]::Round((Get-ChildItem $t.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1) + \" age_min=\" + [int]((Get-Date) - $t.LastWriteTime).TotalMinutes }; \"free_e_gb=\" + [math]::Round((Get-PSDrive E).Free/1GB,1)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T121023Z",
+    "powershell":  [
+                       "\"py_procs=\" + ((Get-Process python -ErrorAction SilentlyContinue | ForEach-Object { $_.Id.ToString() + \":\" + [int]$_.CPU }) -join \",\"); $t = Get-ChildItem $env:TEMP -Filter \"pip-*\" -Directory -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if($t){ \"pip_tmp=\" + $t.Name + \" mb=\" + [math]::Round((Get-ChildItem $t.FullName -Recurse -File -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,1) + \" age_min=\" + [int]((Get-Date) - $t.LastWriteTime).TotalMinutes }; \"free_e_gb=\" + [math]::Round((Get-PSDrive E).Free/1GB,1)"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:09:49Z",
+    "executed_at_local":  "2026-10-26 20:09:49",
+    "source_commit":  "7f4efa25054a711dea940b6fb335f48ddf34f38c"
 }
