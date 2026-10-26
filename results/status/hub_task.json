@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T130838Z",
-    "powershell":  [
-                       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId.ToString() + \" name=\" + $_.Name + \" parent=\" + $_.ParentProcessId + \" cmd=\" + $_.CommandLine.Substring(0,[Math]::Min(110,$_.CommandLine.Length)) }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T13:08:08Z",
-    "executed_at_local":  "2026-10-26 21:08:08",
-    "source_commit":  "4240861887aec46100649efc4d13b9b5a8f1c72b"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T130930Z",
+  "powershell": [
+    "\"watcher=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"chat_now=\" + ((Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -match \"^(weixin|wechat|qq)$\" } | ForEach-Object { $_.ProcessName }) -join \",\"); \"task=\" + ((Get-ScheduledTask -TaskName \"jev-chat-monitor\").State); (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\events.jsonl\" -Tail 3 -Encoding UTF8) -join \" || \""
+  ]
 }
