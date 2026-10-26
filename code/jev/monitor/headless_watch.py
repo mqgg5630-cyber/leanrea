@@ -50,6 +50,25 @@ def log(msg: str) -> None:
         pass
 
 
+_MUTEX = None
+
+
+def acquire_single_instance() -> bool:
+    """Named mutex beats a pid file: two watchers started at the same moment both
+    read an empty pid file and both proceed."""
+    global _MUTEX
+    try:
+        import ctypes
+        from ctypes import wintypes
+        k32 = ctypes.windll.kernel32
+        k32.CreateMutexW.restype = wintypes.HANDLE
+        _MUTEX = k32.CreateMutexW(None, True, "Global\\jev-chat-headless-watcher")
+        already = k32.GetLastError() == 183  # ERROR_ALREADY_EXISTS
+        return not already
+    except Exception:
+        return True  # never block the watcher on a guard failure
+
+
 def already_running() -> bool:
     """One watcher per machine: two of them would double-record every message."""
     try:
@@ -83,6 +102,9 @@ def write_pid() -> None:
 
 
 def main() -> int:
+    if not acquire_single_instance():
+        log("another watcher holds the mutex - exiting")
+        return 0
     if already_running():
         log("another watcher is alive - exiting")
         return 0
