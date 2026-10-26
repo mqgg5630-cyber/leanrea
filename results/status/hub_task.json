@@ -1,8 +1,8 @@
 {
   "enabled": true,
   "status": "pending",
-  "request_id": "20261026T160112Z",
+  "request_id": "20261026T160519Z",
   "powershell": [
-    "(Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\winget.log\" -Tail 5 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\"); $s=\"down\"; try { $s = (Invoke-WebRequest -Uri \"http://127.0.0.1:11434/api/tags\" -UseBasicParsing -TimeoutSec 4).StatusCode } catch {}; \"service=\" + $s; \"winget_proc=\" + ((Get-Process winget,AppInstallerCLI -ErrorAction SilentlyContinue | ForEach-Object {$_.ProcessName}) -join \",\")"
+    "(Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\winget.log\" -Tail 4 -Encoding UTF8 -ErrorAction SilentlyContinue) -join \" || \"; \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\")"
   ]
 }
