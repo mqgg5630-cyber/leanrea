@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T152906Z",
-  "powershell": [
-    "\"winget=\" + ((Get-Command winget.exe -ErrorAction SilentlyContinue).Source); \"choco=\" + ((Get-Command choco.exe -ErrorAction SilentlyContinue).Source); \"scoop=\" + ((Get-Command scoop -ErrorAction SilentlyContinue).Source); $b=@(0,50,120,198); foreach($i in $b){ $f=\"E:\\0apps\\tools\\ollama_chunks\\part_\" + $i.ToString(\"d5\") + \".bin\"; if(Test-Path $f){ \"chunk$i=\" + (Get-Item $f).Length } else { \"chunk$i=missing\" } }; \"chunk_count=\" + ((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" | Measure-Object).Count); \"short_chunks=\" + ((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" | Where-Object { $_.Length -ne 8388608 } | Measure-Object).Count)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T152906Z",
+    "powershell":  [
+                       "\"winget=\" + ((Get-Command winget.exe -ErrorAction SilentlyContinue).Source); \"choco=\" + ((Get-Command choco.exe -ErrorAction SilentlyContinue).Source); \"scoop=\" + ((Get-Command scoop -ErrorAction SilentlyContinue).Source); $b=@(0,50,120,198); foreach($i in $b){ $f=\"E:\\0apps\\tools\\ollama_chunks\\part_\" + $i.ToString(\"d5\") + \".bin\"; if(Test-Path $f){ \"chunk$i=\" + (Get-Item $f).Length } else { \"chunk$i=missing\" } }; \"chunk_count=\" + ((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" | Measure-Object).Count); \"short_chunks=\" + ((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" | Where-Object { $_.Length -ne 8388608 } | Measure-Object).Count)"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T15:28:40Z",
+    "executed_at_local":  "2026-10-26 23:28:40",
+    "source_commit":  "907c877737d86b5104a945f8908bd037529c4bff"
 }
