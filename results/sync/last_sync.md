@@ -2,7 +2,7 @@
 
 - 时间：2026-10-26 13:04 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：chore: verify the hub after pruning the extra branch
+- 本轮助手提交：fix(jev): make sure exactly one watcher runs
 - 本轮改动文件：
    M results/status/hub_task.json
 
