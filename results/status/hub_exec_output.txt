@@ -1,13 +1,18 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: c115bc28e73850b3b20ebc708a6cd340a13369b0
-executed_at_utc: 2026-10-26T12:55:51Z
-executed_at_local: 2026-10-26 20:55:51
+source_commit: c9f198f45817968f5b38f9e1779eb570737bfccc
+executed_at_utc: 2026-10-26T12:56:22Z
+executed_at_local: 2026-10-26 20:56:22
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-copied=False,True
-spider_python3dll=True spider_python311dll=True
-py312_pyside=Traceback (most recent call last): ||   File "<string>", line 1, in <module> || ImportError: cannot import name 'QtCore' from 'PySide6' (unknown location)
+spider_PySide6 => Traceback (most recent call last):   File "<string>", line 1, in <module> ModuleNotFoundError: No module named 'PySide6'
+spider_qfluentwidgets => Traceback (most recent call last):   File "<string>", line 1, in <module> ModuleNotFoundError: No module named 'qfluentwidgets'
+spider_rapidocr_onnxruntime => Traceback (most recent call last):   File "<string>", line 1, in <module> ModuleNotFoundError: No module named 'rapidocr_onnxruntime'
+spider_windows_capture => Traceback (most recent call last):   File "<string>", line 1, in <module> ModuleNotFoundError: No module named 'windows_capture'
+spider_numpy => 1.26.4
+spider_qtcore=Traceback (most recent call last): ||   File "<string>", line 1, in <module> || ModuleNotFoundError: No module named 'PySide6'
+pyd_sample=Qt3DAnimation.pyd,Qt3DCore.pyd,Qt3DExtras.pyd,Qt3DInput.pyd,Qt3DLogic.pyd,Qt3DRender.pyd
+qtcore_pyd=True
 

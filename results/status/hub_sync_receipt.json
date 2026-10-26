@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "c115bc28e73850b3b20ebc708a6cd340a13369b0",
-    "synced_at_utc":  "2026-10-26T12:55:52Z",
-    "synced_at_local":  "2026-10-26 20:55:52",
+    "source_commit":  "c9f198f45817968f5b38f9e1779eb570737bfccc",
+    "synced_at_utc":  "2026-10-26T12:56:22Z",
+    "synced_at_local":  "2026-10-26 20:56:22",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  44,
+    "synced_files_count":  45,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  3453,
-                               "stdout":  "copied=False,True\r\nspider_python3dll=True spider_python311dll=True\r\npy312_pyside=Traceback (most recent call last): ||   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e || ImportError: cannot import name \u0027QtCore\u0027 from \u0027PySide6\u0027 (unknown location)",
+                               "elapsed_ms":  2215,
+                               "stdout":  "spider_PySide6 =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027PySide6\u0027\r\nspider_qfluentwidgets =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027qfluentwidgets\u0027\r\nspider_rapidocr_onnxruntime =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027rapidocr_onnxruntime\u0027\r\nspider_windows_capture =\u003e Traceback (most recent call last):   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e ModuleNotFoundError: No module named \u0027windows_capture\u0027\r\nspider_numpy =\u003e 1.26.4\r\nspider_qtcore=Traceback (most recent call last): ||   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e || ModuleNotFoundError: No module named \u0027PySide6\u0027\r\npyd_sample=Qt3DAnimation.pyd,Qt3DCore.pyd,Qt3DExtras.pyd,Qt3DInput.pyd,Qt3DLogic.pyd,Qt3DRender.pyd\r\nqtcore_pyd=True",
                                "stderr":  ""
                            }
                        ],

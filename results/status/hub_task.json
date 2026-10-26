@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T125656Z",
-  "powershell": [
-    "$sp=\"E:\\spider\\python.exe\"; foreach($mod in @(\"PySide6\",\"qfluentwidgets\",\"rapidocr_onnxruntime\",\"windows_capture\",\"numpy\")){ $r = (& $sp -c \"import $mod; print(getattr($mod, chr(95)*2+chr(118)+chr(101)+chr(114)+chr(115)+chr(105)+chr(111)+chr(110)+chr(95)*2, chr(45)))\" 2>&1) -join \" \"; \"spider_$mod => $r\" }; $r2 = (& $sp -c \"from PySide6 import QtCore; print(chr(79)+chr(75), QtCore.__version__)\" 2>&1) -join \" || \"; \"spider_qtcore=\" + $r2; $src=\"E:\\0apps\\jev-chat-windows\\venv\\Lib\\site-packages\\PySide6\"; \"pyd_sample=\" + ((Get-ChildItem $src -Filter \"*.pyd\" -ErrorAction SilentlyContinue | Select-Object -First 6 | ForEach-Object {$_.Name}) -join \",\"); \"qtcore_pyd=\" + (Test-Path \"$src\\QtCore.pyd\")"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T125656Z",
+    "powershell":  [
+                       "$sp=\"E:\\spider\\python.exe\"; foreach($mod in @(\"PySide6\",\"qfluentwidgets\",\"rapidocr_onnxruntime\",\"windows_capture\",\"numpy\")){ $r = (\u0026 $sp -c \"import $mod; print(getattr($mod, chr(95)*2+chr(118)+chr(101)+chr(114)+chr(115)+chr(105)+chr(111)+chr(110)+chr(95)*2, chr(45)))\" 2\u003e\u00261) -join \" \"; \"spider_$mod =\u003e $r\" }; $r2 = (\u0026 $sp -c \"from PySide6 import QtCore; print(chr(79)+chr(75), QtCore.__version__)\" 2\u003e\u00261) -join \" || \"; \"spider_qtcore=\" + $r2; $src=\"E:\\0apps\\jev-chat-windows\\venv\\Lib\\site-packages\\PySide6\"; \"pyd_sample=\" + ((Get-ChildItem $src -Filter \"*.pyd\" -ErrorAction SilentlyContinue | Select-Object -First 6 | ForEach-Object {$_.Name}) -join \",\"); \"qtcore_pyd=\" + (Test-Path \"$src\\QtCore.pyd\")"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:56:22Z",
+    "executed_at_local":  "2026-10-26 20:56:22",
+    "source_commit":  "c9f198f45817968f5b38f9e1779eb570737bfccc"
 }
