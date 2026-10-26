@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T144922Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\install_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 40; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8; $f=\"E:\\0apps\\tools\\OllamaSetup.exe\"; \"setup_mb=\" + [math]::Round((Get-Item $f -ErrorAction SilentlyContinue).Length/1MB,0)"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:49:34Z",
-    "executed_at_local":  "2026-10-26 22:49:34",
-    "source_commit":  "008b6a561a0f9f87a73c9c7847577cbc394de725"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T145044Z",
+  "powershell": [
+    "function Head([string]$u){ $a=@(\"-sS\",\"-I\",\"-L\",\"--ssl-no-revoke\",\"--http1.1\",\"--connect-timeout\",\"15\",\"--max-time\",\"40\",\"-o\",\"NUL\",\"-w\",\"%{http_code} %{size_download}\",\"-x\",\"http://127.0.0.1:18088\"); $r = (& curl.exe @a $u 2>&1) -join \" \"; return $r }; $urls=@(\"https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\",\"https://ghproxy.net/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\",\"https://gh-proxy.com/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\",\"https://mirror.ghproxy.com/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\"); foreach($u in $urls){ \"TRY \" + $u + \" => \" + (Head $u) }; \"--- api tag ---\"; try { $t = (Invoke-RestMethod -Uri \"https://api.github.com/repos/ollama/ollama/releases/latest\" -Headers @{\"User-Agent\"=\"agent\"} -TimeoutSec 25); \"tag=\" + $t.tag_name + \" assets=\" + (($t.assets | ForEach-Object { $_.name + \":\" + [int]($_.size/1MB) + \"MB\" }) -join \",\") } catch { \"api_fail \" + $_.Exception.Message }"
+  ]
 }
