@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T130049Z",
-    "powershell":  [
-                       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"E:\\0apps\\jev-chat-windows\\venv\\Scripts\\pythonw.exe\" -ArgumentList \"E:\\0apps\\jev-chat-windows\\monitor\\headless_watch.py\" -WorkingDirectory \"E:\\0apps\\jev-chat-windows\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\app_err.log\" -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\app_out.log\"; Start-Sleep -Seconds 10; \"procs=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object {$_.ProcessId}) -join \",\"); (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 4 -Encoding UTF8) -join \" || \"; \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 200"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T13:00:37Z",
-    "executed_at_local":  "2026-10-26 21:00:37",
-    "source_commit":  "82eb474a7fa41fe809a73ae064537edb1f9084ad"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T130151Z",
+  "powershell": [
+    "Set-Location (Get-Location).Path; . \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 100 2>&1 | Select-Object -First 12; \"---- file ----\"; (Get-Item \"results\\jev-monitor\\pull-*.md\" | Sort-Object LastWriteTime -Descending | Select-Object -First 1 | ForEach-Object { $_.Name + \" bytes=\" + $_.Length })"
+  ]
 }
