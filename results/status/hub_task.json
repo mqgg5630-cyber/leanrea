@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T151946Z",
-    "powershell":  [
-                       "\u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 150 | Out-Null; \"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0); \"setup=\" + (Test-Path \"E:\\0apps\\tools\\OllamaSetup.exe\"); Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 2 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T15:19:11Z",
-    "executed_at_local":  "2026-10-26 23:19:11",
-    "source_commit":  "e4cdcd0dc003aeb35ca2c9fa1a93bb4bba4a23af"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T152206Z",
+  "powershell": [
+    "& powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 150 | Out-Null; \"chunks_mb=\" + [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0); \"chunks=\" + ((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object).Count) + \"/199\"; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 2 -Encoding UTF8"
+  ]
 }
