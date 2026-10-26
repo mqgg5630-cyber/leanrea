@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T154306Z",
-    "powershell":  [
-                       "Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 8 -Encoding UTF8; \"status=\" + ((Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama_status.json\" -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) -replace \"\\s+\",\" \"); \"exe=\" + (Test-Path \"$env:LOCALAPPDATA\\Programs\\Ollama\\ollama.exe\")"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T15:42:32Z",
-    "executed_at_local":  "2026-10-26 23:42:32",
-    "source_commit":  "9525a2e53816adca1d28379696fa16a2dc8ad62f"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T154344Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\fix_chunks_small.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\fix_chunks_small.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 90; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 5 -Encoding UTF8"
+  ]
 }
