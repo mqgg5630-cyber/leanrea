@@ -1,17 +1,10 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: cf48d0a93c43ad1e587f91345f8bc297b52365a7
-executed_at_utc: 2026-10-26T12:57:43Z
-executed_at_local: 2026-10-26 20:57:43
+source_commit: 4f366adf411ebb0f93388c2c5da110f04fcbf88b
+executed_at_utc: 2026-10-26T12:58:58Z
+executed_at_local: 2026-10-26 20:58:58
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-Qt6Core.dll        FAIL winerr=127 :: [WinError 127] �Ҳ���ָ���ĳ���
-pyside6.abi3.dll   FAIL winerr=None :: Could not find module 'E:\0apps\jev-chat-windows\venv\Lib\site-packages\PySide6\pyside6.abi3.dll' (or one of its dependencies). Try using the full path with constructor syntax.
-QtCore.pyd         FAIL winerr=None :: Could not find module 'E:\0apps\jev-chat-windows\venv\Lib\site-packages\PySide6\QtCore.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
-Qt6Gui.dll         FAIL winerr=127 :: [WinError 127] �Ҳ���ָ���ĳ���
-msvcp140.dll       LOAD_OK (bundled)
-vcruntime140.dll   LOAD_OK (bundled)
-vcruntime140_1.dll LOAD_OK (bundled)
 
