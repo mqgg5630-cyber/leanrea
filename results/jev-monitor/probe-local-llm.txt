@@ -1,0 +1,13 @@
+﻿COMPUTER=LAPTOP-R77M5D6M
+CPU=Intel(R) Core(TM) i5-10200H CPU @ 2.40GHz cores=4 threads=8
+RAM_GB=15.9
+GPU=OrayIddDriver Device :: 0 MB driver 17.50.19.949 || NVIDIA GeForce GTX 1650 :: 4095 MB driver 32.0.15.7602
+NVIDIA=NVIDIA GeForce GTX 1650, 4096 MiB, 576.02
+CMD python.exe=C:\Users\文少\AppData\Local\Programs\Python\Python312\python.exe
+OLLAMA_MODELS=missing
+OLLAMA_RUNNING=no
+VENV_MODULES=Traceback (most recent call last):   File "<string>", line 1, in <module>   File "<string>", line 1, in <genexpr> AttributeError: module 'importlib' has no attribute 'util'
+FREE_C_GB=35.4
+FREE_D_GB=50.5
+FREE_E_GB=260.9
+PROBE_LLM_DONE=True
