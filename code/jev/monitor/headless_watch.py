@@ -17,6 +17,7 @@ Nothing is sent anywhere. Run with pythonw so no console window appears.
 """
 from __future__ import annotations
 
+import json
 import os
 import sys
 import time
@@ -40,6 +41,32 @@ NO_WINDOW_SLEEP = 5.0
 HEARTBEAT_S = 60.0
 STALL_S = 45.0        # no frame for this long -> drop the capture session and re-acquire
 RESCAN_S = 60.0       # re-check that the hwnd is still the same window
+
+
+SEEN_FILE = os.path.join(LOGS, "seen.json")
+
+
+def load_seen() -> dict:
+    """Per-chat de-duplication state that survives a watcher restart.
+
+    Without this, every restart re-reports whatever is visible on screen as "new"
+    (the upstream Reader only remembers lines inside one process)."""
+    try:
+        with open(SEEN_FILE, encoding="utf-8-sig") as f:
+            data = json.load(f)
+        return {k: [tuple(x) for x in v][-300:] for k, v in data.items() if isinstance(v, list)}
+    except (OSError, ValueError):
+        return {}
+
+
+def save_seen(all_seen: dict) -> None:
+    try:
+        os.makedirs(LOGS, exist_ok=True)
+        trimmed = {k: [list(x) for x in v[-300:]] for k, v in all_seen.items()}
+        with open(SEEN_FILE, "w", encoding="utf-8") as f:
+            json.dump(trimmed, f, ensure_ascii=False)
+    except OSError:
+        pass
 
 
 def log(msg: str) -> None:
@@ -182,6 +209,7 @@ def main() -> int:
     recorder.record("watcher_start", pid=os.getpid(), python=sys.version.split()[0])
 
     readers: dict = {}
+    seen_state: dict = load_seen()
     title = ""
     no_window_logged = ""
     frames = 0
@@ -265,7 +293,11 @@ def main() -> int:
                     recorder.record("chat_switch", chat=title)
                     recorder.digest("\n### 会话：%s（%s）\n" % (title, datetime.now().strftime("%H:%M")))
 
-                reader = readers.setdefault(title, Reader(app))
+                if title not in readers:
+                    r = Reader(app)
+                    r.seen = list(seen_state.get(title) or [])
+                    readers[title] = r
+                reader = readers[title]
                 try:
                     lines = reader.read(full[y0:y1, x0:x1], bg)
                 except Exception:
@@ -281,6 +313,9 @@ def main() -> int:
                     recorder.record_message(title, who, gname, text, clock)
                     log("msg [%s] %s%s: %s" % (title, (gname + " ") if gname else "", who, text[:60]))
 
+                if lines:
+                    seen_state[title] = [list(x) for x in reader.seen][-300:]
+                    save_seen(seen_state)
                 frames += 1
                 if time.time() - last_beat >= HEARTBEAT_S:
                     last_beat = time.time()
