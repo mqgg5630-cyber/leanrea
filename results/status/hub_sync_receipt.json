@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "4a7d69afeaf6c5b2508f976cb99ae9cdb5e45116",
-    "synced_at_utc":  "2026-10-26T14:52:20Z",
-    "synced_at_local":  "2026-10-26 22:52:20",
+    "source_commit":  "bc72f179b2329757ca585292f01881c5c126bbc5",
+    "synced_at_utc":  "2026-10-26T14:53:02Z",
+    "synced_at_local":  "2026-10-26 22:53:02",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  84,
+    "synced_files_count":  85,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  46534,
-                               "stdout":  "[2026-10-26 22:49:13] ollama: FATAL: installer download failed\r\n[2026-10-26 22:52:12] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)\r\n[2026-10-26 22:52:12] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)\r\n[2026-10-26 22:52:12] fetch_ollama: attempt 1 size=33.2 MB",
+                               "elapsed_ms":  1558,
+                               "stdout":  "[2026-10-26 22:52:37] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)\r\n[2026-10-26 22:52:37] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)\r\n[2026-10-26 22:52:37] fetch_ollama: attempt 2 size=34.4 MB\r\nsetup_mb=37.6\r\nstatus={ \"updated_local\": \"2026-10-26 22:52:40\", \"attempt\": 3, \"ok\": false, \"mb\": 34.4, \"stage\": \"download\" }",
                                "stderr":  ""
                            }
                        ],

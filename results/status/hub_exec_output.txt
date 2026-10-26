@@ -1,14 +1,15 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 4a7d69afeaf6c5b2508f976cb99ae9cdb5e45116
-executed_at_utc: 2026-10-26T14:52:20Z
-executed_at_local: 2026-10-26 22:52:20
+source_commit: bc72f179b2329757ca585292f01881c5c126bbc5
+executed_at_utc: 2026-10-26T14:53:02Z
+executed_at_local: 2026-10-26 22:53:02
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 22:49:13] ollama: FATAL: installer download failed
-[2026-10-26 22:52:12] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
-[2026-10-26 22:52:12] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
-[2026-10-26 22:52:12] fetch_ollama: attempt 1 size=33.2 MB
+[2026-10-26 22:52:37] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
+[2026-10-26 22:52:37] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
+[2026-10-26 22:52:37] fetch_ollama: attempt 2 size=34.4 MB
+setup_mb=37.6
+status={ "updated_local": "2026-10-26 22:52:40", "attempt": 3, "ok": false, "mb": 34.4, "stage": "download" }
 
