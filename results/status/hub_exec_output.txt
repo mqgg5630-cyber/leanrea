@@ -1,22 +1,17 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: f53974d40a9e2f21f302f881dcba1f4445550d9b
-executed_at_utc: 2026-10-26T12:56:53Z
-executed_at_local: 2026-10-26 20:56:53
+source_commit: cf48d0a93c43ad1e587f91345f8bc297b52365a7
+executed_at_utc: 2026-10-26T12:57:43Z
+executed_at_local: 2026-10-26 20:57:43
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 20:52:35] fix_pyside:     ╰─�?peer closed connection without sending TLS close_notify:
-[2026-10-26 20:52:35] fix_pyside:         https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof
-[2026-10-26 20:52:35] fix_pyside:   System.Management.Automation.RemoteException
-[2026-10-26 20:52:35] fix_pyside:   hint: `pyside6-essentials` (v6.8.3) was included because `pyside6` (v6.8.3) depends on `pyside6-essentials`
-[2026-10-26 20:52:35] fix_pyside:   uv exit=1
-[2026-10-26 20:52:35] fix_pyside: trying PySide6 6.7.3
-[2026-10-26 20:55:11] fix_pyside:     ╰─�?peer closed connection without sending TLS close_notify:
-[2026-10-26 20:55:11] fix_pyside:         https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof
-[2026-10-26 20:55:11] fix_pyside:   System.Management.Automation.RemoteException
-[2026-10-26 20:55:11] fix_pyside:   hint: `pyside6-essentials` (v6.7.3) was included because `pyside6` (v6.7.3) depends on `pyside6-essentials`
-[2026-10-26 20:55:11] fix_pyside:   uv exit=1
-[2026-10-26 20:55:11] fix_pyside: trying PySide6 6.6.3.1
+Qt6Core.dll        FAIL winerr=127 :: [WinError 127] �Ҳ���ָ���ĳ���
+pyside6.abi3.dll   FAIL winerr=None :: Could not find module 'E:\0apps\jev-chat-windows\venv\Lib\site-packages\PySide6\pyside6.abi3.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+QtCore.pyd         FAIL winerr=None :: Could not find module 'E:\0apps\jev-chat-windows\venv\Lib\site-packages\PySide6\QtCore.pyd' (or one of its dependencies). Try using the full path with constructor syntax.
+Qt6Gui.dll         FAIL winerr=127 :: [WinError 127] �Ҳ���ָ���ĳ���
+msvcp140.dll       LOAD_OK (bundled)
+vcruntime140.dll   LOAD_OK (bundled)
+vcruntime140_1.dll LOAD_OK (bundled)
 

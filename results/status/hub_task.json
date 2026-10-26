@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T125806Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\jev\\diag_dll.py\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; & \"E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe\" \"E:\\0apps\\jev-chat-windows\\monitor\\diag_dll.py\" 2>&1"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T125806Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\jev\\diag_dll.py\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; \u0026 \"E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe\" \"E:\\0apps\\jev-chat-windows\\monitor\\diag_dll.py\" 2\u003e\u00261"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:57:43Z",
+    "executed_at_local":  "2026-10-26 20:57:43",
+    "source_commit":  "cf48d0a93c43ad1e587f91345f8bc297b52365a7"
 }
