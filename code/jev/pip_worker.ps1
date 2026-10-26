@@ -31,7 +31,7 @@ if (-not (Test-Path -LiteralPath $Logs)) { New-Item -ItemType Directory -Path $L
 
 function Log([string]$m) {
     $line = '[{0}] pip_worker: {1}' -f (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'), $m
-    Write-Output $line
+    Write-Host $line   # host stream only: Log() must never leak into $x = Pip-Try ...
     try { Add-Content -LiteralPath $Log -Value $line -Encoding UTF8 } catch {}
 }
 function Save-Status([hashtable]$h) {
