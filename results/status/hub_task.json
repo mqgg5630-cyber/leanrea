@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T143836Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; $o = \u0026 \"E:\\0apps\\jev-chat-windows\\venv\\Scripts\\python.exe\" \"E:\\0apps\\jev-chat-windows\\monitor\\diag_header2.py\" 2\u003e\u00261; $o | Out-File -FilePath \"results\\jev-monitor\\diag-header2.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:38:05Z",
-    "executed_at_local":  "2026-10-26 22:38:05",
-    "source_commit":  "4510b45bfc43d221def2401a20974ec5da27c514"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T144030Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Set-Content -LiteralPath \"E:\\0apps\\jev-chat-windows\\logs\\chat_label.txt\" -Value \"老婆宝宝\" -Encoding UTF8; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; Start-ScheduledTask -TaskName \"jev-chat-monitor\"; Start-Sleep 12; Copy-Item -Path \"results\\jev-monitor\\analysis-20261026-2236.md\" -Destination ([Environment]::GetFolderPath(\"Desktop\")) -Force; Start-Sleep 1; \"desktop=\" + (Test-Path (Join-Path ([Environment]::GetFolderPath(\"Desktop\")) \"analysis-20261026-2236.md\")); \"watcher=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 4 -Encoding UTF8) -join \" || \""
+  ]
 }
