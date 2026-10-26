@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T145044Z",
-    "powershell":  [
-                       "function Head([string]$u){ $a=@(\"-sS\",\"-I\",\"-L\",\"--ssl-no-revoke\",\"--http1.1\",\"--connect-timeout\",\"15\",\"--max-time\",\"40\",\"-o\",\"NUL\",\"-w\",\"%{http_code} %{size_download}\",\"-x\",\"http://127.0.0.1:18088\"); $r = (\u0026 curl.exe @a $u 2\u003e\u00261) -join \" \"; return $r }; $urls=@(\"https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\",\"https://ghproxy.net/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\",\"https://gh-proxy.com/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\",\"https://mirror.ghproxy.com/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe\"); foreach($u in $urls){ \"TRY \" + $u + \" =\u003e \" + (Head $u) }; \"--- api tag ---\"; try { $t = (Invoke-RestMethod -Uri \"https://api.github.com/repos/ollama/ollama/releases/latest\" -Headers @{\"User-Agent\"=\"agent\"} -TimeoutSec 25); \"tag=\" + $t.tag_name + \" assets=\" + (($t.assets | ForEach-Object { $_.name + \":\" + [int]($_.size/1MB) + \"MB\" }) -join \",\") } catch { \"api_fail \" + $_.Exception.Message }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T14:50:58Z",
-    "executed_at_local":  "2026-10-26 22:50:58",
-    "source_commit":  "91c8b50d68e324e704ac3a038d1b98f7c9c5c0a7"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T145215Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\fetch_ollama.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 45; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 4 -Encoding UTF8"
+  ]
 }
