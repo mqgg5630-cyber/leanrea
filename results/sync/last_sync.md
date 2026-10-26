@@ -1,10 +1,10 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-26 12:07 UTC
+- 时间：2026-10-26 12:26 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：feat(jev): detached pip worker (proxy bypassed, mirror fallback)
+- 本轮助手提交：docs(jev): deployment status snapshot (ASCII gate fix)
 - 本轮改动文件：
-   M results/status/hub_task.json
-  ?? code/jev/pip_worker.ps1
+   M code/jev/pull_events.ps1
+  ?? results/jev/STATUS.md
 
 > 完整历史：`git log --oneline -10`；本机 `.\sync.ps1` 之后即可看到本文件。

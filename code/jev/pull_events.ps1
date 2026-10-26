@@ -27,7 +27,7 @@ if (-not (Test-Path -LiteralPath $Dst)) { New-Item -ItemType Directory -Path $Ds
 $report = New-Object System.Collections.ArrayList
 function R([string]$line) { [void]$report.Add($line) }
 
-R ('# JevChat 监控快照 ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))
+R ('# JevChat monitor snapshot ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))
 R ''
 R ('host=' + $env:COMPUTERNAME)
 
@@ -53,7 +53,7 @@ R ''
 # ---- events ------------------------------------------------------------------
 $events = Join-Path $Src 'events.jsonl'
 if (-not (Test-Path -LiteralPath $events)) {
-    R 'events.jsonl 不存在：程序还没启动过，或者还没有任何新消息。'
+    R 'events.jsonl missing: the app has not run yet, or no new message arrived.'
 } else {
     $it = Get-Item -LiteralPath $events
     $lines = @(Get-Content -LiteralPath $events -Tail $Tail -Encoding UTF8 -ErrorAction SilentlyContinue)
@@ -70,18 +70,18 @@ if (-not (Test-Path -LiteralPath $events)) {
     $starts = @($records | Where-Object { $_.kind -eq 'app_start' })
     R ('messages=' + $msgs.Count + ' analyses=' + $an.Count + ' app_starts=' + $starts.Count)
     R ''
-    R '## 会话记录'
+    R '## messages'
     R ''
     foreach ($m in ($msgs | Select-Object -Last 120)) {
-        $who = '对方'
-        if ($m.who -eq 'me') { $who = '我' }
+        $who = 'her'
+        if ($m.who -eq 'me') { $who = 'me' }
         $name = ''
         if ($m.name) { $name = $m.name + ' ' }
-        R ('- `' + $m.t + '` [' + $m.chat + '] ' + $name + $who + '：' + $m.text)
+        R ('- `' + $m.t + '` [' + $m.chat + '] ' + $name + $who + ': ' + $m.text)
     }
     if ($an.Count -gt 0) {
         R ''
-        R '## 程序自身的判断 / 候选'
+        R '## app judgement / candidates'
         R ''
         foreach ($a in ($an | Select-Object -Last 20)) {
             R ('### ' + $a.t)
@@ -102,7 +102,7 @@ if (-not (Test-Path -LiteralPath $events)) {
                     elseif ($v.noul -ne $null) { $txt = 'p=' + [string]$v.noul }
                     $pairs += ($p.Name + '=' + $txt)
                 }
-                R ('- 判断：' + ($pairs -join '; '))
+                R ('- judgement: ' + ($pairs -join '; '))
             }
             R ''
         }
