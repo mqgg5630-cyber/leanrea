@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T121653Z",
-    "powershell":  [
-                       "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip_worker*\" -or $_.CommandLine -like \"*-m pip*jev-chat-windows*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; $url=\"https://mirrors.aliyun.com/pypi/packages/ba/12/1e5497183bdbe782dbb91bad1d0d2297dba4d2831b2652657f7517bfc6df/rapidocr_onnxruntime-1.4.4-py3-none-any.whl\"; $f1=\"$env:TEMP\\r_proxy.whl\"; $sw=[Diagnostics.Stopwatch]::StartNew(); \u0026 curl.exe -sS -x http://127.0.0.1:18088 --http1.1 -o $f1 $url; \"proxy_ms=\" + [int]$sw.Elapsed.TotalMilliseconds + \" size=\" + (Get-Item $f1 -ErrorAction SilentlyContinue).Length; if(Test-Path $f1){ \"proxy_sha=\" + (Get-FileHash $f1 -Algorithm SHA256).Hash.ToLower() }; $f2=\"$env:TEMP\\r_direct.whl\"; $sw2=[Diagnostics.Stopwatch]::StartNew(); \u0026 curl.exe -sS --noproxy \"*\" -o $f2 $url; \"direct_ms=\" + [int]$sw2.Elapsed.TotalMilliseconds + \" size=\" + (Get-Item $f2 -ErrorAction SilentlyContinue).Length; if(Test-Path $f2){ \"direct_sha=\" + (Get-FileHash $f2 -Algorithm SHA256).Hash.ToLower() }; \"expected=971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf\""
-                   ],
-    "status":  "failed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T12:18:14Z",
-    "executed_at_local":  "2026-10-26 20:18:14",
-    "source_commit":  "599c568c2c8297e6a888b0768d94279302064635"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T121934Z",
+  "powershell": [
+    "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip_worker*\" -or $_.CommandLine -like \"*-m pip*jev-chat-windows*\" -or $_.CommandLine -like \"*wheelhouse*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Copy-Item -Path \"code\\jev\\*.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\wheelhouse.ps1\" -WindowStyle Hidden; Start-Sleep -Seconds 50; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\wheelhouse.log\" -Tail 12 -Encoding UTF8"
+  ]
 }
