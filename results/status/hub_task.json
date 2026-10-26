@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T120454Z",
-  "powershell": [
-    "$Root=\"E:\\0apps\\jev-chat-windows\"; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip*install*\" -and $_.CommandLine -like \"*jev-chat-windows*\" } | ForEach-Object { \"killing \" + $_.ProcessId; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; $env:HTTP_PROXY=\"\"; $env:HTTPS_PROXY=\"\"; $env:NO_PROXY=\"*\"; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; $sw=[Diagnostics.Stopwatch]::StartNew(); $r = (& $VPy -m pip install --no-input --no-cache-dir --timeout 60 --retries 2 -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com rapidocr-onnxruntime 2>&1 | Select-Object -Last 4) -join \" ;; \"; \"noproxy_aliyun exit=$LASTEXITCODE elapsed=$([int]$sw.Elapsed.TotalSeconds)s :: $r\""
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T120454Z",
+    "powershell":  [
+                       "$Root=\"E:\\0apps\\jev-chat-windows\"; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pip*install*\" -and $_.CommandLine -like \"*jev-chat-windows*\" } | ForEach-Object { \"killing \" + $_.ProcessId; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; $env:HTTP_PROXY=\"\"; $env:HTTPS_PROXY=\"\"; $env:NO_PROXY=\"*\"; $VPy=\"$Root\\venv\\Scripts\\python.exe\"; $sw=[Diagnostics.Stopwatch]::StartNew(); $r = (\u0026 $VPy -m pip install --no-input --no-cache-dir --timeout 60 --retries 2 -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com rapidocr-onnxruntime 2\u003e\u00261 | Select-Object -Last 4) -join \" ;; \"; \"noproxy_aliyun exit=$LASTEXITCODE elapsed=$([int]$sw.Elapsed.TotalSeconds)s :: $r\""
+                   ],
+    "status":  "failed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:06:31Z",
+    "executed_at_local":  "2026-10-26 20:06:31",
+    "source_commit":  "50f3ca446fd84a232b776174ee81bbba8f5a8982"
 }
