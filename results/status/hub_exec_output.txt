@@ -1,13 +1,13 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 7b861910bcec6b2caeb5dfac62472584923ec314
-executed_at_utc: 2026-10-26T12:46:36Z
-executed_at_local: 2026-10-26 20:46:36
-tasks_all_ok: False
+source_commit: cf78f3f1c606c4930255b22537b1f6662775731c
+executed_at_utc: 2026-10-26T12:47:10Z
+executed_at_local: 2026-10-26 20:47:10
+tasks_all_ok: True
 
---- step: hub_task.powershell (exit=124) ---
-vcruntime140.dll=14.44.35211.0
-vcruntime140_1.dll=14.44.35211.0
-msvcp140.dll=14.44.35211.0
+--- step: hub_task.powershell (exit=0) ---
+PS= 6.12.0
+import_now=Traceback (most recent call last): ||   File "<string>", line 1, in <module> || ImportError: DLL load failed while importing QtCore: �Ҳ���ָ���ĳ���
+bundled=concrt140.dll:14.44.35211.0, msvcp140.dll:14.44.35211.0, msvcp140_1.dll:14.44.35211.0, msvcp140_2.dll:14.44.35211.0, msvcp140_codecvt_ids.dll:14.44.35211.0, vcamp140.dll:14.24.28127.4 built by: vcwrkspc, vccorlib140.dll:14.44.35211.0, vcomp140.dll:14.24.28127.4 built by: vcwrkspc, vcruntime140.dll:14.44.35211.0, vcruntime140_1.dll:14.44.35211.0
 
