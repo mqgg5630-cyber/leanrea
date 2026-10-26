@@ -1,23 +1,20 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 568d2df3cd0e6cfa80851f0de9b4b2bb7227fb98
-executed_at_utc: 2026-10-26T12:14:28Z
-executed_at_local: 2026-10-26 20:14:28
+source_commit: 9329047f7ddef9bb62298370b79865b538656272
+executed_at_utc: 2026-10-26T12:15:43Z
+executed_at_local: 2026-10-26 20:15:43
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-[2026-10-26 20:13:18] pip_worker:   Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
-[2026-10-26 20:13:18] pip_worker:   Requirement already satisfied: numpy in e:\0apps\jev-chat-windows\venv\lib\site-packages (2.4.6)
-[2026-10-26 20:13:18] pip_worker:   exit=0
-[2026-10-26 20:13:18] pip_worker: OK: numpy
-[2026-10-26 20:13:18] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.aliyun.com attempt 1 proxy=True
-[2026-10-26 20:14:26] pip_worker:       rapidocr-onnxruntime<2,>=1.4 from https://mirrors.aliyun.com/pypi/packages/ba/12/1e5497183bdbe782dbb91bad1d0d2297dba4d2831b2652657f7517bfc6df/rapidocr_onnxruntime-1.4.4-py3-none-any.whl#sha256=971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf:
-[2026-10-26 20:14:26] pip_worker:           Expected sha256 971d7d5f223a7a808662229df1ef69893809d8457d834e6373d3854bc1782cbf
-[2026-10-26 20:14:26] pip_worker:                Got        ec1713d33a7a953aafb20e71734306c02741b3e6363f2ca945995405d3b555c6
-[2026-10-26 20:14:26] pip_worker:   System.Management.Automation.RemoteException
-[2026-10-26 20:14:26] pip_worker:   exit=1
-[2026-10-26 20:14:26] pip_worker: OK: rapidocr-onnxruntime>=1.4,<2
-[2026-10-26 20:14:26] pip_worker: install windows-capture via mirrors.aliyun.com attempt 1 proxy=True
-venv_mb=91.4
+[2026-10-26 20:15:09] pip_worker:   ERROR: Could not find a version that satisfies the requirement rapidocr-onnxruntime<2,>=1.4 (from versions: none)
+[2026-10-26 20:15:09] pip_worker:   ERROR: No matching distribution found for rapidocr-onnxruntime<2,>=1.4
+[2026-10-26 20:15:09] pip_worker:   exit=1
+[2026-10-26 20:15:09] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.ustc.edu.cn attempt 1 proxy=True
+[2026-10-26 20:15:28] pip_worker:       opencv-python>=4.5.1.48 from https://mirrors.ustc.edu.cn/pypi/packages/21/f0/9fa6e85cb10c8eb36a0222d27e50fe381b86ce49a55446bf39f491727564/opencv_python-5.0.0.93-cp37-abi3-win_amd64.whl (from rapidocr-onnxruntime<2,>=1.4):
+[2026-10-26 20:15:28] pip_worker:           Expected sha256 f90ba04b8f73bc5c3814037699739f0156f597338a98f05956c684e7c3ca10d2
+[2026-10-26 20:15:28] pip_worker:                Got        6a27f67e2d6ec3de900b56b695331933acb09765fece5a5b49df3447f9f05844
+[2026-10-26 20:15:28] pip_worker:   System.Management.Automation.RemoteException
+[2026-10-26 20:15:28] pip_worker:   exit=1
+[2026-10-26 20:15:28] pip_worker: install rapidocr-onnxruntime>=1.4,<2 via mirrors.aliyun.com attempt 2 proxy=True
 
