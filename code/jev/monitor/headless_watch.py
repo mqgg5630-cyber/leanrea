@@ -38,6 +38,8 @@ PIDFILE = os.path.join(LOGS, "watcher.pid")
 FRAME_SLEEP = 0.05
 NO_WINDOW_SLEEP = 5.0
 HEARTBEAT_S = 60.0
+STALL_S = 45.0        # no frame for this long -> drop the capture session and re-acquire
+RESCAN_S = 60.0       # re-check that the hwnd is still the same window
 
 
 def log(msg: str) -> None:
@@ -211,12 +213,27 @@ def main() -> int:
         recorder.record("capture_start", app=app.key, hwnd=hwnd)
         warn_area = False
 
+        last_frame = time.time()
+        stalled = False
         try:
             while cap.alive():
                 full = cap.settled()
                 if full is None:
+                    # WGC sometimes stops delivering frames (window re-created after a
+                    # minimize/restore, GPU session dropped). Without this watchdog the
+                    # loop waits forever and looks alive while recording nothing.
+                    if time.time() - last_frame > STALL_S:
+                        log("no frame for %.0fs - re-acquiring the window" % STALL_S)
+                        recorder.record("capture_stall", seconds=int(STALL_S))
+                        stalled = True
+                        break
+                    if time.time() - last_beat >= HEARTBEAT_S:
+                        last_beat = time.time()
+                        recorder.record("heartbeat", frames=frames, messages=messages,
+                                        chat=title, waiting_frame=True)
                     time.sleep(FRAME_SLEEP)
                     continue
+                last_frame = time.time()
                 area = cap_mod.chat_area(full)
                 if area is None:
                     if not warn_area:

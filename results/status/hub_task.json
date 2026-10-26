@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T150752Z",
-    "powershell":  [
-                       "\"watcher_procs=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"chat_procs=\" + ((Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -match \"^(weixin|wechat|qq)$\" } | ForEach-Object { $_.ProcessName }) -join \",\"); \"weixin_windows=\" + ((Get-Process -Name Weixin -ErrorAction SilentlyContinue | Where-Object { $_.MainWindowTitle } | ForEach-Object { $_.MainWindowTitle + \"/\" + $_.Id }) -join \" | \"); \"--- watcher.log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 6 -Encoding UTF8) -join \" || \""
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T15:07:23Z",
-    "executed_at_local":  "2026-10-26 23:07:23",
-    "source_commit":  "bd1b9b4d98dd7c37c22a93e2478898f625e43bd4"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261026T150831Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\jev\\monitor\\*\" -Destination \"E:\\0apps\\jev-chat-windows\\monitor\\\" -Force; Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; Start-Sleep 2; Start-ScheduledTask -TaskName \"jev-chat-monitor\"; Start-Sleep 25; \"watchers=\" + ((Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*headless_watch*\" } | ForEach-Object { $_.ProcessId }) -join \",\"); \"--- log ---\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\watcher.log\" -Tail 5 -Encoding UTF8) -join \" || \"; \"--- chunks_mb ---\"; [math]::Round((Get-ChildItem \"E:\\0apps\\tools\\ollama_chunks\" -Filter \"part_*.bin\" -ErrorAction SilentlyContinue | Measure-Object -Property Length -Sum).Sum/1MB,0)"
+  ]
 }
