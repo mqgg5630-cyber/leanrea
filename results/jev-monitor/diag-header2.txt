@@ -1,0 +1,11 @@
+﻿frame=(1080, 960, 3) area=(376,100,953,899) pane_top=40
+== full top 0..260 (pane) shape=(260, 577, 3)
+   box=( 425, 120)-( 535, 143) score=0.95 text=' 177条新消息'
+== top 0..260 upscaled x2 shape=(520, 1154, 3)
+   box=(  44, 123)-( 179, 154) score=0.58 text='9>W<3'
+   box=( 854, 246)-(1065, 279) score=1.00 text='177条新消息'
+== left 60% of top 0..140 shape=(140, 346, 3)
+   box=(  20,  58)-(  92,  81) score=0.69 text='+g>w<e'
+== left list 0..140 (x 0..x0) shape=(140, 376, 3)
+   box=( 100,  59)-( 159,  82) score=0.98 text='Q搜索'
+   box=( 326, 119)-( 366, 138) score=0.99 text='22:38'
