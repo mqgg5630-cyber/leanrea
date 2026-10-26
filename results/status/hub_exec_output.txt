@@ -1,16 +1,14 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 91c8b50d68e324e704ac3a038d1b98f7c9c5c0a7
-executed_at_utc: 2026-10-26T14:50:58Z
-executed_at_local: 2026-10-26 22:50:58
+source_commit: 4a7d69afeaf6c5b2508f976cb99ae9cdb5e45116
+executed_at_utc: 2026-10-26T14:52:20Z
+executed_at_local: 2026-10-26 22:52:20
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-TRY https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe => 200 0
-TRY https://ghproxy.net/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe => 200 0
-TRY https://gh-proxy.com/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe => 200 0
-TRY https://mirror.ghproxy.com/https://github.com/ollama/ollama/releases/latest/download/OllamaSetup.exe => curl: (35) schannel: failed to receive handshake, SSL/TLS connection failed 000 0
---- api tag ---
-tag=v0.40.11 assets=install.ps1:0MB,install.sh:0MB,ollama-darwin.tgz:173MB,Ollama-darwin.zip:210MB,ollama-linux-amd64-mlx.tar.zst:1175MB,ollama-linux-amd64-rocm.tar.zst:1003MB,ollama-linux-amd64.tar.zst:1439MB,ollama-linux-arm64-jetpack5.tar.zst:285MB,ollama-linux-arm64-jetpack6.tar.zst:258MB,ollama-linux-arm64.tar.zst:1492MB,ollama-windows-amd64-mlx.zip:881MB,ollama-windows-amd64-rocm.zip:245MB,ollama-windows-amd64.zip:1513MB,ollama-windows-arm64.zip:203MB,Ollama.dmg:211MB,OllamaSetup.exe:1585MB,sha256sum.txt:0MB
+[2026-10-26 22:49:13] ollama: FATAL: installer download failed
+[2026-10-26 22:52:12] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
+[2026-10-26 22:52:12] fetch_ollama:   curl: (56) schannel: server closed abruptly (missing close_notify)
+[2026-10-26 22:52:12] fetch_ollama: attempt 1 size=33.2 MB
 
