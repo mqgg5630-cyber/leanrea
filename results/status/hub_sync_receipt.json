@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "cdd4f616a91dbc7145eccd7db04afd8edb895b98",
-    "synced_at_utc":  "2026-10-26T12:48:59Z",
-    "synced_at_local":  "2026-10-26 20:48:59",
+    "source_commit":  "3327b19673b08fd538dc42c9b5bdf19d36332034",
+    "synced_at_utc":  "2026-10-26T12:51:29Z",
+    "synced_at_local":  "2026-10-26 20:51:29",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  40,
+    "synced_files_count":  41,
     "tasks_executed_count":  1,
-    "tasks_all_ok":  true,
+    "tasks_all_ok":  false,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
-                               "exit_code":  0,
-                               "elapsed_ms":  79258,
-                               "stdout":  "py312=True\r\nvenv_created=True\r\n3.12.10\r\nuv=      https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html#unexpected-eof ;; System.Management.Automation.RemoteException ;; hint: `pyside6-webengine` (v6.12.0.140) was included because `pyside6` (v6.12.0) depends on `pyside6-webengine`\r\ntest312_import=Traceback (most recent call last): ||   File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e || ModuleNotFoundError: No module named \u0027PySide6\u0027",
+                               "exit_code":  124,
+                               "elapsed_ms":  120164,
+                               "stdout":  "",
                                "stderr":  ""
                            }
                        ],
