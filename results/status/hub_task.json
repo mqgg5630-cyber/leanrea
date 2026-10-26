@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261026T120110Z",
-  "powershell": [
-    "$Root=\"E:\\0apps\\jev-chat-windows\"; Get-Content \"$Root\\logs\\install.log\" -Encoding UTF8 | Select-String -Pattern \"pip|ERROR|WARNING|stage\" | Select-Object -Last 28 | ForEach-Object { $_.ToString() }; \"=== proxy env ===\"; \"HTTP_PROXY=\" + $env:HTTP_PROXY + \" HTTPS_PROXY=\" + $env:HTTPS_PROXY; \"=== winhttp ===\"; (netsh winhttp show proxy) -join \" \"; \"=== pip config ===\"; & \"$Root\\venv\\Scripts\\python.exe\" -m pip config list 2>&1"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261026T120110Z",
+    "powershell":  [
+                       "$Root=\"E:\\0apps\\jev-chat-windows\"; Get-Content \"$Root\\logs\\install.log\" -Encoding UTF8 | Select-String -Pattern \"pip|ERROR|WARNING|stage\" | Select-Object -Last 28 | ForEach-Object { $_.ToString() }; \"=== proxy env ===\"; \"HTTP_PROXY=\" + $env:HTTP_PROXY + \" HTTPS_PROXY=\" + $env:HTTPS_PROXY; \"=== winhttp ===\"; (netsh winhttp show proxy) -join \" \"; \"=== pip config ===\"; \u0026 \"$Root\\venv\\Scripts\\python.exe\" -m pip config list 2\u003e\u00261"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-26T12:00:33Z",
+    "executed_at_local":  "2026-10-26 20:00:33",
+    "source_commit":  "72bfff35d487f5d7ca5720c400fa44969b10f466"
 }
