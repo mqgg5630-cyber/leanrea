@@ -1,8 +1,8 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-26 12:55 UTC
+- 时间：2026-10-26 12:56 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：poll(jev): PySide6 version walk
+- 本轮助手提交：diag(jev): does the same PySide6 import under python 3.12
 - 本轮改动文件：
    M results/status/hub_task.json
 
