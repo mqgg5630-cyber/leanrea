@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "3d02a0e75d22783f4031cea319292be1a486d44d",
-    "synced_at_utc":  "2026-10-27T01:05:21Z",
-    "synced_at_local":  "2026-10-27 09:05:21",
+    "source_commit":  "14963f2c51777feaf9431ab8cfd81ad7a89bd463",
+    "synced_at_utc":  "2026-10-27T01:05:55Z",
+    "synced_at_local":  "2026-10-27 09:05:55",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  146,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  6356,
-                               "stdout":  "",
+                               "elapsed_ms":  7834,
+                               "stdout":  "DISTRO Ubuntu-26.04 exit=126 bytes=0\r\nDISTRO Ubuntu-24.04 exit=126 bytes=0\r\nRUNNER_DONE",
                                "stderr":  ""
                            }
                        ],
