@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010502Z",
-    "powershell":  [
-                       "$r = (Get-Location).Path; $rw = \"/mnt/\" + $r.Substring(0,1).ToLower() + (($r.Substring(2)) -replace \"\\\\\",\"/\"); New-Item -ItemType Directory -Force -Path \"results\\jev-monitor\" | Out-Null; foreach ($d in @(\"Ubuntu-24.04\",\"Ubuntu-26.04\")) { \u0026 wsl.exe -d $d -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh \"$rw/results/jev-monitor/wsl-probe-$d.txt\" 2\u003e\u00261 | Out-Null }; Get-ChildItem \"results\\jev-monitor\\wsl-probe-*.txt\" | ForEach-Object { $_.Name + \" \" + $_.Length }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:04:22Z",
-    "executed_at_local":  "2026-10-27 09:04:22",
-    "source_commit":  "2d8ae9200c0706e9e9d17d53449dc7c0f28fcc55"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T010528Z",
+  "powershell": [
+    "New-Item -ItemType Directory -Force -Path \"results\\jev-monitor\" | Out-Null; \"--- simple ---\"; & wsl.exe -d Ubuntu-24.04 -e bash -c \"echo hi-from-24 > /mnt/e/t.txt; id; cat /mnt/e/t.txt\" 2>&1; \"exit24=\" + $LASTEXITCODE; \"--- script ---\"; & wsl.exe -d Ubuntu-24.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/probe24.txt 2>&1; \"exitS=\" + $LASTEXITCODE; \"size=\" + (Get-Item \"E:\\probe24.txt\" -ErrorAction SilentlyContinue).Length; Get-Content \"E:\\probe24.txt\" -TotalCount 12 -ErrorAction SilentlyContinue"
+  ]
 }
