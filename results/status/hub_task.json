@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010429Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\connect\\wsl_probe.sh\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\wsl_probe.sh\" -Force; $sh = \"E:\\0apps\\jev-chat-windows\\tools\\wsl_probe.sh\"; foreach ($d in @(\"Ubuntu-24.04\",\"Ubuntu-26.04\")) { \u0026 wsl.exe -d $d -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh \"/mnt/e/0apps/jev-chat-windows/results_wsl_$d.txt\" 2\u003e\u00261 | Out-Null }; \"wrote probes\"; \"--- TCP 22 from windows ---\"; foreach ($h in @(\"10.10.5.210\",\"192.168.1.109\")) { $c = New-Object System.Net.Sockets.TcpClient; $ok = $c.BeginConnect($h,22,$null,$null).AsyncWaitHandle.WaitOne(5000,$false); \"$h tcp22=$ok\"; $c.Close() }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:03:52Z",
-    "executed_at_local":  "2026-10-27 09:03:52",
-    "source_commit":  "628facb4ea8c501c8051864c2e86f4c460c8e284"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T010502Z",
+  "powershell": [
+    "$r = (Get-Location).Path; $rw = \"/mnt/\" + $r.Substring(0,1).ToLower() + (($r.Substring(2)) -replace \"\\\\\",\"/\"); New-Item -ItemType Directory -Force -Path \"results\\jev-monitor\" | Out-Null; foreach ($d in @(\"Ubuntu-24.04\",\"Ubuntu-26.04\")) { & wsl.exe -d $d -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh \"$rw/results/jev-monitor/wsl-probe-$d.txt\" 2>&1 | Out-Null }; Get-ChildItem \"results\\jev-monitor\\wsl-probe-*.txt\" | ForEach-Object { $_.Name + \" \" + $_.Length }"
+  ]
 }
