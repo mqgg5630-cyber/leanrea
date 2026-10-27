@@ -1,0 +1,35 @@
+TS_EXE=True
+PEER=100.71.123.19 laptop-r77m5d6m-1 shaohuawen03@ windows - 
+PEER=100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows offline, last seen 8d ago 
+PEER=100.99.113.111 laptop-r77m5d6m shaohuawen03@ windows offline, last seen 134d ago 
+PEER=100.109.207.34 muse shaohuawen03@ offline, last seen 10h ago 
+PEER=100.80.187.74 redmi-note-12-turbo-1 shaohuawen03@ android offline, last seen 24d ago 
+PEER=100.90.87.92 redmi-note-12-turbo shaohuawen03@ android offline, last seen 24d ago 
+PEER=100.83.148.67 xiaomi-23049rad8c shaohuawen03@ android offline, last seen 279d ago 
+SELF_ONLINE=True
+NODE muse=online=False ip=100.109.207.34,fd7a:115c:a1e0::943b:cf23 os= relay=nyc lastseen=2026-10-26T15:20:28.1Z exitnode=False routes=fd7a:115c:a1e0::943b:cf23/128
+NODE Redmi Note 12 Turbo=online=False ip=100.90.87.92,fd7a:115c:a1e0::b93b:575d os=android relay= lastseen=2026-10-02T08:48:08.1Z exitnode=False routes=fd7a:115c:a1e0::b93b:575d/128
+NODE DESKTOP-IEUDGS5=online=False ip=100.84.137.117,fd7a:115c:a1e0::bb01:8994 os=windows relay=hkg lastseen=2026-10-19T00:27:36.1Z exitnode=False routes=fd7a:115c:a1e0::bb01:8994/128
+NODE localhost=online=False ip=100.83.148.67,fd7a:115c:a1e0::b901:9490 os=android relay=ams lastseen=2026-01-20T07:06:17.1Z exitnode=False routes=fd7a:115c:a1e0::b901:9490/128
+NODE Redmi Note 12 Turbo=online=False ip=100.80.187.74,fd7a:115c:a1e0::63b:bb4c os=android relay= lastseen=2026-10-02T10:08:28.1Z exitnode=False routes=fd7a:115c:a1e0::63b:bb4c/128
+NODE LAPTOP-R77M5D6M=online=False ip=100.99.113.111,fd7a:115c:a1e0::ae01:7192 os=windows relay=hkg lastseen=2026-06-14T12:34:09.1Z exitnode=False routes=fd7a:115c:a1e0::ae01:7192/128
+NETCHECK=2026/10/27 09:41:19 tshttpproxy: using proxy "http://127.0.0.1:18088" for URL: "https://controlplane.tailscale.com/" ; 2026/10/27 09:41:27 portmap: monitor: gateway and self IP changed: gw=172.18.0.2 self=172.18.0.1 ; ; Report: ; * Time: 2026-10-27 09:41:31.6710717+08:00 ; * UDP: true ; * IPv4: yes, 149.88.23.207:41432 ; * IPv6: no, but OS has support ; * MappingVariesByDestIP: false ; * PortMapping: ; * CaptivePortal: false ; * Nearest DERP: Singapore ; * DERP latency: ; - sin: 230.2ms (Singapore) ; - blr: 259.7ms (Bengaluru) ; - hkg: 259.7ms (Hong Kong) ; - tok: 288.7ms (Tokyo) ; - dbi: 298.9ms (Dubai) ; - nai: 369.7ms (Nairobi) ; - jnb: 369.7ms (Johannesburg) ; - par: 376.6ms (Paris) ; - fra: 379.3ms (Frankfurt) ; - mad: 390.7ms (Madrid) ; - nue: 392.4ms (Nuremberg) ; - ams: 395.1ms (Amsterdam) ; - lhr: 395.1ms (London) ; - sea: 396.8ms (Seattle) ; - lax: 403.1ms (Los Angeles) ; - sfo: 404.1ms (San Francisco) ; - hel: 404.1ms (Helsinki) ; - waw: 404.1ms (Warsaw) ; - den: 423.9ms (Denver) ; - dfw: 427.7ms (Dallas) ; - hnl: 433.8ms (Honolulu) ; - ord: 439.8ms (Chicago) ; - nyc: 443.4ms (New York City) ; - mia: 451.7ms (Miami) ; - tor: 451.7ms (Toronto) ; - iad: 462.3ms (Ashburn) ; - syd: 497.6ms (Sydney) ; - sao: 556.1ms (So Paulo)
+NETCHECK_UDP= * UDP: true | * IPv4: yes, 149.88.23.207:41432 | * MappingVariesByDestIP: false | * Nearest DERP: Singapore 
+PORT 192.168.1.109: 22=reject
+PORT 192.168.1.109: 3389=reject
+PORT 192.168.1.109: 445=reject
+PORT 192.168.1.109: 5938=reject
+PORT 100.84.137.117: 22=timeout
+PORT 100.84.137.117: 3389=timeout
+PORT 100.84.137.117: 445=timeout
+PORT 100.84.137.117: 5938=timeout
+PORT 100.109.207.34: 22=timeout
+PORT 100.109.207.34: 3389=timeout
+PORT 100.109.207.34: 445=timeout
+PORT 100.109.207.34: 5938=timeout
+SUNLOGIN_DIRS=C:\Program Files\Oray | C:\ProgramData\Oray
+SUNLOGIN_PROCS=none
+SUNLOGIN_SVCS=none
+LOCAL_LAN_IPS=192.168.110.172
+LAN_NEIGHBORS=172.17.31.255/FF-FF-FF-FF-FF-FF | 172.17.31.146/00-15-5D-8D-B4-ED | 172.20.95.255/FF-FF-FF-FF-FF-FF | 172.18.0.3/ | 172.18.0.2/ | 172.18.0.1/ | 192.168.110.255/FF-FF-FF-FF-FF-FF | 192.168.110.226/90-DE-80-81-A9-51 | 192.168.110.202/40-58-46-B6-0A-DF | 192.168.110.1/10-5F-02-08-B5-42 | 10.0.255.255/
+DIAG_DONE=True
