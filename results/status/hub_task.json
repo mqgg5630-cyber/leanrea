@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010632Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\connect\\run_wsl_probe.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\run_wsl_probe.ps1\" 2\u003e\u00261; $o"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:05:55Z",
-    "executed_at_local":  "2026-10-27 09:05:55",
-    "source_commit":  "14963f2c51777feaf9431ab8cfd81ad7a89bd463"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T010705Z",
+  "powershell": [
+    "Remove-Item \"E:\\wsl-*.txt\" -Force -ErrorAction SilentlyContinue; & wsl.exe -d Ubuntu-24.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/wsl-24.txt 2>$null; \"exit24=\" + $LASTEXITCODE; & wsl.exe -d Ubuntu-26.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/wsl-26.txt 2>$null; \"exit26=\" + $LASTEXITCODE; Copy-Item \"E:\\wsl-24.txt\" \"results\\jev-monitor\\wsl-Ubuntu-24.04.txt\" -Force -ErrorAction SilentlyContinue; Copy-Item \"E:\\wsl-26.txt\" \"results\\jev-monitor\\wsl-Ubuntu-26.04.txt\" -Force -ErrorAction SilentlyContinue; Get-ChildItem \"results\\jev-monitor\\wsl-*.txt\" | ForEach-Object { $_.Name + \"=\" + $_.Length }"
+  ]
 }
