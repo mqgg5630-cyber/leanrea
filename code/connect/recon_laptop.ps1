@@ -55,7 +55,7 @@ foreach ($p in @('C:\Users\' + $env:USERNAME + '\Documents', 'C:\Users\' + $env:
     if (-not (Test-Path -LiteralPath $p)) { continue }
     try {
         $hints += @(Get-ChildItem -LiteralPath $p -Directory -ErrorAction SilentlyContinue |
-                    Where-Object { $_.Name -match '(?i)hpc|slurm|pbs|cluster|ssh|scp|集群|超算|工作站' } |
+                    Where-Object { $_.Name -match '(?i)hpc|slurm|pbs|cluster|ssh|scp|workstation' } |
                     Select-Object -First 4 | ForEach-Object { $_.FullName })
     } catch {}
 }
