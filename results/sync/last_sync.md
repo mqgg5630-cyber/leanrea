@@ -1,8 +1,8 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-27 01:51 UTC
+- 时间：2026-10-27 01:52 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：check: is F:\0wsh on this laptop?
+- 本轮助手提交：key: laptop public keys for desktop trust
 - 本轮改动文件：
    M results/status/hub_task.json
 
