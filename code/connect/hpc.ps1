@@ -26,6 +26,7 @@ param(
     [ValidateSet('info', 'run', 'put', 'get', 'submit', 'jobs', 'log')]
     [string]$Action = 'info',
     [string]$Cmd = '',
+    [string]$CmdFile = '',
     [string]$Local = '',
     [string]$Remote = '',
     [string]$Script = '',
@@ -56,6 +57,12 @@ switch ($Action) {
         $lines.Add("S '" + $rc.Replace("'", "'\''") + "'")
     }
     'run' {
+        # -CmdFile avoids every quoting layer between the hub, powershell and WSL
+        if ($CmdFile) {
+            $cf = if ([IO.Path]::IsPathRooted($CmdFile)) { $CmdFile } else { Join-Path (Get-Location).Path $CmdFile }
+            if (-not (Test-Path -LiteralPath $cf)) { Write-Output 'NO_CMDFILE'; exit 2 }
+            $Cmd = [IO.File]::ReadAllText($cf)
+        }
         if (-not $Cmd) { Write-Output 'NO_CMD'; exit 2 }
         $esc = $Cmd.Replace("'", "'\''")
         $lines.Add("S '$esc'")
