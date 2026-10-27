@@ -1,0 +1,24 @@
+TS_EXE=E:\Tailscale\tailscale.exe
+TS_STATUS_HEAD=100.71.123.19 laptop-r77m5d6m-1 shaohuawen03@ windows - ; 100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows active; relay "hkg"; offline, last seen 8d ago, tx 4368 rx 0 ; 100.99.113.111 laptop-r77m5d6m shaohuawen03@ windows offline, last seen 134d ago ; 100.109.207.34 muse shaohuawen03@ active; relay "nyc"; offline, last seen 10h ago, tx 3588 rx 0 ; 100.80.187.74 redmi-note-12-turbo-1 shaohuawen03@ android offline, last seen 24d ago ; 100.90.87.92 redmi-note-12-turbo shaohuawen03@ android offline, last seen 24d ago ; 100.83.148.67 xiaomi-23049rad8c shaohuawen03@ android offline, last seen 279d ago 
+TS_PEERS=100.71.123.19 laptop-r77m5d6m-1 shaohuawen03@ windows - ;; 100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows active; relay "hkg"; offline, last seen 8d ago, tx 4368 rx 0 ;; 100.99.113.111 laptop-r77m5d6m shaohuawen03@ windows offline, last seen 134d ago ;; 100.109.207.34 muse shaohuawen03@ active; relay "nyc"; offline, last seen 10h ago, tx 3588 rx 0 
+TS_PING 100.84.137.117=ping "100.84.137.117" timed out ; ping "100.84.137.117" timed out ; no reply
+TS_PING 100.109.207.34=ping "100.109.207.34" timed out ; ping "100.109.207.34" timed out ; no reply
+PORT 100.84.137.117: 22=timeout
+PORT 100.84.137.117: 5985=timeout
+PORT 100.84.137.117: 5986=timeout
+PORT 100.84.137.117: 3389=timeout
+PORT 100.84.137.117: 445=timeout
+PORT 100.84.137.117: 8000=timeout
+PORT 100.84.137.117: 8080=timeout
+PORT 100.109.207.34: 22=timeout
+PORT 100.109.207.34: 5985=timeout
+PORT 100.109.207.34: 5986=timeout
+PORT 100.109.207.34: 3389=timeout
+PORT 100.109.207.34: 445=timeout
+PORT 100.109.207.34: 8000=timeout
+PORT 100.109.207.34: 8080=timeout
+BANNER 100.84.137.117:22=conn-err: 使用“2”个参数调用“Connect”时发生异常:“由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 100.84.137.117:22”
+BANNER 192.168.1.109:22=conn-err: 使用“3”个参数调用“Read”时发生异常:“无法从传输连接中读取数据: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。。”
+SSH_TRY BNI/id_ed25519=exit=255 :: ssh: connect to host 100.84.137.117 port 22: Connection timed out
+SSH_TRY BNI/id_rsa=exit=255 :: ssh: connect to host 100.84.137.117 port 22: Connection timed out
+SSH_TRY BNI/id_ed25519_shaohua=exit=255 :: ssh: connect to host 100.84.137.117 port 22: Connection timed out

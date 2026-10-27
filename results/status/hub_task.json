@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T013223Z",
-  "powershell": [
-    "Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\probe_desktop.ps1\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\desk.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\desk.err\"; Start-Sleep -Seconds 100; Copy-Item \"E:\\0apps\\jev-chat-windows\\logs\\desk.out\" \"results\\connect\\probe-desktop.txt\" -Force -ErrorAction SilentlyContinue; \"bytes=\" + (Get-Item \"results\\connect\\probe-desktop.txt\" -ErrorAction SilentlyContinue).Length"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T013223Z",
+    "powershell":  [
+                       "Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\probe_desktop.ps1\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\desk.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\desk.err\"; Start-Sleep -Seconds 100; Copy-Item \"E:\\0apps\\jev-chat-windows\\logs\\desk.out\" \"results\\connect\\probe-desktop.txt\" -Force -ErrorAction SilentlyContinue; \"bytes=\" + (Get-Item \"results\\connect\\probe-desktop.txt\" -ErrorAction SilentlyContinue).Length"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:33:40Z",
+    "executed_at_local":  "2026-10-27 09:33:40",
+    "source_commit":  "6f2fe580b19faca2a1bb5e1fefff5db1dc92f608"
 }
