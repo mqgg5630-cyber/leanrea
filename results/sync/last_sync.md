@@ -1,8 +1,8 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-27 11:16 UTC
+- 时间：2026-10-27 11:17 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：zhongqi probe3: trees+git
+- 本轮助手提交：zhongqi tidy: quarantine sessions, keep results
 - 本轮改动文件：
    M results/status/hub_task.json
 
