@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "c420a2dfaa35f31dd31d6084b70522ac1dcc4168",
-    "synced_at_utc":  "2026-10-27T01:44:34Z",
-    "synced_at_local":  "2026-10-27 09:44:34",
+    "source_commit":  "c0f499a9d3cbfaa9c59f6ac4eb5e518c98821dcf",
+    "synced_at_utc":  "2026-10-27T01:50:56Z",
+    "synced_at_local":  "2026-10-27 09:50:56",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  162,
+    "synced_files_count":  163,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1265,
-                               "stdout":  "bat=1853 bytes\r\ntxt=3934",
+                               "elapsed_ms":  11407,
+                               "stdout":  "100.71.123.19 laptop-r77m5d6m-1 shaohuawen03@ windows - \r\n100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows offline, last seen 8d ago \r\n100.99.113.111 laptop-r77m5d6m shaohuawen03@ windows offline, last seen 134d ago \r\n--- ping desktop ---\r\nping \"100.84.137.117\" timed out no reply\r\n--- port 22/3389 ---\r\nport 22 = False\r\nport 3389 = False",
                                "stderr":  ""
                            }
                        ],
