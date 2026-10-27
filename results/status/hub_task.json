@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T015255Z",
-    "powershell":  [
-                       "\u0026 wsl.exe -d Ubuntu-26.04 -e bash -lc \"cat ~/.ssh/id_ed25519.pub\" 2\u003e$null; \"--- win keys ---\"; Get-Content \"$env:USERPROFILE\\.ssh\\id_ed25519.pub\" -ErrorAction SilentlyContinue"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:52:44Z",
-    "executed_at_local":  "2026-10-27 09:52:44",
-    "source_commit":  "f9f836d98f270df42185a4aaecc9aaf29905649f"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T111427Z",
+  "powershell": [
+    "Get-ChildItem E:\\0zhongqi -Force | ForEach-Object { if ($_.PSIsContainer) { $m = Get-ChildItem $_.FullName -Recurse -File -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum; \"{0}`tDIR`tMB={1}`tfiles={2}`t{3}\" -f $_.Name, [math]::Round($m.Sum/1MB,1), $m.Count, $_.LastWriteTime } else { \"{0}`tFILE`tMB={1}`t{2}\" -f $_.Name, [math]::Round($_.Length/1MB,1), $_.LastWriteTime } }; Get-PSDrive E | Select-Object Free, Used"
+  ]
 }
