@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "9a2df03b4424b0f4d8092988de665b73fe046479",
-    "synced_at_utc":  "2026-10-27T01:43:36Z",
-    "synced_at_local":  "2026-10-27 09:43:36",
+    "source_commit":  "c420a2dfaa35f31dd31d6084b70522ac1dcc4168",
+    "synced_at_utc":  "2026-10-27T01:44:34Z",
+    "synced_at_local":  "2026-10-27 09:44:34",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  161,
+    "synced_files_count":  162,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  32132,
-                               "stdout":  "--- route to 192.168.1.0/24 ---\r\n\r\n--- ping ---\r\n\r\n--- tracert ---\r\n ;   1     *        *        *     ����ʱ�� ;   2     *        *        *     ����ʱ�� ;   3     *        *        *     ����ʱ�� ;   4     *        *        *     ����ʱ��\r\n--- sunlogin on laptop ---\r\nAweSun\r\n--- tailnet last seen desktop ---\r\n2026-10-19T00:27:36.1Z",
+                               "elapsed_ms":  1265,
+                               "stdout":  "bat=1853 bytes\r\ntxt=3934",
                                "stderr":  ""
                            }
                        ],

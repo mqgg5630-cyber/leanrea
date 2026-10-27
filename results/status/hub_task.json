@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T014457Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\connect\\desk-diag.bat\" -Destination \"D:\\桌面\\台式机诊断.bat\" -Force; \"bat=\" + (Get-Item \"D:\\桌面\\台式机诊断.bat\").Length + \" bytes\"; Copy-Item -Path \"results\\connect\\diag-desktop.txt\" -Destination \"D:\\桌面\\台式机诊断_本次结果.txt\" -Force; \"txt=\" + (Get-Item \"D:\\桌面\\台式机诊断_本次结果.txt\").Length"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T014457Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\connect\\desk-diag.bat\" -Destination \"D:\\桌面\\台式机诊断.bat\" -Force; \"bat=\" + (Get-Item \"D:\\桌面\\台式机诊断.bat\").Length + \" bytes\"; Copy-Item -Path \"results\\connect\\diag-desktop.txt\" -Destination \"D:\\桌面\\台式机诊断_本次结果.txt\" -Force; \"txt=\" + (Get-Item \"D:\\桌面\\台式机诊断_本次结果.txt\").Length"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:44:34Z",
+    "executed_at_local":  "2026-10-27 09:44:34",
+    "source_commit":  "c420a2dfaa35f31dd31d6084b70522ac1dcc4168"
 }
