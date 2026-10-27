@@ -1,0 +1,14 @@
+﻿TCP desktop_lan 192.168.1.109:22=open
+SSH desktop_lan=exit=255 :: Connection closed by 192.168.1.109 port 22
+TCP hpc_campus 10.10.5.210:22=timeout
+SSH hpc_campus=exit=255 :: ssh: connect to host 10.10.5.210 port 22: Connection timed out
+TCP hpc_paratera wheshell.hpccube.com:65032=open
+SSH hpc_paratera=exit=255 :: scnlizwblw@wheshell.hpccube.com: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+TCP hpc_scnet zzeshell.scnet.cn:65032=open
+SSH hpc_scnet=exit=255 :: \346\226\207\345\260\221@zzeshell.scnet.cn: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+LOCAL_IPS=192.168.110.172@WLAN, 10.0.0.15@本地连接
+TS_PEERS=100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows offline, last seen 8d ago ;; 100.109.207.34 muse shaohuawen03@ offline, last seen 9h ago 
+TS_PING_DESKTOP=ping "100.84.137.117" timed out no reply
+TS_PING_MUSE=ping "100.109.207.34" timed out no reply
+SSH_CONFIG_RAW=Host 25wenshaohua 10.10.5.210 hpc-mu01 |   HostName 10.10.5.210 |   User 25wenshaohua |   Port 22 |   IdentityFile ~/.ssh/id_ed25519 |   IdentitiesOnly yes |   ServerAliveInterval 15 |   ServerAliveCountMax 10 |   TCPKeepAlive yes |   IPQoS none |   UpdateHostKeys no | Host wsl local-wsl |   HostName 127.0.0.1 |   User w24e |   Port 22 | Host wheshell.hpccube.com |   HostName wheshell.hpccube.com |   User scnlizwblw |   Port 65032 |   IdentityFile ~/.ssh/vs1_dk |   IdentitiesOnly yes |   ServerAliveInterval 60 |   ServerAliveCountMax 120 | Host zz |   HostName zzeshell.scnet.cn |   User sdldyh |   Port 65032 |   IdentityFile ~/.ssh/zz_key |   IdentitiesOnly yes |   ServerAliveInterval 60 |   ServerAliveCountMax 120 | User 25wenshaohua | Host 192.168.1.109 |   HostName 192.168.1.109 |   User BNI |   Port 22 | Host github.com |     HostName github.com |     User git |     IdentityFile ~/.ssh/id_ed25519_shaohua | Host github-mqgg |     HostName github.com |     User git |     IdentityFile ~/.ssh/id_ed25519_mqgg
+PROBE_DONE=True

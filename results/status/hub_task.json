@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T004029Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\connect\\probe_targets.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\probe_targets.ps1\" 2>&1; $o | Out-File \"results\\jev-monitor\\probe-targets.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T004029Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\connect\\probe_targets.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\probe_targets.ps1\" 2\u003e\u00261; $o | Out-File \"results\\jev-monitor\\probe-targets.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T00:40:33Z",
+    "executed_at_local":  "2026-10-27 08:40:33",
+    "source_commit":  "311be035ca9c15e999b4f9d374be724eac68538e"
 }
