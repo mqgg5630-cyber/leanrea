@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T003948Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\connect\\recon_laptop.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\recon_laptop.ps1\" 2>&1; $o | Out-File \"results\\jev-monitor\\recon-laptop.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T003948Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\connect\\recon_laptop.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\recon_laptop.ps1\" 2\u003e\u00261; $o | Out-File \"results\\jev-monitor\\recon-laptop.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T00:39:15Z",
+    "executed_at_local":  "2026-10-27 08:39:15",
+    "source_commit":  "2a9857283dbe0e6433e296134a3aeb7ba27b16ce"
 }

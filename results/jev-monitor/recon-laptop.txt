@@ -1,54 +1,14 @@
-﻿powershell.exe : 所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:62 字符: 7
-所在位置 C:\Users\文少\AppData\Local\Temp\hub_inline_9bb6527d07364f5e9d091a00b5f99959.ps1:1 字符: 401
-+ ... Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (所在位置 E:\0apps\j...op.ps1:62 字符: 7:String) [], RemoteException
-    + FullyQualifiedErrorId : NativeCommandError
- 
-+ Line 'HINT_DIRS' (($hints -join ' | ') -replace '^$', 'none')
-+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-表达式或语句中包含意外的标记“HINT_DIRS' (($hints -join '”。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:62 字符: 37
-+ Line 'HINT_DIRS' (($hints -join ' | ') -replace '^$', 'none')
-+                                     ~~~~~~~~~~~~~
-只允许将表达式作为管道的第一个元素。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:62 字符: 50
-+ Line 'HINT_DIRS' (($hints -join ' | ') -replace '^$', 'none')
-+                                                  ~~~~~~~~~~~~
-表达式或语句中包含意外的标记“^$', 'none')
-# ---- 6. tailscale / frp style mesh ---------------------------------------
-$ts = Get-Command tailscale.exe -ErrorAction SilentlyContinue
-if ($ts) {
-    $st = (& $ts.Source status 2>&1) -join '”。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:68 字符: 11
-+     Line 'TAILSCALE' ($st -replace '\s+', ' ')
-+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-表达式或语句中包含意外的标记“TAILSCALE' ($st -replace '\s+', '”。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:74 字符: 158
-+ ... Substring(0, [Math]::Min(60, $_.CommandLine.Length))) }) -join ' | ')
-+                                                                        ~~
-只允许将表达式作为管道的第一个元素。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:75 字符: 24
-+ Line 'RECON_DONE' 'True'
-+                        ~
-字符串缺少终止符: '。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:75 字符: 7
-+ Line 'RECON_DONE' 'True'
-+       ~~~~~~~~~~~~~~~~~~
-表达式或语句中包含意外的标记“RECON_DONE' 'True'
-”。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:58 字符: 34
-+                     Where-Object { $_.Name -match '(?i)hpc|slurm|pbs| ...
-+                                  ~
-语句块或类型定义中缺少右“}”。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:76 字符: 2
-+ 
-子表达式中缺少右“)”。
-所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:56 字符: 9
-+     try {
-+         ~
-语句块或类型定义中缺少右“}”。
-并未报告所有分析错误。请更正报告的错误并重试。
-    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : UnexpectedToken
- 
+﻿SSH_DIR=True
+SSH_FILES=config, config.bak, config.bak2, config.srl-tune-bak, id_ed25519, id_ed25519.pub, id_ed25519_light_skills, id_ed25519_light_skills.pub, id_ed25519_mqgg, id_ed25519_mqgg.pub, id_ed25519_shaohua, id_ed25519_shaohua.pub, id_rsa, id_rsa.pub, known_hosts, known_hosts.old, vs1_dk, zz_key
+SSH_CONFIG=Host 25wenshaohua 10.10.5.210 hpc-mu01 |   HostName 10.10.5.210 |   User 25wenshaohua |   Port 22 | Host wsl local-wsl |   HostName 127.0.0.1 |   User w24e |   Port 22 | Host wheshell.hpccube.com |   HostName wheshell.hpccube.com |   User scnlizwblw |   Port 65032 | Host zz |   HostName zzeshell.scnet.cn |   User sdldyh |   Port 65032 | User 25wenshaohua | Host 192.168.1.109 |   HostName 192.168.1.109 |   User BNI |   Port 22 | Host github.com |     HostName github.com |     User git | Host github-mqgg |     HostName github.com |     User git
+KNOWN_HOSTS=[127.0.0.1]:2226, [127.0.0.1]:49780, [127.0.0.1]:50753, [127.0.0.1]:50985, [127.0.0.1]:51275, [127.0.0.1]:51281, [127.0.0.1]:51658, [127.0.0.1]:51913, [127.0.0.1]:52613, [127.0.0.1]:53268, [127.0.0.1]:54711, [127.0.0.1]:54985, [127.0.0.1]:55290, [127.0.0.1]:55303, [127.0.0.1]:55502, [127.0.0.1]:55510, [127.0.0.1]:55903, [127.0.0.1]:56330, [127.0.0.1]:56747, [127.0.0.1]:57077, [127.0.0.1]:57807, [127.0.0.1]:58179, [127.0.0.1]:58242, [127.0.0.1]:58247, [127.0.0.1]:58282
+CMD ssh.exe=C:\WINDOWS\System32\OpenSSH\ssh.exe
+CMD scp.exe=C:\WINDOWS\System32\OpenSSH\scp.exe
+CMD sftp.exe=C:\WINDOWS\System32\OpenSSH\sftp.exe
+VPN_PROCS=tailscaled, tailscaled, tailscale-ipn, v2rayN, xray, xray
+NET_UP=singbox_tun:sing-tun Tunnel | WLAN:Intel(R) Wi-Fi 6 AX201 160MHz | 本地连接:OpenVPN Data Channel Offload | Tailscale:Tailscale Tunnel | vEthernet (Default Switch):Hyper-V Virtual Ethernet Adapter
+LAN_NEIGHBORS=172.20.95.255, 172.18.0.3, 172.18.0.2, 172.18.0.1, 192.168.110.255, 192.168.110.202, 192.168.110.1, 10.0.255.255
+HINT_DIRS=none
+TAILSCALE=100.71.123.19 laptop-r77m5d6m-1 shaohuawen03@ windows - ; 100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows offline, last seen 8d ago ; 100.99.113.111 laptop-r77m5d6m shaohuawen03@ windows offline, last seen 134d ago ; 100.109.207.34 muse shaohuawen03@ offline, last seen 9h ago ; 100.80.187.74 redmi-note-12-turbo-1 shaohuawen03@ android offline, last seen 24d ago ; 100.90.87.92 redmi-note-12-turbo shaohuawen03@ android offline, last seen 24d ago ; 100.83.148.67 xiaomi-23049rad8c shaohuawen03@ android offline, last seen 279d ago 
+JEV_PROCS=9856:"C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe"  | 13760:"E:\0apps\jev-chat-windows\venv\Scripts\pythonw.exe" E:\0app | 6796:"E:\spider\pythonw.exe" E:\0apps\jev-chat-windows\monitor\au | 5560:"E:\0apps\jev-chat-windows\venv\Scripts\pythonw.exe" "E:\0ap | 7324:"E:\spider\pythonw.exe" "E:\0apps\jev-chat-windows\monitor\h
+RECON_DONE=True
