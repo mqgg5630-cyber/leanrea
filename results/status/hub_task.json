@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T010251Z",
-  "powershell": [
-    "Copy-Item -Path \"code\\connect\\probe_deep.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\probe_deep.ps1\" 2>&1; $o | Out-File \"results\\jev-monitor\\probe-deep.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T010251Z",
+    "powershell":  [
+                       "Copy-Item -Path \"code\\connect\\probe_deep.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\probe_deep.ps1\" 2\u003e\u00261; $o | Out-File \"results\\jev-monitor\\probe-deep.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:03:17Z",
+    "executed_at_local":  "2026-10-27 09:03:17",
+    "source_commit":  "3b40254a81840858d8c9b19adede542129cd677c"
 }
