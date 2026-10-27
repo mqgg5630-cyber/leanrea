@@ -1,11 +1,33 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 880772089f041c0fdd31d4565be062ee9960cef7
-executed_at_utc: 2026-10-27T11:24:05Z
-executed_at_local: 2026-10-27 19:24:05
+source_commit: 7702030a1977e881583eb5e8dab419b6ceb40c7d
+executed_at_utc: 2026-10-27T11:54:42Z
+executed_at_local: 2026-10-27 19:54:42
 tasks_all_ok: True
 
---- step: hub_task.python (exit=0) ---
-{"found": [["E:\\0zhongqi\\\u9644\u4ef6\\1.py", 4767]], "py1_head": "#!/bin/bash\r\nset -euo pipefail\r\n\r\n# ==========================================\r\n# 0. \u57fa\u7840\u8def\u5f84\u914d\u7f6e\r\n# ==========================================\r\n# \u811a\u672c\u8fd0\u884c\u7684\u4e3b\u76ee\u5f55 (\u5305\u542b samples.tsv)\r\nWORKDIR=\"/mnt/hpc/home/25menglei/25wenshaohua/wsh/ad\"\r\n# \u6240\u6709 476 \u4e2a\u6837\u672c\u771f\u6b63\u5b58\u653e\u7684\u76ee\u5f55 (\u5305\u542b\u521a\u4fee\u590d\u597d\u7684\u90a3\u51e0\u4e2a)\r\nMAIN_PROJECT_DIR=\"/mnt/hpc/home/25menglei/25wenshaohua/wsh/stage/code\"\r\n\r\ncd \"$WORKDIR\"\r\n\r\nSAMPLES_TSV=\"temp/qc/samples.tsv\"\r\nREPORT_FILE=\"codenew/Final_Master_Pipeline_Report.md\"\r\nFAILED_LOG=\"codenew/final_failed_samples.list\"\r\n\r\necho \"---------------------------------------------------\"\r\necho \"[INFO] \u5f00\u59cb\u5bf9\u5168\u961f\u5217 476 \u4e2a\u6837\u672c\u8fdb\u884c\u6700\u7ec8\u6210\u679c\u6821\u9a8c\u4e0e\u7edf\u8ba1...\"\r\necho \"---------------------------------------------------\"\r\n\r\nTOTAL=0\r\nSUCCESS=0\r\nFAILED=0\r\nTOTAL_MAGS=0\r\nHQ_MAGS=0\r\n\r\n> \"$FAILED_LOG\"\r\n\r\nwhile IFS=$'\\t' read -r sample r1 r2 group || [ -n \"$sample\" ]; do\r\n    [[ -z \"$sample\" ]] && continue\r\n    TOTAL=$((TOTAL+1))\r\n    \r\n    # \u7edf\u4e00\u4ece\u4e3b\u5de5\u7a0b\u8def\u5f84\u68c0\u67e5\r\n    WD=\"${MAIN_PROJECT_DIR}/work/${sample}\"\r\n    \r\n    # \u68c0\u67e5 1: Megahit \u7ec4\u88c5\r\n    if [[ ! -s \"${WD}/assembly/${sample}.contigs.fa\" ]]; then\r\n        echo -e \"${sample}\\tAssembly_Failed\" >> \"$FAILED_LOG\"\r\n        FAILED=$((FAILED+1))\r\n        continue\r\n    fi\r\n    \r\n    # \u68c0\u67e5 2: Bin_refinement\r\n    if [[ ! -f \"${WD}/temp_v2/refine/metawrap_50_10_bins.stats\" ]]; then\r\n        echo -e \"${sample}\\tBin_Refinement_Failed\" >> \"$FAILED_LOG\"\r\n        FAILED=$((FAILED+1))\r\n        continue\r\n    fi\r\n    \r\n    # \u68c0\u67e5 3: CheckM \u8d28\u91cf\u8bc4\u4f30\u8868\r\n    SUMMARY_FILE=\"${WD}/result/tables/mag_quality_summary.tsv\"\r\n    if [[ ! -f \"$SUMMARY_FILE\" ]", "deleted": ["E:\\0zhongqi\\\u9644\u4ef6\\1.py"], "qmsg": "Q-DELETED", "ssh": {"rc": 0, "out": "DESKTOP-IEUDGS5\r\ndesktop-ieudgs5\\bni\r\n", "err": ""}, "final": ["1.md", "Combined computational and spectroscopic analyses of the interactions between ginger compounds and bovine type I collagen.pdf", "guojiang", "zhongqi-arena-deliverable", "zhongqi-arena_out", "zhongqi-deliverable", "zhongqi_local_backup_20260927_205048", "zhongqi_out", "\u4e2d\u671f.docx", "\u4e2d\u671f\u7b54\u8fa9_\u6587\u7ecd\u534e.pptx", "\u68c0\u7d22\u60c5\u51b5.pdf", "\u7855\u58eb\u8bba\u6587_\u7eaf\u8ba1\u7b97_20260921_1610_476\u6837\u672c_\u5b8f\u57fa\u56e0\u7ec4\u7ec4\u88c5_LightSkills23", "\u8bba\u6587.md", "\u9644\u4ef6"]}
+--- step: hub_task.powershell (exit=0) ---
+已找到 Notion [Notion.Notion] 版本 7.41.0
+此应用程序由其所有者授权给你。
+Microsoft 对第三方程序包概不负责，也不向第三方程序包授予任何许可证。
+正在下载 https://desktop-release.notion-static.com/Notion%20Setup%207.41.0.exe
+已成功验证安装程序哈希
+正在启动程序包安装...
+已成功安装
+APP-SRC-EXISTS: True
+Ϊ C:\Users\����\AppData\Local\Programs\Notion <<===>> E:\Notion ����������
+EXE-ON-E: True
+7.41.0
+
+   Id StartTime          
+   -- ---------          
+34656 2026-10-27 19:54:32
+36620 2026-10-27 19:54:31
+37760 2026-10-27 19:54:32
+38044 2026-10-27 19:54:32
+39748 2026-10-27 19:54:32
+40872 2026-10-27 19:54:32
+41024 2026-10-27 19:54:32
+41036 2026-10-27 19:54:32
+LAUNCH-TEST-DONE
 

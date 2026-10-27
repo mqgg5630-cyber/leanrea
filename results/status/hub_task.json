@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T115341Z",
-  "powershell": [
-    "$app = Join-Path $env:LOCALAPPDATA \"Programs\\Notion\"; $exe1 = Join-Path $app \"Notion.exe\"; if (-not (Test-Path $exe1)) { winget install --id Notion.Notion -e --silent --accept-source-agreements --accept-package-agreements --source winget }; \"APP-SRC-EXISTS: \" + (Test-Path $exe1); Stop-Process -Name \"Notion\" -Force -ErrorAction SilentlyContinue; if ((Test-Path $app) -and (-not (Test-Path \"E:\\Notion\\Notion.exe\"))) { Move-Item $app \"E:\\Notion\" }; if (-not (Test-Path $app)) { cmd /c mklink /J \"$app\" \"E:\\Notion\" }; $data = Join-Path $env:APPDATA \"Notion\"; if ((Test-Path $data) -and (-not (Test-Path \"E:\\NotionData\"))) { Move-Item $data \"E:\\NotionData\" }; if ((Test-Path \"E:\\NotionData\") -and (-not (Test-Path $data))) { cmd /c mklink /J \"$data\" \"E:\\NotionData\" }; \"EXE-ON-E: \" + (Test-Path \"E:\\Notion\\Notion.exe\"); (Get-Item \"E:\\Notion\\Notion.exe\").VersionInfo.ProductVersion; Start-Process \"E:\\Notion\\Notion.exe\"; Start-Sleep -Seconds 10; Get-Process \"Notion\" -ErrorAction SilentlyContinue | Select-Object Id, StartTime; Stop-Process -Name \"Notion\" -Force -ErrorAction SilentlyContinue; \"LAUNCH-TEST-DONE\""
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T115341Z",
+    "powershell":  [
+                       "$app = Join-Path $env:LOCALAPPDATA \"Programs\\Notion\"; $exe1 = Join-Path $app \"Notion.exe\"; if (-not (Test-Path $exe1)) { winget install --id Notion.Notion -e --silent --accept-source-agreements --accept-package-agreements --source winget }; \"APP-SRC-EXISTS: \" + (Test-Path $exe1); Stop-Process -Name \"Notion\" -Force -ErrorAction SilentlyContinue; if ((Test-Path $app) -and (-not (Test-Path \"E:\\Notion\\Notion.exe\"))) { Move-Item $app \"E:\\Notion\" }; if (-not (Test-Path $app)) { cmd /c mklink /J \"$app\" \"E:\\Notion\" }; $data = Join-Path $env:APPDATA \"Notion\"; if ((Test-Path $data) -and (-not (Test-Path \"E:\\NotionData\"))) { Move-Item $data \"E:\\NotionData\" }; if ((Test-Path \"E:\\NotionData\") -and (-not (Test-Path $data))) { cmd /c mklink /J \"$data\" \"E:\\NotionData\" }; \"EXE-ON-E: \" + (Test-Path \"E:\\Notion\\Notion.exe\"); (Get-Item \"E:\\Notion\\Notion.exe\").VersionInfo.ProductVersion; Start-Process \"E:\\Notion\\Notion.exe\"; Start-Sleep -Seconds 10; Get-Process \"Notion\" -ErrorAction SilentlyContinue | Select-Object Id, StartTime; Stop-Process -Name \"Notion\" -Force -ErrorAction SilentlyContinue; \"LAUNCH-TEST-DONE\""
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T11:54:42Z",
+    "executed_at_local":  "2026-10-27 19:54:42",
+    "source_commit":  "7702030a1977e881583eb5e8dab419b6ceb40c7d"
 }
