@@ -1,11 +1,11 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 6d159e6a36814ef487649e132251a0b9360c5058
-executed_at_utc: 2026-10-27T11:19:06Z
-executed_at_local: 2026-10-27 19:19:06
+source_commit: 89fa0a5be3b243b4e0b20d6827ea40971f1ca1fb
+executed_at_utc: 2026-10-27T11:19:51Z
+executed_at_local: 2026-10-27 19:19:51
 tasks_all_ok: True
 
 --- step: hub_task.python (exit=0) ---
-{"actions": [["QUARANTINED-DUP", "zhongqi-arena-\u4e2d\u95f4\u7248", 3], ["QUARANTINED-DUP", "zhongqi-arena-\u4e2d\u95f4\u72482", 3], ["QUARANTINED-DUP", "zhongqi-arena_out", 32], ["QUARANTINED-DUP", "zhongqi-\u4e2d\u95f4\u7248", 3], ["QUARANTINED-DUP", "zhongqi-\u4e2d\u95f4\u72482", 3]], "killed": [], "final": [["1.md", "FILE", 0.0], ["Combined computational and spectroscopic analyses of the interactions between ginger compounds and bovine type I collagen.pdf", "FILE", 4.6], ["_QUARANTINE_20261027", "DIR", 606.1, 5524], ["guojiang", "DIR", 4.9, 7], ["zhongqi-arena-deliverable", "DIR", 13.3, 21], ["zhongqi-deliverable", "DIR", 0.4, 10], ["zhongqi_local_backup_20260927_205048", "DIR", 0.1, 1], ["zhongqi_out", "DIR", 15.8, 23], ["\u4e2d\u671f.docx", "FILE", 0.06], ["\u4e2d\u671f\u7b54\u8fa9_\u6587\u7ecd\u534e.pptx", "FILE", 1.01], ["\u68c0\u7d22\u60c5\u51b5.pdf", "FILE", 0.14], ["\u7855\u58eb\u8bba\u6587_\u7eaf\u8ba1\u7b97_20260921_1610_476\u6837\u672c_\u5b8f\u57fa\u56e0\u7ec4\u7ec4\u88c5_LightSkills23", "DIR", 0.1, 3], ["\u8bba\u6587.md", "FILE", 0.0], ["\u9644\u4ef6", "DIR", 0.2, 5]]}
+{"msg": "RESTORED zhongqi-arena_out", "final": [["1.md", "FILE", 0.0], ["Combined computational and spectroscopic analyses of the interactions between ginger compounds and bovine type I collagen.pdf", "FILE", 4.6], ["_QUARANTINE_20261027", "DIR", 589.1, 5492], ["guojiang", "DIR", 4.9, 7], ["zhongqi-arena-deliverable", "DIR", 13.3, 21], ["zhongqi-arena_out", "DIR", 17.0, 32], ["zhongqi-deliverable", "DIR", 0.4, 10], ["zhongqi_local_backup_20260927_205048", "DIR", 0.1, 1], ["zhongqi_out", "DIR", 15.8, 23], ["\u4e2d\u671f.docx", "FILE", 0.06], ["\u4e2d\u671f\u7b54\u8fa9_\u6587\u7ecd\u534e.pptx", "FILE", 1.01], ["\u68c0\u7d22\u60c5\u51b5.pdf", "FILE", 0.14], ["\u7855\u58eb\u8bba\u6587_\u7eaf\u8ba1\u7b97_20260921_1610_476\u6837\u672c_\u5b8f\u57fa\u56e0\u7ec4\u7ec4\u88c5_LightSkills23", "DIR", 0.1, 3], ["\u8bba\u6587.md", "FILE", 0.0], ["\u9644\u4ef6", "DIR", 0.2, 5]]}
 

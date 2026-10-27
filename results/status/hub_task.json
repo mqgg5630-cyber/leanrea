@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T112019Z",
-  "python": [
-    "import os, json, shutil\nroot = \"E:\\\\0zhongqi\"\nq = os.path.join(root, \"_QUARANTINE_20261027\")\nsrc = os.path.join(q, \"_DUP_zhongqi-arena_out\")\ndst = os.path.join(root, \"zhongqi-arena_out\")\nmsg = \"\"\nif os.path.isdir(src) and not os.path.exists(dst):\n    shutil.move(src, dst)\n    msg = \"RESTORED zhongqi-arena_out\"\nelse:\n    msg = \"SKIP src_exists=\" + str(os.path.isdir(src)) + \" dst_exists=\" + str(os.path.exists(dst))\nfinal = []\nfor name in sorted(os.listdir(root)):\n    p = os.path.join(root, name)\n    if os.path.isdir(p):\n        tot = 0; n = 0\n        for dp2, dn2, fn2 in os.walk(p):\n            for f in fn2:\n                try: tot += os.path.getsize(os.path.join(dp2, f)); n += 1\n                except Exception: pass\n        final.append([name, \"DIR\", round(tot/1048576, 1), n])\n    else:\n        final.append([name, \"FILE\", round(os.path.getsize(p)/1048576, 2)])\nprint(json.dumps({\"msg\": msg, \"final\": final}, ensure_ascii=True))"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T112019Z",
+    "python":  [
+                   "import os, json, shutil\nroot = \"E:\\\\0zhongqi\"\nq = os.path.join(root, \"_QUARANTINE_20261027\")\nsrc = os.path.join(q, \"_DUP_zhongqi-arena_out\")\ndst = os.path.join(root, \"zhongqi-arena_out\")\nmsg = \"\"\nif os.path.isdir(src) and not os.path.exists(dst):\n    shutil.move(src, dst)\n    msg = \"RESTORED zhongqi-arena_out\"\nelse:\n    msg = \"SKIP src_exists=\" + str(os.path.isdir(src)) + \" dst_exists=\" + str(os.path.exists(dst))\nfinal = []\nfor name in sorted(os.listdir(root)):\n    p = os.path.join(root, name)\n    if os.path.isdir(p):\n        tot = 0; n = 0\n        for dp2, dn2, fn2 in os.walk(p):\n            for f in fn2:\n                try: tot += os.path.getsize(os.path.join(dp2, f)); n += 1\n                except Exception: pass\n        final.append([name, \"DIR\", round(tot/1048576, 1), n])\n    else:\n        final.append([name, \"FILE\", round(os.path.getsize(p)/1048576, 2)])\nprint(json.dumps({\"msg\": msg, \"final\": final}, ensure_ascii=True))"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T11:19:51Z",
+    "executed_at_local":  "2026-10-27 19:19:51",
+    "source_commit":  "89fa0a5be3b243b4e0b20d6827ea40971f1ca1fb"
 }
