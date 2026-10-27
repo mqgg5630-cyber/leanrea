@@ -1,0 +1,54 @@
+﻿powershell.exe : 所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:62 字符: 7
+所在位置 C:\Users\文少\AppData\Local\Temp\hub_inline_9bb6527d07364f5e9d091a00b5f99959.ps1:1 字符: 401
++ ... Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (所在位置 E:\0apps\j...op.ps1:62 字符: 7:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
++ Line 'HINT_DIRS' (($hints -join ' | ') -replace '^$', 'none')
++       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+表达式或语句中包含意外的标记“HINT_DIRS' (($hints -join '”。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:62 字符: 37
++ Line 'HINT_DIRS' (($hints -join ' | ') -replace '^$', 'none')
++                                     ~~~~~~~~~~~~~
+只允许将表达式作为管道的第一个元素。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:62 字符: 50
++ Line 'HINT_DIRS' (($hints -join ' | ') -replace '^$', 'none')
++                                                  ~~~~~~~~~~~~
+表达式或语句中包含意外的标记“^$', 'none')
+# ---- 6. tailscale / frp style mesh ---------------------------------------
+$ts = Get-Command tailscale.exe -ErrorAction SilentlyContinue
+if ($ts) {
+    $st = (& $ts.Source status 2>&1) -join '”。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:68 字符: 11
++     Line 'TAILSCALE' ($st -replace '\s+', ' ')
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+表达式或语句中包含意外的标记“TAILSCALE' ($st -replace '\s+', '”。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:74 字符: 158
++ ... Substring(0, [Math]::Min(60, $_.CommandLine.Length))) }) -join ' | ')
++                                                                        ~~
+只允许将表达式作为管道的第一个元素。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:75 字符: 24
++ Line 'RECON_DONE' 'True'
++                        ~
+字符串缺少终止符: '。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:75 字符: 7
++ Line 'RECON_DONE' 'True'
++       ~~~~~~~~~~~~~~~~~~
+表达式或语句中包含意外的标记“RECON_DONE' 'True'
+”。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:58 字符: 34
++                     Where-Object { $_.Name -match '(?i)hpc|slurm|pbs| ...
++                                  ~
+语句块或类型定义中缺少右“}”。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:76 字符: 2
++ 
+子表达式中缺少右“)”。
+所在位置 E:\0apps\jev-chat-windows\tools\recon_laptop.ps1:56 字符: 9
++     try {
++         ~
+语句块或类型定义中缺少右“}”。
+并未报告所有分析错误。请更正报告的错误并重试。
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : UnexpectedToken
+ 
