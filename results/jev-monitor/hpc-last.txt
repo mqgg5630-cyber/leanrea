@@ -1,0 +1,18 @@
+﻿===== run @ 2026-10-27 09:22:30 (exit=0, 27s) =====
+--- jobs dir ---
+total 1
+-rwxrwxrwx 1 25wenshaohua 25menglei 392 Oct 27 09:16 smoke.sbatch
+-rw-r--r-- 1 25wenshaohua 25menglei   0 Oct 27 09:18 smoke_92384.err
+-rw-r--r-- 1 25wenshaohua 25menglei 133 Oct 27 09:18 smoke_92384.out
+--- smoke out ---
+REACHED_NODE=cu46
+DATE=2026-10-27T09:18:40+0800
+SLURM_JOB_ID=92384 CPUS=2
+2
+gpfs            1.4P  525T  861T  38% /mnt
+python 3.9.25
+--- smoke err ---
+--- sacct detail ---
+92384         COMPLETED      0:0   00:00:00                       cu46 
+92384.batch   COMPLETED      0:0   00:00:00                       cu46 
+

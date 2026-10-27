@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "e2b10db86031c9e928ccb97079b1f9cf3e462e9f",
-    "synced_at_utc":  "2026-10-27T01:21:24Z",
-    "synced_at_local":  "2026-10-27 09:21:24",
+    "source_commit":  "787dba6bee6350e0881e0fe9d23cddd541252457",
+    "synced_at_utc":  "2026-10-27T01:22:46Z",
+    "synced_at_local":  "2026-10-27 09:22:46",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  149,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  46332,
-                               "stdout":  "OUTLEN=0\r\nERR:\r\nE:\\0apps\\jev-chat-windows\\tools\\hpc.ps1 : �Ҳ�����������ơ�5;��ƥ��Ĳ�����\r\n    + CategoryInfo          : InvalidArgument: (:) [hpc.ps1]��ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : NamedParameterNotFound,hpc.ps1",
+                               "elapsed_ms":  46681,
+                               "stdout":  "===== run @ 2026-10-27 09:22:30 (exit=0, 27s) =====\n--- jobs dir ---\ntotal 1\n-rwxrwxrwx 1 25wenshaohua 25menglei 392 Oct 27 09:16 smoke.sbatch\n-rw-r--r-- 1 25wenshaohua 25menglei   0 Oct 27 09:18 smoke_92384.err\n-rw-r--r-- 1 25wenshaohua 25menglei 133 Oct 27 09:18 smoke_92384.out\n--- smoke out ---\nREACHED_NODE=cu46\nDATE=2026-10-27T09:18:40+0800\nSLURM_JOB_ID=92384 CPUS=2\n2\ngpfs            1.4P  525T  861T  38% /mnt\npython 3.9.25\n--- smoke err ---\n--- sacct detail ---\n92384         COMPLETED      0:0   00:00:00                       cu46 \n92384.batch   COMPLETED      0:0   00:00:00                       cu46 \n\r\n\r\nERR:",
                                "stderr":  ""
                            }
                        ],
