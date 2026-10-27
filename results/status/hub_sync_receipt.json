@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "2514e1fe13533feaf2e038c56d50e244efd59731",
-    "synced_at_utc":  "2026-10-27T01:08:32Z",
-    "synced_at_local":  "2026-10-27 09:08:32",
+    "source_commit":  "3450422f7f18c5cd89a808618706d57e338c6fbb",
+    "synced_at_utc":  "2026-10-27T01:11:07Z",
+    "synced_at_local":  "2026-10-27 09:11:07",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  148,
     "tasks_executed_count":  1,
-    "tasks_all_ok":  true,
+    "tasks_all_ok":  false,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
-                               "exit_code":  0,
-                               "elapsed_ms":  117096,
-                               "stdout":  "exit24=0\r\nexit26=0\r\nwsl-Ubuntu-24.04.txt=800\r\nwsl-Ubuntu-26.04.txt=1331",
+                               "exit_code":  124,
+                               "elapsed_ms":  120192,
+                               "stdout":  "",
                                "stderr":  ""
                            }
                        ],
