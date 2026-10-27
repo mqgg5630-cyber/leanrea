@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T112443Z",
-    "python":  [
-                   "import os, json, shutil, stat, subprocess\nroot = \"E:\\\\0zhongqi\"\nq = os.path.join(root, \"_QUARANTINE_20261027\")\nexts = set([\".py\", \".ps1\", \".sh\", \".bat\", \".cmd\", \".js\", \".ts\", \".pl\", \".rb\", \".vbs\"])\nfound = []\nfor dp, dn, fn in os.walk(root):\n    if dp == q or dp.startswith(q + os.sep): continue\n    if \".git\" in dn: found.append([os.path.join(dp, \".git\"), \"DOTGIT-DIR\"])\n    for f in fn:\n        if os.path.splitext(f)[1].lower() in exts:\n            found.append([os.path.join(dp, f), os.path.getsize(os.path.join(dp, f))])\npy1 = \"\"\ntry:\n    with open(os.path.join(root, \"ATTACH\", \"1.py\"), \"rb\") as fh: pass\nexcept Exception: pass\nimport glob\ncands = glob.glob(os.path.join(root, \"*\", \"1.py\"))\nif cands:\n    try:\n        with open(cands[0], \"rb\") as fh: py1 = fh.read().decode(\"utf-8\", \"replace\")[:6000]\n    except Exception as e: py1 = \"READ-ERR \" + repr(e)[:100]\ndeleted = []\nfor p, s in found:\n    if s == \"DOTGIT-DIR\": continue\n    try: os.remove(p); deleted.append(p)\n    except Exception as e: deleted.append(\"FAIL \" + p)\ndef ro(func, path, exc):\n    try: os.chmod(path, stat.S_IWRITE); func(path)\n    except Exception: pass\nqmsg = \"\"\nif os.path.isdir(q):\n    try:\n        shutil.rmtree(\"\\\\\\\\?\\\\\" + q, onerror=ro)\n        qmsg = \"Q-DELETED\" if not os.path.exists(q) else \"Q-STILL-EXISTS\"\n    except Exception as e: qmsg = \"Q-ERR \" + repr(e)[:200]\nelse: qmsg = \"Q-NOT-FOUND\"\ntry:\n    r = subprocess.run([\"ssh\", \"-o\", \"BatchMode=yes\", \"-o\", \"StrictHostKeyChecking=accept-new\", \"-o\", \"ConnectTimeout=15\", \"BNI@100.84.137.117\", \"hostname \u0026 whoami\"], capture_output=True, timeout=60)\n    ssh = {\"rc\": r.returncode, \"out\": r.stdout.decode(\"ascii\", \"replace\")[:500], \"err\": r.stderr.decode(\"ascii\", \"replace\")[:500]}\nexcept Exception as e:\n    ssh = {\"rc\": -1, \"out\": \"\", \"err\": repr(e)[:300]}\nfinal = sorted(os.listdir(root))\nprint(json.dumps({\"found\": found, \"py1_head\": py1[:1500], \"deleted\": deleted, \"qmsg\": qmsg, \"ssh\": ssh, \"final\": final}, ensure_ascii=True))"
-               ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T11:24:05Z",
-    "executed_at_local":  "2026-10-27 19:24:05",
-    "source_commit":  "880772089f041c0fdd31d4565be062ee9960cef7"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T115341Z",
+  "powershell": [
+    "$app = Join-Path $env:LOCALAPPDATA \"Programs\\Notion\"; $exe1 = Join-Path $app \"Notion.exe\"; if (-not (Test-Path $exe1)) { winget install --id Notion.Notion -e --silent --accept-source-agreements --accept-package-agreements --source winget }; \"APP-SRC-EXISTS: \" + (Test-Path $exe1); Stop-Process -Name \"Notion\" -Force -ErrorAction SilentlyContinue; if ((Test-Path $app) -and (-not (Test-Path \"E:\\Notion\\Notion.exe\"))) { Move-Item $app \"E:\\Notion\" }; if (-not (Test-Path $app)) { cmd /c mklink /J \"$app\" \"E:\\Notion\" }; $data = Join-Path $env:APPDATA \"Notion\"; if ((Test-Path $data) -and (-not (Test-Path \"E:\\NotionData\"))) { Move-Item $data \"E:\\NotionData\" }; if ((Test-Path \"E:\\NotionData\") -and (-not (Test-Path $data))) { cmd /c mklink /J \"$data\" \"E:\\NotionData\" }; \"EXE-ON-E: \" + (Test-Path \"E:\\Notion\\Notion.exe\"); (Get-Item \"E:\\Notion\\Notion.exe\").VersionInfo.ProductVersion; Start-Process \"E:\\Notion\\Notion.exe\"; Start-Sleep -Seconds 10; Get-Process \"Notion\" -ErrorAction SilentlyContinue | Select-Object Id, StartTime; Stop-Process -Name \"Notion\" -Force -ErrorAction SilentlyContinue; \"LAUNCH-TEST-DONE\""
+  ]
 }
