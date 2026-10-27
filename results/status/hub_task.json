@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T013617Z",
-  "powershell": [
-    "$ts = \"E:\\Tailscale\\tailscale.exe\"; (& $ts status 2>&1) -split \"`n\" | Where-Object { $_ -match \"desktop|muse\" } | ForEach-Object { ($_ -replace \"\\s+\",\" \") }; \"--- ping ---\"; (& $ts ping -c 1 --timeout 3s 100.84.137.117 2>&1) -join \" \""
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T013617Z",
+    "powershell":  [
+                       "$ts = \"E:\\Tailscale\\tailscale.exe\"; (\u0026 $ts status 2\u003e\u00261) -split \"`n\" | Where-Object { $_ -match \"desktop|muse\" } | ForEach-Object { ($_ -replace \"\\s+\",\" \") }; \"--- ping ---\"; (\u0026 $ts ping -c 1 --timeout 3s 100.84.137.117 2\u003e\u00261) -join \" \""
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:35:49Z",
+    "executed_at_local":  "2026-10-27 09:35:49",
+    "source_commit":  "882c241c661f5899332253ba1dfd2bfc8ee2537b"
 }

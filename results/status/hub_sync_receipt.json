@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "4da1af6f9bdf75c3019c9daecd61798f8a1f3398",
-    "synced_at_utc":  "2026-10-27T01:35:10Z",
-    "synced_at_local":  "2026-10-27 09:35:10",
+    "source_commit":  "882c241c661f5899332253ba1dfd2bfc8ee2537b",
+    "synced_at_utc":  "2026-10-27T01:35:49Z",
+    "synced_at_local":  "2026-10-27 09:35:49",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  157,
+    "synced_files_count":  158,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1402,
-                               "stdout":  "desktop_copy=7227 bytes\r\n��ͨ����.txt | 10/27/2026 09:35:08\r\nJevChat-ʹ��˵��.txt | 10/26/2026 20:32:38\r\n1.txt | 10/26/2026 19:45:45",
+                               "elapsed_ms":  4235,
+                               "stdout":  "100.84.137.117 desktop-ieudgs5 shaohuawen03@ windows active; relay \"hkg\"; offline, last seen 8d ago, tx 11232 rx 0 \r\n100.109.207.34 muse shaohuawen03@ idle; offline, last seen 10h ago, tx 7176 rx 0 \r\n--- ping ---\r\nping \"100.84.137.117\" timed out no reply",
                                "stderr":  ""
                            }
                        ],
