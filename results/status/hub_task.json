@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T015111Z",
-    "powershell":  [
-                       "$ts=\"E:\\Tailscale\\tailscale.exe\"; (\u0026 $ts status 2\u003e\u00261) -split \"`n\" | Where-Object { $_ -match \"desktop|IEUDG|laptop-r77\" } | ForEach-Object { ($_ -replace \"\\s+\",\" \") }; \"--- ping desktop ---\"; (\u0026 $ts ping -c 1 --timeout 4s 100.84.137.117 2\u003e\u00261) -join \" \"; \"--- port 22/3389 ---\"; foreach($p in @(22,3389)){ $c=New-Object System.Net.Sockets.TcpClient; $ok=$c.BeginConnect(\"100.84.137.117\",$p,$null,$null).AsyncWaitHandle.WaitOne(3000,$false); \"port $p = $ok\"; $c.Close() }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:50:56Z",
-    "executed_at_local":  "2026-10-27 09:50:56",
-    "source_commit":  "c0f499a9d3cbfaa9c59f6ac4eb5e518c98821dcf"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T015158Z",
+  "powershell": [
+    "\"--- drives on laptop ---\"; (Get-PSDrive -PSProvider FileSystem | ForEach-Object { $_.Name + \":\" + [math]::Round($_.Used/1GB) + \"G/\" + [math]::Round(($_.Used+$_.Free)/1GB) + \"G\" }) -join \"  \"; \"F_0wsh_exists=\" + (Test-Path \"F:\\0wsh\"); \"computer=\" + $env:COMPUTERNAME; \"desktop_dir=\" + [Environment]::GetFolderPath(\"Desktop\")"
+  ]
 }
