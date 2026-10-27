@@ -3,9 +3,9 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "7db08a944518c31d5bd939ce6e4b5e100c394053",
-    "synced_at_utc":  "2026-10-27T01:17:26Z",
-    "synced_at_local":  "2026-10-27 09:17:26",
+    "source_commit":  "ac88882c9331d0e3e26a028fcd1c4d65a32dae2d",
+    "synced_at_utc":  "2026-10-27T01:18:43Z",
+    "synced_at_local":  "2026-10-27 09:18:43",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  149,
@@ -15,8 +15,8 @@
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  81450,
-                               "stdout":  "=== 1. prepare remote dirs ===\r\n** WARNING: connection is not using a post-quantum key exchange algorithm.\r\r\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\r\r\n** The server may need to be upgraded. See https://openssh.com/pq.html\r\r\nREMOTE_DIR_OK\r\n/mnt/hpc/home/25menglei/25wenshaohua/jobs\r\n=== 2. upload smoke.sbatch ===\r\n** WARNING: connection is not using a post-quantum key exchange algorithm.\r\r\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\r\r\n** The server may need to be upgraded. See https://openssh.com/pq.html\r\r\nUPLOAD_OK\r\n** WARNING: connection is not using a post-quantum key exchange algorithm.\r\r\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\r\r\n** The server may need to be upgraded. See https://openssh.com/pq.html\r\r\n-rwxrwxrwx 1 25wenshaohua 25menglei 392 Oct 27 09:16 /mnt/hpc/home/25menglei/25wenshaohua/jobs/smoke.sbatch\r\n=== 3. submit ===\r\n** WARNING: connection is not using a post-quantum key exchange algorithm.\r\r\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\r\r\n** The server may need to be upgraded. See https://openssh.com/pq.html",
+                               "elapsed_ms":  1325,
+                               "stdout":  "=== smoke log ===\r\n=== 1. prepare remote dirs ===\r\n/mnt/hpc/home/25menglei/25wenshaohua/jobs\r\n=== 2. upload smoke.sbatch ===\r\n-rwxrwxrwx 1 25wenshaohua 25menglei 392 Oct 27 09:16 /mnt/hpc/home/25menglei/25wenshaohua/jobs/smoke.sbatch\r\n=== 3. submit ===\r\nJOBID=92384\r\n=== 4. poll ===\r\npoll 1 state=\u003cgone\u003e\r\n=== 5. accounting ===\r\n92384                 jev-smoke  COMPLETED      0:0   00:00:00            cu46 \r\n92384.batch               batch  COMPLETED      0:0   00:00:00            cu46 \r\n=== 6. fetch result ===\r\n=== fetched result ===",
                                "stderr":  ""
                            }
                        ],
