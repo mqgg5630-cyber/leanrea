@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010705Z",
-    "powershell":  [
-                       "Remove-Item \"E:\\wsl-*.txt\" -Force -ErrorAction SilentlyContinue; \u0026 wsl.exe -d Ubuntu-24.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/wsl-24.txt 2\u003e$null; \"exit24=\" + $LASTEXITCODE; \u0026 wsl.exe -d Ubuntu-26.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/wsl-26.txt 2\u003e$null; \"exit26=\" + $LASTEXITCODE; Copy-Item \"E:\\wsl-24.txt\" \"results\\jev-monitor\\wsl-Ubuntu-24.04.txt\" -Force -ErrorAction SilentlyContinue; Copy-Item \"E:\\wsl-26.txt\" \"results\\jev-monitor\\wsl-Ubuntu-26.04.txt\" -Force -ErrorAction SilentlyContinue; Get-ChildItem \"results\\jev-monitor\\wsl-*.txt\" | ForEach-Object { $_.Name + \"=\" + $_.Length }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:08:32Z",
-    "executed_at_local":  "2026-10-27 09:08:32",
-    "source_commit":  "2514e1fe13533feaf2e038c56d50e244efd59731"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T010943Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\connect\\hpc_info.sh\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\hpc_info.sh\" -Force; $t=[IO.File]::ReadAllText(\"E:\\0apps\\jev-chat-windows\\tools\\hpc_info.sh\").Replace(\"`r\",\"\"); [IO.File]::WriteAllText(\"E:\\0apps\\jev-chat-windows\\tools\\hpc_info.sh\",$t); & wsl.exe -d Ubuntu-26.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/hpc_info.sh /mnt/e/hpc_info.txt 2>$null; Copy-Item \"E:\\hpc_info.txt\" \"results\\jev-monitor\\hpc-info.txt\" -Force; \"bytes=\" + (Get-Item \"results\\jev-monitor\\hpc-info.txt\").Length"
+  ]
 }
