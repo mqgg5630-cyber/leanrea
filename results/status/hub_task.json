@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T111427Z",
-    "powershell":  [
-                       "Get-ChildItem E:\\0zhongqi -Force | ForEach-Object { if ($_.PSIsContainer) { $m = Get-ChildItem $_.FullName -Recurse -File -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum; \"{0}`tDIR`tMB={1}`tfiles={2}`t{3}\" -f $_.Name, [math]::Round($m.Sum/1MB,1), $m.Count, $_.LastWriteTime } else { \"{0}`tFILE`tMB={1}`t{2}\" -f $_.Name, [math]::Round($_.Length/1MB,1), $_.LastWriteTime } }; Get-PSDrive E | Select-Object Free, Used"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T11:14:02Z",
-    "executed_at_local":  "2026-10-27 19:14:02",
-    "source_commit":  "60a91bfe14f386123d1e3ed94b7667fecbd55ab5"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T111529Z",
+  "python": [
+    "import os, json, subprocess, socket\nroot = \"E:\\\\0zhongqi\"\nout = {}\nfor name in sorted(os.listdir(root)):\n    p = os.path.join(root, name)\n    if os.path.isdir(p):\n        kids = []\n        for k in sorted(os.listdir(p))[:40]:\n            kp = os.path.join(p, k)\n            try: sz = os.path.getsize(kp) if os.path.isfile(kp) else -1\n            except Exception: sz = -2\n            kids.append([k, sz])\n        hist = {}; n = 0\n        for dp, dn, fn in os.walk(p):\n            for f in fn:\n                e = os.path.splitext(f)[1].lower() or \"<noext>\"\n                hist[e] = hist.get(e, 0) + 1\n                n += 1\n                if n > 30000: break\n            if n > 30000: break\n        out[name] = {\"dir\": True, \"kids\": kids, \"hist\": hist}\n    else:\n        out[name] = {\"dir\": False, \"size\": os.path.getsize(p)}\nprint(json.dumps(out, ensure_ascii=True))\nprint(\"=== TAILSCALE ===\")\nfor cmd in [[\"E:\\\\Tailscale\\\\tailscale.exe\", \"status\"], [\"E:\\\\Tailscale\\\\tailscale.exe\", \"ping\", \"--c=3\", \"100.84.137.117\"]]:\n    try:\n        r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)\n        print(\"CMD:\", \" \".join(cmd[1:]))\n        print((r.stdout + r.stderr)[:1500])\n    except Exception as e:\n        print(\"CMD-ERR:\", cmd[1:], e)\ns = socket.socket(); s.settimeout(8)\ntry:\n    s.connect((\"100.84.137.117\", 22)); print(\"TCP22: OPEN\")\nexcept Exception as e:\n    print(\"TCP22: FAIL\", repr(e)[:200])\ns.close()"
+  ]
 }
