@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010251Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\connect\\probe_deep.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = \u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\probe_deep.ps1\" 2\u003e\u00261; $o | Out-File \"results\\jev-monitor\\probe-deep.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:03:17Z",
-    "executed_at_local":  "2026-10-27 09:03:17",
-    "source_commit":  "3b40254a81840858d8c9b19adede542129cd677c"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T010429Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\connect\\wsl_probe.sh\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\wsl_probe.sh\" -Force; $sh = \"E:\\0apps\\jev-chat-windows\\tools\\wsl_probe.sh\"; foreach ($d in @(\"Ubuntu-24.04\",\"Ubuntu-26.04\")) { & wsl.exe -d $d -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh \"/mnt/e/0apps/jev-chat-windows/results_wsl_$d.txt\" 2>&1 | Out-Null }; \"wrote probes\"; \"--- TCP 22 from windows ---\"; foreach ($h in @(\"10.10.5.210\",\"192.168.1.109\")) { $c = New-Object System.Net.Sockets.TcpClient; $ok = $c.BeginConnect($h,22,$null,$null).AsyncWaitHandle.WaitOne(5000,$false); \"$h tcp22=$ok\"; $c.Close() }"
+  ]
 }
