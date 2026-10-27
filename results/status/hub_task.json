@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T111529Z",
-    "python":  [
-                   "import os, json, subprocess, socket\nroot = \"E:\\\\0zhongqi\"\nout = {}\nfor name in sorted(os.listdir(root)):\n    p = os.path.join(root, name)\n    if os.path.isdir(p):\n        kids = []\n        for k in sorted(os.listdir(p))[:40]:\n            kp = os.path.join(p, k)\n            try: sz = os.path.getsize(kp) if os.path.isfile(kp) else -1\n            except Exception: sz = -2\n            kids.append([k, sz])\n        hist = {}; n = 0\n        for dp, dn, fn in os.walk(p):\n            for f in fn:\n                e = os.path.splitext(f)[1].lower() or \"\u003cnoext\u003e\"\n                hist[e] = hist.get(e, 0) + 1\n                n += 1\n                if n \u003e 30000: break\n            if n \u003e 30000: break\n        out[name] = {\"dir\": True, \"kids\": kids, \"hist\": hist}\n    else:\n        out[name] = {\"dir\": False, \"size\": os.path.getsize(p)}\nprint(json.dumps(out, ensure_ascii=True))\nprint(\"=== TAILSCALE ===\")\nfor cmd in [[\"E:\\\\Tailscale\\\\tailscale.exe\", \"status\"], [\"E:\\\\Tailscale\\\\tailscale.exe\", \"ping\", \"--c=3\", \"100.84.137.117\"]]:\n    try:\n        r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)\n        print(\"CMD:\", \" \".join(cmd[1:]))\n        print((r.stdout + r.stderr)[:1500])\n    except Exception as e:\n        print(\"CMD-ERR:\", cmd[1:], e)\ns = socket.socket(); s.settimeout(8)\ntry:\n    s.connect((\"100.84.137.117\", 22)); print(\"TCP22: OPEN\")\nexcept Exception as e:\n    print(\"TCP22: FAIL\", repr(e)[:200])\ns.close()"
-               ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T11:14:54Z",
-    "executed_at_local":  "2026-10-27 19:14:54",
-    "source_commit":  "b765f9e5f2662e8c9a508e9bc9815fc71ddb77a3"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T111627Z",
+  "python": [
+    "import os, json, subprocess\nroot = \"E:\\\\0zhongqi\"\ndef tree(p, cap=400):\n    out = []\n    for dp, dn, fn in os.walk(p):\n        for f in fn:\n            fp = os.path.join(dp, f)\n            try: sz = os.path.getsize(fp)\n            except Exception: sz = -1\n            out.append([os.path.relpath(fp, p), sz])\n            if len(out) >= cap: return out\n    return out\ndef gitinfo(p):\n    if not os.path.isdir(os.path.join(p, \".git\")): return None\n    o = {}\n    for k, a in ((\"log\", [\"log\", \"--oneline\", \"-3\"]), (\"status\", [\"status\", \"--short\"]), (\"remote\", [\"remote\", \"-v\"]), (\"branch\", [\"branch\", \"--show-current\"])):\n        try:\n            r = subprocess.run([\"git\", \"-C\", p] + a, capture_output=True, text=True, timeout=30)\n            o[k] = (r.stdout + r.stderr)[:600]\n        except Exception as e: o[k] = \"ERR \" + repr(e)[:100]\n    return o\nres = {}\nres[\"guojiang_tree\"] = tree(os.path.join(root, \"guojiang\"))\nfor d in (\"zhongqi\", \"zhongqi-arena\"):\n    dp = os.path.join(root, d)\n    res[d + \"_git\"] = gitinfo(dp)\n    for sub in (\"deliverable\", \"results\"):\n        sp = os.path.join(dp, sub)\n        if os.path.isdir(sp): res[d + \"/\" + sub] = tree(sp, 200)\n    for k in sorted(os.listdir(dp)):\n        if k not in (\".git\", \"code\", \"docs\", \"skills\", \"sources\"):\n            kp = os.path.join(dp, k)\n            if os.path.isdir(kp) and k not in (\"deliverable\", \"results\"):\n                res[d + \"/\" + k + \"_top\"] = sorted(os.listdir(kp))[:30]\nfor d in (\"BrowserSkill-01a0b237\", \"Light-skills-arena-01a0c336\", \"arena-01a0c336-light-skills-01a0c6b7\"):\n    res[d + \"_git\"] = gitinfo(os.path.join(root, d))\nres[\"zhongqi_out_tree\"] = tree(os.path.join(root, \"zhongqi_out\"))\nres[\"zhongqi-arena_out_tree\"] = tree(os.path.join(root, \"zhongqi-arena_out\"))\nprint(json.dumps(res, ensure_ascii=True))"
+  ]
 }
