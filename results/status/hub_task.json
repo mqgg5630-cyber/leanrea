@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T013504Z",
-    "powershell":  [
-                       "Copy-Item -Path \"deliverable\\connect\\打通方法.txt\" -Destination \"D:\\桌面\\打通方法.txt\" -Force; \"desktop_copy=\" + ((Get-Item \"D:\\桌面\\打通方法.txt\").Length) + \" bytes\"; Get-ChildItem \"D:\\桌面\\*.txt\" | Sort-Object LastWriteTime -Descending | Select-Object -First 4 | ForEach-Object { $_.Name + \" | \" + $_.LastWriteTime }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:35:10Z",
-    "executed_at_local":  "2026-10-27 09:35:10",
-    "source_commit":  "4da1af6f9bdf75c3019c9daecd61798f8a1f3398"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T013617Z",
+  "powershell": [
+    "$ts = \"E:\\Tailscale\\tailscale.exe\"; (& $ts status 2>&1) -split \"`n\" | Where-Object { $_ -match \"desktop|muse\" } | ForEach-Object { ($_ -replace \"\\s+\",\" \") }; \"--- ping ---\"; (& $ts ping -c 1 --timeout 3s 100.84.137.117 2>&1) -join \" \""
+  ]
 }
