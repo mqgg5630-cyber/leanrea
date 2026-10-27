@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010558Z",
-    "powershell":  [
-                       "New-Item -ItemType Directory -Force -Path \"results\\jev-monitor\" | Out-Null; $src=\"E:\\0apps\\jev-chat-windows\\tools\"; Copy-Item -Path \"code\\connect\\wsl_probe.sh\" -Destination \"$src\\wsl_probe.sh\" -Force; $t=[IO.File]::ReadAllText(\"$src\\wsl_probe.sh\").Replace(\"`r\",\"\"); [IO.File]::WriteAllText(\"$src\\wsl_probe.sh\",$t); $r=(Get-Location).Path; $rw=\"/mnt/\"+$r.Substring(0,1).ToLower()+(($r.Substring(2)) -replace \"\\\\\",\"/\"); foreach($d in @(\"Ubuntu-26.04\",\"Ubuntu-24.04\")){ \u0026 wsl.exe -d $d -e bash \"$src\\wsl_probe.sh\" \"$rw/results/jev-monitor/wsl-$d.txt\" 2\u003e$null | Out-Null }; Get-ChildItem \"results\\jev-monitor\\wsl-*.txt\" | ForEach-Object { $_.Name+\"=\"+$_.Length }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:05:21Z",
-    "executed_at_local":  "2026-10-27 09:05:21",
-    "source_commit":  "3d02a0e75d22783f4031cea319292be1a486d44d"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T010632Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\connect\\run_wsl_probe.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\run_wsl_probe.ps1\" 2>&1; $o"
+  ]
 }
