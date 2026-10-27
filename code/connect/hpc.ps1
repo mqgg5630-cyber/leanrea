@@ -47,20 +47,13 @@ $lines.Add('S() { $SSH "$@"; }')
 
 switch ($Action) {
     'info' {
-        $lines.Add('echo "== host =="')
-        $lines.Add('S ''hostname; whoami; uname -srm''')
-        $lines.Add('echo; echo "== partitions =="')
-        $lines.Add('S ''sinfo -s 2>&1 | head -12''')
-        $lines.Add('echo; echo "== my jobs =="')
-        $lines.Add('S ''squeue -u $USER 2>&1 | head -12''')
-        $lines.Add('echo; echo "== limits =="')
-        $lines.Add('S ''scontrol show partition 2>/dev/null | grep -E "PartitionName|MaxTime|MaxNodes|MaxMemPerNode" | head -20''')
-        $lines.Add('echo; echo "== storage =="')
-        $lines.Add('S ''df -h $HOME | tail -1; echo HOME=$HOME''')
-        $lines.Add('echo; echo "== stack =="')
-        $lines.Add('S ''for c in python3 conda mamba apptainer singularity gcc nvcc; do printf "%-12s %s\n" $c "$(command -v $c || echo -)"; done''')
-        $lines.Add('echo; echo "== home tree =="')
-        $lines.Add('S ''ls -d $HOME/* 2>/dev/null | head -15''')
+        $rc = 'hostname; whoami; uname -srm; echo "--- partitions"; sinfo -s 2>&1 | head -12; ' +
+              'echo "--- my jobs"; squeue -u $USER 2>&1 | head -12; ' +
+              'echo "--- limits"; scontrol show partition 2>/dev/null | grep -E "PartitionName|MaxTime|MaxNodes|MaxMemPerNode" | head -20; ' +
+              'echo "--- storage"; df -h $HOME | tail -1; echo HOME=$HOME; ' +
+              'echo "--- stack"; for c in python3 conda mamba apptainer singularity gcc nvcc; do printf "%-12s %s\n" $c "$(command -v $c || echo -)"; done; ' +
+              'echo "--- home"; ls -d $HOME/* 2>/dev/null | head -15'
+        $lines.Add("S '" + $rc.Replace("'", "'\''") + "'")
     }
     'run' {
         if (-not $Cmd) { Write-Output 'NO_CMD'; exit 2 }
@@ -121,7 +114,7 @@ $sw.Stop()
 Remove-Item -LiteralPath $tmpWin -Force -ErrorAction SilentlyContinue
 
 # wsl.exe prints harmless config warnings on stderr; keep only interesting lines
-$errKeep = @($e -split "`n" | Where-Object { $_ -and $_ -notmatch 'wsl2\.|Unknown key|localhost|WSL2|建议|仅限' })
+$errKeep = @($e -split "`n" | Where-Object { $_ -and $_ -notmatch 'wsl2\.|Unknown key|localhost|WSL2' -and $_ -match '^[\x20-\x7E]*$' })
 $text = $o
 if ($errKeep.Count -gt 0) { $text += "`n[stderr] " + (($errKeep -join ' ') -replace '\s+', ' ') }
 
