@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T012234Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\connect\\hpc.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Copy-Item -Path \"code\\connect\\checks\\smoke_out.sh\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\smoke_out.sh\" -Force; Get-ChildItem \"E:\\0apps\\jev-chat-windows\\tools\\*.sh\",\"E:\\0apps\\jev-chat-windows\\tools\\*.ps1\" | ForEach-Object { [IO.File]::WriteAllText($_.FullName, [IO.File]::ReadAllText($_.FullName).Replace(\"`r\",\"\")) }; $repo=(Get-Location).Path; Start-Process -FilePath \"powershell.exe\" -WorkingDirectory $repo -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\hpc.ps1\",\"-Action\",\"run\",\"-CmdFile\",\"E:\\0apps\\jev-chat-windows\\tools\\smoke_out.sh\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.err\"; Start-Sleep -Seconds 45; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -Raw -ErrorAction SilentlyContinue; \"ERR:\"; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.err\" -Raw -ErrorAction SilentlyContinue)"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:22:46Z",
-    "executed_at_local":  "2026-10-27 09:22:46",
-    "source_commit":  "787dba6bee6350e0881e0fe9d23cddd541252457"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T012352Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\connect\\checks\\verify_all.sh\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\verify_all.sh\" -Force; $p=\"E:\\0apps\\jev-chat-windows\\tools\\verify_all.sh\"; [IO.File]::WriteAllText($p,[IO.File]::ReadAllText($p).Replace(\"`r\",\"\")); Start-Process -FilePath \"wsl.exe\" -ArgumentList \"-d\",\"Ubuntu-26.04\",\"-e\",\"bash\",\"/mnt/e/0apps/jev-chat-windows/tools/verify_all.sh\",\"/mnt/e/verify_all.txt\" -WindowStyle Hidden; Start-Sleep -Seconds 60; Get-Content \"E:\\verify_all.txt\" -Raw -ErrorAction SilentlyContinue"
+  ]
 }
