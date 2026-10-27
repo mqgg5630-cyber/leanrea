@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T010528Z",
-  "powershell": [
-    "New-Item -ItemType Directory -Force -Path \"results\\jev-monitor\" | Out-Null; \"--- simple ---\"; & wsl.exe -d Ubuntu-24.04 -e bash -c \"echo hi-from-24 > /mnt/e/t.txt; id; cat /mnt/e/t.txt\" 2>&1; \"exit24=\" + $LASTEXITCODE; \"--- script ---\"; & wsl.exe -d Ubuntu-24.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/probe24.txt 2>&1; \"exitS=\" + $LASTEXITCODE; \"size=\" + (Get-Item \"E:\\probe24.txt\" -ErrorAction SilentlyContinue).Length; Get-Content \"E:\\probe24.txt\" -TotalCount 12 -ErrorAction SilentlyContinue"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T010528Z",
+    "powershell":  [
+                       "New-Item -ItemType Directory -Force -Path \"results\\jev-monitor\" | Out-Null; \"--- simple ---\"; \u0026 wsl.exe -d Ubuntu-24.04 -e bash -c \"echo hi-from-24 \u003e /mnt/e/t.txt; id; cat /mnt/e/t.txt\" 2\u003e\u00261; \"exit24=\" + $LASTEXITCODE; \"--- script ---\"; \u0026 wsl.exe -d Ubuntu-24.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/wsl_probe.sh /mnt/e/probe24.txt 2\u003e\u00261; \"exitS=\" + $LASTEXITCODE; \"size=\" + (Get-Item \"E:\\probe24.txt\" -ErrorAction SilentlyContinue).Length; Get-Content \"E:\\probe24.txt\" -TotalCount 12 -ErrorAction SilentlyContinue"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:04:50Z",
+    "executed_at_local":  "2026-10-27 09:04:50",
+    "source_commit":  "fab67fe7adaedf23b4fe2b09d9959775e0bef424"
 }
