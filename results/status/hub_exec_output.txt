@@ -1,13 +1,14 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 14963f2c51777feaf9431ab8cfd81ad7a89bd463
-executed_at_utc: 2026-10-27T01:05:55Z
-executed_at_local: 2026-10-27 09:05:55
+source_commit: 2514e1fe13533feaf2e038c56d50e244efd59731
+executed_at_utc: 2026-10-27T01:08:32Z
+executed_at_local: 2026-10-27 09:08:32
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-DISTRO Ubuntu-26.04 exit=126 bytes=0
-DISTRO Ubuntu-24.04 exit=126 bytes=0
-RUNNER_DONE
+exit24=0
+exit26=0
+wsl-Ubuntu-24.04.txt=800
+wsl-Ubuntu-26.04.txt=1331
 

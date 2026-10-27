@@ -1,0 +1,44 @@
+DISTRO=Ubuntu 26.04 LTS
+USER=w26 HOST=LAPTOP-R77M5D6M
+TOOLS ssh=/usr/bin/ssh rsync=/usr/bin/rsync sshpass= jq= sbatch=
+HAS_PASSFILE=no
+--- config host aliases ---
+mu01,
+--- keys ---
+id_ed25519 256
+=== mu01 (alias in w26 config) ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+AUTH_OK
+mu01
+25wenshaohua
+HOME=/mnt/hpc/home/25menglei/25wenshaohua
+SINODES
+cu01           1       cu* idle  
+cu02           1       cu* mix   
+cu03           1       cu* mix   
+rc=0
+=== 25wenshaohua@10.10.5.210 (id_ed25519) ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+AUTH_OK
+mu01
+25wenshaohua
+HOME=/mnt/hpc/home/25menglei/25wenshaohua
+SINODES
+cu01           1       cu* idle  
+cu02           1       cu* mix   
+cu03           1       cu* mix   
+rc=0
+=== BNI@192.168.1.109 (id_ed25519) ===
+Connection closed by 192.168.1.109 port 22
+rc=255
+=== w24e@192.168.1.109 (id_ed25519) ===
+Connection closed by 192.168.1.109 port 22
+rc=255
+=== TCP 22 ===
+10.10.5.210 open
+192.168.1.109 open
+PROBE_DONE

@@ -1,0 +1,26 @@
+DISTRO=Ubuntu 24.04.4 LTS
+USER=w24e HOST=LAPTOP-R77M5D6M
+TOOLS ssh=/usr/bin/ssh rsync=/usr/bin/rsync sshpass=/usr/bin/sshpass jq= sbatch=
+HAS_PASSFILE=yes
+--- config host aliases ---
+github.com-shaohua,github.com-mqgg,
+--- keys ---
+id_ed25519 256
+id_ed25519_mqgg 256
+id_ed25519_shaohua 256
+=== mu01 (alias in w26 config) ===
+ssh: Could not resolve hostname mu01: Temporary failure in name resolution
+rc=255
+=== 25wenshaohua@10.10.5.210 (id_ed25519) ===
+25wenshaohua@10.10.5.210: Permission denied (publickey,gssapi-keyex,gssapi-with-mic,password).
+rc=255
+=== BNI@192.168.1.109 (id_ed25519) ===
+Connection closed by 192.168.1.109 port 22
+rc=255
+=== w24e@192.168.1.109 (id_ed25519) ===
+Connection closed by 192.168.1.109 port 22
+rc=255
+=== TCP 22 ===
+10.10.5.210 open
+192.168.1.109 open
+PROBE_DONE
