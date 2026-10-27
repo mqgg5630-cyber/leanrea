@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T115602Z",
-  "powershell": [
-    "$run = Get-Process \"Notion\" -ErrorAction SilentlyContinue; if ($run) { \"NOTION-RUNNING-SKIP\" } else { $data = Join-Path $env:APPDATA \"Notion\"; if ((Test-Path $data) -and (-not (Test-Path \"E:\\NotionData\"))) { Move-Item $data \"E:\\NotionData\" }; if ((Test-Path \"E:\\NotionData\") -and (-not (Test-Path $data))) { cmd /c mklink /J \"$data\" \"E:\\NotionData\" } }; \"APP: \" + (Test-Path \"E:\\Notion\\Notion.exe\"); \"DATA-ON-E: \" + (Test-Path \"E:\\NotionData\"); cmd /c dir \"$env:LOCALAPPDATA\\Programs\" | Select-String \"Notion\"; cmd /c dir \"$env:APPDATA\" | Select-String \"Notion\""
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T115602Z",
+    "powershell":  [
+                       "$run = Get-Process \"Notion\" -ErrorAction SilentlyContinue; if ($run) { \"NOTION-RUNNING-SKIP\" } else { $data = Join-Path $env:APPDATA \"Notion\"; if ((Test-Path $data) -and (-not (Test-Path \"E:\\NotionData\"))) { Move-Item $data \"E:\\NotionData\" }; if ((Test-Path \"E:\\NotionData\") -and (-not (Test-Path $data))) { cmd /c mklink /J \"$data\" \"E:\\NotionData\" } }; \"APP: \" + (Test-Path \"E:\\Notion\\Notion.exe\"); \"DATA-ON-E: \" + (Test-Path \"E:\\NotionData\"); cmd /c dir \"$env:LOCALAPPDATA\\Programs\" | Select-String \"Notion\"; cmd /c dir \"$env:APPDATA\" | Select-String \"Notion\""
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T11:55:19Z",
+    "executed_at_local":  "2026-10-27 19:55:19",
+    "source_commit":  "5b4e50c4d07a1a6f3adb8ef21fd51c1ef1d2ff1f"
 }
