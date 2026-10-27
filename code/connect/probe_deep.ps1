@@ -28,7 +28,7 @@ foreach ($c in @('plink.exe', 'pscp.exe', 'sshpass.exe', 'rsync.exe', 'wt.exe'))
 # ---- saved secrets on this host -------------------------------------------
 $cand = @("$env:USERPROFILE\.hpc_pass", "$env:USERPROFILE\.ssh\.hpc_pass", 'D:\.hpc_pass', 'E:\.hpc_pass')
 foreach ($p in $cand) { if (Test-Path -LiteralPath $p) { Line ('PASSFILE ' + $p) ('bytes=' + (Get-Item $p).Length) } }
-$cred = @(& cmdkey.exe /list 2>&1 | Where-Object { $_ -match 'Target|目标' } | Select-Object -First 12)
+$cred = @(& cmdkey.exe /list 2>&1 | Where-Object { $_ -match 'Target' } | Select-Object -First 12)
 Line 'CMDLIST' ((($cred -join ' ; ') -replace '\s+', ' ') -replace '[^\x20-\x7E]', '')
 
 # ---- verbose handshake: 192.168.1.109 -------------------------------------
