@@ -1,58 +1,29 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 92ea98a29a4013a92348d411045e00a771a133b8
-executed_at_utc: 2026-10-27T01:15:31Z
-executed_at_local: 2026-10-27 09:15:31
+source_commit: 7db08a944518c31d5bd939ce6e4b5e100c394053
+executed_at_utc: 2026-10-27T01:17:25Z
+executed_at_local: 2026-10-27 09:17:25
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-===== info @ 2026-10-27 09:15:03 (exit=0, 26s) =====
-mu01
-25wenshaohua
-Linux 3.10.0-1160.el7.x86_64 x86_64
---- partitions
-PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T)  NODELIST
-cu*          up   infinite      15/35/12/62  cu[01-62]
-fat1         up   infinite          0/7/1/8  fat[01-08]
-fat2         up   infinite          0/1/0/1  fat09
---- my jobs
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
---- limits
-PartitionName=cu
-   MaxNodes=UNLIMITED MaxTime=UNLIMITED MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED
-   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED
-PartitionName=fat1
-   MaxNodes=UNLIMITED MaxTime=UNLIMITED MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED
-   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED
-PartitionName=fat2
-   MaxNodes=UNLIMITED MaxTime=UNLIMITED MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED
-   DefMemPerNode=UNLIMITED MaxMemPerNode=UNLIMITED
---- storage
-gpfs            1.4P  525T  861T  38% /mnt
-HOME=/mnt/hpc/home/25menglei/25wenshaohua
---- stack
-python3      /mnt/hpc/home/25menglei/25wenshaohua/miniconda3/bin/python3
-conda        conda
-mamba        /mnt/hpc/home/25menglei/25wenshaohua/miniconda3/bin/mamba
-apptainer    -
-singularity  -
-gcc          /usr/bin/gcc
-nvcc         -
---- home
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-branches
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-connect-backup-20261013-151532
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-connect-backup-20261014-090633
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-connect-backup-20261014-093406
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-connect-backup-20261015-143538
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-connect-backup-20261015-145900
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-multi
-/mnt/hpc/home/25menglei/25wenshaohua/0amp-src
-/mnt/hpc/home/25menglei/25wenshaohua/26wangqin
-/mnt/hpc/home/25menglei/25wenshaohua/H_pylory_AD
-/mnt/hpc/home/25menglei/25wenshaohua/Miniconda3-py39_4.12.0-Linux-x86_64.sh
-/mnt/hpc/home/25menglei/25wenshaohua/_3_reactions
-/mnt/hpc/home/25menglei/25wenshaohua/amp
-/mnt/hpc/home/25menglei/25wenshaohua/amp_analysis
-/mnt/hpc/home/25menglei/25wenshaohua/amp_candidates_laptop_20260928
+=== 1. prepare remote dirs ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+REMOTE_DIR_OK
+/mnt/hpc/home/25menglei/25wenshaohua/jobs
+=== 2. upload smoke.sbatch ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+UPLOAD_OK
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+-rwxrwxrwx 1 25wenshaohua 25menglei 392 Oct 27 09:16 /mnt/hpc/home/25menglei/25wenshaohua/jobs/smoke.sbatch
+=== 3. submit ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
 
