@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T014349Z",
-  "powershell": [
-    "function L($k,$v){ \"$k=$v\" }; \"--- route to 192.168.1.0/24 ---\"; (route print -4 | Select-String \"192\\.168\\.1\\.\" | Select-Object -First 6) -join \" ; \"; \"--- ping ---\"; (Test-Connection 192.168.1.109 -Count 2 -ErrorAction SilentlyContinue | ForEach-Object { \"reply \" + $_.Address + \" \" + $_.ResponseTime + \"ms\" }) -join \",\"; \"--- tracert ---\"; (tracert -h 4 -w 700 192.168.1.109 2>&1 | Select-Object -Skip 2 -First 5) -join \" ; \"; \"--- sunlogin on laptop ---\"; (Get-ChildItem \"C:\\Program Files\\Oray\" -Directory -ErrorAction SilentlyContinue | Select-Object -First 5 | ForEach-Object { $_.Name }) -join \",\"; \"--- tailnet last seen desktop ---\"; (& \"E:\\Tailscale\\tailscale.exe\" status --json | ConvertFrom-Json).Peer.PSObject.Properties | Where-Object { $_.Value.HostName -match \"IEUDGS\" } | ForEach-Object { $_.Value.LastSeen }"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T014349Z",
+    "powershell":  [
+                       "function L($k,$v){ \"$k=$v\" }; \"--- route to 192.168.1.0/24 ---\"; (route print -4 | Select-String \"192\\.168\\.1\\.\" | Select-Object -First 6) -join \" ; \"; \"--- ping ---\"; (Test-Connection 192.168.1.109 -Count 2 -ErrorAction SilentlyContinue | ForEach-Object { \"reply \" + $_.Address + \" \" + $_.ResponseTime + \"ms\" }) -join \",\"; \"--- tracert ---\"; (tracert -h 4 -w 700 192.168.1.109 2\u003e\u00261 | Select-Object -Skip 2 -First 5) -join \" ; \"; \"--- sunlogin on laptop ---\"; (Get-ChildItem \"C:\\Program Files\\Oray\" -Directory -ErrorAction SilentlyContinue | Select-Object -First 5 | ForEach-Object { $_.Name }) -join \",\"; \"--- tailnet last seen desktop ---\"; (\u0026 \"E:\\Tailscale\\tailscale.exe\" status --json | ConvertFrom-Json).Peer.PSObject.Properties | Where-Object { $_.Value.HostName -match \"IEUDGS\" } | ForEach-Object { $_.Value.LastSeen }"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:43:36Z",
+    "executed_at_local":  "2026-10-27 09:43:36",
+    "source_commit":  "9a2df03b4424b0f4d8092988de665b73fe046479"
 }
