@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261026T162401Z",
-    "powershell":  [
-                       "\u0026 powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\pull_events.ps1\" -Tail 120 | Out-Null; \"gguf_mb=\" + [math]::Round((Get-Item \"E:\\0apps\\tools\\qwen2.5-3b-instruct-q4_k_m.gguf\" -ErrorAction SilentlyContinue).Length/1MB,0); Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\ollama.log\" -Tail 2 -Encoding UTF8"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-26T16:23:44Z",
-    "executed_at_local":  "2026-10-27 00:23:44",
-    "source_commit":  "f55fb0af89347e3f465bb03db776366121fb36ae"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T003917Z",
+  "powershell": [
+    "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -like \"*pull_model_direct*\" -or $_.CommandLine -like \"*fetch_ollama*\" -or $_.CommandLine -like \"*repair_ollama*\" } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }; \"paused model download\"; Copy-Item -Path \"code\\connect\\recon_laptop.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\recon_laptop.ps1\" 2>&1; $o | Out-File \"results\\jev-monitor\\recon-laptop.txt\" -Encoding utf8; \"lines=\" + @($o).Count"
+  ]
 }
