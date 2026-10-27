@@ -1,8 +1,8 @@
 # 最近一轮同步回执（agent -> 分支）
 
-- 时间：2026-10-27 11:19 UTC
+- 时间：2026-10-27 11:20 UTC
 - 分支：`arena/4d729933-leanrea`
-- 本轮助手提交：zhongqi dedupe verified dups to quarantine
+- 本轮助手提交：zhongqi restore arena_out to top
 - 本轮改动文件：
    M results/status/hub_task.json
 
