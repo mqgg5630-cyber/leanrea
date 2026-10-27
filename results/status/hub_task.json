@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T010943Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\connect\\hpc_info.sh\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\hpc_info.sh\" -Force; $t=[IO.File]::ReadAllText(\"E:\\0apps\\jev-chat-windows\\tools\\hpc_info.sh\").Replace(\"`r\",\"\"); [IO.File]::WriteAllText(\"E:\\0apps\\jev-chat-windows\\tools\\hpc_info.sh\",$t); \u0026 wsl.exe -d Ubuntu-26.04 -e bash /mnt/e/0apps/jev-chat-windows/tools/hpc_info.sh /mnt/e/hpc_info.txt 2\u003e$null; Copy-Item \"E:\\hpc_info.txt\" \"results\\jev-monitor\\hpc-info.txt\" -Force; \"bytes=\" + (Get-Item \"results\\jev-monitor\\hpc-info.txt\").Length"
-                   ],
-    "status":  "failed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:11:07Z",
-    "executed_at_local":  "2026-10-27 09:11:07",
-    "source_commit":  "3450422f7f18c5cd89a808618706d57e338c6fbb"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T011229Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\connect\\hpc.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; & powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"E:\\0apps\\jev-chat-windows\\tools\\hpc.ps1\" -Action info -NoOut"
+  ]
 }
