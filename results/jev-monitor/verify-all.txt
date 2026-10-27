@@ -1,0 +1,42 @@
+=== A. rsync download from HPC ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+DOWNLOAD_OK
+local copy:
+total 0
+-rwxrwxrwx 1 w26 w26 133 Oct 27 09:18 smoke_92384.out
+REACHED_NODE=cu46
+DATE=2026-10-27T09:18:40+0800
+SLURM_JOB_ID=92384 CPUS=2
+
+=== B. 192.168.1.109 diagnosis ===
+port 22 : no-banner
+port 2222 : no-banner
+port 3389 : no-banner
+port 5985 : no-banner
+port 5986 : no-banner
+port 445 : no-banner
+port 80 : no-banner
+-- verbose ssh --
+debug1: Connecting to 192.168.1.109 [192.168.1.109] port 22.
+debug1: Local version string SSH-2.0-OpenSSH_10.2p1 Ubuntu-2ubuntu3.6
+kex_exchange_identification: Connection closed by remote host
+Connection closed by 192.168.1.109 port 22
+
+=== C. tailscale peers ===
+skip
+
+=== D. HPC quick facts ===
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+host=mu01
+   CPUAlloc=0 CPUTot=64 CPULoad=0.01
+   Gres=(null)
+   RealMemory=515000 AllocMem=0 FreeMem=497547 Sockets=2 Boards=1
+
+   CPUAlloc=0 CPUTot=96 CPULoad=0.01
+   Gres=(null)
+   RealMemory=1030000 AllocMem=0 FreeMem=996430 Sockets=4 Boards=1
+VERIFY_DONE

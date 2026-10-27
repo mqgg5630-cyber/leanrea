@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "d2b62c25b108d21f74d7b2ffe496aa425f5e7d75",
-    "synced_at_utc":  "2026-10-27T01:24:23Z",
-    "synced_at_local":  "2026-10-27 09:24:23",
+    "source_commit":  "5b5b720e5896e5f4fa55e24c32298bf5730f61c6",
+    "synced_at_utc":  "2026-10-27T01:25:01Z",
+    "synced_at_local":  "2026-10-27 09:25:01",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  149,
+    "synced_files_count":  150,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  61352,
-                               "stdout":  "=== A. rsync download from HPC ===\n** WARNING: connection is not using a post-quantum key exchange algorithm.\r\n** This session may be vulnerable to \"store now, decrypt later\" attacks.\r\n** The server may need to be upgraded. See https://openssh.com/pq.html\r\nDOWNLOAD_OK\nlocal copy:\ntotal 0\n-rwxrwxrwx 1 w26 w26 133 Oct 27 09:18 smoke_92384.out\nREACHED_NODE=cu46\nDATE=2026-10-27T09:18:40+0800\nSLURM_JOB_ID=92384 CPUS=2\n\n=== B. 192.168.1.109 diagnosis ===\nport 22 : no-banner\nport 2222 : no-banner\nport 3389 : no-banner\nport 5985 : no-banner\nport 5986 : no-banner\nport 445 : no-banner\nport 80 : no-banner\n-- verbose ssh --",
+                               "elapsed_ms":  1744,
+                               "stdout":  "bytes=1403\r\nport 22 : no-banner\r\nport 2222 : no-banner\r\nport 3389 : no-banner\r\nport 5985 : no-banner\r\nport 5986 : no-banner\r\nport 445 : no-banner\r\nport 80 : no-banner\r\n-- verbose ssh --\r\ndebug1: Connecting to 192.168.1.109 [192.168.1.109] port 22.\r\nConnection closed by 192.168.1.109 port 22\r\nhost=mu01\r\n   CPUAlloc=0 CPUTot=64 CPULoad=0.01\r\n   RealMemory=515000 AllocMem=0 FreeMem=497547 Sockets=2 Boards=1\r\n   CPUAlloc=0 CPUTot=96 CPULoad=0.01\r\n   RealMemory=1030000 AllocMem=0 FreeMem=996430 Sockets=4 Boards=1\r\nVERIFY_DONE",
                                "stderr":  ""
                            }
                        ],
