@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T011508Z",
-    "powershell":  [
-                       "Copy-Item -Path \"code\\connect\\hpc.ps1\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\hpc.ps1\",\"-Action\",\"info\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\hpc_info.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\hpc_info.err\"; Start-Sleep -Seconds 55; (Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\hpc_info.out\" -Raw -ErrorAction SilentlyContinue)"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:15:31Z",
-    "executed_at_local":  "2026-10-27 09:15:31",
-    "source_commit":  "92ea98a29a4013a92348d411045e00a771a133b8"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T011647Z",
+  "powershell": [
+    "Copy-Item -Path \"code\\connect\\hpc_smoke.sh\",\"code\\connect\\templates\\smoke.sbatch\" -Destination \"E:\\0apps\\jev-chat-windows\\tools\\\" -Force; foreach($f in @(\"hpc_smoke.sh\",\"smoke.sbatch\")){ $p=\"E:\\0apps\\jev-chat-windows\\tools\\$f\"; [IO.File]::WriteAllText($p, [IO.File]::ReadAllText($p).Replace(\"`r\",\"\")) }; Start-Process -FilePath \"wsl.exe\" -ArgumentList \"-d\",\"Ubuntu-26.04\",\"-e\",\"bash\",\"/mnt/e/0apps/jev-chat-windows/tools/hpc_smoke.sh\",\"/mnt/e/hpc_smoke.txt\" -WindowStyle Hidden; Start-Sleep -Seconds 80; (Get-Content \"E:\\hpc_smoke.txt\" -Raw -ErrorAction SilentlyContinue) -split \"`n\" | Select-Object -Last 25"
+  ]
 }
