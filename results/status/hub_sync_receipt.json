@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "f9f836d98f270df42185a4aaecc9aaf29905649f",
-    "synced_at_utc":  "2026-10-27T01:52:44Z",
-    "synced_at_local":  "2026-10-27 09:52:44",
+    "source_commit":  "60a91bfe14f386123d1e3ed94b7667fecbd55ab5",
+    "synced_at_utc":  "2026-10-27T11:14:02Z",
+    "synced_at_local":  "2026-10-27 19:14:02",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  165,
+    "synced_files_count":  166,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  11349,
-                               "stdout":  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOs0Nm0C4YKZ/L57uAbv9XBZDy8pqAM0P7jCMt0EEEGg shaohuawen03@gmail.com\n--- win keys ---\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEcvrvBvxgT71o7C+poN8QOXuOLgq+qiqtcWXowoAY4C shaohuawen03@gmail.com",
+                               "elapsed_ms":  4086,
+                               "stdout":  "arena-01a0c336-light-skills-01a0c6b7\tDIR\tMB=58\tfiles=1436\t2026-09-22 15:17:16\r\nBrowserSkill-01a0b237\tDIR\tMB=31.5\tfiles=1503\t2026-09-22 9:21:35\r\nguojiang\tDIR\tMB=50.4\tfiles=272\t2026-09-18 15:26:59\r\nLight-skills-arena-01a0c336\tDIR\tMB=136.3\tfiles=725\t2026-09-21 19:10:50\r\nzhongqi\tDIR\tMB=150.5\tfiles=921\t2026-09-27 20:47:09\r\nzhongqi-arena\tDIR\tMB=181.1\tfiles=673\t2026-10-09 17:20:35\r\nzhongqi-arena_out\tDIR\tMB=17\tfiles=32\t2026-09-18 10:12:52\r\nzhongqi_local_backup_20260927_205048\tDIR\tMB=0.1\tfiles=1\t2026-09-27 20:50:48\r\nzhongqi_out\tDIR\tMB=15.8\tfiles=23\t2026-09-17 16:30:16\r\n˶ʿ����_������_20260921_1610_476����_���������װ_LightSkills23\tDIR\tMB=0.1\tfiles=3\t2026-09-21 16:40:43\r\n����\tDIR\tMB=0.2\tfiles=5\t2026-09-14 11:09:52\r\n1.md\tFILE\tMB=0\t2026-10-13 10:13:02\r\nCombined computational and spectroscopic analyses of the interactions between ginger compounds and bovine type I collagen.pdf\tFILE\tMB=4.6\t2026-09-17 15:48:57\r\n����.docx\tFILE\tMB=0.1\t2026-09-19 10:34:24\r\n���ڴ��_���ܻ�.pptx\tFILE\tMB=1\t2026-09-21 10:34:00\r\n�������.pdf\tFILE\tMB=0.1\t2026-09-18 16:13:12\r\n����.md\tFILE\tMB=0\t2026-09-21 19:44:58\r\n\r\n        Free         Used\r\n        ----         ----\r\n273826418688 494321557504",
                                "stderr":  ""
                            }
                        ],

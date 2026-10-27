@@ -1,13 +1,31 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: f9f836d98f270df42185a4aaecc9aaf29905649f
-executed_at_utc: 2026-10-27T01:52:44Z
-executed_at_local: 2026-10-27 09:52:44
+source_commit: 60a91bfe14f386123d1e3ed94b7667fecbd55ab5
+executed_at_utc: 2026-10-27T11:14:02Z
+executed_at_local: 2026-10-27 19:14:02
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOs0Nm0C4YKZ/L57uAbv9XBZDy8pqAM0P7jCMt0EEEGg shaohuawen03@gmail.com
---- win keys ---
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEcvrvBvxgT71o7C+poN8QOXuOLgq+qiqtcWXowoAY4C shaohuawen03@gmail.com
+arena-01a0c336-light-skills-01a0c6b7	DIR	MB=58	files=1436	2026-09-22 15:17:16
+BrowserSkill-01a0b237	DIR	MB=31.5	files=1503	2026-09-22 9:21:35
+guojiang	DIR	MB=50.4	files=272	2026-09-18 15:26:59
+Light-skills-arena-01a0c336	DIR	MB=136.3	files=725	2026-09-21 19:10:50
+zhongqi	DIR	MB=150.5	files=921	2026-09-27 20:47:09
+zhongqi-arena	DIR	MB=181.1	files=673	2026-10-09 17:20:35
+zhongqi-arena_out	DIR	MB=17	files=32	2026-09-18 10:12:52
+zhongqi_local_backup_20260927_205048	DIR	MB=0.1	files=1	2026-09-27 20:50:48
+zhongqi_out	DIR	MB=15.8	files=23	2026-09-17 16:30:16
+˶ʿ����_������_20260921_1610_476����_���������װ_LightSkills23	DIR	MB=0.1	files=3	2026-09-21 16:40:43
+����	DIR	MB=0.2	files=5	2026-09-14 11:09:52
+1.md	FILE	MB=0	2026-10-13 10:13:02
+Combined computational and spectroscopic analyses of the interactions between ginger compounds and bovine type I collagen.pdf	FILE	MB=4.6	2026-09-17 15:48:57
+����.docx	FILE	MB=0.1	2026-09-19 10:34:24
+���ڴ��_���ܻ�.pptx	FILE	MB=1	2026-09-21 10:34:00
+�������.pdf	FILE	MB=0.1	2026-09-18 16:13:12
+����.md	FILE	MB=0	2026-09-21 19:44:58
+
+        Free         Used
+        ----         ----
+273826418688 494321557504
 

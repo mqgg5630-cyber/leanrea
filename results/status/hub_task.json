@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T111427Z",
-  "powershell": [
-    "Get-ChildItem E:\\0zhongqi -Force | ForEach-Object { if ($_.PSIsContainer) { $m = Get-ChildItem $_.FullName -Recurse -File -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum; \"{0}`tDIR`tMB={1}`tfiles={2}`t{3}\" -f $_.Name, [math]::Round($m.Sum/1MB,1), $m.Count, $_.LastWriteTime } else { \"{0}`tFILE`tMB={1}`t{2}\" -f $_.Name, [math]::Round($_.Length/1MB,1), $_.LastWriteTime } }; Get-PSDrive E | Select-Object Free, Used"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T111427Z",
+    "powershell":  [
+                       "Get-ChildItem E:\\0zhongqi -Force | ForEach-Object { if ($_.PSIsContainer) { $m = Get-ChildItem $_.FullName -Recurse -File -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum; \"{0}`tDIR`tMB={1}`tfiles={2}`t{3}\" -f $_.Name, [math]::Round($m.Sum/1MB,1), $m.Count, $_.LastWriteTime } else { \"{0}`tFILE`tMB={1}`t{2}\" -f $_.Name, [math]::Round($_.Length/1MB,1), $_.LastWriteTime } }; Get-PSDrive E | Select-Object Free, Used"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T11:14:02Z",
+    "executed_at_local":  "2026-10-27 19:14:02",
+    "source_commit":  "60a91bfe14f386123d1e3ed94b7667fecbd55ab5"
 }
