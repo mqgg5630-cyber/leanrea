@@ -1,0 +1,40 @@
+科研模板使用指南（数据库已直接搭建）
+更新：2026-10-27
+
+科研中枢：https://app.notion.com/p/406186af12d3812eae09f4d653163b04
+在线指南：https://app.notion.com/p/406186af12d381ebb0c4d56e239ef482
+论文库：https://app.notion.com/p/b5eabb93859c4ab891053c15c6a79919
+实验记录：https://app.notion.com/p/9ee515106f8d44cd9341c91a8c19aa81
+项目资料索引：https://app.notion.com/p/406186af12d3811f96eacb762c733f75
+
+一、已经搭好
+科研中枢：每日流程、本周待办、三份说明、项目资料、两个内嵌数据库。
+论文库：标题(Title)、作者(Text)、期刊(Text)、年份(Number)、状态(Select)、评分(Select)、DOI(URL)、附件(Files)、本地路径(Text)、要点(Text)。
+状态：待读 / 在读 / 已读 / 已引用；评分：一至五星。
+实验记录：实验名称(Title)、日期(Date)、项目(Select)、状态(Select)、结果(Text)、数据路径(Text)、作业ID(Text)、同步键(Text)、关联论文(Relation)。
+状态：待验证 / 进行中 / 已完成 / 失败。
+项目：基础设施 / 中期 / 开题 / 宏基因组 / AMP预测 / 国奖。
+关联论文为从实验记录指向论文库的单向关联，不乱填无关论文。
+
+二、正文模板（复制到一条记录内部）
+论文：研究问题 → 数据/样本 → 方法 → 关键结果及图表位置 → 局限性 → 对我的课题有什么用 → 待验证问题。
+实验：目的 → 输入及版本 → 参数/命令（不含密钥）→ 运行机器与作业ID → 日志证据 → 结果与限制 → 下一步。
+可在客户端 New 旁的模板菜单，将上述正文保存为自己的模板。
+
+三、可选视图（还需客户端操作，不是已建功能）
+论文库：添加视图 → 看板 → 按「状态」分组。
+论文库：添加表格视图「待读」→ 筛选 状态=待读。
+实验记录：添加视图 → 日历 → 日期属性选「日期」。
+实验记录：添加表格视图「待跟进」→ 筛选 状态不等于已完成。
+当前连接器没有创建视图或原生数据库模板的工具；交付的是数据库、正文模板和操作说明。
+
+四、已录入的记录
+1. ginger compounds / bovine type I collagen 论文：待读；仅按本地 PDF 文件名建索引，作者/年份/DOI 留空待核实，没有上传 PDF。
+2. 笔记本 → 台式机 SSH 免密验证：真实的此前执行结果，返回码 0，已完成。
+不把 HPC smoke 测试冒充 476 样本分析完成，不填未经验证的科研结论。
+
+五、项目资料（只存位置）
+中期：E:\0zhongqi\zhongqi_out；E:\0zhongqi\zhongqi-arena_out
+交付物：E:\0zhongqi\zhongqi-deliverable；E:\0zhongqi\zhongqi-arena-deliverable
+国奖材料：E:\0zhongqi\guojiang
+台式机 → HPC 的端到端传输/提交/取结果仍待验证。
