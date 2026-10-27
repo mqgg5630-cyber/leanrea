@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T015158Z",
-  "powershell": [
-    "\"--- drives on laptop ---\"; (Get-PSDrive -PSProvider FileSystem | ForEach-Object { $_.Name + \":\" + [math]::Round($_.Used/1GB) + \"G/\" + [math]::Round(($_.Used+$_.Free)/1GB) + \"G\" }) -join \"  \"; \"F_0wsh_exists=\" + (Test-Path \"F:\\0wsh\"); \"computer=\" + $env:COMPUTERNAME; \"desktop_dir=\" + [Environment]::GetFolderPath(\"Desktop\")"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T015158Z",
+    "powershell":  [
+                       "\"--- drives on laptop ---\"; (Get-PSDrive -PSProvider FileSystem | ForEach-Object { $_.Name + \":\" + [math]::Round($_.Used/1GB) + \"G/\" + [math]::Round(($_.Used+$_.Free)/1GB) + \"G\" }) -join \"  \"; \"F_0wsh_exists=\" + (Test-Path \"F:\\0wsh\"); \"computer=\" + $env:COMPUTERNAME; \"desktop_dir=\" + [Environment]::GetFolderPath(\"Desktop\")"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:51:33Z",
+    "executed_at_local":  "2026-10-27 09:51:33",
+    "source_commit":  "f2737644a9b7152baf0a4d50c028a96c276f5c48"
 }
