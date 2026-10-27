@@ -1,24 +1,10 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: ac88882c9331d0e3e26a028fcd1c4d65a32dae2d
-executed_at_utc: 2026-10-27T01:18:43Z
-executed_at_local: 2026-10-27 09:18:43
+source_commit: fe09aac93a4fc5e5c322627183a59c0ce81e64d7
+executed_at_utc: 2026-10-27T01:20:00Z
+executed_at_local: 2026-10-27 09:20:00
 tasks_all_ok: True
 
 --- step: hub_task.powershell (exit=0) ---
-=== smoke log ===
-=== 1. prepare remote dirs ===
-/mnt/hpc/home/25menglei/25wenshaohua/jobs
-=== 2. upload smoke.sbatch ===
--rwxrwxrwx 1 25wenshaohua 25menglei 392 Oct 27 09:16 /mnt/hpc/home/25menglei/25wenshaohua/jobs/smoke.sbatch
-=== 3. submit ===
-JOBID=92384
-=== 4. poll ===
-poll 1 state=<gone>
-=== 5. accounting ===
-92384                 jev-smoke  COMPLETED      0:0   00:00:00            cu46 
-92384.batch               batch  COMPLETED      0:0   00:00:00            cu46 
-=== 6. fetch result ===
-=== fetched result ===
 

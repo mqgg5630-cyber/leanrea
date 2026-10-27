@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261027T011951Z",
-  "powershell": [
-    "Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\hpc.ps1\",\"-Action\",\"run\",\"-Cmd\",\"ls -l ~/jobs | head; echo ---OUT---; cat ~/jobs/smoke_92384.out; echo ---ERR---; cat ~/jobs/smoke_92384.err\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.err\"; Start-Sleep -Seconds 40; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -Raw"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261027T011951Z",
+    "powershell":  [
+                       "Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\hpc.ps1\",\"-Action\",\"run\",\"-Cmd\",\"ls -l ~/jobs | head; echo ---OUT---; cat ~/jobs/smoke_92384.out; echo ---ERR---; cat ~/jobs/smoke_92384.err\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.err\"; Start-Sleep -Seconds 40; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -Raw"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-27T01:20:00Z",
+    "executed_at_local":  "2026-10-27 09:20:00",
+    "source_commit":  "fe09aac93a4fc5e5c322627183a59c0ce81e64d7"
 }
