@@ -1,27 +1,10 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 5b5b720e5896e5f4fa55e24c32298bf5730f61c6
-executed_at_utc: 2026-10-27T01:25:01Z
-executed_at_local: 2026-10-27 09:25:01
-tasks_all_ok: True
+source_commit: ea6d104c29da764354938335405bc35cd2abd0ae
+executed_at_utc: 2026-10-27T01:31:18Z
+executed_at_local: 2026-10-27 09:31:18
+tasks_all_ok: False
 
---- step: hub_task.powershell (exit=0) ---
-bytes=1403
-port 22 : no-banner
-port 2222 : no-banner
-port 3389 : no-banner
-port 5985 : no-banner
-port 5986 : no-banner
-port 445 : no-banner
-port 80 : no-banner
--- verbose ssh --
-debug1: Connecting to 192.168.1.109 [192.168.1.109] port 22.
-Connection closed by 192.168.1.109 port 22
-host=mu01
-   CPUAlloc=0 CPUTot=64 CPULoad=0.01
-   RealMemory=515000 AllocMem=0 FreeMem=497547 Sockets=2 Boards=1
-   CPUAlloc=0 CPUTot=96 CPULoad=0.01
-   RealMemory=1030000 AllocMem=0 FreeMem=996430 Sockets=4 Boards=1
-VERIFY_DONE
+--- step: hub_task.powershell (exit=124) ---
 
