@@ -3,22 +3,16 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "f9f836d98f270df42185a4aaecc9aaf29905649f",
-    "synced_at_utc":  "2026-10-27T01:52:44Z",
-    "synced_at_local":  "2026-10-27 09:52:44",
+    "source_commit":  "b1521ec79e16a19aa7cccd324a0f147ea444ec45",
+    "synced_at_utc":  "2026-10-27T01:53:46Z",
+    "synced_at_local":  "2026-10-27 09:53:46",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
     "synced_files_count":  165,
-    "tasks_executed_count":  1,
+    "tasks_executed_count":  0,
     "tasks_all_ok":  true,
     "tasks_executed":  [
-                           {
-                               "step":  "hub_task.powershell",
-                               "exit_code":  0,
-                               "elapsed_ms":  11349,
-                               "stdout":  "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOs0Nm0C4YKZ/L57uAbv9XBZDy8pqAM0P7jCMt0EEEGg shaohuawen03@gmail.com\n--- win keys ---\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEcvrvBvxgT71o7C+poN8QOXuOLgq+qiqtcWXowoAY4C shaohuawen03@gmail.com",
-                               "stderr":  ""
-                           }
+
                        ],
     "copied_targets":  [
 
