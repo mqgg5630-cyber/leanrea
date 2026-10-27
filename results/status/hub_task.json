@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261027T011918Z",
-    "powershell":  [
-                       "Remove-Item \"results\\jev-monitor\\hpc-last.txt\" -ErrorAction SilentlyContinue; \"=== smoke log ===\"; ((Get-Content \"E:\\hpc_smoke.txt\" -Raw -ErrorAction SilentlyContinue) -replace \"\\*\\* WARNING[^`n]*`n?\",\"\" -replace \"\\*\\* This session[^`n]*`n?\",\"\" -replace \"\\*\\* The server[^`n]*`n?\",\"\") -split \"`n\" | Where-Object { $_ -match \"===|JOB|poll|COMPLETED|REACHED|DATE|python|SMOKE|FAIL|state\" } | Select-Object -Last 22; \"=== fetched result ===\"; Get-Content \"E:\\0apps\\jev-chat-windows\\tools\\hpc_smoke_result.txt\" -ErrorAction SilentlyContinue"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-27T01:18:43Z",
-    "executed_at_local":  "2026-10-27 09:18:43",
-    "source_commit":  "ac88882c9331d0e3e26a028fcd1c4d65a32dae2d"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261027T011951Z",
+  "powershell": [
+    "Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile\",\"-ExecutionPolicy\",\"Bypass\",\"-File\",\"E:\\0apps\\jev-chat-windows\\tools\\hpc.ps1\",\"-Action\",\"run\",\"-Cmd\",\"ls -l ~/jobs | head; echo ---OUT---; cat ~/jobs/smoke_92384.out; echo ---ERR---; cat ~/jobs/smoke_92384.err\" -WindowStyle Hidden -RedirectStandardOutput \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -RedirectStandardError \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.err\"; Start-Sleep -Seconds 40; Get-Content \"E:\\0apps\\jev-chat-windows\\logs\\hpc_q.out\" -Raw"
+  ]
 }
