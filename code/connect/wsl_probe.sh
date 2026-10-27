@@ -1,41 +1,39 @@
 #!/usr/bin/env bash
-# Probe the two HPC targets from inside WSL, where the previous working SSH
-# setup lives (key ~/.ssh/id_ed25519, Host mu01). Read-only: BatchMode only,
-# so it never blocks on a password prompt.
+# Probe the HPC targets from inside WSL, where the previous working SSH setup
+# lives. Read-only: BatchMode only, so it never blocks on a password prompt.
 # Usage: bash wsl_probe.sh <outfile>
 out="${1:-/tmp/wsl_probe.txt}"
-exec >"$out" 2>&1
+: >"$out"
+exec >>"$out" 2>&1
 
-echo "DISTRO=$(lsb_release -ds 2>/dev/null || cat /etc/os-release | grep PRETTY | cut -d= -f2)"
+echo "DISTRO=$( (lsb_release -ds 2>/dev/null || grep PRETTY /etc/os-release) | tr -d '\"' )"
 echo "USER=$USER HOST=$(hostname)"
-echo "TOOLS ssh=$(command -v ssh) rsync=$(command -v rsync) sshpass=$(command -v sshpass) jq=$(command -v jq)"
-echo "--- ~/.ssh ---"
-ls -l ~/.ssh 2>/dev/null | awk '{print $1, $5, $9}'
-echo "--- config hosts ---"
-grep -E '^\s*(Host|HostName|User|Port|IdentityFile)' ~/.ssh/config 2>/dev/null | tr -s ' ' | tr '\n' '|'
-echo
-echo "--- keys available ---"
-for k in ~/.ssh/id_*; do case "$k" in *.pub) ;; *) [ -f "$k" ] && echo "$k $(ssh-keygen -l -f "$k" 2>/dev/null | cut -d' ' -f1-2)";; esac; done
+echo "TOOLS ssh=$(command -v ssh) rsync=$(command -v rsync) sshpass=$(command -v sshpass) jq=$(command -v jq) sbatch=$(command -v sbatch)"
+echo "HAS_PASSFILE=$( [ -f "$HOME/.hpc_pass" ] && echo yes || echo no )"
 
-echo "--- targets from ~/.ssh/config (host aliases) ---"
-grep -iE '^\s*Host\s' ~/.ssh/config 2>/dev/null | sed 's/^\s*Host\s\+//'
-
-for tgt in mu01 25wenshaohua 10.10.5.210; do
-  echo "=== TCP $tgt:22 ==="
-  timeout 8 bash -c "cat < /dev/null > /dev/tcp/$tgt/22" 2>&1 && echo "tcp=open" || echo "tcp=fail"
-  echo "=== SSH $tgt (BatchMode, 20s) ==="
-  timeout 25 ssh -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=accept-new \
-      "$tgt" 'echo AUTH_OK; hostname; whoami; uname -r; echo SINFO; sinfo -V 2>/dev/null || echo no-slurm; echo HOME=$HOME; ls -d ~/* 2>/dev/null | head -5' 2>&1
-  echo "rc=$?"
+echo "--- config host aliases ---"
+grep -iE '^[[:space:]]*Host[[:space:]]' "$HOME/.ssh/config" 2>/dev/null | sed 's/^[[:space:]]*Host[[:space:]]*//' | tr '\n' ',' ; echo
+echo "--- keys ---"
+for k in "$HOME"/.ssh/id_*; do
+  case "$k" in *.pub) continue;; esac
+  [ -f "$k" ] && echo "$(basename "$k") $(ssh-keygen -l -f "$k" 2>/dev/null | cut -d' ' -f1)"
 done
 
-for tgt in 192.168.1.109 BNI@192.168.1.109; do
-  echo "=== TCP/SSH $tgt ==="
-  timeout 8 bash -c "cat < /dev/null > /dev/tcp/192.168.1.109/22" 2>&1 && echo "tcp=open" || echo "tcp=fail"
-  timeout 20 ssh -o BatchMode=yes -o ConnectTimeout=8 -o StrictHostKeyChecking=accept-new "$tgt" \
-      'echo AUTH_OK; hostname; whoami; uname -a' 2>&1
+try() { # label, timeout-ssh-args...
+  local label="$1"; shift
+  echo "=== $label ==="
+  timeout 30 ssh -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=accept-new "$@" \
+    'echo AUTH_OK; hostname; whoami; echo HOME=$HOME; echo SINODES; sinfo -h -N 2>/dev/null | head -3 || echo no-sinfo' 2>&1
   echo "rc=$?"
-  break
-done
+}
 
+try "mu01 (alias in w26 config)" mu01
+try "25wenshaohua@10.10.5.210 (id_ed25519)" -o IdentitiesOnly=yes -i "$HOME/.ssh/id_ed25519" 25wenshaohua@10.10.5.210
+try "BNI@192.168.1.109 (id_ed25519)" -o IdentitiesOnly=yes -i "$HOME/.ssh/id_ed25519" BNI@192.168.1.109
+try "w24e@192.168.1.109 (id_ed25519)" -o IdentitiesOnly=yes -i "$HOME/.ssh/id_ed25519" w24e@192.168.1.109
+
+echo "=== TCP 22 ==="
+for h in 10.10.5.210 192.168.1.109; do
+  timeout 8 bash -c "cat < /dev/null > /dev/tcp/$h/22" >/dev/null 2>&1 && echo "$h open" || echo "$h closed"
+done
 echo "PROBE_DONE"
