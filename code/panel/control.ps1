@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('snapshot','start','stop','hide','show')][string]$Action='snapshot',
+    [ValidateSet('snapshot','start','stop','hide','show','open')][string]$Action='snapshot',
     [string]$Name=''
 )
 $ErrorActionPreference='Stop'
@@ -18,7 +18,10 @@ if ($Action -eq 'snapshot') {
     ConvertTo-Json -InputObject $rows -Depth 4 -Compress
     exit 0
 }
-if ($Action -in @('hide','show')) {
+if ($Action -eq 'open') {
+    if ($Name -ne 'arena-dsh-web') { throw 'Only DSH can be opened' }
+    & (Join-Path $PSScriptRoot 'open_dsh.ps1')
+} elseif ($Action -in @('hide','show')) {
     if ($Name -ne 'arena-desktop-pet') { throw 'Only pet windows may be hidden' }
     Add-Type @'
 using System;

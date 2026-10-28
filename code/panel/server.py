@@ -62,7 +62,8 @@ class Store:
             self.audit({'event':'prompt_saved','session':sid})
         return {'ok':True}
     def control(self, name, action):
-        if name not in ALLOWED or action not in {'start','stop','hide','show'}: raise ValueError('Protected or unknown action')
+        if name not in ALLOWED or action not in {'start','stop','hide','show','open'}: raise ValueError('Protected or unknown action')
+        if action=='open' and name!='arena-dsh-web': raise ValueError('Only DSH can be opened')
         if action in {'hide','show'} and name!='arena-desktop-pet': raise ValueError('Only desktop pet can be hidden')
         if self.demo or os.name!='nt': raise ValueError('Preview is read-only; no Windows task changes')
         with self.lock:

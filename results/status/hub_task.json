@@ -1,15 +1,11 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261028T013540Z",
-    "powershell":  [
-                       "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\retry_pet.py\" \"E:\\0apps\\ArenaDesk\\retry_pet.py\" -Force; Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"E:\\0apps\\ArenaDesk\\retry_pet.py\"; \"RETRY_STARTED\""
-                   ],
-    "python":  [
-                   "import json,urllib.request,subprocess\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists():\n b=p.read_bytes();print(\"DSH_LOG\",json.dumps(b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")[-7000:],ensure_ascii=True))\ntry:\n r=urllib.request.urlopen(\"http://127.0.0.1:3080\",timeout=10);print(\"DSH_HTTP\",r.status)\nexcept Exception as e:print(\"DSH_HTTP\",repr(e))\nprint(\"PANEL_SAMPLE\",json.dumps(json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))[\"tasks\"],ensure_ascii=True))"
-               ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-28T01:35:04Z",
-    "executed_at_local":  "2026-10-28 09:35:04",
-    "source_commit":  "eb7af3c0e2d50b8d3990b30a983c168237101582"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261028T013640Z",
+  "powershell": [
+    "$ErrorActionPreference=\"Stop\"; $log=\"E:\\0apps\\ArenaDesk\\data\\dsh-runtime.log\"; $old=\"\"; if(Test-Path $log){$old=[regex]::Match((Get-Content $log -Raw),\"token=([A-Za-z0-9_-]+)\").Groups[1].Value}; Stop-ScheduledTask -TaskName \"arena-dsh-web\" -TaskPath \"\\\"; Start-Sleep -Seconds 2; & \"code\\panel\\deploy.ps1\"; Start-Sleep -Seconds 4; $new=[regex]::Match((Get-Content $log -Raw),\"token=([A-Za-z0-9_-]+)\").Groups[1].Value; \"DSH_BOOTSTRAP_ROTATED=\"+($old -ne $new -and $new.Length -gt 0)"
+  ],
+  "python": [
+    "import json,re,urllib.request\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nb=p.read_bytes();text=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")\nm=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",text)\nif m:\n try:\n  with urllib.request.urlopen(m.group(),timeout=10) as r: print(\"DSH_AUTHENTICATED_HTTP\",r.status)\n except Exception as e: print(\"DSH_AUTH_CHECK\",type(e).__name__)\nelse:print(\"DSH_AUTH_CHECK\", \"no launch URL yet\")\ns=json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))\nprint(\"TASKS\",json.dumps(s[\"tasks\"],ensure_ascii=True))\nstate=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text())\nprint(\"PET\",json.dumps([x for x in state if x[\"name\"]==\"desktop-pet\"][-1:],ensure_ascii=True))\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\");print(\"PET_BYTES\",p.stat().st_size if p.exists() else 0)"
+  ]
 }

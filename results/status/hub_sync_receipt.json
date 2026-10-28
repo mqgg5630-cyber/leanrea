@@ -1,4 +1,4 @@
-﻿{
+{
     "status":  "synced",
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
@@ -23,7 +23,7 @@
                                "step":  "hub_task.python",
                                "exit_code":  0,
                                "elapsed_ms":  231,
-                               "stdout":  "DSH_LOG \"dsh web: http://127.0.0.1:3080/?token=GMM8xXA3YNScZqsikIx33tJ79cY7Nowz3Ty8MgRCDXQ\\r\\n\"\r\nDSH_HTTP \u003cHTTPError 401: \u0027Unauthorized\u0027\u003e\r\nPANEL_SAMPLE [{\"last_result\": 2147946720, \"name\": \"git-sync-hub\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-desk-panel\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 0, \"name\": \"jev-chat-monitor\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Ready\"}, {\"last_result\": 267009, \"name\": \"jev-chat-analyze\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-dsh-web\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"name\": \"arena-desktop-pet\", \"protected\": false, \"state\": \"NotInstalled\"}]",
+                               "stdout":  "DSH_LOG \"dsh web: http://127.0.0.1:3080/?token=REDACTED\\r\\n\"\r\nDSH_HTTP \u003cHTTPError 401: \u0027Unauthorized\u0027\u003e\r\nPANEL_SAMPLE [{\"last_result\": 2147946720, \"name\": \"git-sync-hub\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-desk-panel\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 0, \"name\": \"jev-chat-monitor\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Ready\"}, {\"last_result\": 267009, \"name\": \"jev-chat-analyze\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-dsh-web\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"name\": \"arena-desktop-pet\", \"protected\": false, \"state\": \"NotInstalled\"}]",
                                "stderr":  ""
                            }
                        ],
