@@ -1,22 +1,14 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 30b51ebfc97b482c95a34d16b1f1a8d2c4b05528
-executed_at_utc: 2026-10-28T01:42:08Z
-executed_at_local: 2026-10-28 09:42:08
-tasks_all_ok: False
+source_commit: 098b89032d4bfefae9a3a4c5d43cf06b9fa3799f
+executed_at_utc: 2026-10-28T01:42:51Z
+executed_at_local: 2026-10-28 09:42:51
+tasks_all_ok: True
 
---- step: hub_task.powershell (exit=1) ---
+--- step: hub_task.powershell (exit=0) ---
+{"ok":true,"task":"arena-desktop-pet","action":"show"}
 {"ok":true,"task":"arena-desktop-pet","action":"hide"}
-[stderr] 无法将“System.Object[]”类型的“System.Object[]”值转换为“System.Int64”类型。
-所在位置 E:\0apps\ArenaDesk\control.ps1:53 字符: 13
-+             $h=[IntPtr][long]$v; [uint32]$proc=0; [void][PetWindows]: ...
-+             ~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:) []，ParentContainsErrorRecordException
-    + FullyQualifiedErrorId : ConvertToFinalInvalidCastException
-
---- step: hub_task.python (exit=0) ---
-HIDE_WINDOWS [461750, 1837854, 1117084]
-HIDDEN_FLAG True
-PET_DATA_ON_E True
+{"ok":true,"task":"arena-desktop-pet","action":"show"}
+[{"last_result":2147946720,"name":"git-sync-hub","limit":"PT0S","protected":true,"state":"Running"},{"last_result":267009,"name":"arena-desk-panel","limit":"PT0S","protected":true,"state":"Running"},{"last_result":0,"name":"jev-chat-monitor","limit":"PT0S","protected":false,"state":"Ready"},{"last_result":267009,"name":"jev-chat-analyze","limit":"PT0S","protected":false,"state":"Running"},{"last_result":2147946720,"name":"arena-dsh-web","limit":"PT0S","protected":false,"state":"Running"},{"last_result":267009,"name":"arena-desktop-pet","limit":"PT0S","protected":false,"state":"Running"}]
 
