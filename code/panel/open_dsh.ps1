@@ -5,13 +5,12 @@ for ($i=0; $i -lt 20; $i++) {
     $t=Get-ScheduledTask -TaskName 'arena-dsh-web' -TaskPath '\' -ErrorAction SilentlyContinue
     if (-not $t -or [string]$t.State -eq 'Disabled') { exit 0 }
     if (Test-Path $log) {
-        $text=Get-Content $log -Raw
+        $text=[string](Get-Content $log -Raw)
         $m=[regex]::Match($text,'http://127\.0\.0\.1:3080/\?token=[A-Za-z0-9_-]+')
         if ($m.Success) {
-            try {
-                $r=Invoke-WebRequest $m.Value -UseBasicParsing -TimeoutSec 3
-                if ($r.StatusCode -eq 200) { Start-Process $m.Value; exit 0 }
-            } catch {}
+            # A launch token is for the browser bootstrap. Do not consume it in a probe.
+            Start-Process $m.Value
+            exit 0
         }
     }
     Start-Sleep -Seconds 1
