@@ -4,7 +4,7 @@ $root='E:\0apps\ArenaDesk'
 New-Item -ItemType Directory -Force "$root\data" | Out-Null
 $old=Get-ScheduledTask -TaskName 'arena-desk-panel' -TaskPath '\' -ErrorAction SilentlyContinue
 if ($old) { Stop-ScheduledTask -TaskName 'arena-desk-panel' -TaskPath '\' }
-foreach ($name in @('server.py','index.html','style.css','app.js','control.ps1','launch_panel.ps1','launch_dsh.ps1','launch_pet.ps1','open_dsh.ps1','notion-links.json','software-registry.json','README.md')) {
+foreach ($name in @('server.py','index.html','style.css','app.js','control.ps1','launch_panel.ps1','launch_dsh.ps1','launch_pet.ps1','pet_toggle.ps1','open_dsh.ps1','notion-links.json','software-registry.json','README.md')) {
     Copy-Item (Join-Path $PSScriptRoot $name) (Join-Path $root $name) -Force
 }
 # Syntax check on real Windows before registration.
@@ -30,6 +30,8 @@ $desktop=[Environment]::GetFolderPath('Desktop')
 $w=New-Object -ComObject WScript.Shell
 $link=$w.CreateShortcut((Join-Path $desktop 'Arena Desk.lnk'))
 $link.TargetPath=$ps; $link.Arguments=$launchArgs; $link.WorkingDirectory=$root; $link.WindowStyle=7; $link.Description='Local control panel - permanent hub protected'; $link.Save()
+$petLink=$w.CreateShortcut((Join-Path $desktop 'Toggle Desktop Pet.lnk'))
+$petLink.TargetPath=$ps; $petLink.Arguments='-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$root+'\pet_toggle.ps1"'; $petLink.WindowStyle=7; $petLink.Hotkey='CTRL+ALT+H'; $petLink.Save()
 Set-Content -LiteralPath (Join-Path $desktop 'Notion Console.url') -Value "[InternetShortcut]`r`nURL=https://app.notion.com/p/407186af12d381cf97eeebf4ec37f0c9" -Encoding ASCII
 # Optional extras are registered only when the installer reports completion.
 $stateFile=Join-Path $root 'data\install-state.json'
@@ -48,5 +50,5 @@ if ($finished -or @($rows | Where-Object {$_.name -eq 'desktop-pet'}).Count -gt 
 }
 Start-Sleep -Seconds 3
 $r=Invoke-RestMethod 'http://127.0.0.1:18765/api/state' -TimeoutSec 10
-@{panel_http_ok=$true;session_count=@($r.sessions).Count;tasks=$r.tasks;install_state=$rows;desktop=$desktop;hub=(Get-ScheduledTask -TaskName 'git-sync-hub' -TaskPath '\' | Select-Object TaskName,State)} | ConvertTo-Json -Depth 6
+@{panel_http_ok=$true;session_count=@($r.sessions).Count;tasks=$r.tasks;install_state=@($rows | Select-Object name,status,at);desktop=$desktop;hub=(Get-ScheduledTask -TaskName 'git-sync-hub' -TaskPath '\' | Select-Object TaskName,State)} | ConvertTo-Json -Depth 6
 Start-Process $ps -ArgumentList $launchArgs -WindowStyle Hidden

@@ -36,6 +36,8 @@ public static class PetWindows {
 '@
     $ids=@(Get-CimInstance Win32_Process | Where-Object { $_.ExecutablePath -like 'E:\0apps\DSHPet\*' -and $_.Name -eq 'dsh-pet-standalone-webm.exe' } | ForEach-Object { [uint32]$_.ProcessId })
     $file='E:\0apps\ArenaDesk\data\hidden-pet.json'
+    if ($ids.Count -eq 0) { throw 'Desktop pet is not running' }
+    $flag='E:\0apps\ArenaDesk\data\pet-hidden.flag'
     if ($Action -eq 'hide') {
         $script:windows=New-Object System.Collections.Generic.List[long]
         $callback=[PetWindows+EnumProc]{param($h,$l)
@@ -45,12 +47,13 @@ public static class PetWindows {
             }; return $true
         }
         [void][PetWindows]::EnumWindows($callback,[IntPtr]::Zero)
-        if ($script:windows.Count -gt 0) { ConvertTo-Json -InputObject @($script:windows.ToArray()) | Set-Content $file -Encoding UTF8 }
+        if ($script:windows.Count -gt 0) { ConvertTo-Json -InputObject @($script:windows.ToArray()) | Set-Content $file -Encoding UTF8; Set-Content $flag 'hidden' -Encoding ASCII }
     } elseif (Test-Path $file) {
         foreach ($v in @(Get-Content $file -Raw | ConvertFrom-Json)) {
             $h=[IntPtr][long]$v; [uint32]$proc=0; [void][PetWindows]::GetWindowThreadProcessId($h,[ref]$proc)
             if ($proc -in $ids) { [void][PetWindows]::ShowWindowAsync($h,5) }
         }
+        Remove-Item $flag -ErrorAction SilentlyContinue
     }
 } elseif ($Action -eq 'start') {
     Enable-ScheduledTask -TaskName $Name -TaskPath '\' | Out-Null
