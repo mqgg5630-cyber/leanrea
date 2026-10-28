@@ -1,15 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261028T013320Z",
-    "powershell":  [
-                       "\u0026 \"code\\panel\\deploy.ps1\""
-                   ],
-    "python":  [
-                   "import json, urllib.request\nfrom pathlib import Path\nu=\"http://127.0.0.1:18765\"\nr=json.load(urllib.request.urlopen(u+\"/api/state\",timeout=20))\nprint(json.dumps({\"task_sample\":r[\"tasks\"],\"task_error\":r[\"tasks_error\"],\"sessions\":len(r[\"sessions\"]),\"software\":r[\"software\"]},ensure_ascii=True))\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.part\")\nprint(\"PET_DOWNLOAD_BYTES\",p.stat().st_size if p.exists() else \"not partial\")\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists(): print(\"DSH_RUNTIME\",p.read_text(encoding=\"utf-8-sig\",errors=\"replace\")[-3500:])\n# Verify the write interface refuses attempts to stop the protected permanent hub.\nb=json.load(urllib.request.urlopen(u+\"/api/bootstrap\"))\nreq=urllib.request.Request(u+\"/api/control\",data=json.dumps({\"name\":\"git-sync-hub\",\"action\":\"stop\"}).encode(),headers={\"Content-Type\":\"application/json\",\"Origin\":u,\"X-CSRF-Token\":b[\"csrf\"]})\ntry: urllib.request.urlopen(req); print(\"ERROR_PROTECTION_FAILED\")\nexcept urllib.error.HTTPError as e: print(\"PROTECTED_HUB_REJECTED\",e.code)"
-               ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-28T01:32:51Z",
-    "executed_at_local":  "2026-10-28 09:32:51",
-    "source_commit":  "682db599c8134cab7c8087c180b8aef73b202c9f"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261028T013414Z",
+  "python": [
+    "import json,subprocess,hashlib,urllib.request\nfrom pathlib import Path\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\")\nif p.exists():\n h=hashlib.sha256()\n with p.open(\"rb\") as f:\n  first=f.read(80); h.update(first)\n  for b in iter(lambda:f.read(1024*1024),b\"\"): h.update(b)\n print(\"PET_FILE\",json.dumps({\"size\":p.stat().st_size,\"sha\":h.hexdigest(),\"magic\":first[:20].hex()}))\nr=json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))\nprint(\"PANEL\",json.dumps({k:r[k] for k in [\"tasks\",\"tasks_error\",\"tasks_sampled\"]},ensure_ascii=True))\nr=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",\"snapshot\"],capture_output=True,timeout=35)\nprint(\"CONTROL\",r.returncode,r.stdout.decode(\"utf-8\",\"replace\"),r.stderr.decode(\"utf-8\",\"replace\"))\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists(): print(\"DSH\",p.read_text(encoding=\"utf-8-sig\",errors=\"replace\")[-7000:])\ntry:\n r=urllib.request.urlopen(\"http://127.0.0.1:3080\",timeout=5);print(\"DSH_HTTP\",r.status)\nexcept Exception as e:print(\"DSH_HTTP\",repr(e))"
+  ]
 }
