@@ -1,12 +1,8 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261028T012126Z",
-    "python":  [
-                   "import os,json,subprocess,shutil\nfrom pathlib import Path\nhome=Path.home()\ndef read(p):\n try: return json.loads(p.read_text(encoding=\"utf-8-sig\"))\n except Exception: return None\nps=\"Get-ScheduledTask | Where-Object { $_.TaskName -match \\\"git-sync|jev|dsh|hermes\\\" } | Select-Object TaskName,TaskPath,State,@{N=\\\"Actions\\\";E={@($_.Actions | Select-Object Execute,Arguments)}},@{N=\\\"Limit\\\";E={$_.Settings.ExecutionTimeLimit}} | ConvertTo-Json -Depth 5\"\nr=subprocess.run([\"powershell\",\"-NoProfile\",\"-Command\",ps],capture_output=True,timeout=25)\nprint(json.dumps({\"host\":os.environ.get(\"COMPUTERNAME\"),\"python\":__import__(\"sys\").executable,\"tools\":{x:shutil.which(x) for x in [\"node\",\"npm\",\"dsh\",\"hermes\"]},\"hub\":read(home/\".git-sync-hub\"/\"hub-state.json\"),\"tasks\":r.stdout.decode(\"utf-8\",\"replace\"),\"task_error\":r.stderr.decode(\"utf-8\",\"replace\"),\"e_dirs\":[p.name for p in Path(\"E:/\").iterdir() if p.is_dir() and any(s in p.name.lower() for s in [\"dsh\",\"hermes\",\"apps\",\"node\"])],\"result_dirs\":[p.name for p in Path(\"E:/0github/results\").iterdir() if p.is_dir()]},ensure_ascii=True))"
-               ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-28T01:20:47Z",
-    "executed_at_local":  "2026-10-28 09:20:47",
-    "source_commit":  "a83516cb986ac4252b4526f3ddee89300b77e396"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261028T012254Z",
+  "powershell": [
+    "$ErrorActionPreference=\"Stop\"; $d=\"E:\\0apps\\ArenaDesk\"; New-Item -ItemType Directory -Force \"$d\\data\" | Out-Null; Copy-Item \"code\\panel\\install_extras.py\" \"$d\\install_extras.py\" -Force; $p=Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"`\"$d\\install_extras.py`\"\" -WorkingDirectory $d -PassThru; \"OPTIONAL_INSTALLER_PID=$($p.Id)\"; \"BASE_HUB_UNCHANGED\""
+  ]
 }
