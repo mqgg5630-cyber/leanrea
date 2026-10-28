@@ -3,22 +3,16 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "098b89032d4bfefae9a3a4c5d43cf06b9fa3799f",
-    "synced_at_utc":  "2026-10-28T01:42:51Z",
-    "synced_at_local":  "2026-10-28 09:42:51",
+    "source_commit":  "8bc3432c175e2909635dba0548154c0b3d768907",
+    "synced_at_utc":  "2026-10-28T01:44:29Z",
+    "synced_at_local":  "2026-10-28 09:44:29",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  194,
-    "tasks_executed_count":  1,
+    "synced_files_count":  195,
+    "tasks_executed_count":  0,
     "tasks_all_ok":  true,
     "tasks_executed":  [
-                           {
-                               "step":  "hub_task.powershell",
-                               "exit_code":  0,
-                               "elapsed_ms":  7447,
-                               "stdout":  "{\"ok\":true,\"task\":\"arena-desktop-pet\",\"action\":\"show\"}\r\n{\"ok\":true,\"task\":\"arena-desktop-pet\",\"action\":\"hide\"}\r\n{\"ok\":true,\"task\":\"arena-desktop-pet\",\"action\":\"show\"}\r\n[{\"last_result\":2147946720,\"name\":\"git-sync-hub\",\"limit\":\"PT0S\",\"protected\":true,\"state\":\"Running\"},{\"last_result\":267009,\"name\":\"arena-desk-panel\",\"limit\":\"PT0S\",\"protected\":true,\"state\":\"Running\"},{\"last_result\":0,\"name\":\"jev-chat-monitor\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Ready\"},{\"last_result\":267009,\"name\":\"jev-chat-analyze\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Running\"},{\"last_result\":2147946720,\"name\":\"arena-dsh-web\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Running\"},{\"last_result\":267009,\"name\":\"arena-desktop-pet\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Running\"}]",
-                               "stderr":  ""
-                           }
+
                        ],
     "copied_targets":  [
 
