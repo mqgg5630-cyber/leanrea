@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T013013Z",
-  "powershell": [
-    "& \"code\\panel\\deploy.ps1\"; if (Test-Path \"E:\\0apps\\ArenaDesk\\data\\dsh-host.log\") { \"DSH_LOG_TAIL\"; Get-Content \"E:\\0apps\\ArenaDesk\\data\\dsh-host.log\" -Tail 18 }"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T013013Z",
+    "powershell":  [
+                       "\u0026 \"code\\panel\\deploy.ps1\"; if (Test-Path \"E:\\0apps\\ArenaDesk\\data\\dsh-host.log\") { \"DSH_LOG_TAIL\"; Get-Content \"E:\\0apps\\ArenaDesk\\data\\dsh-host.log\" -Tail 18 }"
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:30:58Z",
+    "executed_at_local":  "2026-10-28 09:30:58",
+    "source_commit":  "483eddceb89c3624d32c7206ad1f870ebeea75b8"
 }
