@@ -49,7 +49,8 @@ public static class PetWindows {
         [void][PetWindows]::EnumWindows($callback,[IntPtr]::Zero)
         if ($script:windows.Count -gt 0) { ConvertTo-Json -InputObject @($script:windows.ToArray()) | Set-Content $file -Encoding UTF8; Set-Content $flag 'hidden' -Encoding ASCII }
     } elseif (Test-Path $file) {
-        foreach ($v in @(Get-Content $file -Raw | ConvertFrom-Json)) {
+        $handles=Get-Content $file -Raw | ConvertFrom-Json
+        foreach ($v in $handles) {
             $h=[IntPtr][long]$v; [uint32]$proc=0; [void][PetWindows]::GetWindowThreadProcessId($h,[ref]$proc)
             if ($proc -in $ids) { [void][PetWindows]::ShowWindowAsync($h,5) }
         }
