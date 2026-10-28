@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T014159Z",
-  "python": [
-    "import json,os\nfrom pathlib import Path\nroot=Path(\"E:/0apps/DSHPet\");a=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text());p=[x for x in a if x[\"name\"]==\"desktop-pet\"][-1];print(json.dumps({\"pet\":p,\"zip_bytes\":(root/\"pet-v4.4.0.zip\").stat().st_size,\"chunks\":len(list((root/\"download-parts\").glob(\"*\"))),\"executables\":[str(x) for x in root.rglob(\"dsh-pet-standalone-webm.exe\")]},ensure_ascii=True))"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T014159Z",
+    "python":  [
+                   "import json,os\nfrom pathlib import Path\nroot=Path(\"E:/0apps/DSHPet\");a=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text());p=[x for x in a if x[\"name\"]==\"desktop-pet\"][-1];print(json.dumps({\"pet\":p,\"zip_bytes\":(root/\"pet-v4.4.0.zip\").stat().st_size,\"chunks\":len(list((root/\"download-parts\").glob(\"*\"))),\"executables\":[str(x) for x in root.rglob(\"dsh-pet-standalone-webm.exe\")]},ensure_ascii=True))"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:41:22Z",
+    "executed_at_local":  "2026-10-28 09:41:22",
+    "source_commit":  "5c3dab1e953a1a3dd2722311374352b5f512443f"
 }
