@@ -1,11 +1,15 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T013540Z",
-  "powershell": [
-    "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\retry_pet.py\" \"E:\\0apps\\ArenaDesk\\retry_pet.py\" -Force; Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"E:\\0apps\\ArenaDesk\\retry_pet.py\"; \"RETRY_STARTED\""
-  ],
-  "python": [
-    "import json,urllib.request,subprocess\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists():\n b=p.read_bytes();print(\"DSH_LOG\",json.dumps(b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")[-7000:],ensure_ascii=True))\ntry:\n r=urllib.request.urlopen(\"http://127.0.0.1:3080\",timeout=10);print(\"DSH_HTTP\",r.status)\nexcept Exception as e:print(\"DSH_HTTP\",repr(e))\nprint(\"PANEL_SAMPLE\",json.dumps(json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))[\"tasks\"],ensure_ascii=True))"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T013540Z",
+    "powershell":  [
+                       "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\retry_pet.py\" \"E:\\0apps\\ArenaDesk\\retry_pet.py\" -Force; Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"E:\\0apps\\ArenaDesk\\retry_pet.py\"; \"RETRY_STARTED\""
+                   ],
+    "python":  [
+                   "import json,urllib.request,subprocess\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists():\n b=p.read_bytes();print(\"DSH_LOG\",json.dumps(b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")[-7000:],ensure_ascii=True))\ntry:\n r=urllib.request.urlopen(\"http://127.0.0.1:3080\",timeout=10);print(\"DSH_HTTP\",r.status)\nexcept Exception as e:print(\"DSH_HTTP\",repr(e))\nprint(\"PANEL_SAMPLE\",json.dumps(json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))[\"tasks\"],ensure_ascii=True))"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:35:04Z",
+    "executed_at_local":  "2026-10-28 09:35:04",
+    "source_commit":  "eb7af3c0e2d50b8d3990b30a983c168237101582"
 }

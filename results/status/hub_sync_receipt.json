@@ -3,21 +3,28 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "fc9b0f90ae4ddf57dcb930770484c6feed67cc9f",
-    "synced_at_utc":  "2026-10-28T01:34:00Z",
-    "synced_at_local":  "2026-10-28 09:34:00",
+    "source_commit":  "eb7af3c0e2d50b8d3990b30a983c168237101582",
+    "synced_at_utc":  "2026-10-28T01:35:04Z",
+    "synced_at_local":  "2026-10-28 09:35:04",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  186,
-    "tasks_executed_count":  1,
-    "tasks_all_ok":  false,
+    "synced_files_count":  187,
+    "tasks_executed_count":  2,
+    "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
+                               "step":  "hub_task.powershell",
+                               "exit_code":  0,
+                               "elapsed_ms":  1283,
+                               "stdout":  "RETRY_STARTED",
+                               "stderr":  ""
+                           },
+                           {
                                "step":  "hub_task.python",
-                               "exit_code":  1,
-                               "elapsed_ms":  6052,
-                               "stdout":  "PET_FILE {\"size\": 8862329, \"sha\": \"c011b2b47fd62a3d794d53286626a83be4650c4d187c5effd1c4c9245de36a6a\", \"magic\": \"504b0304140000000000cb7d565d000000000000\"}\r\nPANEL {\"tasks\": [{\"last_result\": 2147946720, \"name\": \"git-sync-hub\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-desk-panel\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 0, \"name\": \"jev-chat-monitor\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Ready\"}, {\"last_result\": 267009, \"name\": \"jev-chat-analyze\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-dsh-web\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"name\": \"arena-desktop-pet\", \"protected\": false, \"state\": \"NotInstalled\"}], \"tasks_error\": \"\", \"tasks_sampled\": \"2026-10-28T01:33:39.988355+00:00\"}\r\nCONTROL 0 [{\"last_result\":2147946720,\"name\":\"git-sync-hub\",\"limit\":\"PT0S\",\"protected\":true,\"state\":\"Running\"},{\"last_result\":267009,\"name\":\"arena-desk-panel\",\"limit\":\"PT0S\",\"protected\":true,\"state\":\"Running\"},{\"last_result\":0,\"name\":\"jev-chat-monitor\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Ready\"},{\"last_result\":267009,\"name\":\"jev-chat-analyze\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Running\"},{\"last_result\":267009,\"name\":\"arena-dsh-web\",\"limit\":\"PT0S\",\"protected\":false,\"state\":\"Running\"},{\"name\":\"arena-desktop-pet\",\"protected\":false,\"state\":\"NotInstalled\"}]\r\r\n \r\nDSH",
-                               "stderr":  "Traceback (most recent call last):\r\n  File \"C:\\Users\\����\\AppData\\Local\\Temp\\hub_inline_4051dc9fd30a4b1a80138867ecbbf6f8.py\", line 15, in \u003cmodule\u003e\r\n    if p.exists(): print(\"DSH\",p.read_text(encoding=\"utf-8-sig\",errors=\"replace\")[-7000:])\r\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nUnicodeEncodeError: \u0027gbk\u0027 codec can\u0027t encode character \u0027\\ufffd\u0027 in position 0: illegal multibyte sequence"
+                               "exit_code":  0,
+                               "elapsed_ms":  231,
+                               "stdout":  "DSH_LOG \"dsh web: http://127.0.0.1:3080/?token=GMM8xXA3YNScZqsikIx33tJ79cY7Nowz3Ty8MgRCDXQ\\r\\n\"\r\nDSH_HTTP \u003cHTTPError 401: \u0027Unauthorized\u0027\u003e\r\nPANEL_SAMPLE [{\"last_result\": 2147946720, \"name\": \"git-sync-hub\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-desk-panel\", \"limit\": \"PT0S\", \"protected\": true, \"state\": \"Running\"}, {\"last_result\": 0, \"name\": \"jev-chat-monitor\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Ready\"}, {\"last_result\": 267009, \"name\": \"jev-chat-analyze\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"last_result\": 267009, \"name\": \"arena-dsh-web\", \"limit\": \"PT0S\", \"protected\": false, \"state\": \"Running\"}, {\"name\": \"arena-desktop-pet\", \"protected\": false, \"state\": \"NotInstalled\"}]",
+                               "stderr":  ""
                            }
                        ],
     "copied_targets":  [
