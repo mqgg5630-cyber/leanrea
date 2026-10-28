@@ -1,0 +1,7 @@
+{
+  "home": "https://app.notion.com/p/407186af12d381cf97eeebf4ec37f0c9",
+  "sessions": {"database_id":"1081c7cf-56a2-4e2b-af33-9246e1287015","data_source_id":"e4026a06-acca-459f-8815-4872db45a53b"},
+  "tasks": {"database_id":"fa87edb9-fd76-45b4-826c-5929d802b0ee","data_source_id":"b581817d-d6ae-4bab-ad11-debcf0775587"},
+  "software": {"database_id":"ccd877d3-ac92-41da-bfd5-f443402d24e1","data_source_id":"5cb367d1-620b-4b49-ac93-16485908a34c"},
+  "mode": "on-demand-connector-only"
+}

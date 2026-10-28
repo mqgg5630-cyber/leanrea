@@ -1,26 +1,12 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: b39b92308f26e51801b6997b2c2beef19c8f78fe
-executed_at_utc: 2026-10-28T01:27:58Z
-executed_at_local: 2026-10-28 09:27:58
+source_commit: 0250059c21ca73880db9b12d06166555d00729b0
+executed_at_utc: 2026-10-28T01:22:30Z
+executed_at_local: 2026-10-28 09:22:30
 tasks_all_ok: True
 
---- step: hub_task.python (exit=0) ---
-[
-  {
-    "name": "installer",
-    "status": "running",
-    "detail": "DSH optional UI tools isolated from git-sync-hub; no AI credentials",
-    "at": "2026-10-28 09:22:31"
-  },
-  {
-    "name": "dsh-host",
-    "status": "running",
-    "detail": "Installation in progress",
-    "at": "2026-10-28 09:22:31"
-  }
-]
-RESULT_LAYOUT
-["status\\hub_sync_receipt.json"]
+--- step: hub_task.powershell (exit=0) ---
+OPTIONAL_INSTALLER_PID=22112
+BASE_HUB_UNCHANGED
 
