@@ -1,11 +1,15 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T014105Z",
-  "powershell": [
-    "& \"code\\panel\\deploy.ps1\""
-  ],
-  "python": [
-    "import json,urllib.request,subprocess\nfrom pathlib import Path\nitems=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text());pet=[x for x in items if x[\"name\"]==\"desktop-pet\"][-1];print(\"PET\",json.dumps(pet,ensure_ascii=True))\nprint(\"PACKAGE_BYTES\",Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\").stat().st_size)\nr=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",\"snapshot\"],capture_output=True,timeout=30)\nprint(\"TASKS\",r.stdout.decode(\"ascii\",\"replace\"))\nif pet[\"status\"]==\"installed\":\n for action in [\"hide\",\"show\"]:\n  r=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",action,\"-Name\",\"arena-desktop-pet\"],capture_output=True,timeout=20)\n  print(\"PET_CONTROL\",action,r.returncode,json.dumps(r.stdout.decode(\"utf-8\",\"replace\"),ensure_ascii=True))\n# Validate both CSRF and permanent-task protection, without changing the hub.\nu=\"http://127.0.0.1:18765\";b=json.load(urllib.request.urlopen(u+\"/api/bootstrap\"))\nfor headers in [{\"Content-Type\":\"application/json\"},{\"Content-Type\":\"application/json\",\"Origin\":u,\"X-CSRF-Token\":b[\"csrf\"]}]:\n req=urllib.request.Request(u+\"/api/control\",data=b\"{\\\"name\\\":\\\"git-sync-hub\\\",\\\"action\\\":\\\"stop\\\"}\",headers=headers)\n try:urllib.request.urlopen(req);print(\"PROTECTION_FAILED\")\n except urllib.error.HTTPError as e:print(\"PROTECTION_HTTP\",e.code)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T014105Z",
+    "powershell":  [
+                       "\u0026 \"code\\panel\\deploy.ps1\""
+                   ],
+    "python":  [
+                   "import json,urllib.request,subprocess\nfrom pathlib import Path\nitems=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text());pet=[x for x in items if x[\"name\"]==\"desktop-pet\"][-1];print(\"PET\",json.dumps(pet,ensure_ascii=True))\nprint(\"PACKAGE_BYTES\",Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\").stat().st_size)\nr=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",\"snapshot\"],capture_output=True,timeout=30)\nprint(\"TASKS\",r.stdout.decode(\"ascii\",\"replace\"))\nif pet[\"status\"]==\"installed\":\n for action in [\"hide\",\"show\"]:\n  r=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",action,\"-Name\",\"arena-desktop-pet\"],capture_output=True,timeout=20)\n  print(\"PET_CONTROL\",action,r.returncode,json.dumps(r.stdout.decode(\"utf-8\",\"replace\"),ensure_ascii=True))\n# Validate both CSRF and permanent-task protection, without changing the hub.\nu=\"http://127.0.0.1:18765\";b=json.load(urllib.request.urlopen(u+\"/api/bootstrap\"))\nfor headers in [{\"Content-Type\":\"application/json\"},{\"Content-Type\":\"application/json\",\"Origin\":u,\"X-CSRF-Token\":b[\"csrf\"]}]:\n req=urllib.request.Request(u+\"/api/control\",data=b\"{\\\"name\\\":\\\"git-sync-hub\\\",\\\"action\\\":\\\"stop\\\"}\",headers=headers)\n try:urllib.request.urlopen(req);print(\"PROTECTION_FAILED\")\n except urllib.error.HTTPError as e:print(\"PROTECTION_HTTP\",e.code)"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:40:32Z",
+    "executed_at_local":  "2026-10-28 09:40:32",
+    "source_commit":  "5c9f96605aee9e0c97fcd8a124fb5e52d943936f"
 }
