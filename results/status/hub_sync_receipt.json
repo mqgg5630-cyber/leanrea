@@ -3,27 +3,27 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "ae39cb94fab2a223763a13ca79da28c59a99290f",
-    "synced_at_utc":  "2026-10-28T01:37:16Z",
-    "synced_at_local":  "2026-10-28 09:37:16",
+    "source_commit":  "7377bfa22d8ad0f1bd3bd4da05dadf8cf9921643",
+    "synced_at_utc":  "2026-10-28T01:39:21Z",
+    "synced_at_local":  "2026-10-28 09:39:21",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  189,
+    "synced_files_count":  190,
     "tasks_executed_count":  2,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
                                "step":  "hub_task.powershell",
                                "exit_code":  0,
-                               "elapsed_ms":  1294,
-                               "stdout":  "RANGED_DOWNLOAD_STARTED",
+                               "elapsed_ms":  1232,
+                               "stdout":  "",
                                "stderr":  ""
                            },
                            {
                                "step":  "hub_task.python",
                                "exit_code":  0,
-                               "elapsed_ms":  196,
-                               "stdout":  "BOOTSTRAP_FINGERPRINT b5c436f5d6204686e6f531e204c3fc9c0a98d5c822f03c863eb0a48ce59831d7\r\nDSH_CHECK HTTPError\r\nRUNTIME_LOG_BYTES 168",
+                               "elapsed_ms":  3004,
+                               "stdout":  "PET [{\"name\": \"desktop-pet\", \"status\": \"downloading\", \"detail\": \"Verified ranges downloaded: 259232704 / 348968895 bytes\", \"at\": \"2026-10-28 09:39:18\"}]\r\nDSH_AUTH_COOKIE_HTTP 200\r\nBROWSER {\"exit\": 0, \"dom_bytes\": 37547, \"scripts_rendered\": true, \"has_task_name\": true, \"has_63\": true, \"has_error\": false}",
                                "stderr":  ""
                            }
                        ],

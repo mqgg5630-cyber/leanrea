@@ -1,11 +1,15 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T013852Z",
-  "powershell": [
-    "Copy-Item \"code\\panel\\open_dsh.ps1\" \"E:\\0apps\\ArenaDesk\\open_dsh.ps1\" -Force"
-  ],
-  "python": [
-    "import json,re,urllib.request,http.cookiejar,subprocess,os\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/install-state.json\");a=json.loads(p.read_text());print(\"PET\",json.dumps([x for x in a if x[\"name\"]==\"desktop-pet\"][-1:],ensure_ascii=True))\nb=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\").read_bytes();t=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\");m=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",t)\nif m:\n op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))\n try:\n  with op.open(m.group(),timeout=10) as r: print(\"DSH_AUTH_COOKIE_HTTP\",r.status)\n except urllib.error.HTTPError as e:print(\"DSH_AUTH_COOKIE_HTTP\",e.code)\nedge=next((p for p in [Path(\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"),Path(\"C:/Program Files/Microsoft/Edge/Application/msedge.exe\")] if p.exists()),None)\nif edge:\n try:\n  r=subprocess.run([str(edge),\"--headless=new\",\"--disable-gpu\",\"--no-first-run\",\"--user-data-dir=E:/0apps/ArenaDesk/browser-check\",\"--virtual-time-budget=6000\",\"--dump-dom\",\"http://127.0.0.1:18765\"],capture_output=True,timeout=25)\n  html=r.stdout.decode(\"utf-8\",\"replace\")\n  print(\"BROWSER\",json.dumps({\"exit\":r.returncode,\"dom_bytes\":len(r.stdout),\"scripts_rendered\": \"<td>\" in html,\"has_task_name\":\"jev-chat-analyze\" in html,\"has_63\":\">63<\" in html,\"has_error\": \"TypeError\" in html},ensure_ascii=True))\n except Exception as e: print(\"BROWSER\",type(e).__name__)\nelse:print(\"BROWSER\",\"Edge not located\")"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T013852Z",
+    "powershell":  [
+                       "Copy-Item \"code\\panel\\open_dsh.ps1\" \"E:\\0apps\\ArenaDesk\\open_dsh.ps1\" -Force"
+                   ],
+    "python":  [
+                   "import json,re,urllib.request,http.cookiejar,subprocess,os\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/install-state.json\");a=json.loads(p.read_text());print(\"PET\",json.dumps([x for x in a if x[\"name\"]==\"desktop-pet\"][-1:],ensure_ascii=True))\nb=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\").read_bytes();t=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\");m=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",t)\nif m:\n op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))\n try:\n  with op.open(m.group(),timeout=10) as r: print(\"DSH_AUTH_COOKIE_HTTP\",r.status)\n except urllib.error.HTTPError as e:print(\"DSH_AUTH_COOKIE_HTTP\",e.code)\nedge=next((p for p in [Path(\"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe\"),Path(\"C:/Program Files/Microsoft/Edge/Application/msedge.exe\")] if p.exists()),None)\nif edge:\n try:\n  r=subprocess.run([str(edge),\"--headless=new\",\"--disable-gpu\",\"--no-first-run\",\"--user-data-dir=E:/0apps/ArenaDesk/browser-check\",\"--virtual-time-budget=6000\",\"--dump-dom\",\"http://127.0.0.1:18765\"],capture_output=True,timeout=25)\n  html=r.stdout.decode(\"utf-8\",\"replace\")\n  print(\"BROWSER\",json.dumps({\"exit\":r.returncode,\"dom_bytes\":len(r.stdout),\"scripts_rendered\": \"\u003ctd\u003e\" in html,\"has_task_name\":\"jev-chat-analyze\" in html,\"has_63\":\"\u003e63\u003c\" in html,\"has_error\": \"TypeError\" in html},ensure_ascii=True))\n except Exception as e: print(\"BROWSER\",type(e).__name__)\nelse:print(\"BROWSER\",\"Edge not located\")"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:39:21Z",
+    "executed_at_local":  "2026-10-28 09:39:21",
+    "source_commit":  "7377bfa22d8ad0f1bd3bd4da05dadf8cf9921643"
 }
