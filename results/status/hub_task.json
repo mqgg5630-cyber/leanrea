@@ -1,11 +1,15 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T013755Z",
-  "powershell": [
-    "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\retry_pet.py\" \"E:\\0apps\\ArenaDesk\\retry_pet.py\" -Force; Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"E:\\0apps\\ArenaDesk\\retry_pet.py\"; \"RANGED_DOWNLOAD_STARTED\""
-  ],
-  "python": [
-    "import json,re,urllib.request,hashlib\nfrom pathlib import Path\nb=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\").read_bytes();t=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")\nm=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",t)\nif m:\n print(\"BOOTSTRAP_FINGERPRINT\",hashlib.sha256(m.group().split(\"token=\")[1].encode()).hexdigest())\n try:\n  with urllib.request.urlopen(m.group(),timeout=10) as r: print(\"DSH_AUTHENTICATED_HTTP\",r.status)\n except Exception as e:print(\"DSH_CHECK\",type(e).__name__)\nelse:print(\"DSH_CHECK\", \"launch URL not ready\")\nprint(\"RUNTIME_LOG_BYTES\",len(b))"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T013755Z",
+    "powershell":  [
+                       "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\retry_pet.py\" \"E:\\0apps\\ArenaDesk\\retry_pet.py\" -Force; Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"E:\\0apps\\ArenaDesk\\retry_pet.py\"; \"RANGED_DOWNLOAD_STARTED\""
+                   ],
+    "python":  [
+                   "import json,re,urllib.request,hashlib\nfrom pathlib import Path\nb=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\").read_bytes();t=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")\nm=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",t)\nif m:\n print(\"BOOTSTRAP_FINGERPRINT\",hashlib.sha256(m.group().split(\"token=\")[1].encode()).hexdigest())\n try:\n  with urllib.request.urlopen(m.group(),timeout=10) as r: print(\"DSH_AUTHENTICATED_HTTP\",r.status)\n except Exception as e:print(\"DSH_CHECK\",type(e).__name__)\nelse:print(\"DSH_CHECK\", \"launch URL not ready\")\nprint(\"RUNTIME_LOG_BYTES\",len(b))"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:37:16Z",
+    "executed_at_local":  "2026-10-28 09:37:16",
+    "source_commit":  "ae39cb94fab2a223763a13ca79da28c59a99290f"
 }
