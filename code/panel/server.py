@@ -88,10 +88,10 @@ class Store:
         try: age=max(0,round(time.time()-dt.datetime.fromisoformat(hub['updated_at'].replace('Z','+00:00')).timestamp()))
         except (ValueError,KeyError): pass
         sessions=self.sessions()
-        installs=read_json(self.data/'install-state.json',[]) or []
+        installs=(read_json(HERE/'software-registry.json',[]) or []) + (read_json(self.data/'install-state.json',[]) or [])
         latest={}
         for item in installs:
-            if isinstance(item,dict): latest[item.get('name','')]=item
+            if isinstance(item,dict) and item.get('name') not in {'installer','dsh-help','dsh-plugin-help'}: latest[item.get('name','')]=item
         return {'at':stamp(),'demo':self.demo,'notion':NOTION,'hub':hub,'heartbeat_age':age,
                 'tasks':self.tasks,'tasks_sampled':self.sampled,'tasks_error':self.error,
                 'sessions':sessions,'software':list(latest.values()),
@@ -103,7 +103,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
     def log_message(self,*args): pass
     def host_ok(self):
         host=self.headers.get('Host','')
-        return host in self.server.hosts
+        return host in self.server.hosts or (self.server.store.demo and re.fullmatch(r"[a-zA-Z0-9-]+\.e2b\.app", host) is not None)
     def send(self, code, data, kind='application/json; charset=utf-8'):
         body=json.dumps(data,ensure_ascii=False).encode() if isinstance(data,(dict,list)) else data
         self.send_response(code);self.send_header('Content-Type',kind);self.send_header('Content-Length',str(len(body)))

@@ -4,7 +4,7 @@ $root='E:\0apps\ArenaDesk'
 New-Item -ItemType Directory -Force "$root\data" | Out-Null
 $old=Get-ScheduledTask -TaskName 'arena-desk-panel' -TaskPath '\' -ErrorAction SilentlyContinue
 if ($old) { Stop-ScheduledTask -TaskName 'arena-desk-panel' -TaskPath '\' }
-foreach ($name in @('server.py','index.html','style.css','app.js','control.ps1','launch_panel.ps1','launch_dsh.ps1','launch_pet.ps1','open_dsh.ps1','notion-links.json','README.md')) {
+foreach ($name in @('server.py','index.html','style.css','app.js','control.ps1','launch_panel.ps1','launch_dsh.ps1','launch_pet.ps1','open_dsh.ps1','notion-links.json','software-registry.json','README.md')) {
     Copy-Item (Join-Path $PSScriptRoot $name) (Join-Path $root $name) -Force
 }
 # Syntax check on real Windows before registration.
@@ -33,9 +33,9 @@ $link.TargetPath=$ps; $link.Arguments=$launchArgs; $link.WorkingDirectory=$root;
 Set-Content -LiteralPath (Join-Path $desktop 'Notion Console.url') -Value "[InternetShortcut]`r`nURL=https://app.notion.com/p/407186af12d381cf97eeebf4ec37f0c9" -Encoding ASCII
 # Optional extras are registered only when the installer reports completion.
 $stateFile=Join-Path $root 'data\install-state.json'
-$rows=@(); if (Test-Path $stateFile) { $rows=@(Get-Content $stateFile -Raw | ConvertFrom-Json) }
+$rows=@(); if (Test-Path $stateFile) { $rows=Get-Content $stateFile -Raw | ConvertFrom-Json }
 $finished=@($rows | Where-Object {$_.name -eq 'installer' -and $_.status -eq 'finished'}).Count -gt 0
-if ($finished) {
+if ($finished -or @($rows | Where-Object {$_.name -eq 'desktop-pet'}).Count -gt 0) {
     $dsh=@($rows | Where-Object {$_.name -eq 'dsh-host'}) | Select-Object -Last 1
     if ($dsh.status -eq 'installed') {
         Install-Task 'arena-dsh-web' $ps ('-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File "'+$root+'\launch_dsh.ps1"') $true

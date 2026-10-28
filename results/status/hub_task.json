@@ -1,12 +1,11 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261028T013013Z",
-    "powershell":  [
-                       "\u0026 \"code\\panel\\deploy.ps1\"; if (Test-Path \"E:\\0apps\\ArenaDesk\\data\\dsh-host.log\") { \"DSH_LOG_TAIL\"; Get-Content \"E:\\0apps\\ArenaDesk\\data\\dsh-host.log\" -Tail 18 }"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-28T01:30:58Z",
-    "executed_at_local":  "2026-10-28 09:30:58",
-    "source_commit":  "483eddceb89c3624d32c7206ad1f870ebeea75b8"
+{
+  "enabled": true,
+  "status": "pending",
+  "request_id": "20261028T013320Z",
+  "powershell": [
+    "& \"code\\panel\\deploy.ps1\""
+  ],
+  "python": [
+    "import json, urllib.request\nfrom pathlib import Path\nu=\"http://127.0.0.1:18765\"\nr=json.load(urllib.request.urlopen(u+\"/api/state\",timeout=20))\nprint(json.dumps({\"task_sample\":r[\"tasks\"],\"task_error\":r[\"tasks_error\"],\"sessions\":len(r[\"sessions\"]),\"software\":r[\"software\"]},ensure_ascii=True))\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.part\")\nprint(\"PET_DOWNLOAD_BYTES\",p.stat().st_size if p.exists() else \"not partial\")\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists(): print(\"DSH_RUNTIME\",p.read_text(encoding=\"utf-8-sig\",errors=\"replace\")[-3500:])\n# Verify the write interface refuses attempts to stop the protected permanent hub.\nb=json.load(urllib.request.urlopen(u+\"/api/bootstrap\"))\nreq=urllib.request.Request(u+\"/api/control\",data=json.dumps({\"name\":\"git-sync-hub\",\"action\":\"stop\"}).encode(),headers={\"Content-Type\":\"application/json\",\"Origin\":u,\"X-CSRF-Token\":b[\"csrf\"]})\ntry: urllib.request.urlopen(req); print(\"ERROR_PROTECTION_FAILED\")\nexcept urllib.error.HTTPError as e: print(\"PROTECTED_HUB_REJECTED\",e.code)"
+  ]
 }
