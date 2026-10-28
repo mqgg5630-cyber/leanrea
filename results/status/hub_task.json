@@ -1,11 +1,15 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T013640Z",
-  "powershell": [
-    "$ErrorActionPreference=\"Stop\"; $log=\"E:\\0apps\\ArenaDesk\\data\\dsh-runtime.log\"; $old=\"\"; if(Test-Path $log){$old=[regex]::Match((Get-Content $log -Raw),\"token=([A-Za-z0-9_-]+)\").Groups[1].Value}; Stop-ScheduledTask -TaskName \"arena-dsh-web\" -TaskPath \"\\\"; Start-Sleep -Seconds 2; & \"code\\panel\\deploy.ps1\"; Start-Sleep -Seconds 4; $new=[regex]::Match((Get-Content $log -Raw),\"token=([A-Za-z0-9_-]+)\").Groups[1].Value; \"DSH_BOOTSTRAP_ROTATED=\"+($old -ne $new -and $new.Length -gt 0)"
-  ],
-  "python": [
-    "import json,re,urllib.request\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nb=p.read_bytes();text=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")\nm=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",text)\nif m:\n try:\n  with urllib.request.urlopen(m.group(),timeout=10) as r: print(\"DSH_AUTHENTICATED_HTTP\",r.status)\n except Exception as e: print(\"DSH_AUTH_CHECK\",type(e).__name__)\nelse:print(\"DSH_AUTH_CHECK\", \"no launch URL yet\")\ns=json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))\nprint(\"TASKS\",json.dumps(s[\"tasks\"],ensure_ascii=True))\nstate=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text())\nprint(\"PET\",json.dumps([x for x in state if x[\"name\"]==\"desktop-pet\"][-1:],ensure_ascii=True))\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\");print(\"PET_BYTES\",p.stat().st_size if p.exists() else 0)"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T013640Z",
+    "powershell":  [
+                       "$ErrorActionPreference=\"Stop\"; $log=\"E:\\0apps\\ArenaDesk\\data\\dsh-runtime.log\"; $old=\"\"; if(Test-Path $log){$old=[regex]::Match((Get-Content $log -Raw),\"token=([A-Za-z0-9_-]+)\").Groups[1].Value}; Stop-ScheduledTask -TaskName \"arena-dsh-web\" -TaskPath \"\\\"; Start-Sleep -Seconds 2; \u0026 \"code\\panel\\deploy.ps1\"; Start-Sleep -Seconds 4; $new=[regex]::Match((Get-Content $log -Raw),\"token=([A-Za-z0-9_-]+)\").Groups[1].Value; \"DSH_BOOTSTRAP_ROTATED=\"+($old -ne $new -and $new.Length -gt 0)"
+                   ],
+    "python":  [
+                   "import json,re,urllib.request\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nb=p.read_bytes();text=b.decode(\"utf-16\" if b[:2] in [b\"\\xff\\xfe\",b\"\\xfe\\xff\"] else \"utf-8\",errors=\"replace\")\nm=re.search(r\"http://127[.]0[.]0[.]1:3080/\\?token=[A-Za-z0-9_-]+\",text)\nif m:\n try:\n  with urllib.request.urlopen(m.group(),timeout=10) as r: print(\"DSH_AUTHENTICATED_HTTP\",r.status)\n except Exception as e: print(\"DSH_AUTH_CHECK\",type(e).__name__)\nelse:print(\"DSH_AUTH_CHECK\", \"no launch URL yet\")\ns=json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))\nprint(\"TASKS\",json.dumps(s[\"tasks\"],ensure_ascii=True))\nstate=json.loads(Path(\"E:/0apps/ArenaDesk/data/install-state.json\").read_text())\nprint(\"PET\",json.dumps([x for x in state if x[\"name\"]==\"desktop-pet\"][-1:],ensure_ascii=True))\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\");print(\"PET_BYTES\",p.stat().st_size if p.exists() else 0)"
+               ],
+    "status":  "failed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:36:15Z",
+    "executed_at_local":  "2026-10-28 09:36:15",
+    "source_commit":  "db62cd1db34317508d110848d9894cc9d72dc65c"
 }
