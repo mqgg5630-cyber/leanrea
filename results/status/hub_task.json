@@ -1,11 +1,15 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T014239Z",
-  "powershell": [
-    "& \"code\\panel\\enable_pet.ps1\""
-  ],
-  "python": [
-    "import json\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/hidden-pet.json\")\nprint(\"HIDE_WINDOWS\",json.loads(p.read_text(encoding=\"utf-8-sig\")) if p.exists() else \"no visible windows captured\")\nprint(\"HIDDEN_FLAG\",Path(\"E:/0apps/ArenaDesk/data/pet-hidden.flag\").exists())\nprint(\"PET_DATA_ON_E\",Path(\"E:/0apps/DSHPet/data\").exists())"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T014239Z",
+    "powershell":  [
+                       "\u0026 \"code\\panel\\enable_pet.ps1\""
+                   ],
+    "python":  [
+                   "import json\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/hidden-pet.json\")\nprint(\"HIDE_WINDOWS\",json.loads(p.read_text(encoding=\"utf-8-sig\")) if p.exists() else \"no visible windows captured\")\nprint(\"HIDDEN_FLAG\",Path(\"E:/0apps/ArenaDesk/data/pet-hidden.flag\").exists())\nprint(\"PET_DATA_ON_E\",Path(\"E:/0apps/DSHPet/data\").exists())"
+               ],
+    "status":  "failed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:42:08Z",
+    "executed_at_local":  "2026-10-28 09:42:08",
+    "source_commit":  "30b51ebfc97b482c95a34d16b1f1a8d2c4b05528"
 }

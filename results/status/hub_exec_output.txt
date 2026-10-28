@@ -1,11 +1,22 @@
 ﻿== git-sync-hub v4.0 execution log on LAPTOP-R77M5D6M ==
 repo: leanrea
 branch: arena/4d729933-leanrea
-source_commit: 5c3dab1e953a1a3dd2722311374352b5f512443f
-executed_at_utc: 2026-10-28T01:41:22Z
-executed_at_local: 2026-10-28 09:41:22
-tasks_all_ok: True
+source_commit: 30b51ebfc97b482c95a34d16b1f1a8d2c4b05528
+executed_at_utc: 2026-10-28T01:42:08Z
+executed_at_local: 2026-10-28 09:42:08
+tasks_all_ok: False
+
+--- step: hub_task.powershell (exit=1) ---
+{"ok":true,"task":"arena-desktop-pet","action":"hide"}
+[stderr] 无法将“System.Object[]”类型的“System.Object[]”值转换为“System.Int64”类型。
+所在位置 E:\0apps\ArenaDesk\control.ps1:53 字符: 13
++             $h=[IntPtr][long]$v; [uint32]$proc=0; [void][PetWindows]: ...
++             ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []，ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : ConvertToFinalInvalidCastException
 
 --- step: hub_task.python (exit=0) ---
-{"pet": {"name": "desktop-pet", "status": "installed", "detail": "Size and SHA-256 verified; non-chat portable version", "at": "2026-10-28 09:41:01", "exe": "E:\\0apps\\DSHPet\\dsh-pet-standalone-webm.exe", "sha256": "fa049e31f1b0d184f77639a749f239b55b48c64b2ba14b59d08b3897168b55aa"}, "zip_bytes": 348968895, "chunks": 137, "executables": ["E:\\0apps\\DSHPet\\dsh-pet-standalone-webm.exe"]}
+HIDE_WINDOWS [461750, 1837854, 1117084]
+HIDDEN_FLAG True
+PET_DATA_ON_E True
 
