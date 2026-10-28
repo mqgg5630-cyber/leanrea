@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T013414Z",
-  "python": [
-    "import json,subprocess,hashlib,urllib.request\nfrom pathlib import Path\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\")\nif p.exists():\n h=hashlib.sha256()\n with p.open(\"rb\") as f:\n  first=f.read(80); h.update(first)\n  for b in iter(lambda:f.read(1024*1024),b\"\"): h.update(b)\n print(\"PET_FILE\",json.dumps({\"size\":p.stat().st_size,\"sha\":h.hexdigest(),\"magic\":first[:20].hex()}))\nr=json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))\nprint(\"PANEL\",json.dumps({k:r[k] for k in [\"tasks\",\"tasks_error\",\"tasks_sampled\"]},ensure_ascii=True))\nr=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",\"snapshot\"],capture_output=True,timeout=35)\nprint(\"CONTROL\",r.returncode,r.stdout.decode(\"utf-8\",\"replace\"),r.stderr.decode(\"utf-8\",\"replace\"))\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists(): print(\"DSH\",p.read_text(encoding=\"utf-8-sig\",errors=\"replace\")[-7000:])\ntry:\n r=urllib.request.urlopen(\"http://127.0.0.1:3080\",timeout=5);print(\"DSH_HTTP\",r.status)\nexcept Exception as e:print(\"DSH_HTTP\",repr(e))"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T013414Z",
+    "python":  [
+                   "import json,subprocess,hashlib,urllib.request\nfrom pathlib import Path\np=Path(\"E:/0apps/DSHPet/pet-v4.4.0.zip\")\nif p.exists():\n h=hashlib.sha256()\n with p.open(\"rb\") as f:\n  first=f.read(80); h.update(first)\n  for b in iter(lambda:f.read(1024*1024),b\"\"): h.update(b)\n print(\"PET_FILE\",json.dumps({\"size\":p.stat().st_size,\"sha\":h.hexdigest(),\"magic\":first[:20].hex()}))\nr=json.load(urllib.request.urlopen(\"http://127.0.0.1:18765/api/state\"))\nprint(\"PANEL\",json.dumps({k:r[k] for k in [\"tasks\",\"tasks_error\",\"tasks_sampled\"]},ensure_ascii=True))\nr=subprocess.run([\"powershell\",\"-NoProfile\",\"-File\",\"E:/0apps/ArenaDesk/control.ps1\",\"-Action\",\"snapshot\"],capture_output=True,timeout=35)\nprint(\"CONTROL\",r.returncode,r.stdout.decode(\"utf-8\",\"replace\"),r.stderr.decode(\"utf-8\",\"replace\"))\np=Path(\"E:/0apps/ArenaDesk/data/dsh-runtime.log\")\nif p.exists(): print(\"DSH\",p.read_text(encoding=\"utf-8-sig\",errors=\"replace\")[-7000:])\ntry:\n r=urllib.request.urlopen(\"http://127.0.0.1:3080\",timeout=5);print(\"DSH_HTTP\",r.status)\nexcept Exception as e:print(\"DSH_HTTP\",repr(e))"
+               ],
+    "status":  "failed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:33:59Z",
+    "executed_at_local":  "2026-10-28 09:33:59",
+    "source_commit":  "fc9b0f90ae4ddf57dcb930770484c6feed67cc9f"
 }
