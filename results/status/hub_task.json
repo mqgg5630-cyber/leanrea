@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T012254Z",
-  "powershell": [
-    "$ErrorActionPreference=\"Stop\"; $d=\"E:\\0apps\\ArenaDesk\"; New-Item -ItemType Directory -Force \"$d\\data\" | Out-Null; Copy-Item \"code\\panel\\install_extras.py\" \"$d\\install_extras.py\" -Force; $p=Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"`\"$d\\install_extras.py`\"\" -WorkingDirectory $d -PassThru; \"OPTIONAL_INSTALLER_PID=$($p.Id)\"; \"BASE_HUB_UNCHANGED\""
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T012254Z",
+    "powershell":  [
+                       "$ErrorActionPreference=\"Stop\"; $d=\"E:\\0apps\\ArenaDesk\"; New-Item -ItemType Directory -Force \"$d\\data\" | Out-Null; Copy-Item \"code\\panel\\install_extras.py\" \"$d\\install_extras.py\" -Force; $p=Start-Process \"E:\\spider\\pythonw.exe\" -ArgumentList \"`\"$d\\install_extras.py`\"\" -WorkingDirectory $d -PassThru; \"OPTIONAL_INSTALLER_PID=$($p.Id)\"; \"BASE_HUB_UNCHANGED\""
+                   ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:22:30Z",
+    "executed_at_local":  "2026-10-28 09:22:30",
+    "source_commit":  "0250059c21ca73880db9b12d06166555d00729b0"
 }
