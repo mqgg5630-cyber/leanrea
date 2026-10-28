@@ -1,12 +1,12 @@
-﻿{
-    "enabled":  true,
-    "request_id":  "20261028T014322Z",
-    "powershell":  [
-                       "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\control.ps1\" \"E:\\0apps\\ArenaDesk\\control.ps1\" -Force; \u0026 \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action show -Name \"arena-desktop-pet\"; \u0026 \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action hide -Name \"arena-desktop-pet\"; \u0026 \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action show -Name \"arena-desktop-pet\"; \u0026 \"E:\\0apps\\ArenaDesk\\open_dsh.ps1\"; \u0026 \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action snapshot"
-                   ],
-    "status":  "completed_on_host",
-    "executed_on_host":  "LAPTOP-R77M5D6M",
-    "executed_at_utc":  "2026-10-28T01:42:51Z",
-    "executed_at_local":  "2026-10-28 09:42:51",
-    "source_commit":  "098b89032d4bfefae9a3a4c5d43cf06b9fa3799f"
+{
+  "enabled": false,
+  "request_id": "20261028T014322Z",
+  "powershell": [
+    "$ErrorActionPreference=\"Stop\"; Copy-Item \"code\\panel\\control.ps1\" \"E:\\0apps\\ArenaDesk\\control.ps1\" -Force; & \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action show -Name \"arena-desktop-pet\"; & \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action hide -Name \"arena-desktop-pet\"; & \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action show -Name \"arena-desktop-pet\"; & \"E:\\0apps\\ArenaDesk\\open_dsh.ps1\"; & \"E:\\0apps\\ArenaDesk\\control.ps1\" -Action snapshot"
+  ],
+  "status": "completed_on_host",
+  "executed_on_host": "LAPTOP-R77M5D6M",
+  "executed_at_utc": "2026-10-28T01:42:51Z",
+  "executed_at_local": "2026-10-28 09:42:51",
+  "source_commit": "098b89032d4bfefae9a3a4c5d43cf06b9fa3799f"
 }

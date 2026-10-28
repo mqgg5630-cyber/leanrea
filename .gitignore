@@ -2,3 +2,6 @@ bench/work/
 rea_tools.json
 .DS_Store
 __pycache__/
+
+# Arena Desk local-only runtime data
+code/panel/data/
