@@ -1,8 +1,12 @@
-{
-  "enabled": true,
-  "status": "pending",
-  "request_id": "20261028T012645Z",
-  "python": [
-    "import json,os\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/install-state.json\")\nprint(p.read_text(encoding=\"utf-8\") if p.exists() else \"NO_INSTALL_STATE\")\nprint(\"RESULT_LAYOUT\")\nd=Path(\"E:/0github/results/leanrea-4d729933-leanrea\")\nprint(json.dumps([str(p.relative_to(d)) for p in d.glob(\"**/hub_sync_receipt.json\")],ensure_ascii=True))\nfor name in [\"dsh-help.log\",\"dsh-plugin-help.log\"]:\n p=Path(\"E:/0apps/ArenaDesk/data\")/name\n if p.exists(): print(name+\"\\n\"+p.read_text(encoding=\"utf-8\",errors=\"replace\")[-6000:])"
-  ]
+﻿{
+    "enabled":  true,
+    "request_id":  "20261028T012645Z",
+    "python":  [
+                   "import json,os\nfrom pathlib import Path\np=Path(\"E:/0apps/ArenaDesk/data/install-state.json\")\nprint(p.read_text(encoding=\"utf-8\") if p.exists() else \"NO_INSTALL_STATE\")\nprint(\"RESULT_LAYOUT\")\nd=Path(\"E:/0github/results/leanrea-4d729933-leanrea\")\nprint(json.dumps([str(p.relative_to(d)) for p in d.glob(\"**/hub_sync_receipt.json\")],ensure_ascii=True))\nfor name in [\"dsh-help.log\",\"dsh-plugin-help.log\"]:\n p=Path(\"E:/0apps/ArenaDesk/data\")/name\n if p.exists(): print(name+\"\\n\"+p.read_text(encoding=\"utf-8\",errors=\"replace\")[-6000:])"
+               ],
+    "status":  "completed_on_host",
+    "executed_on_host":  "LAPTOP-R77M5D6M",
+    "executed_at_utc":  "2026-10-28T01:27:58Z",
+    "executed_at_local":  "2026-10-28 09:27:58",
+    "source_commit":  "b39b92308f26e51801b6997b2c2beef19c8f78fe"
 }

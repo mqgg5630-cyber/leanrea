@@ -3,20 +3,20 @@
     "host":  "LAPTOP-R77M5D6M",
     "repo":  "leanrea",
     "branch":  "arena/4d729933-leanrea",
-    "source_commit":  "0250059c21ca73880db9b12d06166555d00729b0",
-    "synced_at_utc":  "2026-10-28T01:22:30Z",
-    "synced_at_local":  "2026-10-28 09:22:30",
+    "source_commit":  "b39b92308f26e51801b6997b2c2beef19c8f78fe",
+    "synced_at_utc":  "2026-10-28T01:27:58Z",
+    "synced_at_local":  "2026-10-28 09:27:58",
     "poll_interval_sec":  2,
     "local_results_dir":  "E:\\0github\\results\\leanrea-4d729933-leanrea",
-    "synced_files_count":  181,
+    "synced_files_count":  182,
     "tasks_executed_count":  1,
     "tasks_all_ok":  true,
     "tasks_executed":  [
                            {
-                               "step":  "hub_task.powershell",
+                               "step":  "hub_task.python",
                                "exit_code":  0,
-                               "elapsed_ms":  1363,
-                               "stdout":  "OPTIONAL_INSTALLER_PID=22112\r\nBASE_HUB_UNCHANGED",
+                               "elapsed_ms":  2840,
+                               "stdout":  "[\r\n  {\r\n    \"name\": \"installer\",\r\n    \"status\": \"running\",\r\n    \"detail\": \"DSH optional UI tools isolated from git-sync-hub; no AI credentials\",\r\n    \"at\": \"2026-10-28 09:22:31\"\r\n  },\r\n  {\r\n    \"name\": \"dsh-host\",\r\n    \"status\": \"running\",\r\n    \"detail\": \"Installation in progress\",\r\n    \"at\": \"2026-10-28 09:22:31\"\r\n  }\r\n]\r\nRESULT_LAYOUT\r\n[\"status\\\\hub_sync_receipt.json\"]",
                                "stderr":  ""
                            }
                        ],
