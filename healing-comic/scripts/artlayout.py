@@ -63,27 +63,65 @@ def pill(draw, text: str, font, y: int, fill: str, outline: str = INK,
     return x0, y0, x1, y1
 
 
-def bubble(draw, lines: list[str], font, y_top: int = 210) -> tuple[int, int, int, int]:
-    """白色对白气泡（带小尾巴），宽度随文字自适应，水平居中。"""
+def bubble(draw, lines: list[str], font, y_top: int = 210,
+           align: str = "center", tail: str = "center",
+           tail_dir: str = "up", max_w: int | None = None) -> tuple[int, int, int, int]:
+    """白色对白气泡（带小尾巴），宽度随文字自适应。
+
+    align  "left" / "right" / "center"：气泡横向位置（说话人站位）。
+    tail   "left" / "right" / "center"：尾巴在哪一侧。
+    tail_dir "up" / "down"：尾巴朝上（人物在上格）或朝下（人物在下格）。
+    """
     if not lines:
         return (0, 0, 0, 0)
     pad_x, pad_y, lh = 46, 30, 62
     widths = [int(draw.textlength(ln, font=font)) for ln in lines]
-    body_w = min(max(widths) + pad_x * 2, W - 120)
-    x0 = (W - body_w) // 2
+    body_w = min(max(widths) + pad_x * 2, max_w or (W - 120))
+    if align == "left":
+        x0 = 66
+    elif align == "right":
+        x0 = W - 66 - body_w
+    else:
+        x0 = (W - body_w) // 2
     x1 = x0 + body_w
     first = font.getbbox(lines[0])
     body_h = pad_y * 2 + lh * (len(lines) - 1) + (first[3] - first[1])
     y0, y1 = y_top, y_top + body_h
 
-    tx = x0 + 60
-    draw.polygon([(tx, y0 + 10), (tx + 30, y0 - 42), (tx + 104, y0 + 10)],
-                 fill=PAPER, outline=INK, width=4)
+    if tail == "left":
+        tx = x0 + 46
+    elif tail == "right":
+        tx = x1 - 118
+    else:
+        tx = x0 + 60
+    if tail_dir == "down":
+        draw.polygon([(tx, y1 - 10), (tx + 30, y1 + 42), (tx + 104, y1 - 10)],
+                     fill=PAPER, outline=INK, width=4)
+    else:
+        draw.polygon([(tx, y0 + 10), (tx + 30, y0 - 42), (tx + 104, y0 + 10)],
+                     fill=PAPER, outline=INK, width=4)
     draw.rounded_rectangle([x0, y0, x1, y1], radius=30,
                            fill=PAPER, outline=INK, width=4)
     for i, line in enumerate(lines):
         draw.text((x0 + pad_x, y0 + pad_y + i * lh), line, font=font, fill=INK)
     return x0, y0, x1, y1
+
+
+def _bubbles(item: dict) -> list[dict]:
+    """spec 里的对白气泡列表。兼容旧的 bubble（str / list[str]）。"""
+    out: list[dict] = []
+    legacy = item.get("bubble", [])
+    if isinstance(legacy, str):
+        legacy = [legacy]
+    for i, text in enumerate(legacy):
+        out.append({"text": text, "y": item.get("bubble_y", 210),
+                    "align": "center", "tail": "center", "tail_dir": "up"})
+    for b in item.get("bubbles", []):
+        out.append({"text": b["text"], "y": int(b.get("y", 210)),
+                    "align": b.get("align", "center"),
+                    "tail": b.get("tail", "center"),
+                    "tail_dir": b.get("tail_dir", "up")})
+    return out
 
 
 def seam_y(item: dict) -> int:
@@ -130,19 +168,36 @@ def page_overlay(item: dict, fonts: dict, part: str = "top") -> Image.Image:
         title = item.get("title", "")
         if title:
             pill(d, title, fonts["label_top"], 32, YELLOW)
-        lines = item.get("bubble", [])
-        if isinstance(lines, str):
-            lines = [lines]
-        if lines:
+        seam = seam_y(item)
+        for b in _bubbles(item):
+            if b["y"] >= seam:          # 落在下格的气泡由 bottom 层绘制
+                continue
             f = fonts["bubble"]
+            side = b["align"] in ("left", "right")
+            text_max = (W // 2 - 66) if side else (W - 120 - 92)
             wrapped: list[str] = []
-            for part_text in lines:
-                wrapped.extend(wrap(part_text, f, d, W - 120 - 92))
-            bubble(d, wrapped, f, y_top=item.get("bubble_y", 210))
+            for part_text in [b["text"]]:
+                wrapped.extend(wrap(part_text, f, d, text_max))
+            bubble(d, wrapped, f, y_top=b["y"], align=b["align"],
+                   tail=b["tail"], tail_dir=b["tail_dir"],
+                   max_w=text_max + 92)
     else:
         sub = item.get("subtitle", "")
         if sub:
             pill(d, sub, fonts["label_bottom"], seam_y(item) + 36, PAPER)
+        seam = seam_y(item)
+        for b in _bubbles(item):
+            if b["y"] < seam:
+                continue
+            f = fonts["bubble"]
+            side = b["align"] in ("left", "right")
+            text_max = (W // 2 - 66) if side else (W - 120 - 92)
+            wrapped: list[str] = []
+            for part_text in [b["text"]]:
+                wrapped.extend(wrap(part_text, f, d, text_max))
+            bubble(d, wrapped, f, y_top=b["y"], align=b["align"],
+                   tail=b["tail"], tail_dir=b["tail_dir"],
+                   max_w=text_max + 92)
     return ov
 
 

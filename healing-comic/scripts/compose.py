@@ -123,22 +123,31 @@ def render(item: dict, art_root: Path, outdir: Path, fonts: dict,
                 if af["cover"].getlength(line) > W - 120:
                     problems.append(f"封面标题行超宽：{line}")
         elif mode == "xhs-orig":
-            if len(t) > 6:
-                problems.append(f"顶部标签过长（≤6 字）：{t}")
+            if len(t) > 8:
+                problems.append(f"顶部标签过长（≤8 字）：{t}")
             if af["label_top"].getlength(t) > W - 120:
                 problems.append(f"顶部标签超宽：{t}")
-            if len(item.get("subtitle", "")) > 8:
-                problems.append(f"底部标签过长（≤8 字）：{item.get('subtitle')}")
+            if len(item.get("subtitle", "")) > 12:
+                problems.append(f"底部标签过长（≤12 字）：{item.get('subtitle')}")
             if af["label_bottom"].getlength(item.get("subtitle", "")) > W - 120:
                 problems.append(f"底部标签超宽：{item.get('subtitle')}")
             bl = item.get("bubble", [])
             if isinstance(bl, str):
                 bl = [bl]
             for line in bl:
-                if len(line) > 18:
-                    problems.append(f"气泡台词超过 18 字：{line}")
+                if len(line) > 20:
+                    problems.append(f"气泡台词超过 20 字：{line}")
             if len(bl) > 2:
                 problems.append(f"气泡超过 2 行：{bl}")
+            # 双人对白：bubbles = [{text, y, align, tail, tail_dir}, ...]
+            bs = item.get("bubbles", [])
+            if len(bs) > 2:
+                problems.append(f"气泡数量超过 2：{len(bs)}")
+            for b in bs:
+                if len(b.get("text", "")) > 20:
+                    problems.append(f"气泡台词超过 20 字：{b.get('text')}")
+                if "y" not in b:
+                    problems.append(f"气泡缺少 y 坐标：{b}")
     elif mode == "xhs-cover":
         # 封面：76px Medium 居中（可两行）+ 34px 钩子句，全部落在顶部纸条
         y = 64

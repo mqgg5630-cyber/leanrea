@@ -1,0 +1,219 @@
+[
+  {
+    "art": "art/01-封面.png",
+    "layout": "cover",
+    "title": [
+      "先分清",
+      "引导还是控制"
+    ],
+    "subtitle": "让对方更怕你，就不是引导",
+    "out": "01-封面.png"
+  },
+  {
+    "art": "art/02-一句话检验.png",
+    "layout": "xhs-orig",
+    "title": "一句话检验",
+    "subtitle": "更没得选，就不是引导",
+    "bubbles": [
+      {
+        "text": "我不敢说不想。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "那是我越界了。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "02-一句话检验.png"
+  },
+  {
+    "art": "art/03-以爱之名.png",
+    "layout": "xhs-orig",
+    "title": "以爱之名",
+    "subtitle": "为你好，也得先问一句",
+    "bubbles": [
+      {
+        "text": "我的画笔呢？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "那你想怎么安排？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "03-以爱之名.png"
+  },
+  {
+    "art": "art/04-手机这一关.png",
+    "layout": "xhs-orig",
+    "title": "手机这一关",
+    "subtitle": "查手机，不叫关心",
+    "bubbles": [
+      {
+        "text": "你刚看我手机了？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "嗯，是我越界了。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "04-手机这一关.png"
+  },
+  {
+    "art": "art/05-不盯梢.png",
+    "layout": "xhs-orig",
+    "title": "不盯梢",
+    "subtitle": "不盯着，才是安全感",
+    "bubbles": [
+      {
+        "text": "你怎么知道我出门了？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我不想靠盯着你。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "05-不盯梢.png"
+  },
+  {
+    "art": "art/06-两个选项.png",
+    "layout": "xhs-orig",
+    "title": "两个选项",
+    "subtitle": "给选项，不给标准答案",
+    "bubbles": [
+      {
+        "text": "那你说该选哪个？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "两个都行，你更想要？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "06-两个选项.png"
+  },
+  {
+    "art": "art/07-只谈行为.png",
+    "layout": "xhs-orig",
+    "title": "只谈行为",
+    "subtitle": "不改性格，只谈这件事",
+    "bubbles": [
+      {
+        "text": "你就是太敏感了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我们先说这一件事。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "07-只谈行为.png"
+  },
+  {
+    "art": "art/08-不当救世主.png",
+    "layout": "xhs-orig",
+    "title": "不当救世主",
+    "subtitle": "不当救世主，交给专业",
+    "bubbles": [
+      {
+        "text": "这件事我帮不了你。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "那我们一起找人帮。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "08-不当救世主.png"
+  },
+  {
+    "art": "art/09-危险信号.png",
+    "layout": "xhs-orig",
+    "title": "危险信号",
+    "subtitle": "动手，不是沟通问题",
+    "bubbles": [
+      {
+        "text": "我好烦，想动手。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "先离开这儿，我们求助。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "09-危险信号.png"
+  },
+  {
+    "art": "art/10-记住底线.png",
+    "layout": "xhs-orig",
+    "title": "记住底线",
+    "subtitle": "同意可撤回，人格不改造",
+    "bubbles": [
+      {
+        "text": "那还能在一起吗？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "能，选择权还在你手里。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "10-记住底线.png"
+  }
+]
