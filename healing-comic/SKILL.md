@@ -35,10 +35,10 @@ description: 把长文 / PDF / 指南转成小红书式「一二布布」可爱�
 | 项 | 值 |
 |---|---|
 | 画布 | 1080×1440（3:4 竖版，小红书信息流最优） |
-| 角色 A（一二） | 白色小熊猫：纯白圆身、实心黑圆耳、黑色熊猫眼罩、小眼睛、黑蝴蝶领结、白色短手、黑色小脚 |
-| 角色 B（布布） | 奶茶棕小熊：略大一圈、圆耳、奶白口鼻、黑点眼、小鼻子；原作不戴围巾，别加 |
-| 线条 | 细而干净的近黑描边，无渐层、无阴影、无纹理 |
-| 色板 | 奶油底 #FFF8EE、蜜桃 #F6C9B4、焦糖 #D9A066、雾蓝 #A9C6D9、芥末 #E8B44A、字 #4A3B32 |
+| 角色 A（一二） | 白色小熊猫：纯白圆身、**实心深棕圆耳**（没有眼罩）、小深棕椭圆眼、粉色圆腮红、**深棕蝴蝶结**、白色短手、深棕小脚 |
+| 角色 B（布布） | 奶茶棕小熊：略大一圈、圆耳 + 深棕内耳、黑点眼、小鼻子、**浅黄圆腮红**；原作不戴围巾，别加 |
+| 线条 | **粗深棕描边**（约 5px，#3B2314），无渐层、无阴影、无纹理。写 thin clean outlines 会出来细线版，和原帖对不上 |
+| 色板（xhs-orig 版式） | 顶部黄标签 #FEE7A6、纸 #F5F1E8、白气泡 #FFFFFF、墨 #3B2314 / #301412 |
 | 构图 | 角色居中偏下，**上 1/3 与下 1/4 必须留白**给标题和气泡；文字全部左对齐，共享 72px 左边线 |
 | 版式 | **无页眉小标签、无页码、无装饰下划线**（eyebrow / index numbering / 装饰线，taste-skill 明令删除）；出处信息全部并入页脚 |
 | 字号 | 一个超大 + 一个小：大标题 80px Medium（带奶油描边光环）、支持句 42px、台词 46px Medium（气泡内**左对齐**）、页脚 26px |
@@ -66,16 +66,50 @@ description: 把长文 / PDF / 指南转成小红书式「一二布布」可爱�
 
 ### 4. 生图提示词（复制改 SCENE 即可）
 
+生产实测版（**xhs-orig 双栏连载**用这一套，角色一致性最好）：
+
+```
+CHARACTER 1 (white panda cub, "Yi'er"): chubby pure-white round body and round head,
+two solid very dark brown round ears on top of the head, small dark brown oval eyes,
+tiny mouth, soft pink round blush cheeks, a small dark brown bow tie at the neck,
+short white stubby arms, small dark brown feet.
+CHARACTER 2 (milk-tea brown bear cub, "Bubu"): slightly bigger chubby milk-tea brown
+round body and round head, small round ears with darker brown inner ear, small black
+dot eyes, tiny nose, pale yellow round blush cheeks, short stubby limbs, no scarf,
+no accessories.
+
+Style: thick dark brown outlines, completely flat coloring, warm pastel interior
+background, soft even lighting, no gradients, no shading, no texture, simple
+rounded shapes, cozy warm healing mood, vertical portrait 3:4, one single
+continuous scene, the illustration fills the entire frame edge to edge, no panel
+borders, no white frame.
+
+The illustration is a comic page split into TWO stacked panels separated by a
+clean straight horizontal edge: the UPPER panel is bright and warmly lit, the
+LOWER panel is dimmer and muted/greyish. No panel borders, no frames, no white
+margin.
+
+CRITICAL: absolutely no text, no Chinese characters, no letters, no numbers, no
+captions, no speech balloons, no speech bubbles, no watermark, no logo, no signature.
+
+SCENE: <一个动作、一个情绪、最多两个道具，写具体；双栏页要写 UPPER PANEL: … LOWER PANEL: …>
+```
+
+> 参考图挂法：**每次都挂 2–3 张原帖原图**（角色最完整的那几张），模型会连描边粗细、腮红位置一起抄；
+> 只写文字不挂图，10 页里角色会漂。
+
+海报模式（单幅、留白给标题）用这一套：
+
 ```
 Use the two characters and the exact art style from the reference images
 (attach 1-3 一二布布 original pictures as design reference).
 CHARACTER 1 (white panda cub): small chubby pure-white round body, two solid
-black round ears, two black oval panda eye patches, small simple eyes, a small
-black bow tie, short white stubby arms, little black feet.
+very dark brown round ears, small dark brown oval eyes, soft pink round blush
+cheeks, a small dark brown bow tie, short white stubby arms, little dark brown feet.
 CHARACTER 2 (brown bear cub): slightly bigger chubby milk-tea-brown round
-body, small round ears, pale cream muzzle, small black dot eyes, tiny nose,
-short stubby limbs, no scarf.
-Thin clean dark outlines, completely flat coloring, plain warm-white
+body, small round ears, pale yellow round blush cheeks, small black dot eyes,
+tiny nose, short stubby limbs, no scarf.
+Thick dark brown outlines, completely flat coloring, plain warm-white
 background, soft pastel accents, no gradients, no shading, no texture, simple
 rounded shapes, cozy warm, vertical portrait 3:4, one single scene,
 no panel borders.
@@ -185,28 +219,70 @@ python3 scripts/compose.py spec.json --font "$COMIC_FONT" \
 
 完整调研、案例、逐页改造方案与 3.7 整套文案设计见 `references/`；已做好的样张见 `examples/`。
 
-## 批量连载模式（2026-11-02 新增：引导型恋人十连漫画）
+## 内容拆解方法：把长指南拆成「一批十张」的连载漫画
 
-给长指南拆「一批十张」的连载漫画时，用这套结构：
+给长指南（13 章 104 条这种）做连载时，先拆内容再画图，别边读边画。完整方法见
+[`references/文案拆解方法.md`](references/文案拆解方法.md)，这里是最小可用版：
 
-1. **先建内容地图，再写文案**：原书 → 章节清单 → 每批 10 页对应 1–2 章；每页标源文章节，
-   防止跑偏（示例见 `references/anime2-批A-漫画文案.md` 的源文映射表）。
-2. **一页三层文字**（比单气泡更适合「引导型」内容）：
+1. **先建内容地图**：原书 → 章节清单 → 每批 10 页对应 1–2 章；先确认「别人已经做过哪几章」，避免撞车。
+2. **一页三层文字**（比单气泡更适合「引导型 / 教育型」内容）：
    - 顶部黄标签＝**标签**（≤8 字，点题分类）
-   - 上格白气泡＝**触句**（≤20 字，被引导的一方，带委屈/试探）
+   - 上格白气泡＝**触句**（≤20 字，带着委屈或试探的那一方）
    - 底部白标签＝**点题句**（≤12 字，本页结论）
-   - 下格白气泡＝**引导句**（≤20 字，引导的一方，不指责、给选择权）
-3. **双气泡版式**（本次新增）：spec 里用 `bubbles` 数组写两句台词，
+   - 下格白气泡＝**引导句**（≤20 字，不指责、给选择权的那一方）
+3. **每页标源文**：章节号 + 用到的手册字段（判断 / 第一句 / 两种回应 / 接着做 / 做对了 / 红线）。
+   能核对到原文的句子逐字引用，核对不到的按原书结构改写——**并把这件事写进文档**，不要装作是原文。
+4. **台词必须和画面里谁在做哪件事对上**：文案说布布在收画笔，图就得是布布在收画笔。
+   对不上就改文案或改图，二选一，不要各说各话。
+5. **气泡别压脸**：生图提示词里让人物偏下 / 偏侧，气泡落在墙面、地面或人物腿上；
+   人物居中时把下格气泡放到 `y≈1200`（身体以下）。
 
-   ```json
-   "bubbles": [
-     {"text": "我不敢说不想。", "y": 190,  "align": "left",  "tail": "left", "tail_dir": "down"},
-     {"text": "那是我越界了。", "y": 1200, "align": "right", "tail": "left", "tail_dir": "up"}
-   ]
-   ```
+### 双气泡版式（`--layout xhs-orig` 的 `bubbles` 字段）
 
-   `y < seam` 画在上格、`y ≥ seam` 画在下格；`align` 决定靠左/靠右；`tail_dir` 决定尾巴朝上还是朝下。
-   上格气泡放「问题」、下格气泡放「回应」，天然形成一问一答的翻页节奏。
-4. **气泡别压脸**：生图提示词里让人物偏下/偏侧，气泡落在墙面、地面或人物腿上；
-   若人物居中，把下格气泡放到 `y≈1200`（身体以下）而不是中段。
-5. **避坑**：台词必须和画面里谁在做哪件事对上（改文案还是改图，二选一，不要各说各话）。
+```json
+"bubbles": [
+  {"text": "我不敢说不想。", "y": 190,  "align": "left",  "tail": "left", "tail_dir": "down"},
+  {"text": "那是我越界了。", "y": 1200, "align": "right", "tail": "left", "tail_dir": "up"}
+]
+```
+
+| 字段 | 取值 | 作用 |
+|---|---|---|
+| `text` | ≤20 字 | 气泡台词，超 20 字 compose 的 gate 会直接报错 |
+| `y` | 0–1440 | `< seam`（默认 720）画在上格，`≥ seam` 画在下格 |
+| `align` | `left` / `right` / `center` | 气泡横向位置，对应说话人站位 |
+| `tail` | `left` / `right` / `center` | 尾巴在哪一侧 |
+| `tail_dir` | `up` / `down` | 尾巴朝上还是朝下（人物在上格就朝下，在下格就朝上） |
+
+一页最多 2 个气泡；`y` 与 `tail_dir` 要跟画面里人物的位置对上，否则像贴纸。
+
+### 十张一批的流水线
+
+```sh
+# 1) 写文案：references/anime2-批A-漫画文案.md 是可抄的模板（逐页表 + 源文映射表）
+# 2) 写 spec：examples/spec-anime2-A.json（批A）/ spec-anime2-B.json（批B）
+# 3) 生图：art/ 每页一张无字底图，挂 原图01 + 原图04（+ 原图02）当参考
+# 4) 合成
+python3 scripts/compose.py spec-anime2-A.json \
+  --font ~/.fonts/LXGWWenKai-Regular.ttf --font-medium ~/.fonts/LXGWWenKai-Medium.ttf \
+  --art-root . --outdir pages-A --layout xhs-orig --html --contact-sheet
+# 5) 拼版 + 上传：2 列拼版 → Drive 目录；文案 md / 提示词 md 一起传
+```
+
+**平台额度注意**：生图模型一般限制「每次回复最多 10 张」，所以一个批次正好 10 张，
+一批做完再开下一轮，别在一轮里硬凑 20 张。
+
+## references 索引
+
+| 文件 | 用途 |
+|---|---|
+| `文案拆解方法.md` | ⭐ 把长指南拆成十张一批的完整方法 + 自检清单 |
+| `anime2-批A-漫画文案.md` | 批A《先分清：引导还是控制》逐页文案 + 源文映射表 |
+| `anime2-批B-漫画文案.md` | 批B《体面放手》逐页文案 + 源文映射表 |
+| `anime2-批A-生图提示词.md` / `anime2-批B-生图提示词.md` | 两批共 20 页的成品提示词（角色卡 + 画风 + 分格 + 禁字 + SCENE） |
+| `anime2-交付说明.md` | 两批 20 张的交付清单与 Drive 位置 |
+| `anime-分镜表.md` / `anime-生图提示词.md` / `anime-发布清单.md` / `anime-说明.md` | v1.1「引导型恋人·亲密日常」7 页图文 + 8 段视频的做法 |
+| `copy-复刻版-8件事.md` | 参考帖 8 张原图逐像素测量 + 9 页复刻文案 |
+| `copy-3.7-承诺要小而可兑现.md` | 3.7 承诺篇 3 页文案设计 |
+| `conversion-plan.md` / `cases.md` / `github-skills.md` | 逐页改造方案、案例库、GitHub skills 调研 |
+

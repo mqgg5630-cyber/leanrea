@@ -1,0 +1,219 @@
+[
+  {
+    "art": "artB/11-封面.png",
+    "layout": "cover",
+    "title": [
+      "体面放手",
+      "不是继续忍"
+    ],
+    "subtitle": "先照顾自己，才有力气好好告别",
+    "out": "11-封面.png"
+  },
+  {
+    "art": "artB/12-先分清.png",
+    "layout": "xhs-orig",
+    "title": "先分清",
+    "subtitle": "是消耗，还是磨合？",
+    "bubbles": [
+      {
+        "text": "我们是不是一直在硬撑？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "先看你还需不需要硬撑。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "12-先分清.png"
+  },
+  {
+    "art": "artB/13-不全是你的错.png",
+    "layout": "xhs-orig",
+    "title": "不全是你的错",
+    "subtitle": "难受的是你，不全是关系",
+    "bubbles": [
+      {
+        "text": "是不是我不够好？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "该结束的是消耗，不是你。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "13-不全是你的错.png"
+  },
+  {
+    "art": "artB/14-一次讲清.png",
+    "layout": "xhs-orig",
+    "title": "一次讲清",
+    "subtitle": "别反复，别审判自己",
+    "bubbles": [
+      {
+        "text": "我想一次说完。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我听着，你说完。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "14-一次讲清.png"
+  },
+  {
+    "art": "artB/15-沉默也算数.png",
+    "layout": "xhs-orig",
+    "title": "沉默也算数",
+    "subtitle": "没有回应，也是回应",
+    "bubbles": [
+      {
+        "text": "他一直不回消息。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "沉默也是回答。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "15-沉默也算数.png"
+  },
+  {
+    "art": "artB/16-不替他决定.png",
+    "layout": "xhs-orig",
+    "title": "不替他决定",
+    "subtitle": "改不改，是他的事",
+    "bubbles": [
+      {
+        "text": "他会不会改？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "改不改，由他决定。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "16-不替他决定.png"
+  },
+  {
+    "art": "artB/17-照顾你自己.png",
+    "layout": "xhs-orig",
+    "title": "照顾你自己",
+    "subtitle": "慢慢来，别催自己",
+    "bubbles": [
+      {
+        "text": "我怕自己走不出来。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "慢慢来，别催自己。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "17-照顾你自己.png"
+  },
+  {
+    "art": "artB/18-引导者也会累.png",
+    "layout": "xhs-orig",
+    "title": "引导者也会累",
+    "subtitle": "陪伴不是欠条",
+    "bubbles": [
+      {
+        "text": "你是不是因为我需要，才一直陪？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我有过。这不等于你欠我。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "18-引导者也会累.png"
+  },
+  {
+    "art": "artB/19-别等崩了.png",
+    "layout": "xhs-orig",
+    "title": "别等崩了",
+    "subtitle": "不是等崩了才求助",
+    "bubbles": [
+      {
+        "text": "我们俩聊了也没用。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我想找个人帮我们把循环看清楚。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "19-别等崩了.png"
+  },
+  {
+    "art": "artB/20-各站各的位置.png",
+    "layout": "xhs-orig",
+    "title": "各站各的位置",
+    "subtitle": "好好告别，也是好好爱过",
+    "bubbles": [
+      {
+        "text": "以后还能做朋友吗？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "先把这一段，好好结束。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "20-各站各的位置.png"
+  }
+]
