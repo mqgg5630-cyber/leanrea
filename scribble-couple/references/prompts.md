@@ -290,3 +290,35 @@ ground truth for the style`。少一张，或图 2 有遮挡，偏差一定会�
 
 **A 对特别提示**：T 恤上的字母在原画里本来就是涂鸦，模型会写成 `404 OME` 这类乱码。
 只要它是**小面积手写涂鸦**就算合格；若变成大段可读文字，重出该张。
+
+---
+
+## §17 任务是「复刻原画」，不是「照照片重画」（v7，最重要的口径）
+
+前六轮一直搞错的就是这一条。用户要的不是「用原画当风格、照原片重画一遍」，
+而是**把原作者那张画（对照表第二列）本身复刻出来，一届复刻两版**。
+
+- **图 1 = 原画 = 目标（target）**，不是 style reference。提示词第一行必须写：
+  `IMAGE 1 = the artist's original drawing. IT IS THE TARGET, NOT A REFERENCE.
+  Reproduce it as closely as possible — same composition, same crop, same head sizes,
+  same poses, same hand positions, same clothing, same props, same colour areas,
+  same line weight, same amount of solid black, same amount of bare white paper.`
+- **图 2 = 原片 = 只用来核对细节**：`Use it ONLY to confirm small details that are hard to
+  read in image 1. Never change the composition of image 1 to match the photo.`
+- 提示词里把原画逐项写成 `Exact content to reproduce:` 清单（左人 / 右人 / 小道具 /
+  背景 / 签名），**不要留「自由发挥」的空间**。
+- 构图不许改：原画裁到胸就裁到胸，原画裁到胯就裁到胯，原画有车内背景就保留车内背景
+  （D 不是纯白纸，别自作聪明改成白底）。
+
+**两版怎么分**
+
+| 版本 | 定义 | 只改什么 |
+|---|---|---|
+| ① 重蜡笔 | 最贴原画的忠实复刻 | 什么都不改：厚双勾线、发块整、纸白多 |
+| ② 软彩铅 | 同一张画，更细的彩铅收尾 | 只改颜色过渡和排线疏密；**构图/姿势/头身比/黑线粗细/留白全部不动** |
+
+**翻车点**：说「softer」时模型会顺手把眼睛改成带睫毛高光的动漫眼（C② 就这样），
+这已经是改结构。提示词要补：`same small solid black rectangle eyes, no eyelash, no highlight`。
+
+**验收**：把复刻图和原画并排放，遮住签名，能否一眼看出是同一张画的两次抄写。
+不能，就重出。

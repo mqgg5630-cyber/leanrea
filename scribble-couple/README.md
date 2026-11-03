@@ -203,6 +203,49 @@ E 男生的脸比原画略可爱、圆框眼镜稍小。
 
 经验已写进 `references/prompts.md` §16。
 
+## v7：口径修正——要复刻的是第二列那张原画（2026-11-03）
+
+用户第三次指正，也是真正的口径：
+
+> 「我要你复刻五列中的第二列的原画……你肯定是复刻原画，复刻两版呀。」
+
+前六轮我一直做的是「**用原画当风格，照原片重画**」，所以永远差一截——
+因为原片的姿势、取景、道具本来就和原画不同，重画得越认真，离原画越远。
+
+**改法**：把原画本身当 target，不再当 reference。
+
+```
+images = [artworks/clean/artwork-X.jpg,   # 图 1 = 原画 = 目标，要 1:1 复刻
+          originals/original-X.jpg]       # 图 2 = 原片 = 只核对细节
+```
+
+提示词开头写 `IMAGE 1 IS THE TARGET, NOT A REFERENCE`，再逐项列
+`Exact content to reproduce:`（左人 / 右人 / 小道具 / 背景 / 签名），并明确
+`Never change the composition of image 1 to match the photo`。
+
+**两版**：
+- **① 重蜡笔**＝忠实复刻，什么都不改；
+- **② 软彩铅**＝同一张画的更细彩铅收尾，只改颜色过渡与排线疏密，构图/姿势/头身比/黑线粗细/留白全部不动。
+
+**产出**：`examples/out-v7/` 10 张 → `examples/out-v7-final/` 10 张中文命名交付。
+对照总表 `examples/compare-v7-five-columns.jpg`（1872×2136）：
+**① 原片 | ② 原作者原画（=目标）| ③ 上一轮（蓝框）| ④ 复刻① | ⑤ 复刻②**。
+
+| 对 | 原画（目标） | 复刻① 重蜡笔 | 复刻② 软彩铅 |
+|---|---|---|---|
+| A 卷发男 + 黑长直 | `clean/artwork-A` | `out-v7/01-A-v1` | `out-v7/02-A-v2` |
+| B 条纹衫 + 派对帽 | `clean/artwork-B` | `out-v7/03-B-v1` | `out-v7/04-B-v2` |
+| C 黄帽比耶 + 黑 T | `clean/artwork-C` | `out-v7/05-C-v1` | `out-v7/06-C-v2` |
+| D 车内麻花辫 + POLO | `clean/artwork-D` | `out-v7/07-D-v1` | `out-v7/08-D-v2` |
+| E 厨房 hello 帽 + 相机 | `clean/artwork-E` | `out-v7/09-E-v1` | `out-v7/10-E-v2` |
+
+**本轮完成度**：A①②、B①②、D①②、E①② 的构图和原画基本对得上；C① 最贴。
+**已知瑕疵**：C② 的眼睛被「softer」带跑成带睫毛的动漫眼（已写进 prompts.md §17 的翻车点）；
+E①② 的相机比原画略小；A① 的脸比原画略圆。
+
+另外修掉两处参考图残留：`clean/artwork-C` 顶部 4px 灰条、`clean/artwork-E` 顶部 20px 黑条，
+现在都重新裁过并留统一白边。
+
 ## 上手
 
 ```sh
