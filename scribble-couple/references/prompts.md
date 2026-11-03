@@ -211,3 +211,17 @@ BG:    white paper with a few loose grey and brown crayon strokes hinting at <�
 ```
 
 对比：重蜡笔版是「黑块 + 露白 + 抖线」；软彩铅版是「细线 + 暖色铺满 + 一笔阴影」。**两版不要混在同一批里**。
+
+## 14. 「每对两个版本」的做法（v4）
+
+同一对出两版时，**只换质感段，[KEEP] 一字不改**，否则会变成两个不同的人。
+
+| | 版本① 重蜡笔 | 版本② 软彩铅 |
+|---|---|---|
+| 线 | `thick black wax crayon, every contour drawn TWICE, broken, ends overshooting 5-10px` | `soft pencil / thin crayon, contours drawn twice, gently wobbling, mostly closed` |
+| 脸 | 纸白皮肤 + 3-4 道腮红短线 | `smooth warm peach skin, a slightly deeper tone on the shadow side` |
+| 眼 | 实心黑圆角矩形，无高光 | 同样形状，但留一点小白缝 |
+| 色 | `rough diagonal hatching stopping 3-5px short of the outlines, white paper gaps` | `smooth-but-visible colored-pencil strokes, no black outlines everywhere, no harsh contrast` |
+| 背景 | 纯白 | 纯白（最多几笔同色暗示） |
+
+一句话口诀：**版本① 靠「破」，版本② 靠「润」**。用户说「要和原图一样好看」时，通常指版本②——它更接近大众审美的完成度，而版本①更像手账涂鸦。
