@@ -225,3 +225,32 @@ BG:    white paper with a few loose grey and brown crayon strokes hinting at <�
 | 背景 | 纯白 | 纯白（最多几笔同色暗示） |
 
 一句话口诀：**版本① 靠「破」，版本② 靠「润」**。用户说「要和原图一样好看」时，通常指版本②——它更接近大众审美的完成度，而版本①更像手账涂鸦。
+
+## 15. 三图参考：把「上一版」也挂上（v5 修法）
+
+用户说「你新出的没上一版好看」时，最快的修法不是改词，而是**把上一版当第三张参考图挂上去**，并在提示词里写死「对齐它的密度与完成度」。
+
+```
+[REF] Image 1 = the real photo of this couple.
+      Image 2 = the artist's original drawing of this SAME couple.
+      Image 3 = an earlier rendering of the SAME couple that the client approved:
+      match its DENSITY, CONTRAST and FINISH — the same amount of solid black,
+      the same amount of bare white paper, the same head size and framing.
+      Use the style of image 2 and the finish of image 3, the people of image 1.
+```
+
+**v4 为什么变丑（诊断，别再犯）**
+
+| 我做的 | 后果 |
+|---|---|
+| 把「软彩铅」理解成「线变细、大部分闭合」 | 结构线消失 → 掉进通用可爱插画 |
+| 皮肤写成「暖蜜桃铺满」 | 丢掉纸白露白 → 手绘感没了 |
+| 头发从「整块黑 + 白划痕」改成「浅棕细线」 | 视觉重量掉了 |
+| 没写 `keep the structure` | 模型把「soft」理解成「什么都弱一点」 |
+
+**修正后的两版定义**
+
+- 版本① 重蜡笔：**黑更多**（线更粗更断、发块更整、衣纹更密），皮肤**更白**（只留几笔浅排线）。
+- 版本② 软彩铅：软在**颜色过渡**，不软在结构——线仍然两遍、仍然黑；皮肤暖但要看得见笔触和白缝；头发仍是深色重块。
+
+一句话：**「软」只允许软在颜色，不允许软在线和黑。**
