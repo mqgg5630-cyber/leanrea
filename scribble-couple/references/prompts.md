@@ -162,3 +162,52 @@ photo.save("references/originals/original-photo-car.jpg", quality=92)
 ```
 
 裁完一定打开看一眼：截图里的头像栏、评论、播放按钮很容易被一起裁进来。
+
+---
+
+## 12. 逐对复刻版（v3，推荐用这个）
+
+一份抖音截图里同时有「成品画」和「评论区的原片」，但它们分属不同情侣。**做哪一对，就把那一对的两张图一起挂上**：
+
+| 对 | 图 1（内容） | 图 2（风格） | 一句话角色卡 |
+|---|---|---|---|
+| A | `originals/original-A.jpg` | `artworks/artwork-A.jpg` | 卷发男生 + 长直发齐刘海女生，白 T，双肩包，男生手托自己下巴 |
+| B | `originals/original-B.jpg` | `artworks/artwork-B.jpg` | 蓝白条纹衫，绿/粉派对帽，男生凑过去亲女生脸，一手伸出去 |
+| C | `originals/original-C.jpg` | `artworks/artwork-C.jpg` | 黄棒球帽女生比耶，白 T 带棕色格纹图案；黑 T 卷发男生从背后抱 |
+| D | `originals/original-D.jpg` | `artworks/artwork-D.jpg` | 车内，双麻花辫 + 头顶墨镜 + 串珠手链；藏青 POLO，wink，手放头顶 |
+
+模板（把 `<对>` 和 `[KEEP]` 换掉，其余照抄）：
+
+```
+[REF] Image 1 = the real photo of this couple. Image 2 = the artist's own drawing of this
+      SAME couple — copy its style exactly (line quality, face construction, eyes,
+      hair treatment, color filling). Copy the STYLE of image 2, the PEOPLE of image 1.
+
+[CANVAS] Hand-drawn wax-crayon couple doodle on pure white paper, <vertical 4:5 / square 1:1>,
+         <half body / tight close-up / three-quarter bodies>, the pair fills about <80-85>% of the width.
+
+[LINE] …  [FACE] …  [HAIR] …  [COLOR] …  [BLUSH] …   （同第 0 节公共块）
+
+[KEEP] <从角色卡里抄：发型 + 服装 + 配饰 + 手势 + 表情>
+[ACCENT] <一颗红心 / 加 1-2 颗黄星 / 加两道黄射线>
+[BG] Pure white paper — do NOT draw <卧室/街道/车内>，重要：截图里的场景一律不画。
+```
+
+**B 对要额外加一句**：`the stripes drawn as loose skipping blue bands that break and skip`（否则条纹会被画成规整的商品图）。
+
+## 13. 软彩铅版（D 对的原画就是这种）
+
+同一张脸型系统，但整体更柔、更暖、更「画」而不是「涂」：
+
+```
+LINE:  wax crayon / soft pencil pressed unevenly, contours drawn twice, wobbling,
+       sometimes breaking, ends overshooting; thin scratchy inner lines.
+FACE:  wide flat square-ish face, blunt jaw, tiny chin; eyes solid black rounded rectangles
+       with only a small white gap for light, no lashes; short thick brow dashes;
+       one dot nose; small closed smile (or a wink).
+COLOR: smooth-but-visible colored-pencil strokes, warm peach skin with a slightly deeper
+       tone on the shadow side, navy filled in loose diagonal strokes, no gradients.
+BG:    white paper with a few loose grey and brown crayon strokes hinting at <车座>, nothing more.
+```
+
+对比：重蜡笔版是「黑块 + 露白 + 抖线」；软彩铅版是「细线 + 暖色铺满 + 一笔阴影」。**两版不要混在同一批里**。

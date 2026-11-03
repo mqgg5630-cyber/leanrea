@@ -9,7 +9,39 @@ description: 把情侣 / 单人照片画成「蜡笔涂鸦手绘头像」——�
 
 这个风格的全部难点只有一个字：**糙**。不是「精致的可爱」，是「手抖的人拿蜡笔随手涂的可爱」。
 
-> ⚠️ **最重要的一条：只写文字提示词一定失败。** 必须同时挂两张参考图——第 1 张是人物照片（保长相、发型、衣服），第 2 张是风格样张 `references/style-ref-sample.jpg`（保画风）。没挂样张，模型 100% 会滑向「干净二次元」。
+> ⚠️ **最重要的一条：只写文字提示词一定失败。** 必须同时挂两张参考图——第 1 张是**这一对的原始照片**（保长相、发型、衣服），第 2 张是**这一对的原画**（保画风）。没挂原画，模型 100% 会滑向「干净二次元」；挂错了别人的原画，就会出来「既不像片也不像画」的四不像。
+
+## 这位作者其实有两种手感（别混着用）
+
+| | 重蜡笔感（A / B / C） | 软彩铅感（D） |
+|---|---|---|
+| 线 | 粗、黑、两遍、抖得凶 | 细、软、两遍但很轻 |
+| 头发 | 一整块黑 + 白划痕 | 一根根软铅笔排线，带棕色调 |
+| 皮肤 | 纸白 + 几笔浅排线 | 暖蜜桃色铺满，阴影侧加深一档 |
+| 背景 | 纯白 | 白底 + 几笔灰棕暗示（车座） |
+| 典型 | 派对帽、条纹衫、比耶 | 车内自拍、托脸 |
+
+**同一批图只能用同一种手感。** 如果用户已经在你上一版里挑出几张「这个可以」，就以被保留的那张为准，整批统一成那个手感——原画只用来核对「这对是谁、发型/衣服/手势是什么」。
+
+
+## 第 0 步：把「原画」和「原片」对上（最容易出错，也最致命）
+
+抖音 / 小红书的这类帖子结构是固定的：**上面一张成品画，评论区有人贴了原片并说「求求了/老师可以画吗」**。一份截图里同时有画和片，但它们分属不同情侣。
+
+**规则：一对情侣 = 一张成品画 + 一张它自己的原片。绝对不要跨对混用。**
+
+| 截图 | 成品画（风格参考） | 原片（内容参考） | 这对是谁 |
+|---|---|---|---|
+| `shot-0330713` / `-0336689` | `artwork-A` | `original-A` | 卷发男生 + 长直发齐刘海女生，白 T、双肩包、手托下巴 |
+| `shot-0340796` | `artwork-B` | `original-B` | 蓝白条纹衫 + 派对帽，男生凑过去亲女生脸 |
+| `shot-0345802` | `artwork-C` | `original-C` | 黄棒球帽女生比耶 + 黑 T 卷发男生从背后抱 |
+| `shot-0417356` | `artwork-D` | `original-D` | 车内，双麻花辫 + 头顶墨镜 + 藏青 POLO，男生 wink + 手放头顶 |
+
+**对齐的自检**：把原片和成品画并排放，逐条核对——发型（直/卷、有无刘海、绑法）、衣服（条纹？有无图案？）、配饰（墨镜、帽子、手表、背包）、手势。**四条都对上才算同一对**。只要有一条不符，就说明抓错了图。
+
+> 教训：第一版把「D 的原片」配了「A 的画」做对照，用户一眼看出「对应错了」。原片和原画必须来自同一对，否则出来的图既不像片也不像画。
+
+**原片提取**：原片是评论区缩略图，通常只有 300–450px。按像素框裁出后 ×4 LANCZOS + `UnsharpMask(2,70,2)`，放大到 1200–1800px 再用。裁完必须看一眼有没有 UI 残留（头像栏、评论、播放键）。
 
 ## 何时用 / 何时别用
 
@@ -71,14 +103,15 @@ description: 把情侣 / 单人照片画成「蜡笔涂鸦手绘头像」——�
 
 ## 提示词骨架（双参考，一段都别删）
 
-参考图顺序有语义：**图 1 = 照片（保人物），图 2 = 风格样张（保画风）**，并在提示词第一行写明各自作用。
+参考图顺序有语义：**图 1 = 这一对的原片（保人物），图 2 = 这一对的原画（保画风）**，并在提示词第一行写明各自作用。
 
 ```
-[REF] Image 1 = the real photo of the couple (faces, hair, clothes, pose, expressions).
-      Image 2 = the drawing style to copy exactly (line quality, color filling, face parts).
+[REF] Image 1 = the real photo of this couple (faces, hair, clothes, pose, expressions).
+      Image 2 = the artist's own drawing of this SAME couple — copy its style exactly
+      (line quality, face construction, eyes, hair treatment, color filling).
       Copy the STYLE of image 2, the PEOPLE of image 1.
 
-[CANVAS] A hand-drawn wax-crayon couple doodle on pure white paper, vertical 4:5,
+[CANVAS] Hand-drawn wax-crayon couple doodle on pure white paper, vertical 4:5,
          half body, the pair fills about 80% of the width, cropped at the chest.
 
 [LINE] Black wax crayon pressed unevenly; every contour drawn TWICE, wobbling and breaking,
