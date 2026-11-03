@@ -26,7 +26,7 @@
 ## 本地运行
 
 ```sh
-cd couple-site
+cd docs
 python3 -m http.server 8000
 # 打开 http://localhost:8000
 ```
@@ -35,7 +35,7 @@ python3 -m http.server 8000
 
 | 平台 | 方法 |
 |---|---|
-| **GitHub Pages** | 仓库 Settings → Pages → 选择分支和 `couple-site/` 目录 |
+| **GitHub Pages** | 仓库 Settings → Pages → 选择分支和 `docs/` 目录 |
 | **Vercel** | 导入仓库，Root Directory 填 `couple-site`，Framework 选 Other |
 | **Cloudflare Pages** | 连接仓库，构建命令留空，输出目录 `couple-site` |
 | **Netlify** | 拖拽 `couple-site` 文件夹到 app.netlify.com/drop |

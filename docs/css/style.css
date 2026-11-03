@@ -13,6 +13,9 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* 关键修复：确保 hidden 属性优先于任何 display 规则 */
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
