@@ -1,0 +1,259 @@
+/* ==== 恋爱小屋 · 样式 ==== */
+:root {
+  --pink: #ff7a9e;
+  --pink-deep: #e8557f;
+  --pink-light: #ffe3ec;
+  --cream: #fff8f3;
+  --ink: #4a3b42;
+  --ink-soft: #8a7680;
+  --card: #ffffff;
+  --radius: 20px;
+  --shadow: 0 8px 30px rgba(232, 85, 127, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* 关键修复：确保 hidden 属性优先于任何 display 规则 */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  color: var(--ink);
+  background: linear-gradient(160deg, #fff6f9 0%, var(--cream) 40%, #fdf1f5 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 飘落爱心背景 */
+#hearts-bg {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.float-heart {
+  position: absolute; top: -5vh;
+  animation: fall linear forwards;
+  opacity: 0.5; user-select: none;
+}
+@keyframes fall {
+  to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+/* 导航 */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 248, 243, 0.8);
+  border-bottom: 1px solid rgba(232, 85, 127, 0.1);
+}
+.nav-inner {
+  max-width: 1000px; margin: 0 auto; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.nav-logo { font-weight: 700; color: var(--pink-deep); text-decoration: none; font-size: 17px; white-space: nowrap; }
+.nav-links { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.nav-links a { color: var(--ink-soft); text-decoration: none; font-size: 14px; transition: color .2s; }
+.nav-links a:hover { color: var(--pink-deep); }
+
+/* 首屏 */
+.hero {
+  position: relative; z-index: 1;
+  min-height: 86vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 60px 20px 40px;
+}
+.hero-names { display: flex; align-items: center; gap: 18px; font-size: clamp(32px, 7vw, 56px); font-weight: 800; }
+.hero-names .name { background: linear-gradient(120deg, var(--pink-deep), #ff9966); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.heart-beat { color: var(--pink); animation: beat 1.2s ease-in-out infinite; display: inline-block; }
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.25); }
+  40% { transform: scale(1); }
+  60% { transform: scale(1.18); }
+}
+.hero-slogan { margin-top: 14px; color: var(--ink-soft); font-size: 16px; letter-spacing: 2px; }
+
+.counter-card {
+  margin-top: 44px; background: var(--card); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 28px 36px; min-width: min(90vw, 480px);
+}
+.counter-label { color: var(--ink-soft); font-size: 14px; margin-bottom: 14px; letter-spacing: 3px; }
+.counter { display: flex; justify-content: center; gap: 22px; }
+.counter-item { display: flex; flex-direction: column; align-items: center; }
+.counter-item b {
+  font-size: clamp(28px, 6vw, 44px); font-variant-numeric: tabular-nums;
+  color: var(--pink-deep); font-weight: 800; line-height: 1.1;
+}
+.counter-item span { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+.counter-since { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
+.hero-scroll { margin-top: 42px; color: var(--pink); font-size: 22px; animation: bob 1.6s ease-in-out infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+/* 区块 */
+main { position: relative; z-index: 1; }
+.section { max-width: 1000px; margin: 0 auto; padding: 70px 20px 10px; }
+.section-title { font-size: 26px; font-weight: 800; }
+.section-sub { color: var(--ink-soft); font-size: 14px; margin-top: 6px; margin-bottom: 24px; }
+
+/* 纪念日 */
+.milestones { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.milestone {
+  background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px; position: relative; overflow: hidden;
+  transition: transform .2s;
+}
+.milestone:hover { transform: translateY(-4px); }
+.milestone.today { outline: 2px solid var(--pink); }
+.milestone .m-emoji { font-size: 26px; }
+.milestone .m-name { font-weight: 700; margin-top: 8px; }
+.milestone .m-date { color: var(--ink-soft); font-size: 13px; margin-top: 2px; }
+.milestone .m-left { margin-top: 10px; font-size: 14px; }
+.milestone .m-left b { color: var(--pink-deep); font-size: 22px; }
+
+/* 时光轴 */
+.timeline-actions { margin-bottom: 18px; }
+.timeline { position: relative; padding-left: 26px; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px;
+  width: 3px; border-radius: 2px;
+  background: linear-gradient(var(--pink), var(--pink-light));
+}
+.tl-item { position: relative; margin-bottom: 22px; }
+.tl-item::before {
+  content: "💗"; position: absolute; left: -27px; top: 0; font-size: 15px;
+}
+.tl-card {
+  background: var(--card); border-radius: 16px; box-shadow: var(--shadow);
+  padding: 16px 18px;
+}
+.tl-date { font-size: 12px; color: var(--pink-deep); font-weight: 700; letter-spacing: 1px; }
+.tl-title { font-weight: 700; margin-top: 4px; }
+.tl-text { color: var(--ink-soft); font-size: 14px; margin-top: 6px; line-height: 1.7; white-space: pre-wrap; }
+.tl-del {
+  float: right; border: none; background: none; cursor: pointer; color: #ccb3bc;
+  font-size: 14px;
+}
+.tl-del:hover { color: var(--pink-deep); }
+
+/* 相册 */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 16px; }
+.g-item {
+  border-radius: 16px; overflow: hidden; background: var(--pink-light);
+  box-shadow: var(--shadow); cursor: zoom-in; position: relative;
+  aspect-ratio: 3 / 4;
+  transition: transform .25s;
+}
+.g-item:hover { transform: scale(1.03) rotate(.6deg); }
+.g-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.g-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 26px 12px 10px; font-size: 13px; color: #fff;
+  background: linear-gradient(transparent, rgba(60, 20, 35, 0.75));
+}
+
+/* 悄悄话 */
+.note-form {
+  background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px; margin-bottom: 24px;
+}
+.note-who { display: flex; gap: 18px; margin-bottom: 12px; font-size: 14px; }
+.note-who label { cursor: pointer; }
+.note-form textarea {
+  width: 100%; border: 1.5px solid var(--pink-light); border-radius: 12px;
+  padding: 12px; font-size: 14px; font-family: inherit; resize: vertical; outline: none;
+}
+.note-form textarea:focus { border-color: var(--pink); }
+.note-form .btn { margin-top: 12px; }
+.notes-list { display: flex; flex-direction: column; gap: 12px; }
+.note {
+  max-width: 76%; padding: 12px 16px; border-radius: 16px; font-size: 14px;
+  line-height: 1.7; position: relative; white-space: pre-wrap;
+  box-shadow: 0 3px 14px rgba(232, 85, 127, 0.08);
+}
+.note.from-a { align-self: flex-start; background: #fff; border-bottom-left-radius: 4px; }
+.note.from-b { align-self: flex-end; background: var(--pink-light); border-bottom-right-radius: 4px; }
+.note .n-meta { display: block; font-size: 11px; color: var(--ink-soft); margin-top: 6px; }
+.note .n-del {
+  position: absolute; top: 6px; right: 8px; border: none; background: none;
+  cursor: pointer; color: #d9bcc7; font-size: 12px; opacity: 0; transition: opacity .15s;
+}
+.note:hover .n-del { opacity: 1; }
+
+/* 出游指南 */
+.guide-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+.guide-card {
+  background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 22px; text-decoration: none; color: var(--ink);
+  display: flex; align-items: center; gap: 14px; transition: transform .2s;
+}
+.guide-card:hover { transform: translateY(-4px); }
+.guide-card .g-icon { font-size: 30px; }
+.guide-card .g-label { font-weight: 700; }
+.guide-card .g-hint { font-size: 12px; color: var(--ink-soft); margin-top: 3px; }
+
+/* 工具 */
+.section-tools { padding-bottom: 50px; }
+.tools { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* 按钮 */
+.btn {
+  background: linear-gradient(120deg, var(--pink), var(--pink-deep));
+  color: #fff; border: none; padding: 10px 22px; border-radius: 999px;
+  font-size: 14px; cursor: pointer; font-weight: 600;
+  box-shadow: 0 4px 14px rgba(232, 85, 127, 0.3);
+  transition: transform .15s, box-shadow .15s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(232, 85, 127, 0.4); }
+.btn-outline {
+  background: #fff; color: var(--pink-deep); border: 1.5px solid var(--pink);
+  box-shadow: none;
+}
+.btn-ghost { background: none; border: none; cursor: pointer; font-size: 16px; }
+
+/* 页脚 */
+.footer {
+  margin-top: 60px; padding: 34px 20px; text-align: center;
+  color: var(--ink-soft); font-size: 14px;
+  border-top: 1px dashed rgba(232, 85, 127, 0.25);
+  position: relative; z-index: 1;
+}
+.footer-sub { font-size: 12px; margin-top: 8px; opacity: 0.8; }
+
+/* 灯箱 */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; background: rgba(30, 10, 18, 0.9);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 30px;
+}
+.lightbox img { max-width: 92vw; max-height: 80vh; border-radius: 12px; }
+.lightbox-caption { color: #ffd9e5; margin-top: 14px; font-size: 14px; }
+.lightbox-close {
+  position: absolute; top: 18px; right: 22px; background: none; border: none;
+  color: #fff; font-size: 26px; cursor: pointer;
+}
+
+/* 弹窗 */
+.modal {
+  position: fixed; inset: 0; z-index: 90; background: rgba(60, 20, 35, 0.4);
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.modal-box {
+  background: #fff; border-radius: var(--radius); padding: 26px;
+  width: min(92vw, 420px); box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+.modal-box h3 { margin-bottom: 18px; }
+.modal-box label { display: block; font-size: 13px; color: var(--ink-soft); margin-bottom: 14px; }
+.modal-box input, .modal-box textarea {
+  display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+  border: 1.5px solid var(--pink-light); border-radius: 10px; font-size: 14px;
+  font-family: inherit; outline: none;
+}
+.modal-box input:focus, .modal-box textarea:focus { border-color: var(--pink); }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+
+@media (max-width: 560px) {
+  .nav-links { gap: 10px; font-size: 13px; }
+  .counter { gap: 14px; }
+  .note { max-width: 90%; }
+}

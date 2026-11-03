@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我们的恋爱小屋</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="hearts-bg" aria-hidden="true"></div>
+
+  <!-- 顶部导航 -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top">💕 <span id="nav-title">恋爱小屋</span></a>
+      <div class="nav-links">
+        <a href="#days">纪念日</a>
+        <a href="#timeline">时光轴</a>
+        <a href="#gallery">相册</a>
+        <a href="#notes">悄悄话</a>
+        <a href="#guide">出游指南</a>
+        <button class="btn-ghost" id="btn-settings" title="设置">⚙️</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 首屏 -->
+  <header class="hero" id="top">
+    <div class="hero-names">
+      <span class="name" id="name-a">小树</span>
+      <span class="heart-beat">❤</span>
+      <span class="name" id="name-b">小熊</span>
+    </div>
+    <p class="hero-slogan" id="slogan">把每一天的喜欢，都好好记下来</p>
+
+    <div class="counter-card">
+      <p class="counter-label">我们已经在一起</p>
+      <div class="counter" id="counter">
+        <div class="counter-item"><b id="c-days">0</b><span>天</span></div>
+        <div class="counter-item"><b id="c-hours">0</b><span>时</span></div>
+        <div class="counter-item"><b id="c-mins">0</b><span>分</span></div>
+        <div class="counter-item"><b id="c-secs">0</b><span>秒</span></div>
+      </div>
+      <p class="counter-since">自 <span id="since-date"></span> 起</p>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </header>
+
+  <main>
+    <!-- 纪念日 -->
+    <section class="section" id="days">
+      <h2 class="section-title">🎂 纪念日</h2>
+      <p class="section-sub">下一个值得庆祝的日子</p>
+      <div class="milestones" id="milestones"></div>
+    </section>
+
+    <!-- 时光轴 -->
+    <section class="section" id="timeline">
+      <h2 class="section-title">🕰️ 时光轴</h2>
+      <p class="section-sub">我们一起走过的大事小事（点击"+ 记一笔"添加，数据保存在本机浏览器）</p>
+      <div class="timeline-actions">
+        <button class="btn" id="btn-add-event">+ 记一笔</button>
+      </div>
+      <div class="timeline" id="timeline-list"></div>
+    </section>
+
+    <!-- 相册 -->
+    <section class="section" id="gallery">
+      <h2 class="section-title">📷 回忆相册</h2>
+      <p class="section-sub">图片来自我们的 Google Drive · 点击可放大</p>
+      <div class="gallery" id="gallery-grid"></div>
+    </section>
+
+    <!-- 悄悄话 -->
+    <section class="section" id="notes">
+      <h2 class="section-title">💌 悄悄话</h2>
+      <p class="section-sub">想说的话写在这里（保存在本机浏览器，可导出备份）</p>
+      <div class="note-form">
+        <div class="note-who">
+          <label><input type="radio" name="who" value="A" checked /> <span id="who-a">小树</span></label>
+          <label><input type="radio" name="who" value="B" /> <span id="who-b">小熊</span></label>
+        </div>
+        <textarea id="note-input" rows="3" placeholder="今天也想你……"></textarea>
+        <button class="btn" id="btn-add-note">寄出 💌</button>
+      </div>
+      <div class="notes-list" id="notes-list"></div>
+    </section>
+
+    <!-- 出游指南 -->
+    <section class="section" id="guide">
+      <h2 class="section-title">🧳 情侣出游指南</h2>
+      <p class="section-sub">我们整理在 Google Drive 的出游手册 v1.0.0</p>
+      <div class="guide-cards" id="guide-cards"></div>
+    </section>
+
+    <!-- 数据备份 -->
+    <section class="section section-tools">
+      <h2 class="section-title">🗂️ 数据备份</h2>
+      <p class="section-sub">时光轴和悄悄话保存在浏览器本地，换设备前记得导出</p>
+      <div class="tools">
+        <button class="btn" id="btn-export">导出 JSON</button>
+        <label class="btn btn-outline">导入 JSON<input type="file" id="file-import" accept=".json" hidden /></label>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>💕 <span id="footer-names">小树 & 小熊</span> · 用爱发电的小站</p>
+    <p class="footer-sub">纯静态开源方案 · 可免费部署到 GitHub Pages / Vercel / Cloudflare Pages</p>
+  </footer>
+
+  <!-- 灯箱 -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img id="lightbox-img" alt="" />
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <!-- 设置弹窗 -->
+  <div class="modal" id="modal-settings" hidden>
+    <div class="modal-box">
+      <h3>⚙️ 设置</h3>
+      <label>TA 的名字 <input type="text" id="set-name-a" /></label>
+      <label>你的名字 <input type="text" id="set-name-b" /></label>
+      <label>在一起的日子 <input type="date" id="set-date" /></label>
+      <label>一句话 slogan <input type="text" id="set-slogan" /></label>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="set-cancel">取消</button>
+        <button class="btn" id="set-save">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 记一笔弹窗 -->
+  <div class="modal" id="modal-event" hidden>
+    <div class="modal-box">
+      <h3>🕰️ 记一笔</h3>
+      <label>日期 <input type="date" id="ev-date" /></label>
+      <label>标题 <input type="text" id="ev-title" placeholder="例如：第一次看电影" /></label>
+      <label>内容 <textarea id="ev-text" rows="3" placeholder="细节也写下来吧"></textarea></label>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="ev-cancel">取消</button>
+        <button class="btn" id="ev-save">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

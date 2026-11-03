@@ -1,0 +1,219 @@
+[
+  {
+    "art": "artC/21-封面.png",
+    "layout": "cover",
+    "title": [
+      "亲密的节奏",
+      "别用次数算爱"
+    ],
+    "subtitle": "见面、独处、身体和钱",
+    "out": "21-封面.png"
+  },
+  {
+    "art": "artC/22-见面频率.png",
+    "layout": "xhs-orig",
+    "title": "见面频率",
+    "subtitle": "谈次数，不谈爱不爱",
+    "bubbles": [
+      {
+        "text": "一周见三次，你只肯见一次？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我们先按较少的那个来。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "22-见面频率.png"
+  },
+  {
+    "art": "artC/23-独处不是空档.png",
+    "layout": "xhs-orig",
+    "title": "独处",
+    "subtitle": "独处不是空档",
+    "bubbles": [
+      {
+        "text": "我想一个人待着都不行吗？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "需要独处就直说，我不当成拒绝。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "23-独处不是空档.png"
+  },
+  {
+    "art": "artC/24-同意可以撤回.png",
+    "layout": "xhs-orig",
+    "title": "身体边界",
+    "subtitle": "同意可以随时撤回",
+    "bubbles": [
+      {
+        "text": "都这么熟了，还问吗？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我现在可以抱你吗？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "24-同意可以撤回.png"
+  },
+  {
+    "art": "artC/25-说偏好不打分.png",
+    "layout": "xhs-orig",
+    "title": "说偏好",
+    "subtitle": "说喜欢，别说不行",
+    "bubbles": [
+      {
+        "text": "你是不是嫌我不好？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "这是偏好，不是评分。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "25-说偏好不打分.png"
+  },
+  {
+    "art": "artC/26-先给空间.png",
+    "layout": "xhs-orig",
+    "title": "撤退时刻",
+    "subtitle": "先给空间，不追问",
+    "bubbles": [
+      {
+        "text": "你突然就不说话了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "需要空间，还是想说说？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "26-先给空间.png"
+  },
+  {
+    "art": "artC/27-异地要有时间表.png",
+    "layout": "xhs-orig",
+    "title": "异地",
+    "subtitle": "定时间表，不靠想",
+    "bubbles": [
+      {
+        "text": "每天都聊，会不会太累？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "睡前十分钟，就够了。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "27-异地要有时间表.png"
+  },
+  {
+    "art": "artC/28-边界一起守.png",
+    "layout": "xhs-orig",
+    "title": "家人边界",
+    "subtitle": "边界我们一起守",
+    "bubbles": [
+      {
+        "text": "那是我妈，你忍忍。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "是你妈，也是我们的家。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "28-边界一起守.png"
+  },
+  {
+    "art": "artC/29-先定规则.png",
+    "layout": "xhs-orig",
+    "title": "钱的规则",
+    "subtitle": "先定规则，再谈感情",
+    "bubbles": [
+      {
+        "text": "谈钱伤感情。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "不谈才伤，我们只定规则。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "29-先定规则.png"
+  },
+  {
+    "art": "artC/30-靠近能接住.png",
+    "layout": "xhs-orig",
+    "title": "靠近的节奏",
+    "subtitle": "靠近能接住，退开能放心",
+    "bubbles": [
+      {
+        "text": "原来慢一点也可以。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我们就按这个节奏来。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "30-靠近能接住.png"
+  }
+]

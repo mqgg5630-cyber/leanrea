@@ -1,0 +1,70 @@
+[
+  {
+    "art": "art-anime/00-cover.png",
+    "layout": "cover",
+    "title": ["引导型恋人", "的亲密日常"],
+    "subtitle": "爱TA，但不弄丢自己",
+    "out": "01-封面.png",
+    "clip": "01-封面.mp4"
+  },
+  {
+    "art": "art-anime/01.png",
+    "layout": "xhs-orig",
+    "title": "不查手机",
+    "subtitle": "其实是信任",
+    "bubble": ["你的手机，我不看。"],
+    "seam": 0.438,
+    "out": "02-不查手机.png",
+    "clip": "02-不查手机.mp4"
+  },
+  {
+    "art": "art-anime/02.png",
+    "layout": "xhs-orig",
+    "title": "先问再说",
+    "subtitle": "其实是尊重",
+    "bubble": ["先听你说，还是我说个建议？"],
+    "seam": 0.499,
+    "out": "03-先问再说.png",
+    "clip": "03-先问再说.mp4"
+  },
+  {
+    "art": "art-anime/03.png",
+    "layout": "xhs-orig",
+    "title": "互相照顾",
+    "subtitle": "其实是不独自扛",
+    "bubble": ["你也可以被照顾。"],
+    "seam": 0.499,
+    "out": "04-互相照顾.png",
+    "clip": "04-互相照顾.mp4"
+  },
+  {
+    "art": "art-anime/04.png",
+    "layout": "xhs-orig",
+    "title": "不急着讲道理",
+    "subtitle": "其实是先接住",
+    "bubble": ["我先陪你一会儿，不急着讲道理。"],
+    "seam": 0.502,
+    "out": "05-先接住情绪.png",
+    "clip": "05-先接住情绪.mp4"
+  },
+  {
+    "art": "art-anime/05.png",
+    "layout": "xhs-orig",
+    "title": "一起扛一半",
+    "subtitle": "其实是不代替",
+    "bubble": ["我们一起弄，你管一半。"],
+    "seam": 0.490,
+    "out": "06-并肩不代替.png",
+    "clip": "06-并肩不代替.mp4"
+  },
+  {
+    "art": "art-anime/06.png",
+    "layout": "xhs-orig",
+    "single": true,
+    "title": "各站各的位置",
+    "subtitle": "",
+    "bubble": ["两个人都站在自己的位置上，就很好。"],
+    "out": "07-结尾.png",
+    "clip": "07-结尾.mp4"
+  }
+]

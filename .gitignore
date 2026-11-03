@@ -2,3 +2,11 @@ bench/work/
 rea_tools.json
 .DS_Store
 __pycache__/
+
+# healing-comic 生成物（体积大，可由提示词重生成；成品在 Google Drive）
+healing-comic/examples/art*/
+healing-comic/examples/pages*/
+healing-comic/**/__pycache__/
+
+# Arena 工具下载目录（参考图 / 源 PDF）不入库
+google_drive/
