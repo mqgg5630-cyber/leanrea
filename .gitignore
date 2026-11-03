@@ -7,3 +7,6 @@ __pycache__/
 healing-comic/examples/art*/
 healing-comic/examples/pages*/
 healing-comic/**/__pycache__/
+
+# Arena 工具下载目录（参考图 / 源 PDF）不入库
+google_drive/
