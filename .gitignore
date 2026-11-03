@@ -10,3 +10,11 @@ healing-comic/**/__pycache__/
 
 # Arena 工具下载目录（参考图 / 源 PDF）不入库
 google_drive/
+
+# 本地环境与测试缓存
+.venv/
+venv/
+image-search/
+
+# photo-style 中间产物（成品保留，原始素材不重复入库）
+photo-style/examples/**/__pycache__/
