@@ -203,7 +203,40 @@ Same small solid black rectangle eyes, no eyelash, no highlight.
 | 节日版 | 3:4 | 加 `three yellow sparkles and two short exclamation marks` |
 | 背影 | 4:5 | `seen from behind, holding hands, full body, no faces` |
 
-## 泛化：手上没有原画时怎么画（v8 十对实测）
+## 笔触标定：像不像，八成看这一段（v9 定稿）
+
+用户反复说「差别还是太大」，量出来的原因不是黑少，而是**黑是细线堆出来的**：
+我们的图黑覆盖率 15–34%，和原画 15–30% 差不多，但原画的黑是**粗蜡笔块**，我们的是**细钢笔线**。
+所以提示词里必须把「笔有多粗、块有多整」写死，这一段叫 `CRAYON HAND`，每张都要带：
+
+```
+STYLE — match image 2's hand exactly:
+- every line is FAT and WAXY, about as wide as an eye; strokes are short, blunt,
+  unevenly pressed and stop abruptly;
+- outlines are drawn TWICE, with visible doubling and open gaps at the corners;
+- hair is a SOLID OPAQUE BLACK MASS with only three or four white scratch lines —
+  never individual strands;
+- skin stays bare paper with only two to four light peach hatch strokes;
+- three or four short red hatch strokes per cheek;
+- clothing is 8 to 15 separate thick diagonal colour strokes with clearly visible
+  white paper between them, never a smooth fill;
+- hands and props are chunky and simplified, at most three fingers;
+- about a third of the canvas is black or colour, half stays bare white paper.
+If the result looks like a clean digital line drawing, a thin pen sketch or a smooth
+illustration, it is wrong.
+```
+
+判断标准一句话：**把成图缩小到 25%，还看得出「胖黑线 + 大白块」，就是对的；变成灰色一片细线就是错的。**
+
+**画风锚只借手，不借人。** 用 `artwork-A` 当锚时，实测所有男生的头发都变卷、都带胡子——
+因为锚图里的人会被抄。所以每张必写：
+
+```
+The hair silhouette, face shape, clothes and pose come from image 1 ONLY.
+Do not give anyone image 2's fluffy curly hair or image 2's clothes.
+```
+
+## 泛化：手上没有原画时怎么画（v8 / v9 实测）
 
 新情侣只给了照片、找不到原作者那张画时，用**一张已定稿的干净原画当画风锚**：
 

@@ -290,6 +290,25 @@ images = [tests/v8/inputs/pXX.jpg, references/artworks/clean/artwork-A.jpg]
 修法已写进 `SKILL.md` 的「泛化」一节与 `prompts.md §18`：
 补 `denser black mass in the hair, denser clothing hatching, no white glint inside the eyes, keep the two faces clearly different`。
 
+## v10：中国情侣十对 + 笔触标定（2026-11-03）
+
+上一轮 v8 的十对「差别还是太大」。量了一下才发现问题不在黑的比例：
+我们的图黑覆盖 15–34%、原画 15–30%，差不多；但**原画的黑是粗蜡笔块，我们的是细钢笔线**。
+所以这一轮改的不是「更多黑」，而是「**笔更粗、块更整**」。
+
+- 新增 `CRAYON HAND` 段（已写进 `SKILL.md`）：线粗约一个眼睛宽、短而钝、两遍双勾；
+  头发是一整块不透明黑 + 3–4 道白划痕；衣服 8–15 笔粗斜排线、中间露白；
+  整张约 1/3 是黑或颜色，一半是白纸。
+- 判断标准：**缩小到 25% 还看得出「胖黑线 + 大白块」就对**，变成灰糊糊一片细线就是错。
+- 锚图只借手不借人：必写 `hair silhouette / face shape / clothes / pose come from image 1 ONLY`，
+  否则用 `artwork-A` 当锚时所有男生都会变卷发带胡子。
+
+**十对（全部中国 / 亚洲情侣，`tests/v9/`）**：街头牵手、靠墙、红色中式上衣两女生、老夫妇、
+橱窗、门廊、韩系近景、贴纸脸、中式红礼服、婚纱近景。对照表 `tests/v9/review-sheet.jpg`。
+
+**结果**：胖黑线和蜡笔块回来了，10/10 的手感接近第二列原画；
+仍偏的地方是脸部线条比原作者略「乖」（少了手抖的重描），P05/P06 略偏可爱。
+
 ## 上手
 
 ```sh
@@ -321,3 +340,4 @@ python3 -m venv .venv && .venv/bin/pip install Pillow
 | 第5轮交付（重切原画后重出 10 张） | https://drive.google.com/drive/folders/1u8FwptInC9-dD53AOOiOHvl1LmRHcam8 |
 | 第6轮交付（照原画复刻两版，四列对照） | https://drive.google.com/drive/folders/1ZK0n5NyRmz3_AaHUnNGtbCCfHExfAkFt |
 | 第7轮（十对新情侣泛化测试） | https://drive.google.com/drive/folders/1FHOm1lNus_pWvyJpYcK72geMRphQNBpF |
+| 技能文件（SKILL.md 等，上传到硬盘） | https://drive.google.com/drive/folders/1Uxqtmx4rglrMIDv3-KLDeGCCwQiIaXNa |
