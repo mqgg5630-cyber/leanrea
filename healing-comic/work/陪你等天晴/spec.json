@@ -1,0 +1,228 @@
+[
+  {
+    "art": "art/01-封面.png",
+    "layout": "cover",
+    "title": [
+      "陪你",
+      "等天晴"
+    ],
+    "subtitle": "坏天气也会过去",
+    "out": "01-封面.png"
+  },
+  {
+    "art": "art/02-搞砸的一天.png",
+    "layout": "xhs-orig",
+    "seam": 0.49,
+    "title": "搞砸的一天",
+    "subtitle": "回来就好",
+    "bubbles": [
+      {
+        "text": "今天，全都搞砸了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "到家啦，先吃饭。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "02-搞砸的一天.png"
+  },
+  {
+    "art": "art/03-被否定了.png",
+    "layout": "xhs-orig",
+    "seam": 0.509,
+    "title": "被否定了",
+    "subtitle": "我看见你的努力",
+    "bubbles": [
+      {
+        "text": "他们说我做得不好。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我觉得你很好呀。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "03-被否定了.png"
+  },
+  {
+    "art": "art/04-没电了.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "没电了",
+    "subtitle": "不说话也是陪你",
+    "bubbles": [
+      {
+        "text": "我累了，不想说话。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "那我坐旁边就好。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "04-没电了.png"
+  },
+  {
+    "art": "art/05-深夜心事.png",
+    "layout": "xhs-orig",
+    "seam": 0.562,
+    "title": "深夜心事",
+    "subtitle": "夜再长也会亮",
+    "bubbles": [
+      {
+        "text": "夜里，心事特别大。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "天亮前，我都在。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "05-深夜心事.png"
+  },
+  {
+    "art": "art/06-迷路了.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "迷路了",
+    "subtitle": "走错的路也算路",
+    "bubbles": [
+      {
+        "text": "我们是不是走错了？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "错了就看看风景。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "06-迷路了.png"
+  },
+  {
+    "art": "art/07-别气自己.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "别气自己",
+    "subtitle": "对自己温柔点",
+    "bubbles": [
+      {
+        "text": "我怎么这么笨啊。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "你只是还在学呀。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "07-别气自己.png"
+  },
+  {
+    "art": "art/08-吵架之后.png",
+    "layout": "xhs-orig",
+    "seam": 0.508,
+    "title": "吵架之后",
+    "subtitle": "先抱一下再说",
+    "bubbles": [
+      {
+        "text": "刚才，是我说话重了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我们慢慢说清楚。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "08-吵架之后.png"
+  },
+  {
+    "art": "art/09-等雨停.png",
+    "layout": "xhs-orig",
+    "seam": 0.489,
+    "title": "等雨停",
+    "subtitle": "雨会停，天会晴",
+    "bubbles": [
+      {
+        "text": "雨什么时候停呀？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "反正我们在一起。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "09-等雨停.png"
+  },
+  {
+    "art": "art/10-天晴了.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "天晴了",
+    "subtitle": "陪你等每一次天晴",
+    "bubbles": [
+      {
+        "text": "你看，天晴了！",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "嗯，明天也会晴。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "10-天晴了.png"
+  }
+]
