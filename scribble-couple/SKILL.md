@@ -9,11 +9,14 @@ description: 把情侣 / 单人照片「复刻成原作者那张蜡笔涂鸦原�
 
 这个风格的全部难点只有一个字：**糙**。不是「精致的可爱」，是「手抖的人拿蜡笔随手涂的可爱」。
 
-> ⚠️ **最重要的一条（v7 定稿）：任务是「把原作者那张画复刻出来」，不是「照照片重画」。**
+**本技能 = 第六轮交付那一套的固化版**（五对 × 复刻两版 + 四列对照）：
+口径、提示词、验收标准全部按那一轮，别自己改口径。
+
+> ⚠️ **最重要的一条（第六轮定稿）：任务是「把原作者那张画复刻出来」，不是「照照片重画」。**
 > 参考图顺序有语义：**图 1 = 这一对的原画（唯一目标，1:1 照抄）**，**图 2 = 这一对的原片（只用来核对细节，不许反过来改构图）**。
 > 原画决定一切——姿势、取景、手势、道具、配色、用线；照片只决定「细节有没有错」。顺序反了，就会得到一张「好看但不像原作」的重画版，前六轮全部栽在这里。
 
-## 交付标准：一版到位（v7 定稿）
+## 交付标准：一版到位（第六轮定稿）
 
 实测五对下来，**「复刻 V1 · 重蜡笔忠实版」始终是最像原画的那一版**，所以技能里的标准交付版本就是它，**不再默认一稿两版**。
 
@@ -104,7 +107,7 @@ description: 把情侣 / 单人照片「复刻成原作者那张蜡笔涂鸦原�
 | 深蓝（男方 POLO / 卫衣） | `#2F4470` | 斜排线，衣褶处断 |
 | 白（女生上衣） | 纸白 | 只画轮廓，不填色 |
 
-## 提示词骨架（照原画复刻，v7 实测最稳）
+## 提示词骨架（照原画复刻，第六轮实测最稳）
 
 **两张参考图，顺序不能反**：图 1 = 干净原画（target），图 2 = 原片（细节核对）。
 
@@ -203,62 +206,49 @@ Same small solid black rectangle eyes, no eyelash, no highlight.
 | 节日版 | 3:4 | 加 `three yellow sparkles and two short exclamation marks` |
 | 背影 | 4:5 | `seen from behind, holding hands, full body, no faces` |
 
-## 笔触标定：像不像，八成看这一段（v9 定稿）
+## 附录 A：只有照片、没有原画时（已知不可靠，别当交付路径）
 
-用户反复说「差别还是太大」，量出来的原因不是黑少，而是**黑是细线堆出来的**：
-我们的图黑覆盖率 15–34%，和原画 15–30% 差不多，但原画的黑是**粗蜡笔块**，我们的是**细钢笔线**。
-所以提示词里必须把「笔有多粗、块有多整」写死，这一段叫 `CRAYON HAND`，每张都要带：
+用户常常只给照片（对照表的第一列），希望直接画成第二列的样子。**两轮实测（各十对）都不行**，
+用户的原话是「一点都不像」，那两轮的文件已被删掉。结论写在这里，避免再走一遍：
+
+| 试过的做法 | 结果 |
+|---|---|
+| 照片 + 另一张原画当画风锚，只写「copy the style」 | 出来是「干净二次元 + 一点点蜡笔」，黑是细线堆的，没有原作者那种胖黑块的重量 |
+| 再加一段笔触标定（线粗如一个眼睛、整块发、8–15 笔粗排线、1/3 黑 1/2 白） | 手感明显变近，但仍只有「像这个画风」，做不到「像这一张画」 |
+
+笔触标定这段留着有用（当附加约束），原文如下：
 
 ```
 STYLE — match image 2's hand exactly:
 - every line is FAT and WAXY, about as wide as an eye; strokes are short, blunt,
   unevenly pressed and stop abruptly;
 - outlines are drawn TWICE, with visible doubling and open gaps at the corners;
-- hair is a SOLID OPAQUE BLACK MASS with only three or four white scratch lines —
-  never individual strands;
+- hair is a SOLID OPAQUE BLACK MASS with only three or four white scratch lines;
 - skin stays bare paper with only two to four light peach hatch strokes;
 - three or four short red hatch strokes per cheek;
-- clothing is 8 to 15 separate thick diagonal colour strokes with clearly visible
-  white paper between them, never a smooth fill;
+- clothing is 8 to 15 separate thick diagonal colour strokes with clear white gaps;
 - hands and props are chunky and simplified, at most three fingers;
 - about a third of the canvas is black or colour, half stays bare white paper.
-If the result looks like a clean digital line drawing, a thin pen sketch or a smooth
-illustration, it is wrong.
+If the result looks like a clean digital line drawing or a thin pen sketch, it is wrong.
 ```
 
-判断标准一句话：**把成图缩小到 25%，还看得出「胖黑线 + 大白块」，就是对的；变成灰色一片细线就是错的。**
+**判断标准**：把成图缩小到 25%，还看得出「胖黑线 + 大白块」就对；变成灰糊糊一片细线就是错。
 
-**画风锚只借手，不借人。** 用 `artwork-A` 当锚时，实测所有男生的头发都变卷、都带胡子——
-因为锚图里的人会被抄。所以每张必写：
+**实测对照（第一列原片 → 复刻，两版提示词）**
 
-```
-The hair silhouette, face shape, clothes and pose come from image 1 ONLY.
-Do not give anyone image 2's fluffy curly hair or image 2's clothes.
-```
+| 对 | 测试① 只写「copy the style」 | 测试② 再加笔触标定 | 目标（第二列原画） |
+|---|---|---|---|
+| A | 构图和手势对了，但**笔触轻、脸更圆**，女生的眼睛冒出睫毛线 | 黑块和胖线回来了，仍比原画干净 | 厚蜡笔、脸方、眼睛是纯黑方块 |
+| B | 条纹衫/派对帽/亲脸颊/手臂上扬全对，线条偏细 | （本回合生成额度用尽，下轮补） | 同样构图但更重、更毛 |
 
-## 泛化：手上没有原画时怎么画（v8 / v9 实测）
+结论：**第一列能抄到「画了什么」，抄不到「怎么画的」。** 差距集中在三处——
+笔的粗细、脸的方度、眼睛的纯度。要交付，只能拿第二列原画。
 
-新情侣只给了照片、找不到原作者那张画时，用**一张已定稿的干净原画当画风锚**：
+**为什么照片路线注定差一截**：第一列和第二列不是同一张构图。原画的姿势、取景、手的落点、
+道具位置都是画手重排过的；照照片重画，等于每一条都对不上，越认真越远。
+**要交付，就必须拿到第二列那张原画。** 拿不到就先问用户要，不要硬画。
 
-```
-images = [新照片, references/artworks/clean/artwork-A.jpg]
-```
-
-提示词第一段写清分工：`Take the PEOPLE from image 1` / `Copy ONLY its drawing technique from image 2 — do NOT copy its poses, props or background`，
-然后照常列左人 / 右人 / 小道具 / 签名。
-
-十对实测（P01–P10，见 `tests/v8/`）：**10/10 都稳稳落在这套风格里**，但整体比原作者**偏轻**——
-衣服排线稀、头发的白划痕多过黑块，少数眼睛冒出小白点。批量时统一补三句：
-
-```
-denser black mass in the hair, denser clothing hatching,
-no white glint inside the eyes, eyes are flat filled rectangles,
-keep the two faces clearly different
-```
-
-记住定位：**这是扩量验证，不是复刻交付**。真交付永远按上面的口径——图 1 就是原画本身。
-
-## 从截图复刻的完整链路（v7 实测，可直接照做）
+## 从截图复刻的完整链路（第六轮实测，可直接照做）
 
 1. **切原画**：从**无遮挡**那张截图按像素框裁出成品画 → `references/artworks/clean/artwork-X.jpg`，去掉气泡 / 灰边 / 缩略图残角，统一加 18px 白边。裁完放大目检。
    参考框（1080×2400 截图坐标）：A `(120,300)-(930,1140)`、C `(140,345)-(1035,1215)`；B / D / E 原图无遮挡，直接转存。
