@@ -7,3 +7,9 @@ __pycache__/
 healing-comic/examples/art*/
 healing-comic/examples/pages*/
 healing-comic/**/__pycache__/
+
+# work 批次：md/json 入库，图片不入（成品上 Google Drive）
+healing-comic/work/*/refs/
+healing-comic/work/*/art/
+healing-comic/work/*/pages/
+image-search/

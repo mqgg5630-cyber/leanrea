@@ -1,0 +1,228 @@
+[
+  {
+    "art": "art/01-封面.png",
+    "layout": "cover",
+    "title": [
+      "把甜甜的",
+      "都分给你"
+    ],
+    "subtitle": "一二和布布的治愈小日常",
+    "out": "01-封面.png"
+  },
+  {
+    "art": "art/02-一人一半.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "一人一半",
+    "subtitle": "甜的要对半分",
+    "bubbles": [
+      {
+        "text": "最后一块，留给你。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "那我们一人一半。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "02-一人一半.png"
+  },
+  {
+    "art": "art/03-雨天来接.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "雨天来接",
+    "subtitle": "伞往你那边斜",
+    "bubbles": [
+      {
+        "text": "雨好大，你别来了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我想陪你走一段。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "03-雨天来接.png"
+  },
+  {
+    "art": "art/04-生病照顾.png",
+    "layout": "xhs-orig",
+    "seam": 0.49,
+    "title": "生病照顾",
+    "subtitle": "先喝粥，再抱抱",
+    "bubbles": [
+      {
+        "text": "会传染，你别靠太近。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "先喝粥，抱抱待会儿。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "04-生病照顾.png"
+  },
+  {
+    "art": "art/05-睡不着.png",
+    "layout": "xhs-orig",
+    "seam": 0.508,
+    "title": "睡不着",
+    "subtitle": "数不完，我陪着",
+    "bubbles": [
+      {
+        "text": "我数了三百只羊了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "那你数我打呼噜。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "05-睡不着.png"
+  },
+  {
+    "art": "art/06-煮糊的面.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "煮糊的面",
+    "subtitle": "难吃也一起吃光",
+    "bubbles": [
+      {
+        "text": "……面又煮糊了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "焦焦的才够香。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "06-煮糊的面.png"
+  },
+  {
+    "art": "art/07-想哭就哭.png",
+    "layout": "xhs-orig",
+    "seam": 0.49,
+    "title": "想哭就哭",
+    "subtitle": "哭完我还在",
+    "bubbles": [
+      {
+        "text": "我没事，就是眼睛酸。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "手帕借你，不用忍。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "07-想哭就哭.png"
+  },
+  {
+    "art": "art/08-口袋取暖.png",
+    "layout": "xhs-orig",
+    "seam": 0.392,
+    "title": "口袋取暖",
+    "subtitle": "冬天有个口袋",
+    "bubbles": [
+      {
+        "text": "手，有一点点冷。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "放我口袋里暖着。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "08-口袋取暖.png"
+  },
+  {
+    "art": "art/09-留灯等你.png",
+    "layout": "xhs-orig",
+    "seam": 0.556,
+    "title": "留灯等你",
+    "subtitle": "晚归也有人等",
+    "bubbles": [
+      {
+        "text": "今天又得很晚。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "灯留着，汤也温着。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "09-留灯等你.png"
+  },
+  {
+    "art": "art/10-明天也是.png",
+    "layout": "xhs-orig",
+    "seam": 0.491,
+    "title": "明天也是",
+    "subtitle": "把甜甜的都分给你",
+    "bubbles": [
+      {
+        "text": "甜甜的，会不会吃完？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "明天再一起攒呀。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "10-明天也是.png"
+  }
+]
