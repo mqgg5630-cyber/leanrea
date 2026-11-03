@@ -259,6 +259,37 @@ E①② 的相机比原画略小；A① 的脸比原画略圆。
 `SKILL.md` 同步改口径：**图 1 = 干净原画（target，1:1 复刻）**，图 2 = 原片（只核对细节）；
 工作流第 2 步就是「切干净原画」，质检加了第 9 查「和原画是不是同一张画的抄写」。
 
+## v9：十对新情侣泛化测试（2026-11-03）
+
+拿 10 组网上找的**新情侣照片**（不加任何原画）跑一遍技能，看画风能不能撑住。
+因为手上没有这十对的原画，改用「**一张已定稿的干净原画当画风锚**」：
+
+```
+images = [tests/v8/inputs/pXX.jpg, references/artworks/clean/artwork-A.jpg]
+提示词：PEOPLE from image 1 / 只抄 image 2 的 drawing technique，明写 do NOT copy its poses, props or background
+```
+
+| 编号 | 输入 | 成图 |
+|---|---|---|
+| P01 | 公园自拍，卷发胡子男 + 长直发女 | `tests/v8/out/t01-p01.jpg` |
+| P02 | 秋景自拍，深色夹克男女 | `t02-p02` |
+| P03 | 桥上自拍，金发女 + 酒红卫衣男 | `t03-p03` |
+| P04 | 海滩自拍，光头胡子男 + 草帽女 | `t04-p04` |
+| P05 | 近景，胡子男 + 头巾女 | `t05-p05` |
+| P06 | 海滩，银发男 + 金发女 | `t06-p06` |
+| P07 | 厨房，从背后抱 | `t07-p07` |
+| P08 | 两个男生，条纹衫 | `t08-p08` |
+| P09 | 夜景，深色大衣 | `t09-p09` |
+| P10 | 咖啡馆，帽子男 + 黄衣女 | `t10-p10` |
+
+对照总表 `tests/v8/review-sheet.jpg`（原片 | 成图，10 对）。
+
+**结论**：10/10 都落在这套风格里，脸型、黑方块眼、发块、白纸、签名都稳——画风锚可以扩量。
+**共性偏差**：整体比原作者**偏轻**（衣服排线稀、头发白划痕多过黑块），个别眼睛冒出小白点，
+深色外套的 P09 两张脸有点趋同，P07 的道具退化成「握着个小方块」。
+修法已写进 `SKILL.md` 的「泛化」一节与 `prompts.md §18`：
+补 `denser black mass in the hair, denser clothing hatching, no white glint inside the eyes, keep the two faces clearly different`。
+
 ## 上手
 
 ```sh
@@ -278,3 +309,15 @@ python3 -m venv .venv && .venv/bin/pip install Pillow
 ## 授权提醒
 
 `style-ref-sample.jpg` 与 `references/user-screenshots/` 来自用户提供的截图（原作者水印 `danxiaogui`），仅作风格研究与个人使用；对外发布、商用请先确认授权，签名 `sdldyh` 不代表版权归属。
+
+---
+
+## 链接 / Links（记录用）
+
+| 用途 | 链接 |
+|---|---|
+| Arena Agent（本技能的工作现场） | https://arena.ai/agent/01a19f64-af5f-777f-b1e7-2a8d2dc86eea |
+| 代码仓库 | https://github.com/mqgg5630-cyber/leanrea |
+| 第5轮交付（重切原画后重出 10 张） | https://drive.google.com/drive/folders/1u8FwptInC9-dD53AOOiOHvl1LmRHcam8 |
+| 第6轮交付（照原画复刻两版，四列对照） | https://drive.google.com/drive/folders/1ZK0n5NyRmz3_AaHUnNGtbCCfHExfAkFt |
+| 第7轮（十对新情侣泛化测试） | https://drive.google.com/drive/folders/1FHOm1lNus_pWvyJpYcK72geMRphQNBpF |

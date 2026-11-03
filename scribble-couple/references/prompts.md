@@ -322,3 +322,32 @@ ground truth for the style`。少一张，或图 2 有遮挡，偏差一定会�
 
 **验收**：把复刻图和原画并排放，遮住签名，能否一眼看出是同一张画的两次抄写。
 不能，就重出。
+
+---
+
+## §18 泛化测试（新照片 + 老画风锚，v8 十对实测）
+
+手上没有新情侣的原画时，用**已定稿的一张干净原画当画风锚**：
+`images=[新照片, references/artworks/clean/artwork-A.jpg]`。
+提示词要把「抄什么」写死，否则模型会连锚图的人一起抄：
+
+```
+IMAGE 1 = the real photo of a couple. Take the PEOPLE from it: faces, hair, clothes,
+expressions, and the gesture (phone in his raised hand).
+IMAGE 2 = the artist's original wax-crayon drawing. Copy ONLY its drawing technique:
+line weight, face construction, hair-as-one-black-block, solid black rectangle eyes,
+45-degree hatching that stops short of the outlines, bare white paper, the small slanted
+"sdldyh" signature. Do NOT copy image 2's poses, props or background.
+```
+
+十对（P01–P10）实测结论：
+
+| 观察 | 结论 |
+|---|---|
+| 10/10 都落在这套风格里，脸型/眼/发块/白纸稳定 | 画风锚有效，可以放心用来扩量 |
+| 整体比原画**偏轻**：衣服排线稀、头发的白划痕多过黑块 | 每张都要补 `denser black mass in the hair, denser clothing hatching` |
+| 少数图的眼睛出现小白点/小弧线（高光、睫毛） | 补 `no white glint inside the eyes, eyes are flat filled rectangles` |
+| 深色外套（P09）容易糊成一片、两张脸趋同 | 一人一句写清发型差异 + `keep the two faces clearly different` |
+| 手部（P07 拿刀、P06 牵手）容易退化成「握着个小方块」 | 道具只写形状不写细节；手最多三指；拿不准就改成空手 |
+
+**这一档的定位**：这是「扩量验证」，不是「复刻交付」。真交付仍按 §17：图 1 = 原画目标。

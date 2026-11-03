@@ -203,6 +203,28 @@ Same small solid black rectangle eyes, no eyelash, no highlight.
 | 节日版 | 3:4 | 加 `three yellow sparkles and two short exclamation marks` |
 | 背影 | 4:5 | `seen from behind, holding hands, full body, no faces` |
 
+## 泛化：手上没有原画时怎么画（v8 十对实测）
+
+新情侣只给了照片、找不到原作者那张画时，用**一张已定稿的干净原画当画风锚**：
+
+```
+images = [新照片, references/artworks/clean/artwork-A.jpg]
+```
+
+提示词第一段写清分工：`Take the PEOPLE from image 1` / `Copy ONLY its drawing technique from image 2 — do NOT copy its poses, props or background`，
+然后照常列左人 / 右人 / 小道具 / 签名。
+
+十对实测（P01–P10，见 `tests/v8/`）：**10/10 都稳稳落在这套风格里**，但整体比原作者**偏轻**——
+衣服排线稀、头发的白划痕多过黑块，少数眼睛冒出小白点。批量时统一补三句：
+
+```
+denser black mass in the hair, denser clothing hatching,
+no white glint inside the eyes, eyes are flat filled rectangles,
+keep the two faces clearly different
+```
+
+记住定位：**这是扩量验证，不是复刻交付**。真交付永远按上面的口径——图 1 就是原画本身。
+
 ## 从截图复刻的完整链路（v7 实测，可直接照做）
 
 1. **切原画**：从**无遮挡**那张截图按像素框裁出成品画 → `references/artworks/clean/artwork-X.jpg`，去掉气泡 / 灰边 / 缩略图残角，统一加 18px 白边。裁完放大目检。
