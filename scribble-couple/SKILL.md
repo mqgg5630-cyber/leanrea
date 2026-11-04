@@ -16,7 +16,46 @@ description: 把情侣 / 单人照片「复刻成原作者那张蜡笔涂鸦原�
 > 参考图顺序有语义：**图 1 = 这一对的原画（唯一目标，1:1 照抄）**，**图 2 = 这一对的原片（只用来核对细节，不许反过来改构图）**。
 > 原画决定一切——姿势、取景、手势、道具、配色、用线；照片只决定「细节有没有错」。顺序反了，就会得到一张「好看但不像原作」的重画版，前六轮全部栽在这里。
 
-## 交付契约：每对两版，两版都要像第二列（第十轮定稿）
+## 复刻②：只喂第一列（原片）也要像第二列（第十一轮定稿）
+
+第十轮把原画也喂进 ②，出来反而像「原画的劣化版」。第十一轮改成 **② 只喂原片、原画完全不进输入**，
+把第二列的舞台**写成文字**，五对全部明显好转（`examples/out-v11/`、`tests/v11/deliverable-v11.jpg`）。
+成功的关键不是形容词，而是这段**舞台说明（STAGING）**，缺一项就错一项：
+
+```
+Draw a wax-crayon picture of the couple in IMAGE 1 on PURE WHITE PAPER — empty white
+background, no wall, no room, no shadow. IMAGE 1 is a real photo and the only reference:
+take their faces, hair, expressions, clothes and accessories from it.
+Do not copy the photo's background, its lighting or its framing.
+
+STAGING — follow exactly:
+CANVAS vertical 4:5, pure white paper, cropped at <the chest / the hip / the waist>.
+Two heads, big: together they fill about 80% of the width. <谁在左、谁在右、谁的头更大更高、
+脸朝哪边、有没有贴脸 / 亲脸颊 / 一人在前一人半挡>.
+LEFT — <发型 + 帽子/配饰 + 表情 + 上衣 + 下装 + 手放在哪里>.
+RIGHT — <同上；手势一定要写死：托下巴 / 放头顶 / 举锅铲 / 双手举相机>.
+<小道具与点缀：红心在哪侧、黄星、三道黄色动感线、比耶的大手在哪一角>.
+```
+
+后面接 `STYLE — heavy wax crayon` 那一整段（见附录 A.1），末尾加一句总判据：
+
+```
+If it looks like a clean digital line drawing or a thin pen sketch, it is wrong.
+At 25% zoom it must still read as FAT BLACK LINES and BIG WHITE BLOCKS.
+```
+
+**第十一轮实测结论**：构图、姿势、手势、道具、红心位置 5/5 都对上；剩下的差距是**笔重**——
+线偏细、脸偏圆、头发黑块像一撮撮碎线而不是一整块。补针：
+
+```
+hair must be ONE opaque black block, not many small scribbles,
+outline thickness at least one eye wide, every contour drawn twice
+```
+
+**D 这种车内背景**：舞台里要写 `the whole background is dense diagonal crayon hatching, not white
+paper`，否则会被洗成白底。
+
+## 交付契约：每对两版（第十轮口径，第十一轮改法）
 
 用户口径（原话整理）：**「复刻第二列要很像；通过第一列复刻出第二列，也要和第二列很像」**——
 5 对 × 2 版 = 交付 10 张，两版都拿第二列当验收尺。第一列（原片）和第二列（原画）都是从原图里提取的，
