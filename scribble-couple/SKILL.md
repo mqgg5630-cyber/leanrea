@@ -107,7 +107,83 @@ description: 把情侣 / 单人照片「复刻成原作者那张蜡笔涂鸦原�
 | 深蓝（男方 POLO / 卫衣） | `#2F4470` | 斜排线，衣褶处断 |
 | 白（女生上衣） | 纸白 | 只画轮廓，不填色 |
 
-## 提示词骨架（照原画复刻，第六轮实测最稳）
+## 口径澄清：第三列为什么像（先想清楚这件事，再动手）
+
+第六轮那张对照表是四列：
+
+```
+① 第一列 原片   |  ② 第二列 原作者原画  |  ③ 第三列 复刻 V1  |  ④ 第四列 复刻 V2
+```
+
+**第三列本身 = 「拿第二列当 target 1:1 复刻」的产物**，它像第二列是这个原因，不是因为我们从第一列推出了什么。两种需求必须分开回答：
+
+| 用户要的 | 能不能 | 怎么做 |
+|---|---|---|
+| 「用第一列，画出第三列那种像第二列的效果」 | **能**，前提是**这一对的第二列原画在场** | 第二列当 `IMAGE 1`（target），第一列当 `IMAGE 2`（只核对细节）——见下节逐字提示词 |
+| 「只给照片，也画成第二列那样」 | **只能做到「同一位画手画的另一对」，做不到「同一张画」** | 用别对的干净原画当画风锚（附录 A），并接受构图、姿势由照片决定 |
+
+一句话：**构图和用笔来自第二列，长相来自第一列。缺第二列，只能换一只手，换不来这张画。**
+
+## 第六轮第三列的原始提示词（逐字，别改写）
+
+第三列五对（`examples/out-v7/*`）全部由这段生成，`images = [这一对的干净原画, 这一对的原片]`：
+
+```
+IMAGE 1 = the artist's original drawing. IT IS THE TARGET, NOT A REFERENCE.
+Reproduce it as closely as possible — same composition, same crop, same head sizes,
+same poses, same hand positions, same clothing, same props, same colour areas,
+same line weight, same amount of solid black, same amount of bare white paper.
+Do not redesign, do not beautify, do not re-frame.
+IMAGE 2 = the real photo of the couple. Use it ONLY to confirm small details that are
+hard to read in image 1. Never change the composition of image 1 to match the photo.
+
+Output: a new hand-drawn reproduction of image 1, <upright 4:5 / square-ish>, <cropped at
+the chest / at the hip>, on pure white paper.
+（原画有背景的，例如 D 的车内：the frame is filled with dense diagonal hatching for the
+car interior — keep it, do NOT turn it into white paper.）
+
+Exact content to reproduce:
+LEFT — <发型（直/卷、长度、刘海、绑法）+ 眼睛画法 + 表情 + 腮红/星 + 上衣 + 配饰 + 手势，逐项写>
+RIGHT — <同上；一定要写手放在哪里、有没有背包带 / 手表 / 眼镜>
+<小道具与原画特有的点缀：红心在哪侧、黄星、三根感叹号、比耶的大手…>
+Signature bottom-right corner: small, thin, slanted handwriting "sdldyh", dark grey.
+
+VERSION ①: faithful heavy wax-crayon reproduction — thick doubled black outlines with tiny
+breaks, hair as one solid mass with a few white scratch lines, pale cream skin with only two
+or three light hatch strokes, 45-degree hatching, high amount of solid black balanced by lots
+of bare white paper. Keep the original's hand-shake and unevenness.
+
+No readable words, no watermark, no border, no frame, no UI, no photo texture.
+```
+
+**每一句在管什么（改之前先看这张表）**
+
+| 句子 | 管的是 |
+|---|---|
+| `IT IS THE TARGET, NOT A REFERENCE` | 抄这张画 vs 借它的风格——这句一改就前功尽弃 |
+| `same composition / crop / head sizes / poses` | 构图、取景、头身比、手的位置 |
+| `same amount of solid black / bare white paper` | 黑与白的比例（像不像的关键） |
+| `IMAGE 2 … ONLY to confirm small details` | 保证照片不把构图拉走 |
+| `Never change the composition … to match the photo` | 堵住模型「按片重画」的惯性 |
+| `Exact content to reproduce` 清单 | 逐项兜底，漏一项就漏一项 |
+
+## 实测（2026-11，v10，同一批五对 × 四条路线）
+
+见 `tests/v10/review-sheet.jpg` 与 `tests/v10/sheet-two-stage.jpg`：
+
+| 路线 | 输入 | 结果 | 与第二列的距离 |
+|---|---|---|---|
+| 3（第六轮第三列） | 原画 target + 原片核对 | 交付版 | 基准，几乎同纸 |
+| 5（逐字复用同一段提示词） | 同上 | **五对全部复现第三列水平** | 接近基准，个别多出杂色笔触 |
+| 4（只用照片 + 别对原画当风格锚） | 原片 + artwork-X | 内容对、手不对：线细、脸圆、眼大、太干净 | **明显不像** |
+| 丙（照片→草图→再复刻一遍加粗） | 只用原片，两段 self-trace | 变粗变糙，但自己发明了条纹背景、改了道具 | 更「手绘」但**失真** |
+
+三条结论：
+1. **只要这一对的原画在场，第三列可以稳定复现**——这是唯一能达标的路。
+2. **只有照片时无解**：抄得到画了什么，抄不到怎么画的（笔粗细、脸方度、眼睛纯度）。
+3. 二次复刻加粗**不能当补救**：换来糙感，代价是构图和道具跑掉。
+
+## 提示词骨架（第六轮实测最稳；换 `Exact content` 那一段即可）
 
 **两张参考图，顺序不能反**：图 1 = 干净原画（target），图 2 = 原片（细节核对）。
 

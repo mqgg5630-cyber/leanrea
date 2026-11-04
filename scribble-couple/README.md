@@ -341,3 +341,14 @@ python3 -m venv .venv && .venv/bin/pip install Pillow
 | 第6轮交付（照原画复刻两版，四列对照） | https://drive.google.com/drive/folders/1ZK0n5NyRmz3_AaHUnNGtbCCfHExfAkFt |
 | 第7轮（十对新情侣泛化测试） | https://drive.google.com/drive/folders/1FHOm1lNus_pWvyJpYcK72geMRphQNBpF |
 | 技能文件（SKILL.md 等，上传到硬盘） | https://drive.google.com/drive/folders/1Uxqtmx4rglrMIDv3-KLDeGCCwQiIaXNa |
+
+## v10（2026-11）第三列到底是怎么来的
+
+用户问「之前第三列不会是复刻的第二列吧」——**是**。第六轮第三列 = 拿第二列原画当 target 的 1:1 复刻，
+所以它像；这不构成「只给照片也能画成那样」的证据。v10 把四条路线并排测了五对：
+
+- `tests/v10/review-sheet.jpg`：原片 | 原画（目标）| 第六轮第三列 | 只用照片+风格锚 | 照片+本对原画（第六轮提示词）
+- `tests/v10/sheet-two-stage.jpg`：原片 | 原画 | 只用照片出的草图 | 草图再复刻一遍加粗
+
+结果：复用第六轮提示词（原画在场）→ 五对全部回到第三列水平；只用照片 → 线细、脸圆、眼大；
+二次复刻 → 变糙但会改道具。**第 7、8 两轮已被用户删除，不要再当交付。**
