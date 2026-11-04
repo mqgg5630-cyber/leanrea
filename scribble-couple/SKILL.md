@@ -16,6 +16,48 @@ description: 把情侣 / 单人照片「复刻成原作者那张蜡笔涂鸦原�
 > 参考图顺序有语义：**图 1 = 这一对的原画（唯一目标，1:1 照抄）**，**图 2 = 这一对的原片（只用来核对细节，不许反过来改构图）**。
 > 原画决定一切——姿势、取景、手势、道具、配色、用线；照片只决定「细节有没有错」。顺序反了，就会得到一张「好看但不像原作」的重画版，前六轮全部栽在这里。
 
+## 为什么「通过第一列」一直不好看：量化原因（第十二轮）
+
+用 `scripts/measure_ink.py` 量了 5 对的目标原画与我们各版（指标 = 笔画中位宽度 ÷ 画布宽度）：
+
+| 对 | 第二列原画 | 复刻①（喂原画） | 复刻② v11（只喂原片） | ② 线宽只有目标 |
+|---|---|---|---|---|
+| A | 18.8‰ | 16.4‰ | **6.8‰** | 0.36× |
+| B | 11.2‰ | 9.6‰ | **6.5‰** | 0.58× |
+| C | 19.5‰ | 19.3‰ | **7.8‰** | 0.40× |
+| D | 23.7‰ | 10.5‰ | **8.1‰** | 0.34× |
+| E | 10.6‰ | 10.8‰ | **6.8‰** | 0.64× |
+
+**这就是「不一样、没有原来的好看」的第一层原因：只喂照片时，线只有原画的一半粗。**
+照片里没有「胖蜡笔」这个信息，模型默认用铅笔/钢笔的线宽去画，于是画面变细、变灰、变成插画稿。
+
+第二层（补了线宽之后暴露出来的）：**造型是原画自带的设定，照片里根本没有**——
+宽平方脸、低位的实心黑方眼、比头还宽的一整块乱发、夸张表情。模型只能回退到通用卡通脸，
+于是「粗了但变简笔画」，仍然不是原画那个味道。
+
+## 第十二轮：把线宽写成数字
+
+形容词没用，写成可测的数字才生效。这两段是有效的最小集：
+
+```
+INK SPEC — a measurement, not a mood. The picture is 1000 px wide and every black outline is
+15–24 px wide, as wide as one of their eyes, drawn with the flat side of a wax crayon.
+Nothing thinner anywhere: no hairline, no pen stroke, no fine hatching. If a line would come
+out thinner, DO NOT DRAW IT — delete the detail instead.
+```
+```
+DESIGN NUMBERS — her head 340 px, his head 380 px on a 1000 px canvas (together 78% of the
+width); head height ≈ 1.25 × head width; each eye a SOLID BLACK ROUNDED RECTANGLE 60 × 62 px
+set LOW at 62% of the face height, one eye width apart; eyebrows 70 × 14 px; mouth 70 px;
+hair mass 12% wider than the skull, ONE opaque black block.
+```
+
+实测效果（`tests/v12/`）：A 6.8→20.3‰、B 6.5→9.6‰、C 7.8→26.3‰，D 反而 7.0‰（没吃进去）。
+线宽能补到接近，但**脸还是通用卡通脸**——补不回来。
+
+**所以口径写死**：② 的定位是「同一位画手画的近似稿」，天花板就在这；要「和第二列一样好看」，
+只有两条路——①（喂原画复刻），或者 ② 把原画一起喂进去当造型母版、只换脸与衣服。
+
 ## 复刻②：只喂第一列（原片）也要像第二列（第十一轮定稿）
 
 第十轮把原画也喂进 ②，出来反而像「原画的劣化版」。第十一轮改成 **② 只喂原片、原画完全不进输入**，
