@@ -1,0 +1,219 @@
+[
+  {
+    "art": "artD/31-封面.png",
+    "layout": "cover",
+    "title": [
+      "提问、选择",
+      "留白"
+    ],
+    "subtitle": "让对方更容易听见自己",
+    "out": "31-封面.png"
+  },
+  {
+    "art": "artD/32-四个动作.png",
+    "layout": "xhs-orig",
+    "title": "四个动作",
+    "subtitle": "先让他说话，不是先给方案",
+    "bubbles": [
+      {
+        "text": "你能不能别再给建议了？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "你想先聊哪一块？我先听。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "32-四个动作.png"
+  },
+  {
+    "art": "artD/33-一次一问.png",
+    "layout": "xhs-orig",
+    "title": "一次一问",
+    "subtitle": "问完，等三秒",
+    "bubbles": [
+      {
+        "text": "你连着问了我三个问题。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我先问一个：最难受的是哪一刻？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "33-一次一问.png"
+  },
+  {
+    "art": "artD/34-两个选项.png",
+    "layout": "xhs-orig",
+    "title": "两个选项",
+    "subtitle": "给选择，不给命令",
+    "bubbles": [
+      {
+        "text": "那你说该选哪个？",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "周三吃饭，或周六散步？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "34-两个选项.png"
+  },
+  {
+    "art": "artD/35-还回去.png",
+    "layout": "xhs-orig",
+    "title": "还回去",
+    "subtitle": "决定权在你手里",
+    "bubbles": [
+      {
+        "text": "你帮我选一个吧。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我陪你权衡，但不替你按。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "35-还回去.png"
+  },
+  {
+    "art": "artD/36-先复述.png",
+    "layout": "xhs-orig",
+    "title": "先复述",
+    "subtitle": "被听见，防御就低了",
+    "bubbles": [
+      {
+        "text": "我不是不想见你，是见了就要做决定。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "我听到的是，见面就要做决定。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "36-先复述.png"
+  },
+  {
+    "art": "artD/37-夸具体行为.png",
+    "layout": "xhs-orig",
+    "title": "夸具体行为",
+    "subtitle": "夸动作，不夸人格",
+    "bubbles": [
+      {
+        "text": "这有什么好说的。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "你主动说晚点回，我一下就安心了。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "37-夸具体行为.png"
+  },
+  {
+    "art": "artD/38-不贴标签.png",
+    "layout": "xhs-orig",
+    "title": "不贴标签",
+    "subtitle": "说行为，不定性",
+    "bubbles": [
+      {
+        "text": "你就是回避型人格。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "谈到搬家你会换话题，你怎么想？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "38-不贴标签.png"
+  },
+  {
+    "art": "artD/39-换方法.png",
+    "layout": "xhs-orig",
+    "title": "换方法",
+    "subtitle": "无效就换法，别加力",
+    "bubbles": [
+      {
+        "text": "这话我已经说十遍了！",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "是没听懂、不同意，还是做不到？",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "39-换方法.png"
+  },
+  {
+    "art": "artD/40-说得少一点.png",
+    "layout": "xhs-orig",
+    "title": "留白",
+    "subtitle": "说得少一点，听得多一点",
+    "bubbles": [
+      {
+        "text": "你终于没讲道理了。",
+        "y": 190,
+        "align": "left",
+        "tail": "left",
+        "tail_dir": "down"
+      },
+      {
+        "text": "今晚先不解决，坐会儿。",
+        "y": 1200,
+        "align": "right",
+        "tail": "left",
+        "tail_dir": "up"
+      }
+    ],
+    "out": "40-说得少一点.png"
+  }
+]
