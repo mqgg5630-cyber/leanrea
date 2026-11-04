@@ -19,7 +19,9 @@ healing-comic/
 │   ├── anime2-批B-生图提示词.md   批B 10 页成品提示词
 │   ├── anime2-批C-漫画文案.md    批C《亲密的节奏》逐页文案 + 源文映射表
 │   ├── anime2-批C-生图提示词.md   批C 10 页成品提示词
-│   ├── anime2-交付说明.md         三批 30 张的交付清单与 Drive 位置
+│   ├── anime2-批D-漫画文案.md    批D《提问、选择、留白》逐页文案 + 源文映射表（第 6 章 6.1–6.8）
+│   ├── anime2-批D-生图提示词.md   批D 10 页成品提示词
+│   ├── anime2-交付说明.md         四批 40 张的交付清单与 Drive 位置
 │   ├── 会话与交付记录.md          ⭐ 本次对话链接 + 继续做下一批的完整步骤 + 环境备忘
 │   ├── anime-分镜表.md / anime-生图提示词.md / anime-发布清单.md / anime-说明.md
 │   ├── copy-复刻版-8件事.md / copy-3.7-承诺要小而可兑现.md
@@ -32,6 +34,7 @@ healing-comic/
 │   ├── spec-anime2-A.json       ⭐ 批A 10 页（双气泡）
 │   ├── spec-anime2-B.json       ⭐ 批B 10 页（双气泡）
 │   ├── spec-anime2-C.json       ⭐ 批C 10 页（双气泡）
+│   ├── spec-anime2-D.json       ⭐ 批D 10 页（双气泡）
 │   └── pages*/                  样张成品 + preview.html + preview.jpg
 └── scripts/
     ├── compose.py               无字底图 + spec → 成品页（Pillow；折行 / 气泡 / 预览 / gate）
@@ -70,6 +73,7 @@ bash scripts/fetch_font.sh                                  # 或自备任意中
 | v1.2 批A | 《先分清：引导还是控制》（第 11 章）10 张 | Drive `引导型恋人_十连漫画_布布引导_AIPaint_2026-11-02/批A_先分清引导和控制/` |
 | v1.2 批B | 《体面放手》（第 12–13 章）10 张 | Drive `引导型恋人_十连漫画_布布引导_AIPaint_2026-11-02/批B_体面放手/` |
 | v1.2 批C | 《亲密的节奏》（第 8 章）10 张 | Drive `引导型恋人_十连漫画_布布引导_AIPaint_2026-11-02/批C_亲密的节奏/` |
+| v1.2 批D | 《提问、选择、留白》（第 6 章）10 张 | Drive `引导型恋人_十连漫画_布布引导_AIPaint_2026-11-02/批D_提问选择留白/` |
 
 ## 找回这次对话
 
