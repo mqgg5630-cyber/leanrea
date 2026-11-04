@@ -340,7 +340,8 @@ python3 -m venv .venv && .venv/bin/pip install Pillow
 | 第5轮交付（重切原画后重出 10 张） | https://drive.google.com/drive/folders/1u8FwptInC9-dD53AOOiOHvl1LmRHcam8 |
 | 第6轮交付（照原画复刻两版，四列对照） | https://drive.google.com/drive/folders/1ZK0n5NyRmz3_AaHUnNGtbCCfHExfAkFt |
 | 第7轮（十对新情侣泛化测试） | https://drive.google.com/drive/folders/1FHOm1lNus_pWvyJpYcK72geMRphQNBpF |
-| 技能文件（SKILL.md 等，上传到硬盘） | https://drive.google.com/drive/folders/1Uxqtmx4rglrMIDv3-KLDeGCCwQiIaXNa |
+| 第9轮（v10：第三列来源 + 四条路线实测） | https://drive.google.com/drive/folders/1gK_4APYee0UNZm_jLlKfnfx8ikPcgOv9 |
+| 技能文件（SKILL.md 等） | https://drive.google.com/drive/folders/1Uxqtmx4rglrMIDv3-KLDeGCCwQiIaXNa |
 
 ## v10（2026-11）第三列到底是怎么来的
 
